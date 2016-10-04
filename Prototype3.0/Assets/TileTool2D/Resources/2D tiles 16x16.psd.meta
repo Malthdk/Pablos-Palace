@@ -1,0 +1,4285 @@
+fileFormatVersion: 2
+guid: 3d5ccbc1b0b65db49b419a0ee7fa991c
+timeCreated: 1468082290
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GRASS_CN1
+    21300002: GRASS_CN_0
+    21300004: GRASS_CN_1
+    21300006: GRASS_NE_0
+    21300008: GRASS_CW_0
+    21300010: GRASS_C_0
+    21300012: GRASS_C_1
+    21300014: GRASS_CE_0
+    21300016: GRASS_CW_1
+    21300018: GRASS_C_2
+    21300020: GRASS_C_3
+    21300022: GRASS_CE_1
+    21300024: GRASS_SW_0
+    21300026: GRASS_CS_0
+    21300028: GRASS_CS_1
+    21300030: GRASS_SE_0
+    21300032: DIRT_A_0
+    21300034: DIRT_W_0
+    21300036: DIRT_NS_0
+    21300038: DIRT_NS_1
+    21300040: DIRT_E_0
+    21300042: DIRT_S_0
+    21300044: DIRT_WE_1
+    21300046: DIRT_WE_0
+    21300048: DIRT_N_0
+    21300050: TEMPLEDARK_S_0
+    21300052: TEMPLEDARKWINDOW_S_0
+    21300054: TEMPLEDARKWINDOW_WE_0
+    21300056: TEMPLEDARKWINDOW_N_0
+    21300058: 2D tiles 16x16_29
+    21300060: 2D tiles 16x16_30
+    21300062: 2D tiles 16x16_31
+    21300064: 2D tiles 16x16_32
+    21300066: 2D tiles 16x16_33
+    21300068: 2D tiles 16x16_34
+    21300070: 2D tiles 16x16_35
+    21300072: 2D tiles 16x16_36
+    21300074: GRASS_NW
+    21300076: GRASS_CN
+    21300078: GRASS_NE
+    21300080: DIRT_NW
+    21300082: DIRT_CN
+    21300084: DIRT_C
+    21300086: DIRT_C1
+    21300088: x
+    21300090: y
+    21300092: GRASS_SW
+    21300094: GRASS_CS
+    21300096: DIRT_CW
+    21300098: DIRT_CN1
+    21300100: DIRT_NE
+    21300102: DIRT_CE
+    21300104: DIRT_C2
+    21300106: DIRT_C3
+    21300108: DIRT_CW1
+    21300110: DIRT_CE_0
+    21300112: DIRT_CS
+    21300114: DIRT_CS_0
+    21300116: DIRT_SW
+    21300118: DIRT_SE
+    21300120: GRASS_SE
+    21300122: GRASS_CS1
+    21300124: GRASS_C
+    21300126: GRASS_C1
+    21300128: GRASS_E
+    21300130: GRASS_W
+    21300132: GRASS_CW
+    21300134: GRASS_CE
+    21300136: GRASS_C2
+    21300138: GRASS_C3
+    21300140: GRASS_CW1
+    21300142: GRASS_CE1
+    21300144: GRASS_NS
+    21300146: GRASS_N
+    21300148: TREE
+    21300150: SKY
+    21300152: TREE2
+    21300154: GRASS_S
+    21300156: TREE3
+    21300158: BUSH
+    21300160: BUSH1
+    21300162: BUSH2
+    21300164: Zombie
+    21300166: GRASS_WE
+    21300168: GRASS_NW_0
+    21300170: GRASS_A_0
+    21300172: GRASS_W_0
+    21300174: GRASS_NS_0
+    21300176: GRASS_NS_1
+    21300178: GRASS_E_0
+    21300180: GRASS_N_0
+    21300182: GRASS_WE_0
+    21300184: GRASS_WE_1
+    21300186: GRASS_S_0
+    21300188: DIRT_NW_0
+    21300190: DIRT_CW1
+    21300192: DIRT_CW_0
+    21300194: DIRT_SW_0
+    21300196: DIRT_CN_0
+    21300198: DIRT_C_0
+    21300200: DIRT_C_2
+    21300202: DIRT_CS_0
+    21300204: DIRT_CS_1
+    21300206: DIRT_C_3
+    21300208: DIRT_C_1
+    21300210: DIRT_CN_1
+    21300212: DIRT_NE_0
+    21300214: DIRT_CE_0
+    21300216: DIRT_CE_1
+    21300218: DIRT_SE_0
+    21300220: 3N-W1
+    21300222: DIRT2_CN_0
+    21300224: DIRT2_CN_1
+    21300226: DIRT2_NE_0
+    21300228: DIRT2_CW_0
+    21300230: DIRT2_C_0
+    21300232: DIRT2_C_1
+    21300234: DIRT2_CE_0
+    21300236: DIRT2_CW_1
+    21300238: DIRT2_C_2
+    21300240: DIRT2_C_3
+    21300242: DIRT2_CE_1
+    21300244: DIRT2_SW_0
+    21300246: DIRT2_CS_0
+    21300248: DIRT2_CS_1
+    21300250: DIRT2_SE_0
+    21300252: DIRT2_A_0
+    21300254: DIRT2_W_0
+    21300256: DIRT2_NS_0
+    21300258: DIRT2_NS_1
+    21300260: DIRT2_E_0
+    21300262: DIRT2_N_0
+    21300264: DIRT2_WE_0
+    21300266: DIRT2_WE_1
+    21300268: DIRT2_S_0
+    21300270: DIRT2_NW_0
+    21300272: BRICK_NW_0
+    21300274: BRICK_CN_0
+    21300276: BRICK_CN_1
+    21300278: BRICK_NE_0
+    21300280: BRICK_CW1
+    21300282: BRICK_CC1
+    21300284: BRICK_CC2
+    21300286: BRICK_CE1
+    21300288: BRICK_CW2
+    21300290: BRICK_CC3
+    21300292: BRICK_CC4
+    21300294: BRICK_CE2
+    21300296: BRICK_SW1
+    21300298: BRICK_CS1
+    21300300: BRICK_CS2
+    21300302: BRICK_SE1
+    21300304: BRICK_WW1
+    21300306: BRICK_NS1
+    21300308: BRICK_NS2
+    21300310: BRICK_EE1
+    21300312: BRICK_SS1
+    21300314: BRICK_WE2
+    21300316: BRICK_WE1
+    21300318: BRICK_NN1
+    21300320: BRICK_AA1
+    21300322: BRICKDARK_NW1
+    21300324: BRICKDARK_CN1
+    21300326: BRICKDARK_CN2
+    21300328: BRICKDARK_NE1
+    21300330: BRICKDARK_CW1
+    21300332: BRICKDARK_C_0
+    21300334: BRICKDARK_C_1
+    21300336: BRICKDARK_CE_0
+    21300338: BRICKDARK_CW2
+    21300340: BRICKDARK_CC3
+    21300342: BRICKDARK_CC4
+    21300344: BRICKDARK_CE_1
+    21300346: BRICKDARK_SW1
+    21300348: BRICKDARK_CS1
+    21300350: BRICKDARK_CS2
+    21300352: BRICKDARK_SE1
+    21300354: BRICKDARK_AA1
+    21300356: BRICKDARK_WW1
+    21300358: BRICKDARK_NS1
+    21300360: BRICKDARK_NS2
+    21300362: BRICKDARK_EE1
+    21300364: BRICKDARK_SS1
+    21300366: BRICKDARK_WE2
+    21300368: BRICKDARK_WE1
+    21300370: BRICKDARK_NN1
+    21300372: WOOD_NW_0
+    21300374: WOOD_CN_0
+    21300376: WOOD_CN_1
+    21300378: WOOD_NE_0
+    21300380: WOOD_CW_0
+    21300382: WOOD_C_0
+    21300384: WOOD_C_1
+    21300386: WOOD_CE_0
+    21300388: WOOD_CW_1
+    21300390: WOOD_C_2
+    21300392: WOOD_C_03
+    21300394: WOOD_CE_1
+    21300396: WOOD_SW_0
+    21300398: WOOD_CS_0
+    21300400: WOOD_CS_1
+    21300402: WOOD_SE_0
+    21300404: WOOD_W_0
+    21300406: WOOD_NS_0
+    21300408: WOOD_NS_1
+    21300410: WOOD_E_0
+    21300412: WOOD_A_0
+    21300414: WOOD_N_0
+    21300416: WOOD_WE_0
+    21300418: WOOD_WE_1
+    21300420: WOOD_S_0
+    21300422: WOODDARK_NW1
+    21300424: WOODDARK_CN1
+    21300426: WOODDARK_CN2
+    21300428: WOODDARK_NE1
+    21300430: WOODDARK_CW1
+    21300432: WOODDARK_CC1
+    21300434: WOODDARK_CC2
+    21300436: WOODDARK_CE1
+    21300438: WOODDARK_CW2
+    21300440: WOODDARK_CC3
+    21300442: WOODDARK_CC4
+    21300444: WOODDARK_CE2
+    21300446: WOODDARK_SW1
+    21300448: WOODDARK_CS1
+    21300450: WOODDARK_CS2
+    21300452: WOODDARK_SE1
+    21300454: WOODDARK_WW1
+    21300456: WOODDARK_NS1
+    21300458: WOODDARK_NS2
+    21300460: WOODDARK_EE1
+    21300462: WOODDARK_SS1
+    21300464: WOODDARK_WE2
+    21300466: WOODDARK_WE1
+    21300468: WOODDARK_NN1
+    21300470: WOODDARK_AA1
+    21300472: FENCE_W_0
+    21300474: FENCE_NS_0
+    21300476: FENCE_E_0
+    21300478: SPIKE_A_0
+    21300480: FENCE_A_0
+    21300482: SPIKE_W_0
+    21300484: SPIKE_NS_0
+    21300486: SPIKE_E_0
+    21300488: DIRTSTONE_NW_0
+    21300490: DIRTSTONE_CN_0
+    21300492: DIRTSTONE_CN_1
+    21300494: DIRTSTONE_NE_0
+    21300496: DIRTSTONE_CW_0
+    21300498: DIRTSTONE_C_0
+    21300500: DIRTSTONE_C_1
+    21300502: DIRTSTONE_CE_0
+    21300504: DIRTSTONE_CW_1
+    21300506: DIRTSTONE_C_2
+    21300508: DIRTSTONE_C_3
+    21300510: DIRTSTONE_CE_1
+    21300512: DIRTSTONE_SW_0
+    21300514: DIRTSTONE_CS_0
+    21300516: DIRTSTONE_CS_1
+    21300518: DIRTSTONE_SE_0
+    21300520: DIRTSTONE_A_0
+    21300522: DIRTSTONE_W_0
+    21300524: DIRTSTONE_NS_0
+    21300526: DIRTSTONE_NS_1
+    21300528: DIRTSTONE_E_0
+    21300530: DIRTSTONE_N_0
+    21300532: DIRTSTONE_WE_0
+    21300534: DIRTSTONE_WE_1
+    21300536: DIRTSTONE_S_0
+    21300538: BRICK_C_0
+    21300540: BRICK_C_1
+    21300542: BRICK_CE_0
+    21300544: BRICK_CW_1
+    21300546: BRICK_C_2
+    21300548: BRICK_C_3
+    21300550: BRICK_CE_1
+    21300552: BRICK_SW_0
+    21300554: BRICK_CS_0
+    21300556: BRICK_CS_1
+    21300558: BRICK_SE_0
+    21300560: BRICK_W_0
+    21300562: BRICK_NS_0
+    21300564: BRICK_NS_1
+    21300566: BRICK_E_0
+    21300568: BRICK_S_0
+    21300570: BRICK_WE_01
+    21300572: BRICK_WE_0
+    21300574: BRICK_N_0
+    21300576: BRICK_A_0
+    21300578: LADDER_N_0
+    21300580: BRICKDARK_NW_0
+    21300582: BRICKDARK_CN_0
+    21300584: BRICKDARK_CN_1
+    21300586: BRICKDARK_NE_0
+    21300588: BRICKDARK_CW_0
+    21300590: BRICKDARK_CW_1
+    21300592: BRICKDARK_C_2
+    21300594: BRICKDARK_C_3
+    21300596: BRICKDARK_SW_0
+    21300598: BRICKDARK_CS_0
+    21300600: BRICKDARK_CS_1
+    21300602: BRICKDARK_SE_0
+    21300604: BRICKDARK_A_0
+    21300606: BRICKDARK_W_0
+    21300608: BRICKDARK_NS_0
+    21300610: BRICKDARK_NS_1
+    21300612: BRICKDARK_E_0
+    21300614: BRICKDARK_S_0
+    21300616: BRICKDARK_WE_1
+    21300618: BRICKDARK_WE_0
+    21300620: BRICKDARK_N_0
+    21300622: WOODDARK_NW_0
+    21300624: WOODDARK_CN_0
+    21300626: WOODDARK_CN_1
+    21300628: WOODDARK_NE_0
+    21300630: WOODDARK_CW_0
+    21300632: WOODDARK_C_0
+    21300634: WOODDARK_C_1
+    21300636: WOODDARK_CE_0
+    21300638: WOODDARK_CW_1
+    21300640: WOODDARK_C_2
+    21300642: WOODDARK_C_3
+    21300644: WOODDARK_CE_1
+    21300646: WOODDARK_SW_0
+    21300648: WOODDARK_CS_0
+    21300650: WOODDARK_CS_1
+    21300652: WOODDARK_SE_0
+    21300654: WOODDARK_W_0
+    21300656: WOODDARK_NS_0
+    21300658: WOODDARK_NS_1
+    21300660: WOODDARK_E_0
+    21300662: WOODDARK_S_0
+    21300664: WOODDARK_WE_1
+    21300666: WOODDARK_WE_0
+    21300668: WOODDARK_N_0
+    21300670: WOODDARK_A_0
+    21300672: DIRTSTONEBLOCK_NW_0
+    21300674: DIRTSTONEBLOCK_NE_0
+    21300676: DIRTSTONEBLOCK_SE_0
+    21300678: DIRTSTONEBLOCK_SW_0
+    21300680: DIRTSTONEBLOCK_A_0
+    21300682: Crate_A_0
+    21300684: CRATE_A_1
+    21300686: BUSH_A_0
+    21300688: BUSH_A_1
+    21300690: BUSH_A_2
+    21300692: BUSH_A_3
+    21300694: WOODWINDOW_A_0
+    21300696: WINDOW2_A_0
+    21300698: DOOR_S_0
+    21300700: DOOR_N_0
+    21300702: DOOR_A_0
+    21300704: LADDER_WE_0
+    21300706: LADDER_S_0
+    21300708: LADDER_A_0
+    21300710: TREE_A_0
+    21300712: TREE_A_1
+    21300714: TREE_A_2
+    21300716: LADDER2_N_0
+    21300718: LADDER2_S_0
+    21300720: LADDER2_WE_0
+    21300722: LADDER2_A_0
+    21300724: TEMPLE_NW_0
+    21300726: TEMPLE_CN_0
+    21300728: TEMPLE_CN_1
+    21300730: TEMPLE_NE_0
+    21300732: TEMPLE_CW_0
+    21300734: TEMPLE_C_0
+    21300736: TEMPLE_C_1
+    21300738: TEMPLE_CE_0
+    21300740: TEMPLE_CW_1
+    21300742: TEMPLE_C_2
+    21300744: TEMPLE_C_3
+    21300746: TEMPLE_CE_1
+    21300748: TEMPLE_SW_0
+    21300750: TEMPLE_CS_0
+    21300752: TEMPLE_CS_1
+    21300754: TEMPLE_SE_0
+    21300756: TEMPLE_A_0
+    21300758: TEMPLE_W_0
+    21300760: TEMPLE_NS_0
+    21300762: TEMPLE_NS_1
+    21300764: TEMPLE_E_0
+    21300766: TEMPLE_N_0
+    21300768: TEMPLE_WE_0
+    21300770: TEMPLE_WE_1
+    21300772: TEMPLE_S_0
+    21300774: TEMPLEWINDOW_N_0
+    21300776: TEMPLEWINDOW_A_0
+    21300778: TEMPLEWINDOW_WE_0
+    21300780: TEMPLEWINDOW_S_0
+    21300782: TEMPLEDARK_NW_0
+    21300784: TEMPLEDARK_CN_0
+    21300786: TEMPLEDARK_CN_1
+    21300788: TEMPLEDARK_NE_0
+    21300790: TEMPLEDARK_CE_0
+    21300792: TEMPLEDARK_C_1
+    21300794: TEMPLEDARK_C_0
+    21300796: TEMPLEDARK_CW_0
+    21300798: TEMPLEDARK_CW_1
+    21300800: TEMPLEDARK_SW_0
+    21300802: TEMPLEDARK_CS_0
+    21300804: TEMPLEDARK_C_2
+    21300806: TEMPLEDARK_C_3
+    21300808: TEMPLEDARK_CS_1
+    21300810: TEMPLEDARK_CE_1
+    21300812: TEMPLEDARK_SE_0
+    21300814: TEMPLEDARK_W_0
+    21300816: TEMPLEDARK_NS_0
+    21300818: TEMPLEDARK_NS_1
+    21300820: TEMPLEDARK_E_0
+    21300822: TEMPLEDARK_A_0
+    21300824: TEMPLEDARKWINDOW_A_0
+    21300826: TEMPLEDARK_N_0
+    21300828: TEMPLEDARK_WE_0
+    21300830: TEMPLEDARK_WE_1
+    21300832: SPIKE_NS_1
+    21300834: WOODWINDOW_N_0
+    21300836: WOODWINDOW_WE_0
+    21300838: WOODWINDOW_S_0
+    21300840: WOODDARKWINDOW_A_0
+    21300842: WOODDARKWINDOW_N_0
+    21300844: WOODDARKWINDOW_WE_0
+    21300846: WOODDARKWINDOW_S_0
+    21300848: TEMPLELADDER_N_0
+    21300850: TEMPLELADDER_WE_0
+    21300852: TEMPLELADDER_S_0
+    21300854: TEMPLELADDER_A_0
+    21300856: CANDLES_A_0
+    21300858: CANDLES2_A_0
+    21300860: Barrel_A_0
+    21300862: CLOUD_A_0
+    21300864: CLOUD_A_1
+    21300866: CLOUD_A_2
+    21300868: GRASSPATCH_A_0
+    21300870: GRASSPATCH_A_1
+    21300872: GRASSPATCH_A_2
+    21300874: GRASSPATCH_A_3
+    21300876: GRASSPATCH_A_4
+    21300878: GRASSPATCH_A_5
+    21300880: GRASSPATCH_A_6
+    21300882: ROCK_A_0
+    21300884: ROCK_A_1
+    21300886: ROCK_A_2
+    21300888: ROCK_A_3
+    21300890: TORCH_A_0
+    21300892: BRICKWINDOW_A_0
+    21300894: BRICKWINDOW_N_0
+    21300896: BRICKWINDOW_WE_0
+    21300898: BRICKWINDOW_S_0
+    21300900: BRICKDARKWINDOW_A_0
+    21300902: BRICKDARKWINDOW_N_0
+    21300904: BRICKDARKWINDOW_WE_0
+    21300906: BRICKDARKWINDOW_S_0
+    21300908: DIRTGRASS_A_0
+    21300910: DIRTGRASS_A_4
+    21300912: DIRTGRASS_A_1
+    21300914: DIRTGRASS_A_5
+    21300916: DIRTGRASS_A_6
+    21300918: DIRTGRASS_A_2
+    21300920: DIRTGRASS_A_3
+    21300922: VASE_A_0
+    21300924: WOODBRIDGE_W_0
+    21300926: WOODBRIDGE_NS_0
+    21300928: WOODBRIDGE_E_0
+    21300930: WOODBRIDGE_A_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 0
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: GRASS_NW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 493
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_CN_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 493
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_CN_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 493
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_NE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 493
+        width: 19
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_CW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 477
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_C_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 477
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_C_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 477
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_CE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 477
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_CW_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 461
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_C_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 461
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_C_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 461
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_CE_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 461
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_SW_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 440
+        width: 17
+        height: 21
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.23809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_CS_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 440
+        width: 16
+        height: 21
+      alignment: 9
+      pivot: {x: 0, y: 0.23809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_CS_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 440
+        width: 16
+        height: 21
+      alignment: 9
+      pivot: {x: 0, y: 0.23809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_SE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 440
+        width: 17
+        height: 21
+      alignment: 9
+      pivot: {x: 0, y: 0.23809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_A_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 488
+        width: 22
+        height: 23
+      alignment: 9
+      pivot: {x: 0.13636364, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_W_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 440
+        width: 19
+        height: 23
+      alignment: 9
+      pivot: {x: 0.15789473, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_NS_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 440
+        width: 16
+        height: 23
+      alignment: 9
+      pivot: {x: 0, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_NS_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 440
+        width: 16
+        height: 23
+      alignment: 9
+      pivot: {x: 0, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_E_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 440
+        width: 19
+        height: 23
+      alignment: 9
+      pivot: {x: 0, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_N_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 493
+        width: 21
+        height: 18
+      alignment: 9
+      pivot: {x: 0.0952381, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_WE_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 477
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_WE_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 461
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASS_S_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 440
+        width: 18
+        height: 21
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.23809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_NW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 419
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_CW1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 403
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_CW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 387
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_SW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 369
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_CN_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 419
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_C_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 403
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_C_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 387
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_CS_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 369
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_CS_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 369
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_C_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 387
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_C_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 403
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_CN_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 419
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_NE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 419
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_CE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 403
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_CE_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 387
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_SE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 369
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_A_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 417
+        width: 20
+        height: 19
+      alignment: 9
+      pivot: {x: 0.1, y: 0.10526316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_W_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 369
+        width: 17
+        height: 20
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_NS_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 369
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_NS_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 369
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_E_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 369
+        width: 17
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_S_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 369
+        width: 20
+        height: 18
+      alignment: 9
+      pivot: {x: 0.1, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_WE_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 387
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_WE_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 403
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT_N_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 419
+        width: 20
+        height: 17
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_NW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 349
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_CN_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 349
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_CN_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 349
+        width: 16
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_NE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 349
+        width: 18
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_CW_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333
+        width: 19
+        height: 16
+      alignment: 9
+      pivot: {x: 0.15789473, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_C_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 333
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_C_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 333
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_CE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 333
+        width: 19
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_CW_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 317
+        width: 19
+        height: 16
+      alignment: 9
+      pivot: {x: 0.15789473, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_C_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 317
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_C_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 317
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_CE_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 317
+        width: 19
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_SW_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 298
+        width: 19
+        height: 19
+      alignment: 9
+      pivot: {x: 0.15789473, y: 0.15789473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_CS_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 298
+        width: 16
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0.15789473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_CS_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 298
+        width: 16
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0.15789473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_SE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 298
+        width: 19
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0.15789473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_A_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 347
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: 0.0952381, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_W_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 298
+        width: 18
+        height: 22
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.13636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_NS_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 298
+        width: 16
+        height: 22
+      alignment: 9
+      pivot: {x: 0, y: 0.13636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_NS_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 298
+        width: 16
+        height: 22
+      alignment: 9
+      pivot: {x: 0, y: 0.13636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_E_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 298
+        width: 18
+        height: 22
+      alignment: 9
+      pivot: {x: 0, y: 0.13636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_N_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 349
+        width: 22
+        height: 18
+      alignment: 9
+      pivot: {x: 0.13636364, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_WE_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 333
+        width: 22
+        height: 16
+      alignment: 9
+      pivot: {x: 0.13636364, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_WE_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 317
+        width: 22
+        height: 16
+      alignment: 9
+      pivot: {x: 0.13636364, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRT2_S_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 298
+        width: 22
+        height: 19
+      alignment: 9
+      pivot: {x: 0.13636364, y: 0.15789473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_NW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 279
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_CN_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 279
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_CN_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 277
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_NE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 279
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_CW1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 263
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_C_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 263
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_C_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 263
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_CE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 263
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_CW_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 247
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_C_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 247
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_C_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 247
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_CE_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 247
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_SW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 229
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_CS_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 229
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_CS_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 229
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_SE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 229
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_W_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 229
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_NS_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 229
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_NS_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 229
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_E_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 229
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_S_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 229
+        width: 20
+        height: 18
+      alignment: 9
+      pivot: {x: 0.1, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_WE_01
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 247
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_WE_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 263
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_N_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 279
+        width: 20
+        height: 18
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICK_A_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 277
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.1, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_NW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 209
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_CN_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 209
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_CN_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 209
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_NE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 209
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_CW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 193
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_C_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 193
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_C_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 193
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_CE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 193
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_CW_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 177
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_C_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 177
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_C_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 177
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_CE_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 177
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_SW_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 159
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_CS_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 159
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_CS_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 159
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_SE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 159
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_A_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 207
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.1, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_W_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 159
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_NS_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 159
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_NS_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 159
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_E_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 159
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_S_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 159
+        width: 20
+        height: 18
+      alignment: 9
+      pivot: {x: 0.1, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_WE_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 177
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_WE_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 193
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARK_N_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 209
+        width: 20
+        height: 18
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_NW_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 139
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_CN_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 139
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_CN_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 139
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_NE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 139
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_CW_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 123
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_C_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 123
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_C_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 107
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_CE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 123
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_CW_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 107
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_C_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 107
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_C_03
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 123
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_CE_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 107
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_SW_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 90
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_CS_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 90
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_CS_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 90
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_SE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 90
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_W_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 90
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_NS_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 90
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_NS_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 90
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_E_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 90
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_A_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 138
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_N_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 139
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_WE_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 123
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_WE_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 107
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOOD_S_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 90
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_NW_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 69
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_CN_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 69
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_CN_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 69
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_NE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 69
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_CW_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 53
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_C_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 53
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_C_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 53
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_CE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 53
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_CW_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 37
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_C_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 37
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_C_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 37
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_CE_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 37
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_SW_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 20
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_CS_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 20
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_CS_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 20
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_SE_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 20
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_W_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 20
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_NS_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 20
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_NS_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 20
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_E_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 20
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_S_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 20
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_WE_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 37
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_WE_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 53
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_N_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 69
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARK_A_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 68
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: FENCE_W_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1
+        width: 16
+        height: 13
+      alignment: 9
+      pivot: {x: 0, y: 0.07692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: FENCE_E_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1
+        width: 13
+        height: 13
+      alignment: 9
+      pivot: {x: 0, y: 0.07692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: FENCE_NS_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1
+        width: 16
+        height: 13
+      alignment: 9
+      pivot: {x: 0, y: 0.07692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SPIKE_A_0
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 16
+        height: 15
+      alignment: 9
+      pivot: {x: 0, y: 0.13333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: FENCE_A_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1
+        width: 14
+        height: 13
+      alignment: 9
+      pivot: {x: 0, y: 0.07692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SPIKE_W_0
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 16
+        height: 14
+      alignment: 9
+      pivot: {x: 0, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SPIKE_NS_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 16
+        height: 15
+      alignment: 9
+      pivot: {x: 0, y: 0.13333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SPIKE_E_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 15
+        height: 14
+      alignment: 9
+      pivot: {x: 0, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_NW_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 493
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_CN_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 493
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_CN_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 493
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_NE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 493
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_CW_0
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 477
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_C_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 477
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_C_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 477
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_CE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 477
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_CW_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 461
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_C_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 461
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_C_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 461
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_CE_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 461
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_SW_0
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 443
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_CS_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 443
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_CS_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 443
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_SE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 443
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_A_0
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 492
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_W_0
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 443
+        width: 17
+        height: 19
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.10526316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_NS_0
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 443
+        width: 16
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0.10526316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_NS_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 443
+        width: 16
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0.10526316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_E_0
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 443
+        width: 17
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0.10526316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_N_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 493
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_WE_0
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 477
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_WE_1
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 461
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONE_S_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 444
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONEBLOCK_NW_0
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 493
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONEBLOCK_NE_0
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 493
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONEBLOCK_SE_0
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 476
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONEBLOCK_SW_0
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 475
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTSTONEBLOCK_A_0
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 468
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Crate_A_0
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 2
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: CRATE_A_1
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BUSH_A_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 467
+        width: 17
+        height: 20
+      alignment: 9
+      pivot: {x: 0.11764706, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BUSH_A_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 493
+        width: 21
+        height: 16
+      alignment: 9
+      pivot: {x: 0.0952381, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BUSH_A_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 493
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.125, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BUSH_A_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 465
+        width: 14
+        height: 14
+      alignment: 9
+      pivot: {x: 0.14285715, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODWINDOW_A_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 108
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DOOR_S_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 122
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DOOR_N_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 139
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DOOR_A_0
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 137
+        width: 18
+        height: 19
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.10526316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: LADDER_N_0
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 123
+        width: 15
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: LADDER_WE_0
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 107
+        width: 15
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: LADDER_S_0
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 90
+        width: 15
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: LADDER_A_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 122
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TREE_A_0
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1
+        width: 58
+        height: 80
+      alignment: 9
+      pivot: {x: 0.39655173, y: 0.0375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TREE_A_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1
+        width: 53
+        height: 70
+      alignment: 9
+      pivot: {x: 0.4528302, y: 0.042857144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TREE_A_2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1
+        width: 56
+        height: 71
+      alignment: 9
+      pivot: {x: 0.3392857, y: 0.04225352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: LADDER2_N_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 104
+        width: 15
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: LADDER2_S_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 71
+        width: 15
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: LADDER2_WE_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 88
+        width: 15
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: LADDER2_A_0
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 71
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_NW_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 419
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_CN_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 419
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_CN_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 419
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_NE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 419
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_CW_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 403
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_C_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 403
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_C_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 403
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_CE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 403
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_CW_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 387
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_C_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 387
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_C_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 387
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_CE_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 387
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_SW_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 370
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_CS_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 370
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_CS_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 370
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_SE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 370
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_A_0
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 418
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_W_0
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 370
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_NS_0
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 370
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_NS_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 370
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_E_0
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 370
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_N_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 419
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_WE_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 403
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_WE_1
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 387
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLE_S_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 370
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEWINDOW_N_0
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 403
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEWINDOW_A_0
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 389
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEWINDOW_WE_0
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 387
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEWINDOW_S_0
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 370
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_NW_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 349
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_CN_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 349
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_CN_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 349
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_NE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 349
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_CE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 333
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_C_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 333
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_C_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 333
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_CW_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 333
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_CW_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 317
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_SW_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 300
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_CS_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 300
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_C_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 317
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_C_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 317
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_CS_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 300
+        width: 16
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_CE_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 317
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_SE_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 300
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_W_0
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 300
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: 0.05882353, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_NS_0
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 300
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_NS_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 300
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_E_0
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 300
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_A_0
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 348
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARKWINDOW_A_0
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 319
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_N_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 349
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_WE_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 333
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_WE_1
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 317
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARK_S_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 300
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARKWINDOW_S_0
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 300
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARKWINDOW_WE_0
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 317
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLEDARKWINDOW_N_0
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 333
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SPIKE_NS_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 16
+        height: 15
+      alignment: 9
+      pivot: {x: 0, y: 0.13333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODWINDOW_N_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 123
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODWINDOW_WE_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 107
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODWINDOW_S_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 90
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARKWINDOW_A_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 38
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARKWINDOW_N_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 53
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARKWINDOW_WE_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 37
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODDARKWINDOW_S_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 20
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLELADDER_N_0
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 123
+        width: 15
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLELADDER_WE_0
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 107
+        width: 15
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLELADDER_S_0
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 90
+        width: 15
+        height: 17
+      alignment: 9
+      pivot: {x: 0, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TEMPLELADDER_A_0
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 122
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: CANDLES_A_0
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 46
+        width: 28
+        height: 23
+      alignment: 9
+      pivot: {x: 0, y: 0.3043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: CANDLES2_A_0
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 2
+        width: 28
+        height: 35
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Barrel_A_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 53
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: CLOUD_A_0
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 82
+        width: 88
+        height: 29
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: CLOUD_A_1
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 112
+        width: 135
+        height: 41
+      alignment: 9
+      pivot: {x: 0, y: 0.02173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: CLOUD_A_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 74
+        width: 65
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASSPATCH_A_0
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 402
+        width: 14
+        height: 12
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASSPATCH_A_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 402
+        width: 15
+        height: 12
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASSPATCH_A_2
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 402
+        width: 15
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASSPATCH_A_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 402
+        width: 14
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASSPATCH_A_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 391
+        width: 15
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASSPATCH_A_5
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 391
+        width: 15
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GRASSPATCH_A_6
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 391
+        width: 13
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ROCK_A_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 285
+        width: 16
+        height: 9
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ROCK_A_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 285
+        width: 15
+        height: 9
+      alignment: 9
+      pivot: {x: 0, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ROCK_A_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 274
+        width: 15
+        height: 10
+      alignment: 9
+      pivot: {x: 0, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ROCK_A_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 273
+        width: 10
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0.09090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: TORCH_A_0
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 276
+        width: 12
+        height: 19
+      alignment: 9
+      pivot: {x: 0, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKWINDOW_A_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 250
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKWINDOW_N_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 263
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKWINDOW_WE_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 247
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKWINDOW_S_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 230
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARKWINDOW_A_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 180
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARKWINDOW_N_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 193
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARKWINDOW_WE_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 177
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BRICKDARKWINDOW_S_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 160
+        width: 18
+        height: 17
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTGRASS_A_0
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 332
+        width: 14
+        height: 12
+      alignment: 9
+      pivot: {x: 0, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTGRASS_A_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 321
+        width: 15
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0.09090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTGRASS_A_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 332
+        width: 15
+        height: 12
+      alignment: 9
+      pivot: {x: 0, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTGRASS_A_5
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 321
+        width: 15
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0.09090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTGRASS_A_6
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 321
+        width: 13
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTGRASS_A_2
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 332
+        width: 15
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0.09090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DIRTGRASS_A_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 332
+        width: 14
+        height: 11
+      alignment: 9
+      pivot: {x: 0, y: 0.09090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: VASE_A_0
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 419
+        width: 11
+        height: 13
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODBRIDGE_W_0
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 160
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODBRIDGE_NS_0
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 160
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODBRIDGE_E_0
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 160
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WOODBRIDGE_A_0
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 160
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.1, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

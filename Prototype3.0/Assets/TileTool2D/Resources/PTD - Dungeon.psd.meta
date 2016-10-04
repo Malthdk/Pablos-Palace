@@ -1,0 +1,1754 @@
+fileFormatVersion: 2
+guid: 9f2c45f4756798f41a6f2108a20f1f42
+timeCreated: 1462997427
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: EXAMPLE_A
+    21300002: EXAMPLE_N
+    21300004: EXAMPLE_WE
+    21300006: EXAMPLE_NW
+    21300008: EXAMPLE_CNWE
+    21300010: TileNamingExample_5
+    21300012: TileNamingExample_6
+    21300014: EXAMPLE_CN
+    21300016: EXAMPLE_CNW
+    21300018: EXAMPLE_C
+    21300020: EXAMPLE_CNE
+    21300022: TileNamingExample_11
+    21300024: EXAMPLE_NE
+    21300026: EXAMPLE_CW
+    21300028: TileNamingExample_14
+    21300030: TileNamingExample_15
+    21300032: TileNamingExample_16
+    21300034: TileNamingExample_17
+    21300036: TileNamingExample_18
+    21300038: EXAMPLE_CE
+    21300040: EXAMPLE_W
+    21300042: EXAMPLE_NS
+    21300044: EXAMPLE_CWNS
+    21300046: TileNamingExample_23
+    21300048: TileNamingExample_24
+    21300050: TileNamingExample_25
+    21300052: TileNamingExample_26
+    21300054: TileNamingExample_27
+    21300056: EXAMPLE_CENS
+    21300058: TileNamingExample_29
+    21300060: EXAMPLE_E
+    21300062: TileNamingExample_31
+    21300064: TileNamingExample_32
+    21300066: TileNamingExample_33
+    21300068: TileNamingExample_34
+    21300070: TileNamingExample_35
+    21300072: TileNamingExample_36
+    21300074: EXAMPLE_CE
+    21300076: EXAMPLE_SW
+    21300078: EXAMPLE_CS
+    21300080: EXAMPLE_CSW
+    21300082: TileNamingExample_41
+    21300084: EXAMPLE_CSE
+    21300086: TileNamingExample_43
+    21300088: TileNamingExample_44
+    21300090: TileNamingExample_45
+    21300092: EXAMPLE_CSWE
+    21300094: EXAMPLE_SE
+    21300096: TileNamingExample_48
+    21300098: EXAMPLE_S
+    21300100: EXAMPLE_CNSWE
+    21300102: EXAMPLE_CNS
+    21300104: EXAMPLE_CWE
+    21300106: EXAMPLE_CSN
+    21300108: EXAMPLE_CEW
+    21300110: EXAMPLE_CWNN
+    21300112: EXAMPLE_CNEE
+    21300114: EXAMPLE_CESS
+    21300116: EXAMPLE_CSWW
+    21300118: EXAMPLE_CNSS
+    21300120: EXAMPLE_CENN
+    21300122: EXAMPLE_CWSS
+    21300124: EXAMPLE_CSEE
+    21300126: EXAMPLE_SENW
+    21300128: EXAMPLE_SWNE
+    21300130: EXAMPLE_NESW
+    21300132: EXAMPLE_NWSE
+    21300134: EXAMPLE_CENSW
+    21300136: EXAMPLE_CNWES
+    21300138: EXAMPLE_CSWEN
+    21300140: EXAMPLE_CWNSE
+    21300142: EXAMPLE_CNWSE
+    21300144: EXAMPLE_CNESW
+    21300146: EXAMPLE_REPLACED_CW
+    21300148: TileNamingExample 1_0
+    21300150: TileNamingExample 1_1
+    21300152: TileNamingExample 1_2
+    21300154: TileNamingExample 1_3
+    21300156: TileNamingExample 1_4
+    21300158: TileNamingExample 1_5
+    21300160: TileNamingExample 1_6
+    21300162: TileNamingExample 1_7
+    21300164: TileNamingExample 1_8
+    21300166: TileNamingExample 1_9
+    21300168: TileNamingExample 1_10
+    21300170: TileNamingExample 1_11
+    21300172: TileNamingExample 1_12
+    21300174: TileNamingExample 1_13
+    21300176: TileNamingExample 1_14
+    21300178: TileNamingExample 1_15
+    21300180: TileNamingExample 1_16
+    21300182: TileNamingExample 1_17
+    21300184: TileNamingExample 1_18
+    21300186: TileNamingExample 1_19
+    21300188: TileNamingExample 1_20
+    21300190: TileNamingExample 1_21
+    21300192: TileNamingExample 1_22
+    21300194: TileNamingExample 1_23
+    21300196: TileNamingExample 1_24
+    21300198: TileNamingExample 1_25
+    21300200: TileNamingExample 1_26
+    21300202: TileNamingExample 1_27
+    21300204: TileNamingExample 1_28
+    21300206: TileNamingExample 1_29
+    21300208: TileNamingExample 1_30
+    21300210: TileNamingExample 1_31
+    21300212: TileNamingExample 1_32
+    21300214: TileNamingExample 1_33
+    21300216: TileNamingExample 1_34
+    21300218: TileNamingExample 1_35
+    21300220: TileNamingExample 1_36
+    21300222: TileNamingExample 1_37
+    21300224: TileNamingExample 1_38
+    21300226: TileNamingExample 1_39
+    21300228: TileNamingExample 1_40
+    21300230: TileNamingExample 1_41
+    21300232: TileNamingExample 1_42
+    21300234: TileNamingExample 1_43
+    21300236: TileNamingExample 1_44
+    21300238: TileNamingExample 1_45
+    21300240: TileNamingExample 1_46
+    21300242: Template_0
+    21300244: Template_1
+    21300246: Template_2
+    21300248: Template_3
+    21300250: Template_4
+    21300252: Template_5
+    21300254: Template_6
+    21300256: Template_7
+    21300258: Template_8
+    21300260: Template_9
+    21300262: Template_10
+    21300264: Template_11
+    21300266: Template_12
+    21300268: Template_13
+    21300270: Template_14
+    21300272: Template_15
+    21300274: Template_16
+    21300276: Template_17
+    21300278: Template_18
+    21300280: Template_19
+    21300282: Template_20
+    21300284: Template_21
+    21300286: Template_22
+    21300288: Template_23
+    21300290: Template_24
+    21300292: Template_25
+    21300294: Template_26
+    21300296: Template_27
+    21300298: Template_28
+    21300300: Template_29
+    21300302: Template_30
+    21300304: Template_31
+    21300306: Template_32
+    21300308: Template_33
+    21300310: Template_34
+    21300312: Template_35
+    21300314: Template_36
+    21300316: Template_37
+    21300318: Template_38
+    21300320: Template_39
+    21300322: Template_40
+    21300324: Template_41
+    21300326: Template_42
+    21300328: Template_43
+    21300330: Template_44
+    21300332: Template_45
+    21300334: Template_46
+    21300336: Easy Template_0
+    21300338: Easy Template_1
+    21300340: Easy Template_2
+    21300342: Easy Template_3
+    21300344: Easy Template_4
+    21300346: Easy Template_5
+    21300348: Easy Template_6
+    21300350: Easy Template_7
+    21300352: Easy Template_8
+    21300354: Easy Template_9
+    21300356: Easy Template_10
+    21300358: Easy Template_11
+    21300360: Easy Template_12
+    21300362: Easy Template_13
+    21300364: Easy Template_14
+    21300366: Easy Template_15
+    21300368: Easy Template_16
+    21300370: Easy Template_17
+    21300372: Easy Template_18
+    21300374: Easy Template_19
+    21300376: Easy Template_20
+    21300378: Easy Template_21
+    21300380: Easy Template_22
+    21300382: Easy Template_23
+    21300384: Easy Template_24
+    21300386: Easy Template_25
+    21300388: Easy Template_26
+    21300390: Easy Template_27
+    21300392: Easy Template_28
+    21300394: Easy Template_29
+    21300396: Easy Template_30
+    21300398: Easy Template_31
+    21300400: Easy Template_32
+    21300402: Easy Template_33
+    21300404: Easy Template_34
+    21300406: Easy Template_35
+    21300408: Easy Template_36
+    21300410: Easy Template_37
+    21300412: Easy Template_38
+    21300414: Easy Template_39
+    21300416: Easy Template_40
+    21300418: Easy Template_41
+    21300420: Easy Template_42
+    21300422: Easy Template_43
+    21300424: Easy Template_44
+    21300426: Easy Template_45
+    21300428: Easy Template_46
+    21300430: Easy Template 1_0
+    21300432: Easy Template 1_1
+    21300434: Easy Template 1_2
+    21300436: Easy Template 1_3
+    21300438: Easy Template 1_4
+    21300440: Easy Template 1_5
+    21300442: Easy Template 1_6
+    21300444: Easy Template 1_7
+    21300446: Easy Template 1_8
+    21300448: Easy Template 1_9
+    21300450: Easy Template 1_10
+    21300452: Easy Template 1_11
+    21300454: Easy Template 1_12
+    21300456: Easy Template 1_13
+    21300458: Easy Template 1_14
+    21300460: Easy Template 1_15
+    21300462: Easy Template 1_16
+    21300464: Easy Template 1_17
+    21300466: Easy Template 1_18
+    21300468: Easy Template 1_19
+    21300470: Easy Template 1_20
+    21300472: Easy Template 1_21
+    21300474: Easy Template 1_22
+    21300476: Easy Template 1_23
+    21300478: Easy Template 1_24
+    21300480: Easy Template 1_25
+    21300482: Easy Template 1_26
+    21300484: Easy Template 1_27
+    21300486: Easy Template 1_28
+    21300488: Easy Template 1_29
+    21300490: Easy Template 1_30
+    21300492: Easy Template 1_31
+    21300494: Easy Template 1_32
+    21300496: Easy Template 1_33
+    21300498: Easy Template 1_34
+    21300500: Easy Template 1_35
+    21300502: Easy Template 1_36
+    21300504: Easy Template 1_37
+    21300506: Easy Template 1_38
+    21300508: Easy Template 1_39
+    21300510: Easy Template 1_40
+    21300512: Easy Template 1_41
+    21300514: Easy Template 1_42
+    21300516: Easy Template 1_43
+    21300518: Easy Template 1_44
+    21300520: Easy Template 1_45
+    21300522: Easy Template 1_46
+    21300524: Pixel Top Down - Dungeon_0
+    21300526: Pixel Top Down - Dungeon_1
+    21300528: Pixel Top Down - Dungeon_2
+    21300530: Pixel Top Down - Dungeon_3
+    21300532: Pixel Top Down - Dungeon_4
+    21300534: Pixel Top Down - Dungeon_5
+    21300536: Pixel Top Down - Dungeon_6
+    21300538: Pixel Top Down - Dungeon_7
+    21300540: Pixel Top Down - Dungeon_8
+    21300542: Pixel Top Down - Dungeon_9
+    21300544: Pixel Top Down - Dungeon_10
+    21300546: Pixel Top Down - Dungeon_11
+    21300548: Pixel Top Down - Dungeon_12
+    21300550: Pixel Top Down - Dungeon_13
+    21300552: Pixel Top Down - Dungeon_14
+    21300554: Pixel Top Down - Dungeon_15
+    21300556: Pixel Top Down - Dungeon_16
+    21300558: Pixel Top Down - Dungeon_17
+    21300560: Pixel Top Down - Dungeon_18
+    21300562: Pixel Top Down - Dungeon_19
+    21300564: Pixel Top Down - Dungeon_20
+    21300566: Pixel Top Down - Dungeon_21
+    21300568: Pixel Top Down - Dungeon_22
+    21300570: Pixel Top Down - Dungeon_23
+    21300572: Pixel Top Down - Dungeon_24
+    21300574: Pixel Top Down - Dungeon_25
+    21300576: Pixel Top Down - Dungeon_26
+    21300578: Pixel Top Down - Dungeon_27
+    21300580: Pixel Top Down - Dungeon_28
+    21300582: Pixel Top Down - Dungeon_29
+    21300584: Pixel Top Down - Dungeon_30
+    21300586: Pixel Top Down - Dungeon_31
+    21300588: Pixel Top Down - Dungeon_32
+    21300590: Pixel Top Down - Dungeon_33
+    21300592: Pixel Top Down - Dungeon_34
+    21300594: Pixel Top Down - Dungeon_35
+    21300596: Pixel Top Down - Dungeon_36
+    21300598: Pixel Top Down - Dungeon_37
+    21300600: Pixel Top Down - Dungeon_38
+    21300602: Pixel Top Down - Dungeon_39
+    21300604: Pixel Top Down - Dungeon_40
+    21300606: Pixel Top Down - Dungeon_41
+    21300608: Pixel Top Down - Dungeon_42
+    21300610: Pixel Top Down - Dungeon_43
+    21300612: Pixel Top Down - Dungeon_44
+    21300614: Pixel Top Down - Dungeon_45
+    21300616: Pixel Top Down - Dungeon_46
+    21300618: Pixel Top Down - Dungeon_47
+    21300620: Pixel Top Down - Dungeon_48
+    21300622: Pixel Top Down - Dungeon_49
+    21300624: Pixel Top Down - Dungeon_50
+    21300626: PTD - Dungeon_0
+    21300628: PTD - Dungeon_1
+    21300630: PTD - Dungeon_2
+    21300632: PTD - Dungeon_3
+    21300634: PTD - Dungeon_4
+    21300636: PTD - Dungeon_5
+    21300638: PTD - Dungeon_6
+    21300640: PTD - Dungeon_7
+    21300642: PTD - Dungeon_8
+    21300644: PTD - Dungeon_9
+    21300646: PTD - Dungeon_10
+    21300648: PTD - Dungeon_11
+    21300650: PTD - Dungeon_12
+    21300652: PTD - Dungeon_13
+    21300654: PTD - Dungeon_14
+    21300656: PTD - Dungeon_15
+    21300658: PTD - Dungeon_16
+    21300660: PTD - Dungeon_17
+    21300662: PTD - Dungeon_18
+    21300664: PTD - Dungeon_19
+    21300666: PTD - Dungeon_20
+    21300668: PTD - Dungeon_21
+    21300670: PTD - Dungeon_22
+    21300672: PTD - Dungeon_23
+    21300674: PTD - Dungeon_24
+    21300676: PTD - Dungeon_25
+    21300678: PTD - Dungeon_26
+    21300680: PTD - Dungeon_27
+    21300682: PTD - Dungeon_28
+    21300684: PTD - Dungeon_29
+    21300686: PTD - Dungeon_30
+    21300688: PTD - Dungeon_31
+    21300690: PTD - Dungeon_32
+    21300692: PTD - Dungeon_33
+    21300694: PTD - Dungeon_34
+    21300696: PTD - Dungeon_35
+    21300698: PTD - Dungeon_36
+    21300700: PTD - Dungeon_37
+    21300702: PTD - Dungeon_38
+    21300704: PTD - Dungeon_39
+    21300706: PTD - Dungeon_40
+    21300708: PTD - Dungeon_41
+    21300710: PTD - Dungeon_42
+    21300712: PTD - Dungeon_43
+    21300714: PTD - Dungeon_44
+    21300716: PTD - Dungeon_45
+    21300718: PTD - Dungeon_46
+    21300720: PTD - Dungeon Lights_cn
+    21300722: PTD - Dungeon Lights_ce
+    21300724: PTD - Dungeon Lights_cs
+    21300726: PTD - Dungeon Lights_cw
+    21300728: PTD - Dungeon Roof_a
+    21300730: PTD - Dungeon Door_cn
+    21300732: PTD - Dungeon Door_ce
+    21300734: PTD - Dungeon Door_cs
+    21300736: PTD - Dungeon Door_cw
+    21300738: PTD - Dungeon Door Closed_cn
+    21300740: PTD - Dungeon Door Closed_ce
+    21300742: PTD - Dungeon Door Closed_cs
+    21300744: PTD - Dungeon Door Closed_cw
+    21300746: PTD - Dungeon Door Locked_cn
+    21300748: PTD - Dungeon Door Locked_cw
+    21300750: PTD - Dungeon Door Locked_cs
+    21300752: PTD - Dungeon Door Locked_ce
+    21300754: PTD - Dungeon Pillar_cn
+    21300756: PTD - Dungeon Pillar_cw
+    21300758: PTD - Dungeon Pillar_cs
+    21300760: PTD - Dungeon Pillar_ce
+    21300762: PTD - Dungeon Stone_a
+    21300764: PTD - Dungeon Lantern_a
+    21300766: PTD - Dungeon Lantern Lit_a
+    21300768: PTD - Dungeon Bottle_a
+    21300770: PTD - Dungeon_47
+    21300772: PTD - Dungeon_48
+    21300774: PTD - Dungeon_49
+    21300776: PTD - Dungeon_50
+    21300778: PTD - Dungeon_51
+    21300780: PTD - Dungeon Stone Big_n
+    21300782: PTD - Dungeon_53
+    21300784: PTD - Dungeon_54
+    21300786: PTD - Dungeon_55
+    21300788: PTD - Dungeon_56
+    21300790: PTD - Dungeon_57
+    21300792: PTD - Dungeon Stone Big_w
+    21300794: PTD - Dungeon Stone Big_CNSWE
+    21300796: PTD - Dungeon Stone Big_e
+    21300798: PTD - Dungeon_61
+    21300800: PTD - Dungeon_62
+    21300802: PTD - Dungeon_63
+    21300804: PTD - Dungeon_64
+    21300806: PTD - Dungeon_65
+    21300808: PTD - Dungeon Stone Big_we
+    21300810: PTD - Dungeon Stone Big_s
+    21300812: PTD - Dungeon Stone Big_ns
+    21300814: PTD - Dungeon Carpet_nw
+    21300816: PTD - Dungeon Carpet_cn
+    21300818: PTD - Dungeon Carpet_ne
+    21300820: PTD - Dungeon Stone Big_nw
+    21300822: PTD - Dungeon Stone Big_cn
+    21300824: PTD - Dungeon Stone Big_ne
+    21300826: PTD - Dungeon Carpet_cw
+    21300828: PTD - Dungeon Carpet_c
+    21300830: PTD - Dungeon Carpet_ce
+    21300832: PTD - Dungeon Stone Big_cw
+    21300834: PTD - Dungeon Stone Big_c
+    21300836: PTD - Dungeon Stone Big_ce
+    21300838: PTD - Dungeon Carpet_sw
+    21300840: PTD - Dungeon Carpet_cs
+    21300842: PTD - Dungeon Carpet_se
+    21300844: PTD - Dungeon Stone Big_sw
+    21300846: PTD - Dungeon Stone Big_cs
+    21300848: PTD - Dungeon Stone Big_se
+    21300850: PTD - Dungeon_87
+    21300852: PTD - Dungeon_88
+    21300854: PTD - Dungeon_89
+    21300856: PTD - Dungeon_90
+    21300858: PTD - Dungeon_91
+    21300860: PTD - Dungeon_92
+    21300862: PTD - Dungeon Lights_cn_1
+    21300864: PTD - Dungeon Lights_ce_1
+    21300866: PTD - Dungeon Lights_cn_2
+    21300868: PTD - Dungeon Lights_ce_2
+    21300870: PTD - Dungeon Lights_cs_1
+    21300872: PTD - Dungeon Lights_cw_1
+    21300874: PTD - Dungeon Lights_cs_2
+    21300876: PTD - Dungeon Lights_cw_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 1
+    fadeOut: 1
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 2
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PTD - Dungeon_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 478
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 478
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 478
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 478
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 478
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 478
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_6
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 478
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 444
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 444
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 444
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_10
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 444
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_11
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 444
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_12
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 444
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_13
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 444
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 410
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_15
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 410
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_16
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 410
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 410
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_18
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 410
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_19
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 410
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_20
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 410
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 376
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_22
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 376
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_23
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 376
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_24
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 376
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_25
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 376
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_26
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 376
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_27
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 376
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_28
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 342
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_29
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 342
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_30
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 342
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_31
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 342
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_32
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 342
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_33
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 342
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_34
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 342
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_35
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 308
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_36
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 308
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_37
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 308
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_38
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 308
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_39
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 308
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_40
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 308
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_41
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 308
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_42
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_43
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_44
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_45
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_46
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cn
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_ce
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cs
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cw
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Roof_a
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door_cn
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door_ce
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door_cs
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door_cw
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door Closed_cn
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 206
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door Closed_ce
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 206
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door Closed_cs
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 206
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door Closed_cw
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 206
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door Locked_cn
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 172
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door Locked_cw
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 172
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door Locked_cs
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 172
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Door Locked_ce
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 172
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Pillar_cn
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 138
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Pillar_cw
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 138
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Pillar_cs
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 138
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Pillar_ce
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 138
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone_a
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lantern_a
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 20
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lantern Lit_a
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 38
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Bottle_a
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 56
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_47
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 110
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_48
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 110
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_49
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 110
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_50
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 110
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_51
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 110
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_n
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 110
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_53
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 110
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_54
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 92
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_55
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 92
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_56
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 92
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_57
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 92
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_w
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 92
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_CNSWE
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 92
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_e
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 92
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_61
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 28
+        width: 82
+        height: 82
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_62
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 74
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_63
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 74
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_64
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 74
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_65
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 74
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_we
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 74
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_s
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 74
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_ns
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 74
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_nw
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 56
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_cn
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 56
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_ne
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 56
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_nw
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 56
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_cn
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 56
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_ne
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 56
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_cw
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 38
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_c
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 38
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_ce
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 38
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_cw
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 38
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_c
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 38
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_ce
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 38
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_sw
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 20
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_cs
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 20
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Carpet_se
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 20
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_sw
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 20
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_cs
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 20
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Stone Big_se
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 20
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_87
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 2
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_88
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_89
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 2
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_90
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_91
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 2
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon_92
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 2
+        width: 16
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cn_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_ce_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cn_2
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_ce_2
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 274
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cs_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cw_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cs_2
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PTD - Dungeon Lights_cw_2
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 240
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

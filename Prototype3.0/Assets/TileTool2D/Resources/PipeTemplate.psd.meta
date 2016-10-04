@@ -1,0 +1,582 @@
+fileFormatVersion: 2
+guid: 8ccbb0b1541454dc7ad40d539e056e13
+timeCreated: 1470387130
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PipeTemplate_0
+    21300002: PipeTemplate_1
+    21300004: PipeTemplate_2
+    21300006: PipeTemplate_3
+    21300008: PipeTemplate_4
+    21300010: PipeTemplate_5
+    21300012: PipeTemplate_6
+    21300014: PipeTemplate_7
+    21300016: PipeTemplate_8
+    21300018: PipeTemplate_9
+    21300020: PipeTemplate_10
+    21300022: PipeTemplate_11
+    21300024: PipeTemplate_12
+    21300026: PipeTemplate_13
+    21300028: PipeTemplate_14
+    21300030: PipeTemplate_15
+    21300032: PipeTemplate_16
+    21300034: PipeTemplate_17
+    21300036: PipeTemplate_18
+    21300038: PipeTemplate_19
+    21300040: PipeTemplate_20
+    21300042: PipeTemplate_21
+    21300044: PipeTemplate_22
+    21300046: PipeTemplate_23
+    21300048: PipeTemplate_24
+    21300050: PipeTemplate_25
+    21300052: PipeTemplate_26
+    21300054: PipeTemplate_27
+    21300056: PipeTemplate_28
+    21300058: PipeTemplate_29
+    21300060: PipeTemplate_30
+    21300062: PipeTemplate_31
+    21300064: PipeTemplate_32
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 6
+  spritePivot: {x: 0, y: 0}
+  spriteBorder: {x: 4, y: 444, z: 443, w: 5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PipeTemplate_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 889
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 887
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 1}
+        - {x: 69, y: 1}
+        - {x: 128, y: 9}
+        - {x: 128, y: 122}
+        - {x: 89, y: 128}
+    - name: PipeTemplate_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 888
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 121}
+        - {x: 0, y: 8}
+        - {x: 127, y: 5}
+        - {x: 128, y: 5}
+        - {x: 128, y: 124}
+        - {x: 127, y: 124}
+    - name: PipeTemplate_3
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 888
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59, y: 128}
+        - {x: 0, y: 121}
+        - {x: 0, y: 8}
+        - {x: 70, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 208
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 0}
+        - {x: 7, y: 0}
+        - {x: 128, y: 121}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_5
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 618
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 2}
+        - {x: 5, y: 0}
+        - {x: 126, y: 0}
+        - {x: 126, y: 128}
+        - {x: 9, y: 128}
+        - {x: 0, y: 121}
+    - name: PipeTemplate_6
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 752
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 128}
+        - {x: 4, y: 0}
+        - {x: 123, y: 0}
+        - {x: 128, y: 4}
+        - {x: 128, y: 123}
+        - {x: 122, y: 128}
+    - name: PipeTemplate_7
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 346
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 101, y: 119}
+        - {x: 7, y: 63}
+        - {x: 7, y: 0}
+        - {x: 119, y: 0}
+        - {x: 128, y: 9}
+        - {x: 128, y: 119}
+    - name: PipeTemplate_8
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 616
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 128}
+        - {x: 0, y: 123}
+        - {x: 0, y: 6}
+        - {x: 7, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_9
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 613
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 128}
+        - {x: 4, y: 8}
+        - {x: 1, y: 1}
+        - {x: 1, y: 0}
+        - {x: 124, y: 0}
+        - {x: 124, y: 1}
+        - {x: 121, y: 8}
+        - {x: 119, y: 128}
+    - name: PipeTemplate_10
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 344
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 122}
+        - {x: 0, y: 10}
+        - {x: 10, y: 0}
+        - {x: 119, y: 0}
+        - {x: 119, y: 9}
+        - {x: 116, y: 28}
+        - {x: 97, y: 69}
+        - {x: 25, y: 122}
+    - name: PipeTemplate_11
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 210
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 118}
+        - {x: 118, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_12
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 72
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 122}
+        - {x: 0, y: 4}
+        - {x: 128, y: 4}
+        - {x: 128, y: 122}
+    - name: PipeTemplate_15
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 477
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 8}
+        - {x: 7, y: 0}
+        - {x: 126, y: 0}
+        - {x: 128, y: 4}
+        - {x: 128, y: 125}
+        - {x: 0, y: 125}
+    - name: PipeTemplate_16
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 73
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_17
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 73
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 123, y: 128}
+        - {x: 0, y: 5}
+        - {x: 0, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_19
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 208
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 128}
+        - {x: 7, y: 99}
+        - {x: 68, y: 14}
+        - {x: 104, y: 6}
+        - {x: 128, y: 6}
+        - {x: 128, y: 116}
+        - {x: 116, y: 128}
+    - name: PipeTemplate_20
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 483
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 117, y: 128}
+        - {x: 0, y: 128}
+        - {x: 0, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 72}
+        - {x: 119, y: 125}
+    - name: PipeTemplate_21
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 481
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 128}
+        - {x: 0, y: 74}
+        - {x: 0, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 64}
+        - {x: 120, y: 128}
+    - name: PipeTemplate_22
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 208
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 128}
+        - {x: 0, y: 117}
+        - {x: 0, y: 6}
+        - {x: 16, y: 6}
+        - {x: 77, y: 16}
+        - {x: 121, y: 104}
+        - {x: 121, y: 128}
+    - name: PipeTemplate_23
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 750
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 61}
+        - {x: 6, y: 56}
+        - {x: 11, y: 2}
+        - {x: 13, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 484
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 128}
+        - {x: 10, y: 125}
+        - {x: 0, y: 72}
+        - {x: 0, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_25
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 69
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 1}
+        - {x: 128, y: 1}
+        - {x: 128, y: 8}
+        - {x: 8, y: 128}
+    - name: PipeTemplate_27
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 344
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 128}
+        - {x: 3, y: 126}
+        - {x: 0, y: 122}
+        - {x: 0, y: 5}
+        - {x: 128, y: 5}
+        - {x: 128, y: 124}
+        - {x: 124, y: 128}
+    - name: PipeTemplate_28
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 70
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 124, y: 0}
+        - {x: 124, y: 128}
+        - {x: 6, y: 128}
+        - {x: 6, y: 0}
+    - name: PipeTemplate_29
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 752
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 128, y: 128}
+        - {x: 0, y: 128}
+        - {x: 0, y: 0}
+        - {x: 118, y: 0}
+        - {x: 118, y: 53}
+        - {x: 124, y: 56}
+        - {x: 128, y: 59}
+    - name: PipeTemplate_30
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 750
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 46}
+        - {x: 5, y: 0}
+        - {x: 118, y: 0}
+        - {x: 126, y: 63}
+        - {x: 126, y: 128}
+    - name: PipeTemplate_31
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 615
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 128}
+        - {x: 9, y: 6}
+        - {x: 4, y: 4}
+        - {x: 2, y: 1}
+        - {x: 2, y: 0}
+        - {x: 128, y: 0}
+        - {x: 128, y: 128}
+    - name: PipeTemplate_32
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 614
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 117, y: 128}
+        - {x: 0, y: 128}
+        - {x: 0, y: 0}
+        - {x: 125, y: 0}
+        - {x: 125, y: 1}
+        - {x: 122, y: 5}
+        - {x: 117, y: 7}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

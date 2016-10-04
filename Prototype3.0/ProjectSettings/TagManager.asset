@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - blue
+  - blueBox
+  - yellowBox
+  - yellow
+  - orangeDestroy
+  - orangeBox
+  - blackBox
+  - redBox
+  - purpleBox
+  - greenBox
+  - green
+  - orange
+  - red
+  - purple
+  - white
+  - Water
+  - Through
+  - Checkpoint
+  - Interactive
+  - DynamicParticle
+  - Lever
+  - yellowLever
+  - unstoppable
+  - coin
+  - doctorDark
+  - spawnpoint
+  - Obsticle
+  - Trampoline
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Obsticles
+  - Player
+  - MetaBalls
+  - Gas
+  - Liquids
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

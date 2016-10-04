@@ -1,0 +1,381 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &180528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412524}
+  - 114: {fileID: 11416088}
+  - 212: {fileID: 21248958}
+  - 61: {fileID: 6182536}
+  m_Layer: 0
+  m_Name: Example Attachment Replaced CW
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &412524
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!61 &6182536
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180528}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: .5, y: .5}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+--- !u!114 &11416088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3deeb3c20d031a44af9ec61c1c9dcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileTexture: {fileID: 2800000, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileName: Example
+  tileType: Example
+  tileSize: 1
+  passive: 0
+  disableColliderOnAwake: 0
+  particles: {fileID: 0}
+  attachments:
+  - {fileID: 11435876, guid: d714cd09e0871f14e8abbb83399c7392, type: 2}
+  currentAttachment: {fileID: 0}
+  tileSprite: 
+  tileA:
+  - {fileID: 21300000, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileC:
+  - {fileID: 21300018, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCE:
+  - {fileID: 21300038, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCN:
+  - {fileID: 21300014, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCS:
+  - {fileID: 21300078, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCW:
+  - {fileID: 21300026, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileE:
+  - {fileID: 21300060, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileN:
+  - {fileID: 21300002, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileNE:
+  - {fileID: 21300024, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileNS:
+  - {fileID: 21300042, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileNW:
+  - {fileID: 21300006, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileS:
+  - {fileID: 21300098, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileSE:
+  - {fileID: 21300094, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileSW:
+  - {fileID: 21300076, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileW:
+  - {fileID: 21300040, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileWE:
+  - {fileID: 21300004, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNW:
+  - {fileID: 21300016, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNE:
+  - {fileID: 21300020, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCSE:
+  - {fileID: 21300084, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCSW:
+  - {fileID: 21300080, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCWE:
+  - {fileID: 21300104, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNS:
+  - {fileID: 21300102, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCSN:
+  - {fileID: 21300106, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCEW:
+  - {fileID: 21300108, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCWNN:
+  - {fileID: 21300110, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNEE:
+  - {fileID: 21300112, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCSWW:
+  - {fileID: 21300116, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCESS:
+  - {fileID: 21300114, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNSS:
+  - {fileID: 21300118, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCENN:
+  - {fileID: 21300120, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCWSS:
+  - {fileID: 21300122, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCSEE:
+  - {fileID: 21300124, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileSENW:
+  - {fileID: 21300126, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileSWNE:
+  - {fileID: 21300128, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileNESW:
+  - {fileID: 21300130, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileNWSE:
+  - {fileID: 21300132, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNWE:
+  - {fileID: 21300008, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCENS:
+  - {fileID: 21300056, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCSWE:
+  - {fileID: 21300092, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCWNS:
+  - {fileID: 21300044, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCENSW:
+  - {fileID: 21300134, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCSWEN:
+  - {fileID: 21300138, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNWES:
+  - {fileID: 21300136, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCWNSE:
+  - {fileID: 21300140, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNWSE:
+  - {fileID: 21300142, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNESW:
+  - {fileID: 21300144, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  tileCNSWE:
+  - {fileID: 21300100, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  nTile: {fileID: 0}
+  eTile: {fileID: 0}
+  sTile: {fileID: 0}
+  wTile: {fileID: 0}
+  nwTile: {fileID: 0}
+  neTile: {fileID: 0}
+  seTile: {fileID: 0}
+  swTile: {fileID: 0}
+  cacheRenderer: {fileID: 21248958}
+  cacheCollider: {fileID: 0}
+  sortingOrder: 0
+  tiles: []
+  savePosition: {x: 0, y: 0}
+  moved: 0
+--- !u!212 &21248958
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180528}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5d779ac2dbc64a045b272075bb039723, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: tileC.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileE.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileN.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileS.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileW.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileA.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileWE.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileCE.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileCN.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileCS.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileCW.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileNE.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileNS.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileNW.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileSE.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileSW.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attachments.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileWE.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300166, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileWE.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300166, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300252, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cacheRenderer
+      value: 
+      objectReference: {fileID: 21248958}
+    - target: {fileID: 0}
+      propertyPath: tileS.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300204, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileS.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300042, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileS.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300042, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileCS.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300202, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileCS.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300204, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileW.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300228, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileW.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300236, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileCW.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300228, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileCW.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300236, guid: 3d5ccbc1b0b65db49b419a0ee7fa991c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: tileTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 132bd941625290e4aaa6980435f45fbc, type: 3}
+    - target: {fileID: 0}
+      propertyPath: firstChar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: type
+      value: Brick
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileName
+      value: Example
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileType
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d779ac2dbc64a045b272075bb039723, type: 2}
+    - target: {fileID: 0}
+      propertyPath: attachments.Array.data[0]
+      value: 
+      objectReference: {fileID: 11435876, guid: d714cd09e0871f14e8abbb83399c7392,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 180528}
+  m_IsPrefabParent: 1
