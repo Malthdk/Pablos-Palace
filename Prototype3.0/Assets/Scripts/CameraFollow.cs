@@ -20,6 +20,10 @@ public class CameraFollow : MonoBehaviour {
 	float smoothLookVelocityX;
 	float smoothVelocityY;
 
+//	float smoothFindX;
+//	float smoothFindY;
+//	public bool findingTarget = false;
+
 	bool lookAheadStopped;
 
 	void Start()
@@ -40,7 +44,6 @@ public class CameraFollow : MonoBehaviour {
 		focusArea.Update (target.collider.bounds);
 
 		Vector2 focusPosition = focusArea.centre + Vector2.up * verticalOffset + Vector2.right * horizontalOffset;
-	
 
 		if (focusArea.velocity.x != 0)
 		{
@@ -64,8 +67,43 @@ public class CameraFollow : MonoBehaviour {
 
 		focusPosition.y = Mathf.SmoothDamp(transform.position.y, focusPosition.y, ref smoothVelocityY, verticalSmoothTime);
 		focusPosition += Vector2.right * currentLookAheadX;
-		transform.position = (Vector3)focusPosition + Vector3.forward * -10;
+
+		//float rounded_x = RoundToNearestPixel(focusPosition.x);
+		//float rounded_y = RoundToNearestPixel(focusPosition.y);
+
+//		if (findingTarget)
+//		{
+//			Vector3 pos = transform.position;
+//			pos.x = Mathf.SmoothDamp(pos.x, focusPosition.x, ref smoothFindX, 1f);
+//			pos.y = Mathf.SmoothDamp(pos.y, focusPosition.y, ref smoothFindY, 1f);
+//			transform.position = pos;
+//			Debug.Log( "fpos:" + focusPosition.x);
+//			Debug.Log("pos: " + pos.x);
+//			float threshold = 1f;
+//			if (Mathf.Abs(pos.x - focusPosition.x) < threshold && Mathf.Abs(pos.y - focusPosition.y) < threshold)
+//			{
+//				findingTarget = false;
+//			}
+//		}
+//		else 
+//		{
+			transform.position = (Vector3)focusPosition + Vector3.forward * -10;
+			//transform.position = new Vector3(rounded_x, rounded_y, -10);
+//		}
 	}
+
+	/// <summary>
+	/// This is an attempt to remove the tile rendering problem.
+	/// </summary>
+//	public float pixelToUnits = 128f;
+//
+//	public float RoundToNearestPixel(float unityUnits)
+//	{
+//		float valueInPixels = unityUnits * pixelToUnits;
+//		valueInPixels = Mathf.Round(valueInPixels);
+//		float roundedUnityUnits = valueInPixels * (1 / pixelToUnits);
+//		return roundedUnityUnits;
+//	}
 
 	void OnDrawGizmos()
 	{

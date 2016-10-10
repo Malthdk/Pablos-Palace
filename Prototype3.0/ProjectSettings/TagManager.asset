@@ -32,6 +32,8 @@ TagManager:
   - spawnpoint
   - Obsticle
   - Trampoline
+  - dissPlatform
+  - playerCamera
   layers:
   - Default
   - TransparentFX

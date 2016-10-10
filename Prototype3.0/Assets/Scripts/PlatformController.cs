@@ -8,6 +8,7 @@ public class PlatformController : RaycastController {
 	public bool elevator = false;
 	public bool stoppingPlatform = false;
 	public bool platformActivator = false;
+	public bool smashPlatform;
 	public LayerMask passengerMask;
 
 
@@ -49,7 +50,8 @@ public class PlatformController : RaycastController {
 
 		//Debug.Log(platformActivator);
 
-		if ( platformActivator == false && elevator == false ) {
+		if ( platformActivator == false && elevator == false ) 
+		{
 			UpdateRaycastOrigins ();
 			Vector3 velocity = CalculatePlatformMovement();
 			CalculatePassengerMovement(velocity);
@@ -263,6 +265,24 @@ public class PlatformController : RaycastController {
 			}
 		}
 
+		if (directionY == -1 && smashPlatform == true)
+		{
+			float rayLength = skinWidth * 30;			//Short rayLength
+
+			for (int i = 0; i < verticalRayCount; i ++)
+			{
+				Vector2 rayOrigin = raycastOrigins.bottomLeft + Vector2.right * (verticalRaySpacing * i);		//Rayorigin allways on bottomleft.
+				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, rayLength, passengerMask); 		//Allways casting ray.
+
+				Debug.DrawRay(rayOrigin, -Vector2.up * rayLength, Color.green);
+
+				if (hit && hit.distance !=0)
+				{
+					Debug.Log("kill player");
+					PlayerManager.pManager.KillPlayer();
+				}
+			}
+		}
 
 		//PASSENGER STICKING TO A DOWN/UP MOVING PLATFORM
 		if (directionY == -1 && velocity.x == 0|| directionY == 1 && velocity.x == 0 ) 

@@ -107,7 +107,7 @@ public class Player : MonoBehaviour {
 		animator.SetFloat("vSpeed", velocity.y);				//ANIMATION
 		animator.SetBool("OnWall", wallSliding);
 		animator.SetBool("Dashing", abilities.isDashing);
-		animator.SetBool ("Soaring", abilities.inAir);
+		animator.SetBool ("Soaring", abilities.soaring);
 
 		//Debug.Log(controller.collisions.above);
 
@@ -116,7 +116,7 @@ public class Player : MonoBehaviour {
 		wallSliding = false;
 		if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && abilities.notJumping && abilities.isYellow)		//havde && velocity.y <0 efter && og før gameObject.tag =="yellow"	//setting wether player is on wall
 		{
-			abilities.inAir = false;
+			abilities.soaring = false;
 			wallSliding = true;
 			if (velocity.y < -wallSlideSpeedMax)	
 			{
@@ -142,7 +142,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space) && animator.GetBool("Ground"))
+		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			if (controller.collisions.below)
 			{
@@ -153,37 +153,62 @@ public class Player : MonoBehaviour {
 			{
 				velocity.y = maxJumpVelocity;
 			}
-		}
-		else if (Input.GetKeyDown(KeyCode.Space) && !controller.collisions.below && (abilities.isBlue || abilities.isGreen) )
-		{
-			abilities.secondJump = true;
-			if (!abilities.hasDoubleJumped && !wallSliding && !abilities.isPurple)
+
+			if(!controller.collisions.below && (abilities.isBlue || abilities.isGreen) )
 			{
-				Debug.Log ("double jumped");
-				abilities.inAir = false;
-				abilities.hasDoubleJumped = true;
-				velocity.y = maxJumpVelocity/1.3f;
-				abilities.startRotation();
-				
+				/*This is where double jump is handled*/
+				abilities.secondJump = true;
+				if (!abilities.hasDoubleJumped && !wallSliding && !abilities.isPurple)
+				{
+					Debug.Log ("double jumped");
+					abilities.soaring = false;
+					abilities.hasDoubleJumped = true;
+					velocity.y = maxJumpVelocity/1.3f;
+					abilities.startRotation();
+					
+				}
+				else if (abilities.isPurple && !controller.collisions.above && !abilities.hasDoubleJumped)
+				{
+					abilities.hasDoubleJumped = true;
+					velocity.y = maxJumpVelocity/1.3f;
+					abilities.startRotation();
+				}
 			}
-			else if (abilities.isPurple && !controller.collisions.above && !abilities.hasDoubleJumped)
+			if (wallSliding)
 			{
-				abilities.hasDoubleJumped = true;
-				velocity.y = maxJumpVelocity/1.3f;
-				abilities.startRotation();
-				
+				if (wallDirX == input.x)						//If input is towards the wall
+				{
+					abilities.notJumping = false;
+					velocity.x = -wallDirX * abilities.wallJumpClimb.x;
+					velocity.y = abilities.wallJumpClimb.y;
+					if (controller.collisions.above  || controller.collisions.below)		//If raycasts hit above or below, velocity on y axis stops
+					{
+						velocity.y = 0;
+					}
+				}
+				if (input.x == 0)								
+				{
+					abilities.notJumping = false;
+					velocity.x = -wallDirX * abilities.wallLeap.x;
+					velocity.y = abilities.wallLeap.y;
+				}
+				else if (wallDirX != input.x)					//If input is away from wall
+				{
+					abilities.notJumping = false;
+					velocity.x = -wallDirX * abilities.wallLeap.x;
+					velocity.y = abilities.wallLeap.y;
+				}
 			}
 		}
 
 		if (!controller.collisions.below)
 		{
 			moveSpeed = airSpeed;
-			Debug.Log ("No collisions below");
 		}
 		else
 		{
 			abilities.secondJump = false;
-			abilities.inAir = false;
+			abilities.soaring = false;
 			moveSpeed = groundSpeed;
 		}
 
@@ -199,17 +224,8 @@ public class Player : MonoBehaviour {
 			}
 
 		}
-
-		//SPRINTING
-//		if (Input.GetKeyDown(KeyCode.LeftShift))
-//		{
-//			moveSpeed = 17f;
-//		}
-//		if (Input.GetKeyUp(KeyCode.LeftShift))
-//		{
-//			moveSpeed = 11.5f;
-//		}
-		if(!abilities.isDashing && !abilities.inAir)
+			
+		if(!abilities.isDashing && !abilities.soaring)
 		{
 			velocity.y += gravity * Time.deltaTime;							//Applies velocity to gravity
 		}

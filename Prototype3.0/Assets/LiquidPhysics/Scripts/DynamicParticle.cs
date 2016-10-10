@@ -51,7 +51,6 @@ public class DynamicParticle : MonoBehaviour {
 					GetComponent<Rigidbody2D>().drag = 1.5f;
 				break;
 				case STATES.YELLOW:		
-					//gameObject.layer=LayerMask.NameToLayer("Gas");// To have a different collision layer than the other particles (so gas doesnt rises up the lava but still collides with the wolrd)
 				break;		
 				case STATES.ORANGE:		
 				break;	
