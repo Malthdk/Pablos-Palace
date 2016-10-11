@@ -40,7 +40,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -60,9 +60,9 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 2048
+  maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    filterMode: 1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -79,11 +79,14 @@ TextureImporter:
   spriteBorder: {x: 4, y: 444, z: 443, w: 5}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: PipeTemplate_0
+    - serializedVersion: 2
+      name: PipeTemplate_0
       rect:
         serializedVersion: 2
         x: 8
@@ -93,12 +96,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 128}
-        - {x: 0, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_1
       rect:
         serializedVersion: 2
         x: 149
@@ -108,14 +109,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 128}
-        - {x: 0, y: 1}
-        - {x: 69, y: 1}
-        - {x: 128, y: 9}
-        - {x: 128, y: 122}
-        - {x: 89, y: 128}
-    - name: PipeTemplate_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_2
       rect:
         serializedVersion: 2
         x: 280
@@ -125,14 +122,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 121}
-        - {x: 0, y: 8}
-        - {x: 127, y: 5}
-        - {x: 128, y: 5}
-        - {x: 128, y: 124}
-        - {x: 127, y: 124}
-    - name: PipeTemplate_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_3
       rect:
         serializedVersion: 2
         x: 413
@@ -142,14 +135,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 59, y: 128}
-        - {x: 0, y: 121}
-        - {x: 0, y: 8}
-        - {x: 70, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_4
       rect:
         serializedVersion: 2
         x: 279
@@ -159,13 +148,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 128}
-        - {x: 0, y: 0}
-        - {x: 7, y: 0}
-        - {x: 128, y: 121}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_5
       rect:
         serializedVersion: 2
         x: 821
@@ -175,14 +161,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 2}
-        - {x: 5, y: 0}
-        - {x: 126, y: 0}
-        - {x: 126, y: 128}
-        - {x: 9, y: 128}
-        - {x: 0, y: 121}
-    - name: PipeTemplate_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_6
       rect:
         serializedVersion: 2
         x: 825
@@ -192,14 +174,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 128}
-        - {x: 4, y: 0}
-        - {x: 123, y: 0}
-        - {x: 128, y: 4}
-        - {x: 128, y: 123}
-        - {x: 122, y: 128}
-    - name: PipeTemplate_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_7
       rect:
         serializedVersion: 2
         x: 7
@@ -209,14 +187,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 101, y: 119}
-        - {x: 7, y: 63}
-        - {x: 7, y: 0}
-        - {x: 119, y: 0}
-        - {x: 128, y: 9}
-        - {x: 128, y: 119}
-    - name: PipeTemplate_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_8
       rect:
         serializedVersion: 2
         x: 550
@@ -226,14 +200,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 128}
-        - {x: 0, y: 123}
-        - {x: 0, y: 6}
-        - {x: 7, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_9
       rect:
         serializedVersion: 2
         x: 282
@@ -243,16 +213,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 128}
-        - {x: 4, y: 8}
-        - {x: 1, y: 1}
-        - {x: 1, y: 0}
-        - {x: 124, y: 0}
-        - {x: 124, y: 1}
-        - {x: 121, y: 8}
-        - {x: 119, y: 128}
-    - name: PipeTemplate_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_10
       rect:
         serializedVersion: 2
         x: 145
@@ -262,16 +226,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 122}
-        - {x: 0, y: 10}
-        - {x: 10, y: 0}
-        - {x: 119, y: 0}
-        - {x: 119, y: 9}
-        - {x: 116, y: 28}
-        - {x: 97, y: 69}
-        - {x: 25, y: 122}
-    - name: PipeTemplate_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_11
       rect:
         serializedVersion: 2
         x: 417
@@ -281,13 +239,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 128}
-        - {x: 0, y: 118}
-        - {x: 118, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_12
       rect:
         serializedVersion: 2
         x: 552
@@ -297,12 +252,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 122}
-        - {x: 0, y: 4}
-        - {x: 128, y: 4}
-        - {x: 128, y: 122}
-    - name: PipeTemplate_15
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_15
       rect:
         serializedVersion: 2
         x: 822
@@ -312,14 +265,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 8}
-        - {x: 7, y: 0}
-        - {x: 126, y: 0}
-        - {x: 128, y: 4}
-        - {x: 128, y: 125}
-        - {x: 0, y: 125}
-    - name: PipeTemplate_16
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_16
       rect:
         serializedVersion: 2
         x: 283
@@ -329,12 +278,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 128}
-        - {x: 0, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_17
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_17
       rect:
         serializedVersion: 2
         x: 146
@@ -344,13 +291,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 123, y: 128}
-        - {x: 0, y: 5}
-        - {x: 0, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_19
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_19
       rect:
         serializedVersion: 2
         x: 7
@@ -360,15 +304,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: 128}
-        - {x: 7, y: 99}
-        - {x: 68, y: 14}
-        - {x: 104, y: 6}
-        - {x: 128, y: 6}
-        - {x: 128, y: 116}
-        - {x: 116, y: 128}
-    - name: PipeTemplate_20
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_20
       rect:
         serializedVersion: 2
         x: 143
@@ -378,14 +317,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 117, y: 128}
-        - {x: 0, y: 128}
-        - {x: 0, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 72}
-        - {x: 119, y: 125}
-    - name: PipeTemplate_21
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_21
       rect:
         serializedVersion: 2
         x: 281
@@ -395,14 +330,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: 128}
-        - {x: 0, y: 74}
-        - {x: 0, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 64}
-        - {x: 120, y: 128}
-    - name: PipeTemplate_22
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_22
       rect:
         serializedVersion: 2
         x: 144
@@ -412,15 +343,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 10, y: 128}
-        - {x: 0, y: 117}
-        - {x: 0, y: 6}
-        - {x: 16, y: 6}
-        - {x: 77, y: 16}
-        - {x: 121, y: 104}
-        - {x: 121, y: 128}
-    - name: PipeTemplate_23
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_23
       rect:
         serializedVersion: 2
         x: 8
@@ -430,15 +356,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 128}
-        - {x: 0, y: 61}
-        - {x: 6, y: 56}
-        - {x: 11, y: 2}
-        - {x: 13, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_24
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_24
       rect:
         serializedVersion: 2
         x: 9
@@ -448,14 +369,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12, y: 128}
-        - {x: 10, y: 125}
-        - {x: 0, y: 72}
-        - {x: 0, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_25
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_25
       rect:
         serializedVersion: 2
         x: 8
@@ -465,13 +382,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 128}
-        - {x: 0, y: 1}
-        - {x: 128, y: 1}
-        - {x: 128, y: 8}
-        - {x: 8, y: 128}
-    - name: PipeTemplate_27
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_27
       rect:
         serializedVersion: 2
         x: 824
@@ -481,15 +395,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 128}
-        - {x: 3, y: 126}
-        - {x: 0, y: 122}
-        - {x: 0, y: 5}
-        - {x: 128, y: 5}
-        - {x: 128, y: 124}
-        - {x: 124, y: 128}
-    - name: PipeTemplate_28
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_28
       rect:
         serializedVersion: 2
         x: 415
@@ -499,12 +408,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 124, y: 0}
-        - {x: 124, y: 128}
-        - {x: 6, y: 128}
-        - {x: 6, y: 0}
-    - name: PipeTemplate_29
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_29
       rect:
         serializedVersion: 2
         x: 144
@@ -514,15 +421,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 128, y: 128}
-        - {x: 0, y: 128}
-        - {x: 0, y: 0}
-        - {x: 118, y: 0}
-        - {x: 118, y: 53}
-        - {x: 124, y: 56}
-        - {x: 128, y: 59}
-    - name: PipeTemplate_30
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_30
       rect:
         serializedVersion: 2
         x: 283
@@ -532,14 +434,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 128}
-        - {x: 0, y: 46}
-        - {x: 5, y: 0}
-        - {x: 118, y: 0}
-        - {x: 126, y: 63}
-        - {x: 126, y: 128}
-    - name: PipeTemplate_31
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_31
       rect:
         serializedVersion: 2
         x: 10
@@ -549,15 +447,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9, y: 128}
-        - {x: 9, y: 6}
-        - {x: 4, y: 4}
-        - {x: 2, y: 1}
-        - {x: 2, y: 0}
-        - {x: 128, y: 0}
-        - {x: 128, y: 128}
-    - name: PipeTemplate_32
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_32
       rect:
         serializedVersion: 2
         x: 145
@@ -567,14 +460,8 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 117, y: 128}
-        - {x: 0, y: 128}
-        - {x: 0, y: 0}
-        - {x: 125, y: 0}
-        - {x: 125, y: 1}
-        - {x: 122, y: 5}
-        - {x: 117, y: 7}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

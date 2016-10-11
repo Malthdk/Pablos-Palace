@@ -91,7 +91,7 @@ MonoBehaviour:
   prefab: {fileID: 118442, guid: ea4b78d9510144627af635efc515b30d, type: 2}
   particleSize: 3
   particleNumber: 40
-  particleLifetime: 2.5
+  particleLifetime: 1.5
   xMinSize: -100
   xMaxSize: 100
   particlesState: 1

@@ -23,16 +23,16 @@ public class FallingPlatform : MonoBehaviour {
 	private float flashDuration = 0.09f;
 	bool pltformActivated = false;
 
-	Transform transform; 
-	Player player; 
+	Transform transform;
+	MeshRenderer renderer;
 //	public Vector2 fallSpeed = new Vector3(0f, -5f, 0);
 
 	void Start () 
 	{
+		renderer = GetComponent<MeshRenderer>();
 		platformrb = GetComponent<Rigidbody2D>();
 		collider = GetComponent<BoxCollider2D>();
 		transform = GetComponent<Transform>();
-		player = GameObject.FindWithTag("white").GetComponent<Player>();
 	}
 	
 	// Update is called once per frame
@@ -84,7 +84,12 @@ public class FallingPlatform : MonoBehaviour {
 		}
 		else
 		{
-			Destroy(gameObject);
+			renderer.enabled = true;
+			timer = 1.5f;
+			flashTimer = 0.04f;
+			flashDuration = 0.09f;
+			pltformActivated = false;
+			gameObject.SetActive(false);
 		}
 	}
 
@@ -114,12 +119,8 @@ public class FallingPlatform : MonoBehaviour {
 
 	void Flash()
 	{
-		MeshRenderer renderer = GetComponent<MeshRenderer>();
 		renderer.enabled = !renderer.enabled;
 		//Light light = GetComponent<Light>();
 		//light.enabled = !light.enabled;
 	}
-
-
-
 }

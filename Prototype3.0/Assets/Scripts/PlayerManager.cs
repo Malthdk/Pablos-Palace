@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour {
 	public void KillPlayer()
 	{
 		LevelManager.lManager.Respawn();
+
 	}
 
 	public void SpawnSplat(Vector3 position)

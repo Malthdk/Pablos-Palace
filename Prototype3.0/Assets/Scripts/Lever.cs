@@ -15,7 +15,7 @@ public class Lever : MonoBehaviour {
 
 	private Transform from;
 	private Transform to;
-	private float speed = 0.1f;
+
 	private bool rotating = true;
 
 
