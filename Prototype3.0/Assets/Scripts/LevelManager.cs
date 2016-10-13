@@ -19,6 +19,18 @@ public class LevelManager : MonoBehaviour {
 
 	public GameObject[] stateObjects;
 
+	[HideInInspector]
+	public static LevelManager _instance;
+
+	public static LevelManager instance {	// Makes it possible to call script easily from other scripts
+		get {
+			if (_instance == null) {
+				_instance = FindObjectOfType<LevelManager>();
+			}
+			return _instance;
+		}
+	}
+
 	void Awake()
 	{
 		if(lManager == null)
@@ -42,7 +54,7 @@ public class LevelManager : MonoBehaviour {
 	{
 		//spawnPoint = GameObject.FindGameObjectWithTag("spawnpoint");
 
-		if(player == null)
+		if (player == null)
 		{
 			player = FindObjectOfType<Player>();
 		}
@@ -67,10 +79,10 @@ public class LevelManager : MonoBehaviour {
 		yield return new WaitForSeconds(respawnTime);
 		player.enabled = true;
 		graphics.SetActive(true);
+		Debug.Log ("Respawned!");
 	}
 	public void Respawn()
 	{
-		Debug.Log ("Respawned!");
 		StartCoroutine(Respawned());
 		//Application.LoadLevel(Application.loadedLevel);
 	}

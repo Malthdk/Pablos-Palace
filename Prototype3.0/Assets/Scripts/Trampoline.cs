@@ -37,7 +37,6 @@ public class Trampoline : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.name == "Player"){
-			Debug.Log("JUMP!!");
 			StartCoroutine("Squeeze");
 			bounce = true;
 		}

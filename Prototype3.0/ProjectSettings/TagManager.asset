@@ -34,6 +34,7 @@ TagManager:
   - Trampoline
   - dissPlatform
   - playerCamera
+  - Water2D
   layers:
   - Default
   - TransparentFX
