@@ -182,7 +182,7 @@ public class CameraZoom : MonoBehaviour {
 			Vector3 globalWaypointPos = (Application.isPlaying)?targetPosOffline + transform.position:targetPos + transform.position;
 			Gizmos.DrawLine (globalWaypointPos - Vector3.up * size, globalWaypointPos + Vector3.up * size);
 			Gizmos.DrawLine (globalWaypointPos - Vector3.left * size, globalWaypointPos + Vector3.left * size);
-			Gizmos.DrawWireCube(transform.position + targetPos, new Vector3(newSize*2*mainCamera.aspect,newSize*2, 2f));
+			//Gizmos.DrawWireCube(transform.position + targetPos, new Vector3(newSize*2*mainCamera.aspect,newSize*2, 2f));
 
 		}
 	}

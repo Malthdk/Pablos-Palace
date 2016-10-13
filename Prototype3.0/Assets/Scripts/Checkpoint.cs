@@ -22,8 +22,8 @@ public class Checkpoint : MonoBehaviour {
 		if(other.gameObject.name == "Player")
 		{
 			Debug.Log ("Hit checkpoint");
-			LevelManager.lManager.currentCheckpoint = gameObject;
-			LevelManager.lManager.currentTag = player.tag;
+			LevelManager.instance.currentCheckpoint = gameObject;
+			LevelManager.instance.currentTag = player.tag;
 		}
 	}
 

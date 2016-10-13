@@ -35,8 +35,19 @@ public class Player : MonoBehaviour {
 	Controller2D controller;					//calling controller class
 	Abilities abilities;
 
-
 	private Animator animator;		//ANIMATION
+
+	[HideInInspector]
+	public static Player _instance;
+
+	public static Player instance {	// Makes it possible to call script easily from other scripts
+		get {
+			if (_instance == null) {
+				_instance = FindObjectOfType<Player>();
+			}
+			return _instance;
+		}
+	}
 
 	void Start () 
 	{
