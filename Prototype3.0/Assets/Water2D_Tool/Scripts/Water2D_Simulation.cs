@@ -2810,7 +2810,6 @@ namespace Water2DTool
         void OnTriggerEnter2D(Collider2D other)
         {
 			if (other.name == "Player") {
-				Debug.Log("Player hit water");
 				LevelManager.instance.Respawn();
 			}
 

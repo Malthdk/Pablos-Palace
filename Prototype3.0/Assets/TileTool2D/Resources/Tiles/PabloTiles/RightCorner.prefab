@@ -10,8 +10,7 @@ GameObject:
   - 4: {fileID: 480856}
   - 212: {fileID: 21249470}
   - 114: {fileID: 11483776}
-  - 61: {fileID: 6190100}
-  - 60: {fileID: 6081796}
+  - 60: {fileID: 60000011184269260}
   m_Layer: 8
   m_Name: RightCorner
   m_TagString: Untagged
@@ -32,41 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!60 &6081796
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130276}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 0.005218506, y: -0.0065555573}
-      - {x: 1.2754822, y: -0.0018024445}
-      - {x: 0.03, y: 0}
-      - {x: 1.28, y: 0}
-      - {x: 1.28, y: 0.635}
-      - {x: 1.28, y: 1.27}
-      - {x: 1.2817993, y: 1.2700005}
---- !u!61 &6190100
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130276}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.64, y: 0.64}
-  serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
 --- !u!114 &11483776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,7 +45,7 @@ MonoBehaviour:
   tileTexture: {fileID: 0}
   tileName: 
   tileType: 
-  tileSize: 1.2
+  tileSize: 1.275
   passive: 0
   disableColliderOnAwake: 0
   particles: {fileID: 0}
@@ -146,7 +110,7 @@ MonoBehaviour:
   seTile: {fileID: 0}
   swTile: {fileID: 0}
   cacheRenderer: {fileID: 21249470}
-  cacheCollider: {fileID: 6190100}
+  cacheCollider: {fileID: 0}
   sortingOrder: 16
   tiles: []
 --- !u!212 &21249470
@@ -193,3 +157,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130276}
   m_IsPrefabParent: 1
+--- !u!60 &60000011184269260
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130276}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 1.28, y: 1.28}
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      - {x: 1.28, y: 0}
+      - {x: 1.28, y: 1.28}

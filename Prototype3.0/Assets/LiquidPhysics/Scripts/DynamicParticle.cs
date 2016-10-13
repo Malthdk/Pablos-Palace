@@ -28,6 +28,19 @@ public class DynamicParticle : MonoBehaviour {
 	public LevelManager levelmanager;
 	public Checkpoint checkpoint;
 
+	[HideInInspector]
+	public static DynamicParticle _instance;
+
+	public static DynamicParticle instance {	// Makes it possible to call script easily from other scripts
+		get {
+			if (_instance == null) {
+				_instance = FindObjectOfType<DynamicParticle>();
+			}
+			return _instance;
+		}
+	}
+
+
 	public void Awake(){ 
 		if (currentState == STATES.NONE) {
 			SetState (STATES.BLUE);
@@ -247,7 +260,7 @@ public class DynamicParticle : MonoBehaviour {
 		//	other.gameObject.tag = checkpoint.tempTag;
 		}
 		//Killing black particles when hitting stationary black object
-		if(currentState==STATES.BLACK && other.gameObject.tag=="blackBox")
+		if(currentState==STATES.BLACK && other.gameObject.tag=="Water2D")
 		{
 			Destroy();
 		}

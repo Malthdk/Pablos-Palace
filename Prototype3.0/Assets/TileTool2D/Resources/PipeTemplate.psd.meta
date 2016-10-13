@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8ccbb0b1541454dc7ad40d539e056e13
-timeCreated: 1470387130
+timeCreated: 1476358973
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -141,7 +141,7 @@ TextureImporter:
       name: PipeTemplate_4
       rect:
         serializedVersion: 2
-        x: 279
+        x: 280
         y: 208
         width: 128
         height: 128
@@ -180,8 +180,8 @@ TextureImporter:
       name: PipeTemplate_7
       rect:
         serializedVersion: 2
-        x: 7
-        y: 346
+        x: 9
+        y: 343
         width: 128
         height: 128
       alignment: 6
@@ -219,7 +219,7 @@ TextureImporter:
       name: PipeTemplate_10
       rect:
         serializedVersion: 2
-        x: 145
+        x: 144
         y: 344
         width: 128
         height: 128
@@ -232,8 +232,8 @@ TextureImporter:
       name: PipeTemplate_11
       rect:
         serializedVersion: 2
-        x: 417
-        y: 210
+        x: 416
+        y: 208
         width: 128
         height: 128
       alignment: 6
@@ -246,7 +246,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 552
-        y: 72
+        y: 70
         width: 128
         height: 128
       alignment: 6
@@ -271,8 +271,8 @@ TextureImporter:
       name: PipeTemplate_16
       rect:
         serializedVersion: 2
-        x: 283
-        y: 73
+        x: 280
+        y: 72
         width: 128
         height: 128
       alignment: 6
@@ -284,8 +284,8 @@ TextureImporter:
       name: PipeTemplate_17
       rect:
         serializedVersion: 2
-        x: 146
-        y: 73
+        x: 144
+        y: 72
         width: 128
         height: 128
       alignment: 6
@@ -297,7 +297,7 @@ TextureImporter:
       name: PipeTemplate_19
       rect:
         serializedVersion: 2
-        x: 7
+        x: 9
         y: 208
         width: 128
         height: 128
@@ -376,7 +376,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8
-        y: 69
+        y: 72
         width: 128
         height: 128
       alignment: 6

@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 419540}
   - 212: {fileID: 21264796}
   - 114: {fileID: 11414682}
+  - 60: {fileID: 60000013749574966}
   m_Layer: 0
   m_Name: TopRight
   m_TagString: Untagged
@@ -44,7 +45,7 @@ MonoBehaviour:
   tileTexture: {fileID: 0}
   tileName: 
   tileType: 
-  tileSize: 1.2
+  tileSize: 1.275
   passive: 0
   disableColliderOnAwake: 0
   particles: {fileID: 0}
@@ -156,3 +157,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147586}
   m_IsPrefabParent: 1
+--- !u!60 &60000013749574966
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147586}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1.28}
+      - {x: 0, y: 1.26}
+      - {x: 1.26, y: 0}
+      - {x: 1.28, y: 0}
+      - {x: 1.28, y: 1.28}
