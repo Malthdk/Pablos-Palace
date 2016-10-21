@@ -58,10 +58,6 @@ public class Player : MonoBehaviour {
 
 	void Update () 
 	{
-
-		//Debug.Log (abilities.isRed);
-
-	
 		gravity = -(2* maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);		//Gravity defined based of jumpheigmaxJumpVelocityto reach highest point
 
 //		if (velocity.y < 0 && abilities.isGreen) 

@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/CarpeDiem.unity
-=======
-- path: Assets/Scenes/User tests/The Dungeon/bluegreen.unity
->>>>>>> master
   isLoaded: 1
   isActive: 1
