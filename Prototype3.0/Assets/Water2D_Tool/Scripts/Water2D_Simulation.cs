@@ -343,6 +343,10 @@ namespace Water2DTool
         /// It is used to convert float numbers to int and back.
         /// </summary>
         private float scaleFactor = 100000f;
+		/// <summary>
+		/// If player is in water.
+		/// </summary>
+		private bool inWater = false;
         #endregion
 
         #region Public fields
@@ -758,10 +762,18 @@ namespace Water2DTool
 
         void FixedUpdate()
         {
+			if (inWater) {
+				if (Player.instance.velocity.y < 0) {
+					Player.instance.velocity.y = Mathf.Lerp(Player.instance.velocity.y, -2f, 1f);
+				} else if (Player.instance.velocity.y > 0) {
+					Player.instance.velocity.y = Mathf.Lerp(Player.instance.velocity.y, 4f, 1f);
+				}
+			}
+
             if (waterDisplacement)
             {
                 WaterDisplacement();
-            }
+			}
 
             if (surfaceWaves != Water2D_SurfaceWaves.None)
             {
@@ -2809,8 +2821,13 @@ namespace Water2DTool
 
         void OnTriggerEnter2D(Collider2D other)
         {
-			if (other.name == "Player") {
+			if (other.name == "Player" && this.tag == "blackBox") {
 				LevelManager.instance.Respawn();
+			}
+
+			if (other.name == "Player" && this.tag == "Water") {
+				other.gameObject.transform.tag = "white";
+				inWater = true;
 			}
 
             if (!floatingObjects2D.Contains(other) && other.tag != "Ignore")
@@ -2835,6 +2852,10 @@ namespace Water2DTool
 
         void OnTriggerExit2D(Collider2D other)
         {
+			if (other.name == "Player" && this.tag == "Water") {
+				inWater = false;
+			}
+
             if (floatingObjects2D.Contains(other))
             {
 				if (other.name == "Player")

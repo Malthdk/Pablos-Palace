@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/User tests/The Dungeon/bluegreen.unity
+- path: Assets/Scenes/CarpeDiem.unity
   isLoaded: 1
   isActive: 1

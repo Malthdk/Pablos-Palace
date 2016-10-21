@@ -60,6 +60,18 @@ public class Abilities : MonoBehaviour {
 
 	private bool hasBeenReset = true, gravityReversed = false, normalGravity = true;		//normalGravity is for flipping character when purple	
 
+	[HideInInspector]
+	public static Abilities _instance;
+
+	public static Abilities instance {	// Makes it possible to call script easily from other scripts
+		get {
+			if (_instance == null) {
+				_instance = FindObjectOfType<Abilities>();
+			}
+			return _instance;
+		}
+	}
+
 	void Start () 
 	{
 		hasDoubleJumped = false;
