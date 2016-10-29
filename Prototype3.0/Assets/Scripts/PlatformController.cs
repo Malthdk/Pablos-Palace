@@ -7,10 +7,12 @@ public class PlatformController : RaycastController {
 	// Should it function as an elevator
 	public bool elevator = false;
 	public bool stoppingPlatform = false;
-	public bool platformActivator = false;
+	public bool platformActivator= false;
+	private bool isPlatformActivator, isElevator;
 	public bool smashPlatform;
 	public LayerMask passengerMask;
 
+	public bool hasReset;
 
 	public Vector3[] localWaypoints;
 	public Vector3[] globalWaypoints;
@@ -24,6 +26,8 @@ public class PlatformController : RaycastController {
 
 	[HideInInspector]
 	public Vector3 pos;
+	[HideInInspector]
+	public Vector3 velocity;
 
 	private int fromWaypointIndex;
 	private float percentBetweenWaypoints; 
@@ -34,6 +38,15 @@ public class PlatformController : RaycastController {
 
 	public override void Start () 
 	{
+		if (elevator)
+		{
+			isElevator = true;
+		}
+		if (platformActivator)
+		{
+			isPlatformActivator = true;
+		}
+
 		base.Start();
 
 		globalWaypoints = new Vector3[localWaypoints.Length];
@@ -42,18 +55,15 @@ public class PlatformController : RaycastController {
 			globalWaypoints[i] = localWaypoints[i] + transform.position;
 		}
 	}
-	
 
 	void Update () 
 	{
 		pos = gameObject.transform.position;
 
-		//Debug.Log(platformActivator);
-
 		if ( platformActivator == false && elevator == false ) 
 		{
 			UpdateRaycastOrigins ();
-			Vector3 velocity = CalculatePlatformMovement();
+			velocity = CalculatePlatformMovement();
 			CalculatePassengerMovement(velocity);
 			MovePassengers (true);
 			transform.Translate(velocity);
@@ -82,6 +92,17 @@ public class PlatformController : RaycastController {
 
 		Vector3 newPos = Vector3.Lerp(globalWaypoints[fromWaypointIndex], globalWaypoints[toWaypointIndex], easedPercentBetweenWaypoints);
 
+		if (!hasReset)
+		{
+			toWaypointIndex = 0;
+			distanceBetweenWaypoints = 0f;
+			easedPercentBetweenWaypoints = 0f;
+			percentBetweenWaypoints = 0f;
+			fromWaypointIndex = 0;
+			nextMoveTime = 0f;
+			newPos = globalWaypoints[0];
+			hasReset = true;
+		}
 		if (percentBetweenWaypoints >= 1)
 		{
 			percentBetweenWaypoints = 0;
@@ -380,5 +401,20 @@ public class PlatformController : RaycastController {
 		{
 			elevator = false;
 		}
+	}
+
+	public void ResetPlatform()
+	{
+		gameObject.transform.position = globalWaypoints[0];
+		velocity = new Vector3(0f, 0f, 0f);
+		if (isElevator)
+		{
+			elevator = true;			
+		}
+		else if (isPlatformActivator)
+		{
+			platformActivator = true;
+		}
+		hasReset = false;
 	}
 }

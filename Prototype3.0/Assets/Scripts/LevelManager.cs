@@ -17,7 +17,11 @@ public class LevelManager : MonoBehaviour {
 
 	public string MyLevel;
 
-	public GameObject[] stateObjects;
+	//public GameObject[] stateObjects;
+
+	public List<GameObject> stateObjects;
+	public List<PlatformController> platforms;
+	public List<Lever> levers;
 
 	[HideInInspector]
 	public static LevelManager _instance;
@@ -48,7 +52,22 @@ public class LevelManager : MonoBehaviour {
 	{
 		player = FindObjectOfType<Player>();
 
-		stateObjects = FindGameObjectsWithTags(new string[]{"dissPlatform", "orangeDestroy"});
+		foreach(GameObject sObject in FindGameObjectsWithTags(new string[]{"dissPlatform", "orangeDestroy", "coin"})) 
+		{
+			stateObjects.Add(sObject);
+		}
+
+		foreach(GameObject pObject in GameObject.FindGameObjectsWithTag("movingPlatform")) 
+		{
+			PlatformController pController = pObject.GetComponent<PlatformController>();
+			platforms.Add(pController);
+		}
+
+		foreach(GameObject lObject in GameObject.FindGameObjectsWithTag("Lever")) 
+		{
+			Lever lever = lObject.GetComponent<Lever>();
+			levers.Add(lever);
+		}
 	}
 	void Update()
 	{
@@ -74,9 +93,14 @@ public class LevelManager : MonoBehaviour {
 		player.tag = currentTag;
 		player.velocity.x = 0f;
 		player.velocity.y = 0f;
+
 		ResetStates(stateObjects);
+		ResetPlatforms(platforms);
+		ResetLevers(levers);
+		ResetParticles();
 
 		yield return new WaitForSeconds(respawnTime);
+
 		player.enabled = true;
 		graphics.SetActive(true);
 		Debug.Log ("Respawned!");
@@ -95,11 +119,36 @@ public class LevelManager : MonoBehaviour {
 		//player.transform.position = spawnPoint.transform.position;
 	}
 
-	void ResetStates(GameObject[] array)
+	void ResetStates(List<GameObject> theList)
 	{
-		for (int i = 0; i < array.Length; i++)
+		for (int i = 0; i < theList.Count; i++)
 		{
-			array[i].SetActive(true);
+			theList[i].SetActive(true);
+		}
+	}
+
+	void ResetPlatforms(List<PlatformController> theList)
+	{
+		for (int i = 0; i < theList.Count; i++)
+		{
+			theList[i].ResetPlatform();
+		}
+	}
+
+	void ResetLevers(List<Lever> theList)
+	{
+		for (int i = 0; i < theList.Count; i++)
+		{
+			theList[i].activated = false;
+		}
+	}
+
+	void ResetParticles()
+	{
+		foreach(GameObject particle in GameObject.FindGameObjectsWithTag("DynamicParticle")) {
+
+			DynamicParticle dp = particle.GetComponent<DynamicParticle>();
+			//dp.Destroy();
 		}
 	}
 

@@ -405,6 +405,7 @@ public class Abilities : MonoBehaviour {
 				Reset();
 				hasBeenReset = true;
 			}
+			isBlue = isRed = isYellow = isGreen = isOrange = isPurple = false;
 		}
 	}
 
@@ -463,16 +464,15 @@ public class Abilities : MonoBehaviour {
 		player.accelerationTimeAirborn = 0.125f; //Was 0.25f
 		gravityReversed = false;
 		isDashing = false;
-
-		if(controller.collisions.faceDir == 1)
-		{
-			gameObject.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
-		}
-
-		else if(controller.collisions.faceDir == -1)
-		{
-			gameObject.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
-		}
+//		if(controller.collisions.faceDir == 1)
+//		{
+//			gameObject.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
+//		}
+//
+//		else if(controller.collisions.faceDir == -1)
+//		{
+//			gameObject.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
+//		}
 
 	}
 }

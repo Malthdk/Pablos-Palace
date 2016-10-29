@@ -35,6 +35,7 @@ TagManager:
   - dissPlatform
   - playerCamera
   - Water2D
+  - movingPlatform
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21254496}
   - 50: {fileID: 5056782}
   - 58: {fileID: 5897798}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Coin
   m_TagString: coin
   m_Icon: {fileID: 0}
