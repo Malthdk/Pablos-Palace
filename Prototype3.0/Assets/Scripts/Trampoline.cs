@@ -30,7 +30,6 @@ public class Trampoline : MonoBehaviour {
 			} else {	
 				playerScript.velocity.y = bounceAmount;
 			}
-			Debug.Log(playerScript.velocity.y);
 			bounce = false;
 		}
 	}
@@ -41,8 +40,8 @@ public class Trampoline : MonoBehaviour {
 			bounce = true;
 		}
 		if (other.tag == "DynamicParticle"){
-			//StartCoroutine("Squeeze");
-			//bounce = true;
+			DynamicParticle particle = other.gameObject.GetComponent<DynamicParticle>();
+			particle.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f,150f));
 		}
 	}
 

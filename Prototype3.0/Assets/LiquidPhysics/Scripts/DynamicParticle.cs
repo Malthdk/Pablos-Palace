@@ -75,8 +75,8 @@ public class DynamicParticle : MonoBehaviour {
 				break;	
 				case STATES.WATER:		
 					GetComponent<Rigidbody2D>().gravityScale=0.8f;
-					GetComponent<Rigidbody2D>().mass = 0.2f;
-					GetComponent<Rigidbody2D>().drag = 0f;
+					GetComponent<Rigidbody2D>().mass = 0.4f;
+					GetComponent<Rigidbody2D>().drag = 0.2f;
 				break;	
 				case STATES.BLACK:		
 					GetComponent<Rigidbody2D>().gravityScale=1.6f;
@@ -98,7 +98,6 @@ public class DynamicParticle : MonoBehaviour {
 	}
 	void Update () {
 		MovementAnimation();
-
 		ScaleDown ();
 	}
 	// This scales the particle image acording to its velocity, so it looks like its deformable... but its not ;)
@@ -127,7 +126,7 @@ public class DynamicParticle : MonoBehaviour {
 		haveParticlesHit = true;
 	}
 
-	protected void Destroy() {
+	public void Destroy() {
 		gameObject.SetActive(false);
 		scaleValue = particleSize;
 	}
