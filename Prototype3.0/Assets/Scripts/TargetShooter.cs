@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TargetShooter : MonoBehaviour {
 
-	public float speed = 30f;
+	public float speed = 50f;
 	public Transform barrel;
 	public Transform target;
 

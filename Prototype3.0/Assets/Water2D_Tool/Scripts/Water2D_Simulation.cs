@@ -2828,18 +2828,34 @@ namespace Water2DTool
 
 		IEnumerator WaterSplash() 
 		{
-			WaterWaves();
-			Debug.Log("hit water");
 			GameObject prefab = Instantiate(Resources.Load("FX_ParticlePabloWater")) as GameObject;
 			prefab.transform.position = new Vector3(Player.instance.gameObject.transform.position.x,Player.instance.gameObject.transform.position.y-1f,0);
 			yield return new WaitForSeconds(0.7f);
 			Destroy(prefab);
 		}
 
+		IEnumerator DestroyParticle(Collider2D dp) 
+		{
+			DynamicParticle particle = dp.gameObject.GetComponent<DynamicParticle>();
+			yield return new WaitForSeconds(0.5f);
+			particle.Destroy();
+		}
+
         void OnTriggerEnter2D(Collider2D other)
         {
 			if (other.name == "Player" && this.tag == "blackBox") {
 				LevelManager.instance.Respawn();
+			}
+
+			if (other.tag == "DynamicParticle") {
+				StartCoroutine(DestroyParticle(other));
+				if (floatingObjects2D.Contains(other))
+				{
+					floatingObjects2D.Remove(other);
+
+					if (tempObj2D.Contains(other))
+						tempObj2D.Remove(other);
+				}
 			}
 
 			if (other.name == "Player" && this.tag == "Water") {
