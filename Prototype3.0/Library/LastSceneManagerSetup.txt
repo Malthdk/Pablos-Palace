@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/ChrisTestBane.unity
-=======
-- path: Assets/Scenes/CarpeDiem.unity
->>>>>>> master
   isLoaded: 1
   isActive: 1
