@@ -406,4 +406,13 @@ public class Controller2D : RaycastController {
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "coin")
+		{
+			UIManager.uiManager.score++;
+			other.gameObject.SetActive(false);
+		}
+	}
+
 }

@@ -24,7 +24,6 @@ public class Lever : MonoBehaviour {
 
 	}
 	
-	
 	void Update () 
 	{
 		for (int i = 0; i < particleSpawners.Length; i++) {
