@@ -49,8 +49,6 @@ public class PoolManager : MonoBehaviour {
 			poolDic [poolKey].Enqueue (objectToReuse);
 
 			objectToReuse.Reuse (pos, rotation, force, particleLifetime, state, particleSize);
-		} else {
-			Debug.Log("lol");
 		}
 	}
 
