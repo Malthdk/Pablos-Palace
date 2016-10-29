@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TargetShooter : MonoBehaviour {
 
-	public float speed = 50f;
+	public float speed = 5f;
 	public Transform barrel;
 	public Transform target;
 
@@ -15,9 +15,9 @@ public class TargetShooter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Quaternion rotation = Quaternion.LookRotation(target.position - barrel.position);
-		rotation.x = 0;
-		rotation.y = 0;
-		barrel.rotation = Quaternion.RotateTowards(barrel.rotation, rotation, speed * Time.deltaTime);
+		Vector3 vectorToTarget = target.position - barrel.position;
+		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+		Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+		barrel.rotation = Quaternion.Lerp(barrel.rotation, q, Time.deltaTime * speed);
 	}
 }
