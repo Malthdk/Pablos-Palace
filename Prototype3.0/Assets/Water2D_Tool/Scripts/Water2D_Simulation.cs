@@ -655,6 +655,7 @@ namespace Water2DTool
         /// Should the particle system sorting layer and order in layer be set when it is instantiated?
         /// </summary>
         public bool particleSystemSorting = false;
+
         #endregion
 
         #region Class methods
@@ -766,7 +767,13 @@ namespace Water2DTool
 				if (Player.instance.velocity.y < 0) {
 					Player.instance.velocity.y = Mathf.Lerp(Player.instance.velocity.y, -2f, 1f);
 				} else if (Player.instance.velocity.y > 0) {
-					Player.instance.velocity.y = Mathf.Lerp(Player.instance.velocity.y, 4f, 1f);
+					Player.instance.velocity.y = Mathf.Lerp(0, Player.instance.velocity.y, 0.98f);
+				}
+
+				if (Player.instance.velocity.x < 0) {
+					Player.instance.velocity.x *= 0.8f;
+				} else if (Player.instance.velocity.x > 0) {
+					Player.instance.velocity.x *= 0.8f;
 				}
 			}
 
@@ -2819,6 +2826,16 @@ namespace Water2DTool
             }
         }
 
+		IEnumerator WaterSplash() 
+		{
+			WaterWaves();
+			Debug.Log("hit water");
+			GameObject prefab = Instantiate(Resources.Load("FX_ParticlePabloWater")) as GameObject;
+			prefab.transform.position = new Vector3(Player.instance.gameObject.transform.position.x,Player.instance.gameObject.transform.position.y-1f,0);
+			yield return new WaitForSeconds(0.7f);
+			Destroy(prefab);
+		}
+
         void OnTriggerEnter2D(Collider2D other)
         {
 			if (other.name == "Player" && this.tag == "blackBox") {
@@ -2828,6 +2845,7 @@ namespace Water2DTool
 			if (other.name == "Player" && this.tag == "Water") {
 				other.gameObject.transform.tag = "white";
 				inWater = true;
+				StartCoroutine(WaterSplash());
 			}
 
             if (!floatingObjects2D.Contains(other) && other.tag != "Ignore")

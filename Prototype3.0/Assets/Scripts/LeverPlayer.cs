@@ -4,32 +4,35 @@ using System.Collections;
 public class LeverPlayer : MonoBehaviour {
 
 	[Tooltip("Very important that levers are called Lever0, Lever1, etc.")]
-	public GameObject[] leversInMap = {};
+	public GameObject[] leversInMap;
 	private bool[] onLever;
 
 	GameObject[] leverArray;
-	Lever[] lever = {};								//calling Lever class
+	public Lever[] lever = {};								//calling Lever class
 
 	void Start () 
 	{ 
-		onLever = new bool[leversInMap.Length];
-		leverArray = new GameObject[leversInMap.Length];
-		lever = new Lever[leversInMap.Length];
-	}
-	
-
-	void Update () 
-	{
 		//Checking if LeversInMap is empty and filling it if it is
-		for(var i = 0; i < leversInMap.Length; i++){
+		for(int i = 0; i < leversInMap.Length; i++){
 			if (leversInMap[i] == null)
 			{
 				leversInMap = GameObject.FindGameObjectsWithTag("Lever");
 			}
 		}
 
+		onLever = new bool[leversInMap.Length];
+		leverArray = new GameObject[leversInMap.Length];
+		lever = new Lever[leversInMap.Length];
+
+		Debug.Log(leversInMap);
+	}
+	
+
+	void Update () 
+	{
+
 		//Checking if lever is empty and filling it if it is
-		for(var i = 0; i < lever.Length; i++){
+		for(int i = 0; i < lever.Length; i++){
 			if (lever[i] == null)
 			{
 				lever = new Lever[leversInMap.Length];
@@ -68,7 +71,7 @@ public class LeverPlayer : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		for  (int i = 0; i < leversInMap.Length; i++) {
-			if (other.name == "Lever"+i.ToString() )
+			if (other.gameObject == leversInMap[i].gameObject )
 			{
 				onLever[i] = true;
 			} else {
