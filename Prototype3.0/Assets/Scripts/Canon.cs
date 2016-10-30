@@ -40,9 +40,8 @@ public class Canon : MonoBehaviour {
 				ball.GetComponent<Rigidbody2D> ().AddForce (transform.up * power); //Add our custom force
 			}
 		} else {
-			Destroy(ball.GetComponent<Rigidbody2D> ());
-			vel = Vector3.zero;
-			ball.transform.Translate(vel);
+			ball.GetComponent<Rigidbody2D> ().gravityScale = 0f;
+			ball.GetComponent<Rigidbody2D> ().AddRelativeForce (transform.right * 150f);
 		}
 		yield return new WaitForSeconds(cooldown);
 

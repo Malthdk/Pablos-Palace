@@ -9,7 +9,7 @@ public class TargetShooter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		barrel = this.transform.GetChild(0);
+		barrel = this.transform.GetChild(1);
 		target = GameObject.Find("Player").transform;
 	}
 	
