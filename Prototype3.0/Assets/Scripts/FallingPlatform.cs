@@ -33,32 +33,17 @@ public class FallingPlatform : MonoBehaviour {
 		platformrb = GetComponent<Rigidbody2D>();
 		collider = GetComponent<BoxCollider2D>();
 		transform = GetComponent<Transform>();
+
+		UpdateRaycastSpace();
+		UpdateRaycastOrigin();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		UpdateRaycastSpace();
-		UpdateRaycastOrigin();
-
 		if (fallingPlatform)
 		{
-			for (int i = 0; i < verticalRayCount; i ++)
-			{
-			float rayLength = 0.015f * 2f;			//Short rayLength
 
-				Vector2 rayOrigin = topLeft + Vector2.right * verticalRaySpacing * i;		//Rayorigin allways on topLeft.
-				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, passengerMask); 		//Allways casting ray upwards.
-				
-				Debug.DrawRay(rayOrigin, Vector2.up * rayLength * 4, Color.red);
-
-				if (hit)
-				{
-					Debug.Log ("you've hit it");
-					pltformActivated = true;
-
-				}
-			}
 		}
 
 		if (pltformActivated)
@@ -122,5 +107,33 @@ public class FallingPlatform : MonoBehaviour {
 		renderer.enabled = !renderer.enabled;
 		//Light light = GetComponent<Light>();
 		//light.enabled = !light.enabled;
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.name == "Player")
+		{
+			ShootRay();	
+			Debug.Log("Shoot ray");
+		}
+	}
+
+	void ShootRay()
+	{
+		for (int i = 0; i < verticalRayCount; i ++)
+		{
+			float rayLength = 0.015f * 2f;			//Short rayLength
+
+			Vector2 rayOrigin = topLeft + Vector2.right * verticalRaySpacing * i;		//Rayorigin allways on topLeft.
+			RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, passengerMask); 		//Allways casting ray upwards.
+
+			Debug.DrawRay(rayOrigin, Vector2.up * rayLength * 4, Color.red);
+
+			if (hit)
+			{
+				Debug.Log ("you've hit it");
+				pltformActivated = true;
+			}
+		}
 	}
 }

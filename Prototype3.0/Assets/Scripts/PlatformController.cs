@@ -8,6 +8,8 @@ public class PlatformController : RaycastController {
 	public bool elevator = false;
 	public bool stoppingPlatform = false;
 	public bool platformActivator= false;
+	private bool hasPassenger = false;
+
 	private bool isPlatformActivator, isElevator;
 	public bool smashPlatform;
 	public LayerMask passengerMask;
@@ -56,18 +58,30 @@ public class PlatformController : RaycastController {
 		}
 	}
 
-	void Update () 
+	public override void Update () 
 	{
+		base.Update();
+
 		pos = gameObject.transform.position;
 
 		if ( platformActivator == false && elevator == false ) 
 		{
-			UpdateRaycastOrigins ();
-			velocity = CalculatePlatformMovement();
-			CalculatePassengerMovement(velocity);
-			MovePassengers (true);
-			transform.Translate(velocity);
-			MovePassengers (false);
+			//UpdateRaycastOrigins ();
+			if (hasPassenger)
+			{
+				velocity = CalculatePlatformMovement();
+				CalculatePassengerMovement(velocity);
+				MovePassengers (true);
+				transform.Translate(velocity);
+				MovePassengers (false);
+			}
+			else
+			{
+				velocity = CalculatePlatformMovement();
+				transform.Translate(velocity);
+			}
+			//MovePassengers (true);
+			//MovePassengers (false);
 		} 
 	}
 
@@ -103,6 +117,7 @@ public class PlatformController : RaycastController {
 			newPos = globalWaypoints[0];
 			hasReset = true;
 		}
+
 		if (percentBetweenWaypoints >= 1)
 		{
 			percentBetweenWaypoints = 0;
@@ -135,8 +150,7 @@ public class PlatformController : RaycastController {
 			}
 		}
 	}
-
-
+		
 	void CalculatePassengerMovement(Vector3 velocity)
 	{
 		HashSet<Transform> movedPassengers = new HashSet<Transform>();
@@ -387,14 +401,20 @@ public class PlatformController : RaycastController {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.name == "Player") {
+	void OnTriggerEnter2D(Collider2D other) 
+	{
+		if (other.name == "Player") 
+		{	
+			hasPassenger = true;
 			elevator = false;
 			Debug.Log("player on platform");
 		}
 	}
-	void OnTriggerExit2D(Collider2D other) {
-		if (other.name == "Player" && stoppingPlatform == true) {
+	void OnTriggerExit2D(Collider2D other) 
+	{
+		//hasPassenger = false;
+		if (other.name == "Player" && stoppingPlatform == true) 
+		{
 			elevator = true;
 		}
 		else

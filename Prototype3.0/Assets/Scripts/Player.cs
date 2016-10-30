@@ -91,7 +91,7 @@ public class Player : MonoBehaviour {
 		minJumpVelocity = Mathf.Sqrt(2*Mathf.Abs(gravity) * minJumpHeight);	//Min jump velocity defined based on gravity and min jump height
 
 		input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));		//Input from player
-		wallDirX = (controller.collisions.left)? -1:1;												//wall direction left or right
+		wallDirX = (controller.collisions.left)? -1:1;											//wall direction left or right
 
 		float targetVelocityX = input.x * moveSpeed;							//velocity on x axis
 

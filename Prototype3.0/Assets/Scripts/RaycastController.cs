@@ -31,7 +31,7 @@ public class RaycastController : MonoBehaviour {
 	public virtual void Update ()
 	{
 		UpdateRaycastOrigins();						//Now capable of scaling at run time
-		CalculateRaySpacing();						//Now capable of scaling at run time
+		//CalculateRaySpacing();						//Now capable of scaling at run time
 	}
 	//RAYCAST ORIGIN
 	public void UpdateRaycastOrigins() 

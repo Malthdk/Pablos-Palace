@@ -54,11 +54,19 @@ public class Controller2D : RaycastController {
 
 			if (collisions.faceDir == -1 && facingRight)
 			{
-				Flip ();
+				if (!Player.instance.wallSliding)
+				{
+					Debug.Log("Flip1");
+					Flip ();
+				}
 			}
 			if (collisions.faceDir == 1 && !facingRight)
 			{
-				Flip ();
+				if (!Player.instance.wallSliding)
+				{
+					Debug.Log("Flip2");
+					Flip ();
+				}
 			}
 		}
 
