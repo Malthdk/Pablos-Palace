@@ -7,6 +7,7 @@ public class Canon : MonoBehaviour {
 	public int particleNumber = 20;
 	public float particleLifetime = 2f;
 	public bool spawn = true;
+	public bool stopShooting = false;
 	public float power = 4500f;
 	public DynamicParticle.STATES states = DynamicParticle.STATES.BLUE;
 	public bool constantVelocity;
@@ -21,12 +22,16 @@ public class Canon : MonoBehaviour {
 			StartCoroutine ("Fire");
 			spawn = false;
 		}
-
+		if (stopShooting) 
+		{
+			StopCoroutine ("Fire");
+		}
 		vel = transform.right * 0.4f;
 	}
 
 	IEnumerator Fire () 
 	{	
+		yield return new WaitForSeconds(cooldown);
 		ball = (GameObject) Instantiate(Resources.Load("Canonball", typeof(GameObject)));
 		ball.gameObject.transform.position = this.gameObject.transform.position;
 		ball.GetComponent<ParticleGeneratorStill> ().particlesState = states;
@@ -41,10 +46,8 @@ public class Canon : MonoBehaviour {
 			}
 		} else {
 			ball.GetComponent<Rigidbody2D> ().gravityScale = 0f;
-			ball.GetComponent<Rigidbody2D> ().AddRelativeForce (transform.right * 150f);
+			ball.GetComponent<Rigidbody2D> ().AddRelativeForce (transform.right * power);
 		}
-		yield return new WaitForSeconds(cooldown);
-
 		StartCoroutine ("Fire");
 	}
 }
