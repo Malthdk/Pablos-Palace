@@ -36,6 +36,7 @@ TagManager:
   - playerCamera
   - Water2D
   - movingPlatform
+  - particleSource
   layers:
   - Default
   - TransparentFX

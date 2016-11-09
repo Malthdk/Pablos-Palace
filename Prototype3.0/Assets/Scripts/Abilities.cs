@@ -15,7 +15,7 @@ public class Abilities : MonoBehaviour {
 	public bool isBlue = false, isRed = false, isYellow = false, isGreen = false, isOrange = false, isPurple = false;
 
 	//DOUBLE JUMP
-	[HideInInspector]
+	//[HideInInspector]
 	public bool hasDoubleJumped, ifRotating = false, secondJump, notRotating;
 	private float duration = 0.5f, t = 0, time = 0, start = 0f;
 
@@ -48,8 +48,8 @@ public class Abilities : MonoBehaviour {
 	public float floatingVelocity;
 	
 	//FOR WALLJUMP
-	[HideInInspector]
-	public Vector2 wallJumpClimb = new Vector2(12f, 25.6f), wallLeap = new Vector2(26.4f, 24.9f); 			//1. iteration of wallJumpClimb (input towards wall + space) 7.5f, 16f. 2nd iteration: 12f, 25.6f 3rd. 10.5f, 22.4
+	public Vector2 wallJumpClimb = new Vector2(12f, 25.6f), wallLeap = new Vector2(0f, 0f); 			//1. iteration of wallJumpClimb (input towards wall + space) 7.5f, 16f. 2nd iteration: 12f, 25.6f 3rd. 10.5f, 22.4
+																												//4. iteration (12f, 25.6f) (26.4f, 24.9f)
 	[HideInInspector]																										//3. iteration of wallLeap (input away from wall + space) 18f 17f. 2nd 26.4f, 24.9f 3rd. 23.1f,21.8f
 	public bool notJumping;
 
@@ -330,8 +330,8 @@ public class Abilities : MonoBehaviour {
 				FlipPurple ();
 				gravityReversed = true;
 			}
-			player.maxJumpHeight = -8f;		//Negative for reverse gravity
-			player.timeToJumpApex = -.8f;		//Negative for reverse gravity	
+			player.maxJumpHeight = -5.6f;		//Negative for reverse gravity
+			player.timeToJumpApex = -0.4875f;		//Negative for reverse gravity	
 			player.minJumpHeight = -0.5f; 		//Need to fix for variable jump
 		}
 
