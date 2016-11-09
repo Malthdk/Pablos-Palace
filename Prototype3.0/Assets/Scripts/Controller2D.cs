@@ -56,7 +56,7 @@ public class Controller2D : RaycastController {
 			{
 				if (!Player.instance.wallSliding)
 				{
-					Debug.Log("Flip1");
+					//Debug.Log("Flip1");
 					Flip ();
 				}
 			}
@@ -64,7 +64,7 @@ public class Controller2D : RaycastController {
 			{
 				if (!Player.instance.wallSliding)
 				{
-					Debug.Log("Flip2");
+					//Debug.Log("Flip2");
 					Flip ();
 				}
 			}
