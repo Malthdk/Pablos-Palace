@@ -198,7 +198,7 @@ public class PlatformController : RaycastController {
 
 				Debug.DrawRay(rayOrigin, Vector2.right * directionX * rayLength, Color.red);
 
-				if (hit && hit.distance != 0 && hit.collider.gameObject.tag != "yellow")
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == false)
 				{
 					if (!movedPassengers.Contains(hit.transform))
 					{
@@ -217,7 +217,7 @@ public class PlatformController : RaycastController {
 				
 				Debug.DrawRay(rayOrigin, Vector2.left * rayLength, Color.red);
 				
-				if (hit && hit.distance != 0 && hit.collider.gameObject.tag == "yellow")
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == true)
 				{
 					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
 					{
@@ -236,7 +236,7 @@ public class PlatformController : RaycastController {
 				
 				Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.red);
 				
-				if (hit && hit.distance != 0 && hit.collider.gameObject.tag == "yellow")
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == true)
 				{
 					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
 					{
@@ -331,7 +331,7 @@ public class PlatformController : RaycastController {
 				
 				Debug.DrawRay(rayOrigin, Vector2.left * rayLength, Color.red);
 				
-				if (hit && hit.distance != 0 && hit.collider.gameObject.tag == "yellow")
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == true)
 				{
 					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
 					{
@@ -350,7 +350,7 @@ public class PlatformController : RaycastController {
 				
 				Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.red);
 				
-				if (hit && hit.distance != 0 && hit.collider.gameObject.tag == "yellow")
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == true)
 				{
 					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
 					{

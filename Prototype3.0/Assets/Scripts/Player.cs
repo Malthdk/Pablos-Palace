@@ -164,9 +164,9 @@ public class Player : MonoBehaviour {
 			if(!controller.collisions.below && (abilities.isBlue || abilities.isGreen) )
 			{
 				/*This is where double jump is handled*/
-				abilities.secondJump = true;
 				if (!abilities.hasDoubleJumped && !wallSliding && !abilities.isPurple)
 				{
+					abilities.secondJump = true;
 					Debug.Log ("double jumped");
 					abilities.soaring = false;
 					abilities.hasDoubleJumped = true;
@@ -174,11 +174,16 @@ public class Player : MonoBehaviour {
 					abilities.startRotation();
 					
 				}
-				else if (abilities.isPurple && !controller.collisions.above && !abilities.hasDoubleJumped)
+				else if (abilities.isPurple && !controller.collisions.above)
 				{
-					abilities.hasDoubleJumped = true;
-					velocity.y = maxJumpVelocity/1.3f;
-					abilities.startRotation();
+					abilities.secondJump = true;
+
+					if (!abilities.hasDoubleJumped)
+					{
+						abilities.hasDoubleJumped = true;
+						velocity.y = maxJumpVelocity/1.3f;
+						abilities.startRotation();
+					}
 				}
 			}
 			if (wallSliding)
@@ -218,6 +223,10 @@ public class Player : MonoBehaviour {
 			abilities.soaring = false;
 			moveSpeed = groundSpeed;
 		}
+		if (abilities.isPurple && controller.collisions.above)
+		{
+			abilities.secondJump = false;
+		}
 
 		if (Input.GetKeyUp(KeyCode.Space))					//For variable jump
 		{
@@ -225,7 +234,7 @@ public class Player : MonoBehaviour {
 			{
 				velocity.y = minJumpVelocity;									//When space is released set velocity y to minimum jump velocity
 			}
-			if (velocity.y < purpMinJumpVelocity && gameObject.tag == "purple")  //For variable jump when purple
+			if (velocity.y < purpMinJumpVelocity && gameObject.tag == "purple" && !abilities.secondJump)  //For variable jump when purple
 			{
 				velocity.y = purpMinJumpVelocity;
 			}
