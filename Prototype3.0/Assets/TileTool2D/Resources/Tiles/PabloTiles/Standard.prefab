@@ -59,7 +59,7 @@ MonoBehaviour:
   tileTexture: {fileID: 0}
   tileName: 
   tileType: Standard
-  tileSize: 1.2
+  tileSize: 1.275
   passive: 0
   disableColliderOnAwake: 0
   particles: {fileID: 0}

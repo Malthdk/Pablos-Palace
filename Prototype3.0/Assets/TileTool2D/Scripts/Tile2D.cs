@@ -9,7 +9,7 @@ public class Tile2D : MonoBehaviour {
 	public string tileName;	//Used to identify sprites when creating tiles in the editor
 	public string tileType;	//Tile with the same tileType will trigger automatic sprite changes
 	//Used in cases where tiles are not using the standard 1 Unity unit scale
-	public float tileSize = 1f;
+	public float tileSize = 1.275f;
 
 	public bool passive;
 	public bool disableColliderOnAwake;
