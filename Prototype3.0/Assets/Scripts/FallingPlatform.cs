@@ -21,7 +21,7 @@ public class FallingPlatform : MonoBehaviour {
 	private float timer = 1.5f;
 	private float flashTimer = 0.04f;
 	private float flashDuration = 0.09f;
-	bool pltformActivated = false;
+	public bool pltformActivated = false;
 
 	Transform transform;
 	MeshRenderer renderer;
@@ -135,5 +135,12 @@ public class FallingPlatform : MonoBehaviour {
 				pltformActivated = true;
 			}
 		}
+	}
+	public void Reset()
+	{
+		timer = 1.5f;
+		pltformActivated = false;
+		renderer.enabled = true;
+		gameObject.SetActive(true);
 	}
 }

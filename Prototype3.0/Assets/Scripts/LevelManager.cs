@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour {
 	public List<GameObject> stateObjects;
 	public List<PlatformController> platforms;
 	public List<Lever> levers;
+	public List<FallingPlatform> fallingPlatforms;
 
 	[HideInInspector]
 	public static LevelManager _instance;
@@ -55,6 +56,12 @@ public class LevelManager : MonoBehaviour {
 		foreach(GameObject sObject in FindGameObjectsWithTags(new string[]{"dissPlatform", "orangeDestroy", "coin"})) 
 		{
 			stateObjects.Add(sObject);
+		}
+
+		foreach(GameObject dObject in GameObject.FindGameObjectsWithTag("dissPlatform")) 
+		{
+			FallingPlatform fPlatform = dObject.GetComponent<FallingPlatform>();
+			fallingPlatforms.Add(fPlatform);
 		}
 
 		foreach(GameObject pObject in GameObject.FindGameObjectsWithTag("movingPlatform")) 
@@ -94,6 +101,7 @@ public class LevelManager : MonoBehaviour {
 		player.velocity.x = 0f;
 		player.velocity.y = 0f;
 
+		ResetFallingPlatforms(fallingPlatforms);
 		ResetStates(stateObjects);
 		ResetPlatforms(platforms);
 		ResetLevers(levers);
@@ -127,6 +135,14 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+	void ResetFallingPlatforms(List<FallingPlatform> theList)
+	{
+		for (int i = 0; i < theList.Count; i++)
+		{
+			theList[i].Reset();
+		}
+	}
+
 	void ResetPlatforms(List<PlatformController> theList)
 	{
 		for (int i = 0; i < theList.Count; i++)
@@ -139,7 +155,7 @@ public class LevelManager : MonoBehaviour {
 	{
 		for (int i = 0; i < theList.Count; i++)
 		{
-			theList[i].activated = false;
+			theList[i].ResetLever();
 		}
 	}
 

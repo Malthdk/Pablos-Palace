@@ -4,6 +4,8 @@ using System.Collections;
 public class Lever : MonoBehaviour {
 
 	public bool activated;
+	private bool startActivated;
+	private bool startDeactivated;
 
 	public GameObject[] particleSpawners = {};
 	public GameObject[] movingPlatforms = {};
@@ -21,7 +23,14 @@ public class Lever : MonoBehaviour {
 
 	void Start () 
 	{
-
+		if (activated)
+		{
+			startActivated = true;		
+		}
+		else
+		{
+			startDeactivated = true;
+		}
 	}
 	
 	void Update () 
@@ -66,6 +75,18 @@ public class Lever : MonoBehaviour {
 		transform.Rotate(new Vector3(0, 0, -50) * Time.deltaTime);
 		yield return new WaitForSeconds(2.0f);
 		rotating = true;
+	}
+
+	public void ResetLever()
+	{
+		if (startActivated)
+		{
+			activated = true;
+		}
+		else
+		{
+			activated = false;
+		}
 	}
 
 }
