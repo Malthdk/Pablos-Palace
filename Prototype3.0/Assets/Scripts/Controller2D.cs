@@ -20,6 +20,17 @@ public class Controller2D : RaycastController {
 
 	private Transform graphicsTransform;
 
+	[HideInInspector]
+	public static Controller2D _instance;
+
+	public static Controller2D instance {	// Makes it possible to call script easily from other scripts
+		get {
+			if (_instance == null) {
+				_instance = FindObjectOfType<Controller2D>();
+			}
+			return _instance;
+		}
+	}
 
 	public override void Start()
 	{
@@ -421,6 +432,10 @@ public class Controller2D : RaycastController {
 			UIManager.uiManager.score++;
 			other.gameObject.SetActive(false);
 		}
+	}
+	public void StartSplat()
+	{
+		StartCoroutine(SplatterControl());
 	}
 
 }

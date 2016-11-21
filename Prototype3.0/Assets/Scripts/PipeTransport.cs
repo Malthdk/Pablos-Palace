@@ -19,6 +19,11 @@ public class PipeTransport : MonoBehaviour {
 		endPoint = transform.GetChild(1).GetComponent<Transform>();
 	}
 
+	void Update()
+	{
+
+	}
+
 	IEnumerator Transport() 
 	{
 		for (int i = 0; i < movableObjects.Count; i++)
@@ -32,24 +37,18 @@ public class PipeTransport : MonoBehaviour {
 		{
 			//AddForce to objects
 			movableObjects[i].SetActive(true);
+			Controller2D.instance.StartSplat();
 		}
 
 		//player.SetActive(true);
 	}
 
-	void Update()
-	{
-
-	}
-
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.name == "Player" || other.tag == "DynamicParticle")
+		if (other.name == "Player" || other.name == "DynamicParticle")
 		{
-			Debug.Log ("Should be sucked in now");
-
 			movableObjects.Add(other.gameObject);
-	
+
 			attObjects.attractedGameobjects.Remove(other.transform);
 			StartCoroutine(Transport());
 		}
