@@ -59,7 +59,7 @@ MonoBehaviour:
   tileTexture: {fileID: 0}
   tileName: 
   tileType: Pipes
-  tileSize: 1.2
+  tileSize: 1.275
   passive: 0
   disableColliderOnAwake: 0
   particles: {fileID: 0}
@@ -124,9 +124,11 @@ MonoBehaviour:
   tileNWSE:
   - {fileID: 21300014, guid: 8ccbb0b1541454dc7ad40d539e056e13, type: 3}
   tileCNWE: []
-  tileCENS: []
+  tileCENS:
+  - {fileID: 21300028, guid: 8ccbb0b1541454dc7ad40d539e056e13, type: 3}
   tileCSWE: []
-  tileCWNS: []
+  tileCWNS:
+  - {fileID: 21300026, guid: 8ccbb0b1541454dc7ad40d539e056e13, type: 3}
   tileCENSW: []
   tileCSWEN: []
   tileCNWES: []

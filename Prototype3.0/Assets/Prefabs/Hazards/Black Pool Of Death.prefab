@@ -27,7 +27,7 @@ GameObject:
   - 50: {fileID: 50000010062830870}
   m_Layer: 0
   m_Name: Black Pool Of Death
-  m_TagString: Untagged
+  m_TagString: blackBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ChrisTestBane.unity
+- path: "Assets/Scenes/User tests/The Dungeon/2. bla\u030A og gul.unity"
   isLoaded: 1
   isActive: 1

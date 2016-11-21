@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8ccbb0b1541454dc7ad40d539e056e13
-timeCreated: 1476358973
+timeCreated: 1479465469
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -37,6 +37,8 @@ TextureImporter:
     21300060: PipeTemplate_30
     21300062: PipeTemplate_31
     21300064: PipeTemplate_32
+    21300066: PipeTemplate_33
+    21300068: PipeTemplate_34
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -90,7 +92,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8
-        y: 889
+        y: 888
         width: 128
         height: 128
       alignment: 6
@@ -102,8 +104,8 @@ TextureImporter:
       name: PipeTemplate_1
       rect:
         serializedVersion: 2
-        x: 149
-        y: 887
+        x: 143
+        y: 889
         width: 128
         height: 128
       alignment: 6
@@ -116,7 +118,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 280
-        y: 888
+        y: 889
         width: 128
         height: 128
       alignment: 6
@@ -128,8 +130,8 @@ TextureImporter:
       name: PipeTemplate_3
       rect:
         serializedVersion: 2
-        x: 413
-        y: 888
+        x: 416
+        y: 889
         width: 128
         height: 128
       alignment: 6
@@ -154,8 +156,8 @@ TextureImporter:
       name: PipeTemplate_5
       rect:
         serializedVersion: 2
-        x: 821
-        y: 618
+        x: 823
+        y: 616
         width: 128
         height: 128
       alignment: 6
@@ -167,7 +169,7 @@ TextureImporter:
       name: PipeTemplate_6
       rect:
         serializedVersion: 2
-        x: 825
+        x: 824
         y: 752
         width: 128
         height: 128
@@ -193,7 +195,7 @@ TextureImporter:
       name: PipeTemplate_8
       rect:
         serializedVersion: 2
-        x: 550
+        x: 552
         y: 616
         width: 128
         height: 128
@@ -206,8 +208,8 @@ TextureImporter:
       name: PipeTemplate_9
       rect:
         serializedVersion: 2
-        x: 282
-        y: 613
+        x: 281
+        y: 616
         width: 128
         height: 128
       alignment: 6
@@ -258,8 +260,8 @@ TextureImporter:
       name: PipeTemplate_15
       rect:
         serializedVersion: 2
-        x: 822
-        y: 477
+        x: 823
+        y: 480
         width: 128
         height: 128
       alignment: 6
@@ -310,8 +312,8 @@ TextureImporter:
       name: PipeTemplate_20
       rect:
         serializedVersion: 2
-        x: 143
-        y: 483
+        x: 144
+        y: 479
         width: 128
         height: 128
       alignment: 6
@@ -324,7 +326,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 281
-        y: 481
+        y: 480
         width: 128
         height: 128
       alignment: 6
@@ -349,8 +351,8 @@ TextureImporter:
       name: PipeTemplate_23
       rect:
         serializedVersion: 2
-        x: 8
-        y: 750
+        x: 9
+        y: 752
         width: 128
         height: 128
       alignment: 6
@@ -363,7 +365,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 484
+        y: 479
         width: 128
         height: 128
       alignment: 6
@@ -388,7 +390,7 @@ TextureImporter:
       name: PipeTemplate_27
       rect:
         serializedVersion: 2
-        x: 824
+        x: 823
         y: 344
         width: 128
         height: 128
@@ -427,8 +429,8 @@ TextureImporter:
       name: PipeTemplate_30
       rect:
         serializedVersion: 2
-        x: 283
-        y: 750
+        x: 281
+        y: 752
         width: 128
         height: 128
       alignment: 6
@@ -440,8 +442,8 @@ TextureImporter:
       name: PipeTemplate_31
       rect:
         serializedVersion: 2
-        x: 10
-        y: 615
+        x: 9
+        y: 616
         width: 128
         height: 128
       alignment: 6
@@ -453,8 +455,8 @@ TextureImporter:
       name: PipeTemplate_32
       rect:
         serializedVersion: 2
-        x: 145
-        y: 614
+        x: 144
+        y: 616
         width: 128
         height: 128
       alignment: 6
@@ -462,6 +464,84 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
+    - serializedVersion: 2
+      name: PipeTemplate_13
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 616
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeTemplate_14
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 752
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeTemplate_18
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 208
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeTemplate_26
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 207
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeTemplate_33
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 72
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeTemplate_34
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 208
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
