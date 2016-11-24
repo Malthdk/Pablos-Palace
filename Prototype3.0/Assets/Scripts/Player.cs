@@ -59,33 +59,6 @@ public class Player : MonoBehaviour {
 	void Update () 
 	{
 		gravity = -(2* maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);		//Gravity defined based of jumpheigmaxJumpVelocityto reach highest point
-
-//		if (velocity.y < 0 && abilities.isGreen) 
-//		{							// Sets gravity for red ability
-//			gravity = -4.5f;
-//			if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-//			{
-//				gravity = -(2* maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);		
-//			}
-//		}
-
-		/*if (velocity.y < 0 && abilities.isRed && !abilities.isPurple) 
-		{							// Sets gravity for red ability
-			gravity = -4.5f;
-			if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-			{
-				gravity = -(2* maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);		
-			}
-		}
-		if (velocity.y > 0 && abilities.isPurple) 
-		{							// Sets gravity for red ability
-			gravity = 6.5f;
-			if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-			{
-				gravity = -(2* maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);		
-			}
-		}*/
-
 	
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;				//Max jump velocity defined based on gravity and time to reach highest point
 		minJumpVelocity = Mathf.Sqrt(2*Mathf.Abs(gravity) * minJumpHeight);	//Min jump velocity defined based on gravity and min jump height
@@ -115,9 +88,6 @@ public class Player : MonoBehaviour {
 		animator.SetBool("OnWall", wallSliding);
 		animator.SetBool("Dashing", abilities.isDashing);
 		animator.SetBool ("Soaring", abilities.soaring);
-
-		//Debug.Log(controller.collisions.above);
-
 
 //		//WALLSLIDING WITH YELLOW
 		wallSliding = false;
@@ -238,7 +208,6 @@ public class Player : MonoBehaviour {
 			{
 				velocity.y = purpMinJumpVelocity;
 			}
-
 		}
 			
 		if(!abilities.isDashing && !abilities.soaring)

@@ -164,7 +164,7 @@ public class LevelManager : MonoBehaviour {
 		foreach(GameObject particle in GameObject.FindGameObjectsWithTag("DynamicParticle")) {
 
 			DynamicParticle dp = particle.GetComponent<DynamicParticle>();
-			//dp.Destroy();
+			dp.Destroy();
 		}
 	}
 

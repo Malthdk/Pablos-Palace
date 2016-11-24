@@ -464,6 +464,7 @@ public class Abilities : MonoBehaviour {
 		player.accelerationTimeAirborn = 0.125f; //Was 0.25f
 		gravityReversed = false;
 		isDashing = false;
+		soaring = false;
 //		if(controller.collisions.faceDir == 1)
 //		{
 //			gameObject.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
