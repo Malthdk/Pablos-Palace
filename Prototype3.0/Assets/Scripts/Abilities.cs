@@ -455,7 +455,7 @@ public class Abilities : MonoBehaviour {
 	public void Reset()
 	{
 		renderer.material.color = Color.white;
-		player.maxJumpHeight = 6f;
+		player.maxJumpHeight = 5.6f;
 		player.minJumpHeight = 0.5f;
 		player.timeToJumpApex = 0.4875f;
 		player.moveSpeed = 11.5f;
@@ -465,6 +465,7 @@ public class Abilities : MonoBehaviour {
 		gravityReversed = false;
 		isDashing = false;
 		soaring = false;
+		Debug.Log("PlayerState has been Reset");
 //		if(controller.collisions.faceDir == 1)
 //		{
 //			gameObject.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
