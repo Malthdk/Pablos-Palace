@@ -64,7 +64,7 @@ public class LevelManager : MonoBehaviour {
 			fallingPlatforms.Add(fPlatform);
 		}
 
-		foreach(GameObject pObject in GameObject.FindGameObjectsWithTag("movingPlatform")) 
+		foreach(GameObject pObject in FindGameObjectsWithTags(new string[]{"movingPlatform", "chaseBoss"})) 
 		{
 			PlatformController pController = pObject.GetComponent<PlatformController>();
 			platforms.Add(pController);

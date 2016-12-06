@@ -37,6 +37,7 @@ TagManager:
   - Water2D
   - movingPlatform
   - particleSource
+  - chaseBoss
   layers:
   - Default
   - TransparentFX
