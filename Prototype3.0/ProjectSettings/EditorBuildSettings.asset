@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuUI/MainMenu.unity
+  - enabled: 1
     path: Assets/Scenes/MenuUI/LevelSelection.unity
   - enabled: 1
-    path: Assets/Scenes/MenuUI/MainMenu.unity
+    path: Assets/Scenes/User tests/The Dungeon/1.Intro.unity
+  - enabled: 1
+    path: Assets/Scenes/User tests/The Dungeon/2.BlueYellow.unity
+  - enabled: 1
+    path: Assets/Scenes/User tests/The Dungeon/3.YellowBlue.unity
+  - enabled: 1
+    path: Assets/Scenes/User tests/The Dungeon/4.BlueGreen.unity
+  - enabled: 1
+    path: Assets/Scenes/User tests/The Dungeon/5.RedPurple.unity
+  - enabled: 1
+    path: Assets/Scenes/User tests/The Dungeon/6.RedOrange.unity
+  - enabled: 1
+    path: Assets/Scenes/User tests/The Dungeon/7.OrangePurple.unity
+  - enabled: 1
+    path: Assets/Scenes/User tests/The Dungeon/8.MultiColor.unity
+  - enabled: 1
+    path: Assets/Scenes/User tests/The Dungeon/9.Boss.unity
