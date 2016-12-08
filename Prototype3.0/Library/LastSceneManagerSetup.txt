@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/User tests/The Dungeon/9. boss lvl.unity
+- path: Assets/Scenes/User tests/The Dungeon/3.YellowBlue.unity
   isLoaded: 1
   isActive: 1
