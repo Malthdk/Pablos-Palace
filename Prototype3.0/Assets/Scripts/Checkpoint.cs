@@ -10,6 +10,7 @@ public class Checkpoint : MonoBehaviour {
 	public List<GameObject> objectsToRemove;
 	public List<PlatformController> platformsToRemove;
 	public List<Lever> leversToRemove;
+	public List<FallingPlatform> fallingToRemove;
 
 	void Start () 
 	{
@@ -43,6 +44,10 @@ public class Checkpoint : MonoBehaviour {
 			foreach(Lever leverObj in leversToRemove) 
 			{
 				LevelManager.instance.levers.Remove(leverObj);
+			}
+			foreach(FallingPlatform fallObj in fallingToRemove) 
+			{
+				LevelManager.instance.fallingPlatforms.Remove(fallObj);
 			}
 				
 		}

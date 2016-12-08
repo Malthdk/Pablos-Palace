@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 
 	void Awake()
-	{
+	{	
+		/* DISABLED BY CHRIS FOR USERTEST
 		if(uiManager == null)
 		{
 			DontDestroyOnLoad(gameObject);
@@ -27,10 +28,11 @@ public class UIManager : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+		*/
 	}
 
 	void Start () {
-		DontDestroyOnLoad(gameObject);
+		//DontDestroyOnLoad(gameObject); DISABLED BY CHRIS FOR USERTEST
 		uiText = FindObjectOfType<Text>();
 		//score = FindObjectOfType<Controller2D>();
 	}

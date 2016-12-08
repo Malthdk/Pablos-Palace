@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq ;
+using System.Linq;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
 
@@ -53,7 +54,7 @@ public class LevelManager : MonoBehaviour {
 	{
 		player = FindObjectOfType<Player>();
 
-		foreach(GameObject sObject in FindGameObjectsWithTags(new string[]{"dissPlatform", "orangeDestroy", "coin"})) 
+		foreach(GameObject sObject in FindGameObjectsWithTags(new string[]{"orangeDestroy", "coin"})) 
 		{
 			stateObjects.Add(sObject);
 		}

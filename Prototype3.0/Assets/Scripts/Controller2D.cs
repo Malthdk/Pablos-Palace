@@ -429,7 +429,7 @@ public class Controller2D : RaycastController {
 	{
 		if (other.tag == "coin")
 		{
-			UIManager.uiManager.score++;
+			//UIManager.uiManager.score++;
 			other.gameObject.SetActive(false);
 		}
 		if (other.tag == "chaseBoss")
