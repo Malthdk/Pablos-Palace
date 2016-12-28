@@ -278,11 +278,6 @@ public class Controller2D : RaycastController {
 				collisions.below = directionY == -1;
 				collisions.above = directionY == 1;
 
-				//Vertical Collision with Paint
-//				if (hit.collider.gameObject.CompareTag("orangeDestroy") && gameObject.tag == "orange" )
-//				{
-//					Destroy(hit.collider.gameObject);
-//				}
 				if (hit.collider.gameObject.CompareTag("blackBox"))
 				{
 					//gameObject.tag = checkpoint.tempTag;

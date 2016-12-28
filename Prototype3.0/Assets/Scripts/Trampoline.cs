@@ -24,7 +24,7 @@ public class Trampoline : MonoBehaviour {
 	void Update () {
 		
 		if (bounce == true) {
-			if (abilitiesScript.isdowndashing) {
+			if (abilitiesScript.isDownDashing) {
 				abilitiesScript.downDashState = Abilities.DownDashState.Cooldown;
 				playerScript.velocity.y = downDashBounceAmount;
 			} else {	

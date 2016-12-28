@@ -77,7 +77,7 @@ public class Player : MonoBehaviour {
 			accelerationTimeGrounded = 0.05f;
 		}
 
-		if(!abilities.isDashing)
+		if(!abilities.isDashing && !abilities.isDownDashing)
 		{
 			velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below || gameObject.tag == "purple" && controller.collisions.above)?accelerationTimeGrounded:accelerationTimeAirborn);		//Calculating velocity x both airborn and on ground with smoothing
 		}
@@ -118,7 +118,6 @@ public class Player : MonoBehaviour {
 
 			}
 		}
-
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			if (controller.collisions.below)
@@ -210,7 +209,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 			
-		if(!abilities.isDashing && !abilities.soaring)
+		if(!abilities.isDashing && !abilities.soaring && !abilities.isDownDashing)
 		{
 			velocity.y += gravity * Time.deltaTime;							//Applies velocity to gravity
 		}

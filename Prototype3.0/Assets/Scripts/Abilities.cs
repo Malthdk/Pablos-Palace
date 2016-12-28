@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Abilities : MonoBehaviour {
 
 	private Color red = new Color(0.82F, 0F, 0.2F);			//Red farve
@@ -20,6 +21,7 @@ public class Abilities : MonoBehaviour {
 	private float duration = 0.5f, t = 0, time = 0, start = 0f;
 
 	//DASH
+	[HideInInspector]
 	public float maxDash = 0.15f, minDash = 0.06f, maxDashVelocity = 30f;
 	public bool singleDash; //For testing dash
 	public bool longDash;	//For testing dash
@@ -31,12 +33,15 @@ public class Abilities : MonoBehaviour {
 	private bool isDashKeyDown;
 
 	//DOWN DASH
-	public float waitTime = 0.5f, maxDownDashVelocity = 40f;
+	private float maxDownDash = 0.15f;
+	private float waitTime = 0.1f, maxDownDashVelocity = 30f;
 	[HideInInspector]
 	public DownDashState downDashState;
 	private float tempWaitTime;
+	private bool isDownDashKeyDown;
 	[HideInInspector]
-	public bool isdowndashing = false;
+	public bool isDownDashing;
+	private bool facingDirection;
 
 	//DASH ORANGE
 	[HideInInspector]
@@ -90,7 +95,9 @@ public class Abilities : MonoBehaviour {
 	public enum DashState 
 	{
 		Ready,
+		Waiting,
 		Dashing,
+		EndDash,
 		Cooldown
 	}
 	public enum DownDashState 
@@ -98,6 +105,7 @@ public class Abilities : MonoBehaviour {
 		Ready,
 		Waiting,
 		Dashing,
+		EndDash,
 		Cooldown
 	}
 
@@ -144,23 +152,46 @@ public class Abilities : MonoBehaviour {
 			{
 				hasDashed = false;
 			}
-			if (Input.GetKey(KeyCode.LeftShift))
+			if (isDashing)
 			{
+				if (controller.collisions.left || controller.collisions.right)
+				{
+					dashState = DashState.Cooldown;
+				}
+ 			}
+
+			if (Input.GetKeyDown(KeyCode.LeftShift)) {
 				isDashKeyDown = true;
 			}
-			else
-			{
+			else {
 				isDashKeyDown = false;
 			}
+
+			if (Input.GetKey(KeyCode.DownArrow)) {
+				isDownDashKeyDown = true;
+			}
+			else {
+				isDownDashKeyDown = false;
+			}
+
 			//For dash
 			switch (dashState) 
 			{
 			case DashState.Ready:
-				if(isDashKeyDown && !player.wallSliding && !hasDashed)
+				if(isDashKeyDown && !isDownDashKeyDown && !player.wallSliding && !hasDashed)
 				{
 					isDashing = true;
 					canDestroy = true;
 					EnableTrailRenderer();
+					dashState = DashState.Waiting;
+				}
+				break;
+			case DashState.Waiting:
+				tempWaitTime -= Time.deltaTime;
+				player.velocity.x = 0f;
+				if (tempWaitTime <= 0)
+				{
+					Debug.Log ("Switching state");
 					dashState = DashState.Dashing;
 				}
 				break;
@@ -189,27 +220,20 @@ public class Abilities : MonoBehaviour {
 						}
 						if (!isDashKeyDown && minDash == 0) //Seems to be 0.5 sec delay on release of shift which causes bad control.
 						{
-							dashState = DashState.Cooldown;
+							dashState = DashState.EndDash;
 						}
 					}
 					//One dash when pressing dashbutton
 					if (singleDash)
 					{
-						dashState = DashState.Cooldown;
+						dashState = DashState.EndDash;
 					}
 				}
 				break;
-			case DashState.Cooldown:
+			case DashState.EndDash:
 				dashTimer -= Time.deltaTime;
 				if(dashTimer <= 0)
 				{
-					isDashing = false;
-					canDestroy = false;
-					dashTimer = 0;
-					minDash = tempMinDash;
-					dashState = DashState.Ready;
-					DisableTrailRenderer();
-
 					//Bad fix for having the player retain some velocity after a dash. This could also be 0 for instant stop.
 					if (controller.collisions.faceDir == 1)
 					{
@@ -219,7 +243,17 @@ public class Abilities : MonoBehaviour {
 					{
 						player.velocity.x = -10f;
 					}
+					dashState = DashState.Cooldown;
 				}
+				break;
+			case DashState.Cooldown:
+					isDashing = false;
+					canDestroy = false;
+					dashTimer = 0;
+					minDash = tempMinDash;
+					tempWaitTime = waitTime;
+					dashState = DashState.Ready;
+					DisableTrailRenderer();
 				break;
 			}
 
@@ -227,13 +261,21 @@ public class Abilities : MonoBehaviour {
 			switch (downDashState) 
 			{
 			case DownDashState.Ready:
-				var isDashKeyDown = Input.GetKeyDown (KeyCode.DownArrow);
 				
-				if(isDashKeyDown && !controller.collisions.below && !player.wallSliding)
+				if(isDownDashKeyDown && isDashKeyDown && !controller.collisions.below && !player.wallSliding)
 				{
+					if (controller.collisions.faceDir == 1)
+					{
+						facingDirection = true;	
+					}
+					else
+					{
+						facingDirection = false;
+					}
 					EnableTrailRenderer();
-					isDashing = true;
-					player.velocity.x = 0;
+					isDownDashing = true;
+					player.velocity.x = 0f;
+					player.velocity.y = 0f;
 					downDashState = DownDashState.Waiting;
 				}
 				break;
@@ -241,36 +283,64 @@ public class Abilities : MonoBehaviour {
 				tempWaitTime -= Time.deltaTime;
 				if (tempWaitTime <= 0)
 				{
+					if (controller.collisions.faceDir == 1)
+					{
+						bool facingRight = true;
+					}
 					Debug.Log ("Switching state");
 					downDashState = DownDashState.Dashing;
 				}
 				break;
 			case DownDashState.Dashing:
 				dashTimer += Time.deltaTime * 3;
-				isdowndashing = true;
-				isDashing = false;
 				canDestroy = true;
-				if(dashTimer >= maxDash)
+				if(dashTimer >= maxDownDash)
 				{
-					dashTimer = maxDash;
-					player.velocity.y = -maxDownDashVelocity;
-					if (controller.collisions.below)
+					dashTimer = maxDownDash;
+					if(!isPurple)
 					{
-						downDashState = DownDashState.Cooldown;
+						player.velocity.y = -maxDownDashVelocity;
 					}
+
+					if (isPurple)
+					{
+						player.velocity.y = maxDashVelocity;
+					}
+					downDashState = DownDashState.EndDash;
+					
 				}
 				break;
-			case DownDashState.Cooldown:
+			case DownDashState.EndDash:
 				dashTimer -= Time.deltaTime;
 				if (dashTimer <= 0)
 				{
+					if(!isPurple)
+					{
+						player.velocity.y = -10f;
+					}
+
+					if (isPurple)
+					{
+						player.velocity.y = 10f;
+					}
+					downDashState = DownDashState.Cooldown;
+				}
+				break;
+			case DownDashState.Cooldown:
+				if (facingDirection)
+				{
+					controller.collisions.faceDir = 1;
+				}
+				else 
+				{
+					controller.collisions.faceDir = -1;
+				}
 					canDestroy = false;
+					isDownDashing = false;
 					tempWaitTime = waitTime;
 					dashTimer = 0;
-					downDashState = DownDashState.Ready;
-					isdowndashing = false;
 					DisableTrailRenderer();
-				}
+					downDashState = DownDashState.Ready;
 				break;
 			}
 		}
@@ -325,6 +395,7 @@ public class Abilities : MonoBehaviour {
 																////////////////////////
 		if (isPurple)
 		{
+			Debug.Log(gravityReversed);
 			if(!gravityReversed)
 			{
 				FlipPurple ();
@@ -466,15 +537,9 @@ public class Abilities : MonoBehaviour {
 		isDashing = false;
 		soaring = false;
 		Debug.Log("PlayerState has been Reset");
-//		if(controller.collisions.faceDir == 1)
-//		{
-//			gameObject.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
-//		}
-//
-//		else if(controller.collisions.faceDir == -1)
-//		{
-//			gameObject.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
-//		}
-
+		if(isPurple)
+		{
+			FlipPurple();
+		}
 	}
 }
