@@ -37,6 +37,7 @@ GameObject:
   - 4: {fileID: 4000012836973074}
   - 198: {fileID: 198000011484471450}
   - 199: {fileID: 199000013462138600}
+  - 114: {fileID: 114000011949319758}
   m_Layer: 10
   m_Name: ParticleSystem
   m_TagString: Untagged
@@ -50,8 +51,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012557254826}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -64,13 +65,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012000796248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.54}
+  m_LocalPosition: {x: -281, y: -27.25, z: -4.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012836973074}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000011949319758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012557254826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64ec6d2eed704201987251fd691854f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  part: {fileID: 198000011484471450}
+  drip: {fileID: 0}
 --- !u!114 &114000013429799796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,7 +146,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 848646696
+  randomSeed: -1490704018
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -1658,10 +1672,10 @@ ParticleSystem:
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     plane0: {fileID: 0}
     plane1: {fileID: 0}
     plane2: {fileID: 0}
@@ -1773,12 +1787,12 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    minKillSpeed: 0
+    minKillSpeed: 50
     maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 256
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
