@@ -118,7 +118,7 @@ public class Player : MonoBehaviour {
 
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetButtonDown("Jump"))
 		{
 			if (controller.collisions.below)
 			{
@@ -197,7 +197,7 @@ public class Player : MonoBehaviour {
 			abilities.secondJump = false;
 		}
 
-		if (Input.GetKeyUp(KeyCode.Space))					//For variable jump
+		if (Input.GetButtonUp("Jump"))					//For variable jump
 		{
 			if (velocity.y > minJumpVelocity && gameObject.tag != "purple" && !abilities.secondJump)
 			{

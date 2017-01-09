@@ -53,7 +53,7 @@ public class LeverPlayer : MonoBehaviour {
 			leverArray[i]=leversInMap[i];
 		}
 
-		if (Input.GetKeyDown(KeyCode.UpArrow))		//For activating Levers
+		if (Input.GetButtonDown("Interact"))		//For activating Levers
 		{
 			for (int i = 0; i < leversInMap.Length; i++) {
 				if(onLever[i] && !lever[i].activated)

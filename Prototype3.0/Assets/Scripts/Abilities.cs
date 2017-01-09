@@ -65,6 +65,8 @@ public class Abilities : MonoBehaviour {
 
 	private bool hasBeenReset = true, gravityReversed = false, normalGravity = true;		//normalGravity is for flipping character when purple	
 
+    float special;
+
 	[HideInInspector]
 	public static Abilities _instance;
 
@@ -111,6 +113,8 @@ public class Abilities : MonoBehaviour {
 
 	void Update () 
 	{
+
+        special = Input.GetAxis("Special");
 																	////////////////////////
 																	////PLAYER IS BLUE//////
 																	////////////////////////
@@ -160,14 +164,16 @@ public class Abilities : MonoBehaviour {
 				}
  			}
 
-			if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            if (Input.GetButtonDown("Special") || special == 1)
+            {
 				isDashKeyDown = true;
 			}
 			else {
 				isDashKeyDown = false;
 			}
 
-			if (Input.GetKey(KeyCode.DownArrow)) {
+            if (player.input.y == -1)
+            {
 				isDownDashKeyDown = true;
 			}
 			else {
@@ -352,14 +358,14 @@ public class Abilities : MonoBehaviour {
 			notJumping = true;
 			
 			//WALLSLIDING WITH YELLOW		
-			if (Input.GetKeyDown(KeyCode.DownArrow))			//For increasing slidespeed on wall
+			if (player.input.y == -1)			//For increasing slidespeed on wall
 			{
 				if (player.wallSliding)				
 				{
 					player.wallSlideSpeedMax = 8f;
 				}
 			}
-			if (Input.GetKeyUp(KeyCode.DownArrow))				//For decreasing slidespeed on wall
+			if (player.input.y != -1)				//For decreasing slidespeed on wall
 			{
 				player.wallSlideSpeedMax = 0f;
 			}	
@@ -369,7 +375,7 @@ public class Abilities : MonoBehaviour {
 																////////////////////////
 		if (isGreen)
 		{
-			if (Input.GetKeyDown(KeyCode.LeftShift))
+			if (Input.GetButtonDown("Special")  || special == 1 )
 			{
 				if (!controller.collisions.below && !player.wallSliding)
 				{	
@@ -378,7 +384,7 @@ public class Abilities : MonoBehaviour {
 				}
 			}
 
-			else if (Input.GetKeyUp(KeyCode.LeftShift))
+			else if (Input.GetButtonUp("Special")  || special == 0)
 			{
 				soaring = false;
 			}
