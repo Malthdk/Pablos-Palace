@@ -38,6 +38,7 @@ TagManager:
   - movingPlatform
   - particleSource
   - chaseBoss
+  - Crush
   layers:
   - Default
   - TransparentFX

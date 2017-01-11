@@ -432,6 +432,7 @@ public class Controller2D : RaycastController {
 			PlayerManager.pManager.KillPlayer();
 		}
 	}
+
 	public void StartSplat()
 	{
 		StartCoroutine(SplatterControl());

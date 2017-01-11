@@ -302,7 +302,7 @@ public class PlatformController : RaycastController {
 
 		if (directionY == -1 && smashPlatform == true)
 		{
-			float rayLength = skinWidth * 30;			//Short rayLength
+			float rayLength = skinWidth * 30;		
 
 			for (int i = 0; i < verticalRayCount; i ++)
 			{

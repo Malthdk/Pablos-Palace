@@ -90,6 +90,7 @@ public class LevelManager : MonoBehaviour {
 	{
 		GameObject graphics = player.gameObject.transform.GetChild(0).gameObject;
 		GameObject particleEffect = player.gameObject.transform.GetChild(1).GetChild(0).gameObject;
+		BoxCollider2D boxCol = player.gameObject.GetComponent<BoxCollider2D>();
 		player.enabled = false;
 		graphics.SetActive(false);
 		particleEffect.SetActive(true);
@@ -113,6 +114,7 @@ public class LevelManager : MonoBehaviour {
 
 		player.enabled = true;
 		graphics.SetActive(true);
+		boxCol.enabled = true;
 		Debug.Log ("Respawned!");
 	}
 	public void Respawn()
