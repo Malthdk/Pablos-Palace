@@ -6,7 +6,7 @@ public class SmashBlock : RaycastController {
 
 	public LayerMask collisionMask1;
 
-	public bool isHorizontal, isVertical, constantSmash;
+	public bool isHorizontal, isVertical, constantSmash, Chandelier;
 	public float riseSpeed;
 	public float waitTimeConstSmash;
 
@@ -50,7 +50,8 @@ public class SmashBlock : RaycastController {
 	{
 		Ready,
 		Smashing,
-		Retreating
+		Retreating,
+		Destroyed
 	}
 
 	public override void Update () 
@@ -65,8 +66,8 @@ public class SmashBlock : RaycastController {
 			if (hit.collider != null) 
 			{
 				Debug.Log("hit player");
-				//StartCoroutine(Smash());
 				smashing = Smashing.Smashing;
+
 			}
 		}
 		if (retreating)
@@ -97,11 +98,14 @@ public class SmashBlock : RaycastController {
 
 		case Smashing.Smashing:
 			rgb.isKinematic = false;
-			rgb.AddForce(smashForce, ForceMode2D.Impulse);
 			shootingRay = false;
 
-			float rayLength = skinWidth * 40;		
+			if(!Chandelier)
+			{
+				rgb.AddForce(smashForce, ForceMode2D.Impulse);
+			}
 
+			float rayLength = skinWidth * 40;		
 			for (int i = 0; i < verticalRayCount; i ++)
 			{
 				Vector2 rayOrigin = raycastOrigins.bottomLeft + Vector2.right * (verticalRaySpacing * i);		//Rayorigin allways on bottomleft.
@@ -126,13 +130,23 @@ public class SmashBlock : RaycastController {
 			rgb.isKinematic = true;
 			retreating = true;
 			break;
+		case Smashing.Destroyed:
+			rgb.isKinematic = true;
+			break;
 		}
 	}
 
 	IEnumerator Wait()
 	{
 		yield return new WaitForSeconds(groundTime);
-		smashing = Smashing.Retreating;
+		if (Chandelier)
+		{
+			smashing = Smashing.Destroyed;
+		}
+		else
+		{
+			smashing = Smashing.Retreating;
+		}
 	}
 
 	IEnumerator ConstantSmash()
