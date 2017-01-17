@@ -10,9 +10,9 @@ public class Player : MonoBehaviour {
 	public float timeToJumpApex = .65f;				//Time to reach highest point
 	public float accelerationTimeAirborn = .2f;		//Acceleration while airborne
 	public float accelerationTimeGrounded = .5f;	//Acceleration while grounded
-	public float moveSpeed = 9;						//Player movement speed
-	private float airSpeed = 8.4f;
-	private float groundSpeed = 11.4f;
+	public float moveSpeed = 9;	
+	[HideInInspector]
+	public float airSpeed = 8.4f, groundSpeed = 11.4f;
 	[HideInInspector]
 	public Vector2 input;
 	[HideInInspector]
@@ -36,6 +36,7 @@ public class Player : MonoBehaviour {
 	Abilities abilities;
 
 	private Animator animator;		//ANIMATION
+	private PullPush pullPush;
 
 	[HideInInspector]
 	public static Player _instance;
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour {
 
 	void Start () 
 	{
+		pullPush = GetComponent<PullPush>();
 		controller = GetComponent<Controller2D>();
 		abilities = GetComponent<Abilities>();
 		animator = GetComponent<Animator>();		//ANIMATION
@@ -118,9 +120,10 @@ public class Player : MonoBehaviour {
 
 			}
 		}
+
 		if (Input.GetButtonDown("Jump"))
 		{
-			if (controller.collisions.below)
+			if (controller.collisions.below && !pullPush.isPulling)
 			{
 				velocity.y = maxJumpVelocity;
 				animator.SetBool("Ground", false);
@@ -182,11 +185,11 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if (!controller.collisions.below)
+		if (!controller.collisions.below && !pullPush.isPulling)
 		{
 			moveSpeed = airSpeed;
 		}
-		else
+		else if (!pullPush.isPulling)
 		{
 			abilities.secondJump = false;
 			abilities.soaring = false;

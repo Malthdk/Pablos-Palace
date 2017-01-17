@@ -61,7 +61,7 @@ public class DynamicParticle : MonoBehaviour {
 				case STATES.BLUE:													
 					GetComponent<Rigidbody2D>().gravityScale=2f;
 					GetComponent<Rigidbody2D>().mass = 1f;
-					GetComponent<Rigidbody2D>().drag = 1.5f;
+					GetComponent<Rigidbody2D>().drag = 1.5f; //was 1.5f
 				break;
 				case STATES.YELLOW:		
 				break;		
@@ -96,8 +96,8 @@ public class DynamicParticle : MonoBehaviour {
 			}
 		}		
 	}
-	void Update () {
-		MovementAnimation();
+	void FixedUpdate () {
+		//MovementAnimation();
 		ScaleDown ();
 	}
 	// This scales the particle image acording to its velocity, so it looks like its deformable... but its not ;)

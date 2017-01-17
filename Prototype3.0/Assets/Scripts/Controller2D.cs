@@ -20,6 +20,7 @@ public class Controller2D : RaycastController {
 
 	private Transform graphicsTransform;
 
+	private PullPush pullPush;
 	[HideInInspector]
 	public static Controller2D _instance;
 
@@ -39,6 +40,7 @@ public class Controller2D : RaycastController {
 		levelmanager = FindObjectOfType<LevelManager>();
 		checkpoint = FindObjectOfType<Checkpoint>();
 		abilities = GetComponent<Abilities>();
+		pullPush = GetComponent<PullPush>();
 		//uiManager = FindObjectOfType<UIManager>();
 		//splatter = FindObjectOfType<Splatter>();
 
@@ -46,6 +48,7 @@ public class Controller2D : RaycastController {
 
 		StartCoroutine(SplatterControl());
 	}
+		
 
 	public void Move(Vector3 velocity, bool standingOnPlatform, bool slidingOnplatformLeft, bool slidingOnPlatformRight)		//Small overload function for the platformcontroller to use without any player input. Ergo Vector2.zero. 
 	{
@@ -136,6 +139,15 @@ public class Controller2D : RaycastController {
 
 			if (hit)
 			{
+				//This is for pushing and pulling boxes
+				if (hit.collider.tag == "pushBox")
+				{
+					Debug.Log("Can pull and push now!");
+					pullPush.canGrab = true;
+					pullPush.pushBlock = hit.collider.gameObject;
+				}
+
+				//To make sure there is no collision when dashing as orange
 				if (hit.collider.tag == "orangeDestroy")
 				{
 					if(abilities.canDestroy && abilities.isOrange)

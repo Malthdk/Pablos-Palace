@@ -39,6 +39,7 @@ TagManager:
   - particleSource
   - chaseBoss
   - Crush
+  - pushBox
   layers:
   - Default
   - TransparentFX
