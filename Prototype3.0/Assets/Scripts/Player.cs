@@ -79,7 +79,7 @@ public class Player : MonoBehaviour {
 			accelerationTimeGrounded = 0.05f;
 		}
 
-		if(!abilities.isDashing && !abilities.isDownDashing)
+		if(!abilities.isDashing && !abilities.isDownDashing && !Swimming.instance.isSwimming )
 		{
 			velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below || gameObject.tag == "purple" && controller.collisions.above)?accelerationTimeGrounded:accelerationTimeAirborn);		//Calculating velocity x both airborn and on ground with smoothing
 		}
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetButtonDown("Jump"))
 		{
-			if (controller.collisions.below && !pullPush.isPulling)
+			if (controller.collisions.below && !pullPush.isPulling && !Swimming.instance.isSwimming)
 			{
 				velocity.y = maxJumpVelocity;
 				animator.SetBool("Ground", false);
@@ -212,14 +212,14 @@ public class Player : MonoBehaviour {
 			}
 		}
 			
-		if(!abilities.isDashing && !abilities.soaring && !abilities.isDownDashing)
+		if(!abilities.isDashing && !abilities.soaring && !abilities.isDownDashing && !WaterTop.instance.onSurface)
 		{
 			velocity.y += gravity * Time.deltaTime;							//Applies velocity to gravity
 		}
 
 		controller.Move(velocity * Time.deltaTime, input);				//Moving character
 
-		if (controller.collisions.above  || controller.collisions.below || abilities.isDashing == true )		//If raycasts hit above or below, velocity on y axis stops
+		if (controller.collisions.above  || controller.collisions.below || abilities.isDashing == true || WaterTop.instance.onSurface)		//If raycasts hit above or below, velocity on y axis stops
 		{
 			velocity.y = 0;
 		}
