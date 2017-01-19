@@ -24,15 +24,19 @@ public class Splatter : MonoBehaviour
 //			Destroy(gameObject);
 //		}
         spriteRenderer = GetComponent<SpriteRenderer>();
+		player = GameObject.Find("Player");	
+		CompareColors();
+
+		Debug.Log(spriteRenderer.color);
     }
 
     private void Start()
     {
-		player = GameObject.Find("Player");
         spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
-		CompareColors();
 		spriteRenderer.color = new Color(playerColor.x, playerColor.y, playerColor.z);
 		transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+
+		//Debug.Log(spriteRenderer.color);
     }
 
 

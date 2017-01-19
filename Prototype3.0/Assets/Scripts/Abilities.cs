@@ -54,7 +54,7 @@ public class Abilities : MonoBehaviour {
 	
 	//FOR WALLJUMP
 	public Vector2 wallJumpClimb = new Vector2(12f, 25.6f), wallLeap = new Vector2(0f, 0f); 			//1. iteration of wallJumpClimb (input towards wall + space) 7.5f, 16f. 2nd iteration: 12f, 25.6f 3rd. 10.5f, 22.4
-																												//4. iteration (12f, 25.6f) (26.4f, 24.9f)
+																												//4. iteration (12f, 25.6f) (26.4f, 24.9f) //5 12,21 og 17,21
 	[HideInInspector]																										//3. iteration of wallLeap (input away from wall + space) 18f 17f. 2nd 26.4f, 24.9f 3rd. 23.1f,21.8f
 	public bool notJumping;
 
@@ -63,9 +63,10 @@ public class Abilities : MonoBehaviour {
 	private Controller2D controller;			//Calling controller class
 	private Transform graphicsTransform;
 
-	private bool hasBeenReset = true, gravityReversed = false, normalGravity = true;		//normalGravity is for flipping character when purple	
-
-    float special;
+	private bool hasBeenReset = true, normalGravity = true;		//normalGravity is for flipping character when purple	
+	public  bool gravityReversed = false;
+	[HideInInspector]
+    public float special;
 
 	[HideInInspector]
 	public static Abilities _instance;
@@ -405,7 +406,6 @@ public class Abilities : MonoBehaviour {
 			if(!gravityReversed)
 			{
 				FlipPurple ();
-				gravityReversed = true;
 			}
 			player.maxJumpHeight = -5.6f;		//Negative for reverse gravity
 			player.timeToJumpApex = -0.4875f;		//Negative for reverse gravity	
@@ -480,14 +480,15 @@ public class Abilities : MonoBehaviour {
 			if(!hasBeenReset)
 			{
 				Reset();
-				hasBeenReset = true;
 			}
+			renderer.material.color = Color.white;
 			isBlue = isRed = isYellow = isGreen = isOrange = isPurple = false;
 		}
 	}
 
 	private void FlipPurple()
 	{
+		Debug.Log("Flipped");
 		// Switch the way the player is labelled as facing.
 		normalGravity = !normalGravity;
 		
@@ -495,6 +496,7 @@ public class Abilities : MonoBehaviour {
 		Vector3 theScale = graphicsTransform.localScale;
 		theScale.y *= -1;
 		graphicsTransform.localScale = theScale;
+		gravityReversed = true;
 	}
 
 	private void Resize(Vector3 newScale)
@@ -531,21 +533,32 @@ public class Abilities : MonoBehaviour {
 
 	public void Reset()
 	{
-		renderer.material.color = Color.white;
+		StartCoroutine("Resetting");
+	}
+
+	IEnumerator Resetting()
+	{
+		//Debug.Log("PlayerState has been Reset");
+		gameObject.tag = "white";
+		DisableTrailRenderer();
+		if (isPurple)
+		{
+			gravityReversed = false;
+		}
+		yield return null;
+
+		player.moveSpeed = 11.5f;
+		player.accelerationTimeGrounded = .05f; 
+		player.accelerationTimeAirborn = 0.125f;
+		isDashing = false;
+		soaring = false;
+		hasBeenReset = true;
+		gravityReversed = false;
+
+		yield return null;
+
 		player.maxJumpHeight = 5.6f;
 		player.minJumpHeight = 0.5f;
 		player.timeToJumpApex = 0.4875f;
-		player.moveSpeed = 11.5f;
-
-		player.accelerationTimeGrounded = .09f; 
-		player.accelerationTimeAirborn = 0.125f; //Was 0.25f
-		gravityReversed = false;
-		isDashing = false;
-		soaring = false;
-		Debug.Log("PlayerState has been Reset");
-		if(isPurple)
-		{
-			FlipPurple();
-		}
 	}
 }

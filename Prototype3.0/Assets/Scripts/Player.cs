@@ -24,6 +24,12 @@ public class Player : MonoBehaviour {
 	float timeToWallUnstick;
 	public bool wallSliding;
 
+	public float wjXSmoothing;
+	public float wjYSmoothing;
+	private float wjAcceleration = 0.05f;
+	private float targetX;
+	private float targetY;
+
 	public bool hasJumped;
 	public float gravity;					//gramaxJumpVelocity to player
 	public float maxJumpVelocity;			//Max jump velocity
@@ -60,6 +66,10 @@ public class Player : MonoBehaviour {
 
 	void Update () 
 	{
+
+		targetX = -wallDirX * abilities.wallJumpClimb.x;
+		targetY = abilities.wallJumpClimb.y;
+
 		gravity = -(2* maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);		//Gravity defined based of jumpheigmaxJumpVelocityto reach highest point
 	
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;				//Max jump velocity defined based on gravity and time to reach highest point
@@ -91,7 +101,7 @@ public class Player : MonoBehaviour {
 		animator.SetBool("Dashing", abilities.isDashing);
 		animator.SetBool ("Soaring", abilities.soaring);
 
-//		//WALLSLIDING WITH YELLOW
+		//WALLSLIDING WITH YELLOW
 		wallSliding = false;
 		if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && abilities.notJumping && abilities.isYellow)		//havde && velocity.y <0 efter && og før gameObject.tag =="yellow"	//setting wether player is on wall
 		{
@@ -163,6 +173,9 @@ public class Player : MonoBehaviour {
 				if (wallDirX == input.x)						//If input is towards the wall
 				{
 					abilities.notJumping = false;
+
+					//Tried to add smoothness to the ability by SmoothDamp - didnt work. Tried afterwards with maxJumpVelocity - worked but not apparent difference. 
+					//The reason it looks wierd could simply be due to the animations state machine. 
 					velocity.x = -wallDirX * abilities.wallJumpClimb.x;
 					velocity.y = abilities.wallJumpClimb.y;
 					if (controller.collisions.above  || controller.collisions.below)		//If raycasts hit above or below, velocity on y axis stops

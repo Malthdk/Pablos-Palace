@@ -37,11 +37,10 @@ public class Swimming : MonoBehaviour {
 
 	void Update () 
 	{
-
 		if (isSwimming)
 		{
-			player.maxJumpHeight = 5f;		// -5.6f;
-			player.timeToJumpApex = 2.5f;		// -0.4875f;	
+			player.maxJumpHeight = 5f;			//-5.6f;
+			player.timeToJumpApex = 2.5f;		//-0.4875f;	
 			player.minJumpHeight = -0.5f; 		//-0.5f; UNNECESSARY?
 
 			float targetVelocityX = player.input.x * swimSpeed;

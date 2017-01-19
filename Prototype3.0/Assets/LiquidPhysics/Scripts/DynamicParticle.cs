@@ -222,7 +222,7 @@ public class DynamicParticle : MonoBehaviour {
 		//WATER
 		if(currentState==STATES.WATER && other.gameObject.tag=="blue" || currentState==STATES.WATER && other.gameObject.tag=="red" || currentState==STATES.WATER && other.gameObject.tag=="yellow" || currentState==STATES.WATER && other.gameObject.tag=="purple" || currentState==STATES.WATER && other.gameObject.tag=="green" || currentState==STATES.WATER && other.gameObject.tag=="orange")
 		{
-			other.gameObject.tag = "white";
+			Abilities.instance.Reset();
 		}
 		//BLACK PAINT
 		if(currentState==STATES.BLACK && other.gameObject.tag=="blue" || currentState==STATES.BLACK && other.gameObject.tag=="red" || currentState==STATES.BLACK && other.gameObject.tag=="yellow" || currentState==STATES.BLACK && other.gameObject.tag=="purple" || currentState==STATES.BLACK && other.gameObject.tag=="green" || currentState==STATES.BLACK && other.gameObject.tag=="orange" || currentState==STATES.BLACK && other.gameObject.tag =="white")

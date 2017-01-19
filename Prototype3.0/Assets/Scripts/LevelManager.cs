@@ -96,7 +96,7 @@ public class LevelManager : MonoBehaviour {
 		particleEffect.SetActive(true);
 		Abilities.instance.Reset();
 
-		yield return new WaitForSeconds(0.7f);
+		yield return new WaitForSeconds(0.9f);
 
 		particleEffect.SetActive(false);
 		player.transform.position = currentCheckpoint.transform.position;

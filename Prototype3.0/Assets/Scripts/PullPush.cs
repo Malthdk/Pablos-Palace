@@ -27,7 +27,7 @@ public class PullPush : MonoBehaviour {
 	{
 		if (canGrab)
 		{
-			if (Input.GetButton("Special"))
+			if (Input.GetButton("Special") || Abilities.instance.special == 1)
 			{
 				Grab();
 			}
@@ -35,7 +35,7 @@ public class PullPush : MonoBehaviour {
 
 		if (isPulling)
 		{
-			if (Input.GetButtonUp("Special"))
+			if (Input.GetButtonUp("Special") || Abilities.instance.special == 0)
 			{
 				canGrab = false;
 				Release();
@@ -71,16 +71,23 @@ public class PullPush : MonoBehaviour {
 
 	void Release()
 	{
-		isPulling = false;
-		pushBlock.transform.parent = null;
-		pushBlock.layer = 8;
-		if (controller.collisions.below)
+		if (pushBlock == null)
 		{
-			player.moveSpeed = player.groundSpeed;
+			return;
 		}
 		else
 		{
-			player.moveSpeed = player.airSpeed;
+			isPulling = false;
+			pushBlock.transform.parent = null;
+			pushBlock.layer = 8;
+			if (controller.collisions.below)
+			{
+				player.moveSpeed = player.groundSpeed;
+			}
+			else
+			{
+				player.moveSpeed = player.airSpeed;
+			}	
 		}
 	}
 }

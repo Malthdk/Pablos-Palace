@@ -3,21 +3,24 @@ using System.Collections;
 
 public class HotMetal : MonoBehaviour {
 
-	private SpriteRenderer spriteRend;
-	//public float heatAndCoolFraction;
+	//Public
+	public float waitTime;
+	public bool deadly;
 	public LayerMask collisionMask;
 	public Collider2D[] colliders;
 	public int numOfWaterParticles;
-
-	private BoxCollider2D bCollider;
 	public HeatAndCool heatAndCool;
-	public Color color;
+
+	//Private and hidden
+	private SpriteRenderer spriteRend;
+	//public float heatAndCoolFraction;
+	private BoxCollider2D bCollider;
+	private Color color;
 	private Bounds bounds;
 
+	private float tempWaitTime;
 	private Vector2 pointA;
 	private Vector2 pointB;
-
-	public bool deadly;
 
 	void Start () 
 	{
@@ -33,7 +36,7 @@ public class HotMetal : MonoBehaviour {
 	
 	public enum HeatAndCool
 	{
-		Hawt,
+		Hot,
 		Heating,
 		Cooling,
 		Cold
@@ -43,31 +46,45 @@ public class HotMetal : MonoBehaviour {
 	{
 		colliders = Physics2D.OverlapAreaAll(pointA, pointB, collisionMask);
 
-		if (colliders.Length <5)
+		if (colliders.Length < numOfWaterParticles && heatAndCool != HeatAndCool.Hot && heatAndCool != HeatAndCool.Cold)
 		{
 			heatAndCool = HeatAndCool.Heating;
 		}
 
 		switch (heatAndCool)
 		{
-		case HeatAndCool.Hawt:
-			deadly = true;
-			Debug.Log("ishawt");
+		case HeatAndCool.Hot:
+			gameObject.tag = "blackBox";
+			//deadly = true;
+			color = new Color(1f, 0.4f, 0f);
+			spriteRend.color = color;
+
+			Debug.Log("isHot");
 			break;
 
 		case HeatAndCool.Heating:
-			Heating();
+			MoreHot();
 			Debug.Log("isHeating");
 			break;
 
 		case HeatAndCool.Cooling:
-			Cooling();
+			gameObject.tag = "Untagged";
+			MoreCold();
 			Debug.Log("isCooling");
 			break;
 
 		case HeatAndCool.Cold:
 			gameObject.tag = "Untagged";
-			deadly = false;
+			//deadly = false;
+			tempWaitTime -= Time.deltaTime;
+			color = new Color(0.7f, 0.9f, 1f);
+			spriteRend.color = color;
+
+			if (tempWaitTime <= 0)
+			{
+				heatAndCool = HeatAndCool.Heating;
+				tempWaitTime = waitTime;
+			}
 			Debug.Log("isCold");
 			break;
 		}
@@ -84,10 +101,6 @@ public class HotMetal : MonoBehaviour {
 				heatAndCool = HeatAndCool.Cooling;
 			}
 		}
-		if (other.collider.name == "Player")
-		{
-			PlayerManager.pManager.KillPlayer();
-		}
 	}
 
 	void SetColor()
@@ -96,20 +109,21 @@ public class HotMetal : MonoBehaviour {
 		spriteRend.color = color;
 	}
 
-	void Heating()
+	void MoreHot()
 	{
 		//color.r += heatAndCoolFraction;
 		//spriteRend.material.color = color;
+
 		color = Color.Lerp(color, Color.red, Mathf.PingPong(Time.deltaTime * 0.5f, 1));
 		spriteRend.color = color;
 
 		if (color.b <= 0.1f && color.g <= 0.1f)
 		{
-			heatAndCool = HeatAndCool.Hawt;
+			heatAndCool = HeatAndCool.Hot;
 		}
 	}
 
-	void Cooling()
+	void MoreCold()
 	{
 //		if(color.r > 0)
 //		{
@@ -120,7 +134,7 @@ public class HotMetal : MonoBehaviour {
 		color = Color.Lerp(color, Color.white, Mathf.PingPong(Time.deltaTime * 0.5f, 1));
 		spriteRend.color = color;
 
-		if (color.b >= 0.90f & color.g >= 0.90f)
+		if (color.b >= 0.90f && color.g >= 0.90f)
 		{
 			heatAndCool = HeatAndCool.Cold;
 		}

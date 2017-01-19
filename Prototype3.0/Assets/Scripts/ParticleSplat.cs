@@ -19,12 +19,13 @@ public class ParticleSplat: MonoBehaviour {
 		int numCol = part.GetCollisionEvents(other, list);
 		int i = 0;
 		while(i<numCol){
-			Blood(list[i].intersection,list[i].normal,list[i].colliderComponent);
+			Blood(new Vector3(list[i].intersection.x, list[i].intersection.y, 0),list[i].normal,list[i].colliderComponent);
 			/*if (list[i].intersection != null) {
 				//Destroy(list[i].);
 				list.Remove(list[i]);
 			}*/
-			Debug.Log(numCol + " collisions");
+
+			//Debug.Log(numCol + " collisions");
 			i++;
 		}
 
@@ -37,14 +38,14 @@ public class ParticleSplat: MonoBehaviour {
 	void Blood(Vector3 point, Vector3 normal, Component col){
 		Debug.DrawRay(point, normal);
 		splatter = (GameObject)Instantiate(drip, point + (normal * 0.1f), Quaternion.FromToRotation (Vector3.up, normal));
-		splatter.transform.parent = col.transform;
+		//splatter.transform.parent = col.transform;
 		//splatter.GetComponent<MeshRenderer>().material.mainTexture = materials[Random.Range(0, materials.Length)]; //For multiple materials
 
 
 		//splatter.transform.localRotation = Quaternion.Euler(new Vector3(90f, 0, 0));
 
 
-		var scaler = Random.value * 2;
+		var scaler = Random.value * 1.5f;
 		splatter.transform.localScale *= scaler;
 		//splatter.transform.localScale.z *= scaler;
 
