@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swimSpeed: 5
-  sprintSwim: 8
+  sprintSwim: 9
   isSwimming: 0
   accelerationTimeWater: 0.185
   notSurface: 0

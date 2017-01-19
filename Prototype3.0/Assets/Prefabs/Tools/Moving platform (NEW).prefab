@@ -15,7 +15,7 @@ GameObject:
   - 50: {fileID: 5033748}
   m_Layer: 8
   m_Name: Moving platform (NEW)
-  m_TagString: Obsticle
+  m_TagString: movingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -122,9 +122,11 @@ MonoBehaviour:
   elevator: 0
   stoppingPlatform: 0
   platformActivator: 0
+  smashPlatform: 0
   passengerMask:
     serializedVersion: 2
     m_Bits: 512
+  hasReset: 0
   localWaypoints:
   - {x: 0, y: 0, z: 0}
   globalWaypoints: []
@@ -133,6 +135,7 @@ MonoBehaviour:
   waitTime: 2
   easeAmount: 0
   pos: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

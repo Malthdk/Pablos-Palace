@@ -41,7 +41,7 @@ GameObject:
   - 61: {fileID: 61000012291006694}
   - 50: {fileID: 50000013314703696}
   m_Layer: 0
-  m_Name: WaterZone
+  m_Name: WaterSwimZone
   m_TagString: waterPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

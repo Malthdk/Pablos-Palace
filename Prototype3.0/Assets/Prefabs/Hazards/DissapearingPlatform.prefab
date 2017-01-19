@@ -43,7 +43,7 @@ Transform:
   m_GameObject: {fileID: 177034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -327.81, y: -32.80151, z: 3.0234375}
-  m_LocalScale: {x: 2.0749729, y: 0.6125077, z: 1}
+  m_LocalScale: {x: 3.5, y: 0.8, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 465786}
@@ -146,6 +146,7 @@ MonoBehaviour:
     m_Bits: 512
   verticalRaySpacing: 0
   verticalRayCount: 8
+  pltformActivated: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
