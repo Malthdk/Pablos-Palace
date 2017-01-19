@@ -66,6 +66,7 @@ public class Swimming : MonoBehaviour {
 		{
 			Debug.Log("Swimming");
 			isSwimming = true;
+            Abilities.instance.Reset();
 			//Abilities.instance.Reset();  //NEEDS TO RESET TAG ASWELL 
 		}
 	}

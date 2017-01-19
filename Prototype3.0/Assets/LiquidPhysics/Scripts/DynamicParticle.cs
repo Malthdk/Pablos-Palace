@@ -58,7 +58,9 @@ public class DynamicParticle : MonoBehaviour {
 	public void SetState(STATES newState){
 		if(newState!=currentState){ //Only change to a different state
 			switch(newState){
-				case STATES.BLUE:													
+				case STATES.BLUE:
+					GetComponent<BoxCollider2D>().enabled = true;
+                    GetComponent<CircleCollider2D>().enabled = false;								
 					GetComponent<Rigidbody2D>().gravityScale=2f;
 					GetComponent<Rigidbody2D>().mass = 1f;
 					GetComponent<Rigidbody2D>().drag = 1.5f; //was 1.5f
@@ -73,12 +75,16 @@ public class DynamicParticle : MonoBehaviour {
 				break;
 				case STATES.GREEN:		
 				break;	
-				case STATES.WATER:		
+				case STATES.WATER:
+                    GetComponent<BoxCollider2D>().enabled = false;
+                    GetComponent<CircleCollider2D>().enabled = true;
 					GetComponent<Rigidbody2D>().gravityScale=0.8f;
 					GetComponent<Rigidbody2D>().mass = 0.4f;
 					GetComponent<Rigidbody2D>().drag = 0.2f;
 				break;	
-				case STATES.BLACK:		
+				case STATES.BLACK:
+		            GetComponent<BoxCollider2D>().enabled = true;
+                    GetComponent<CircleCollider2D>().enabled = false;
 					GetComponent<Rigidbody2D>().gravityScale=1.6f;
 					GetComponent<Rigidbody2D>().drag = 1.5f;
 				break;	
@@ -98,7 +104,7 @@ public class DynamicParticle : MonoBehaviour {
 	}
 	void FixedUpdate () {
 		//MovementAnimation();
-		ScaleDown ();
+		ScaleDown (); //Should be reconfigured - right now it takes a shit ton of computational power.
 	}
 	// This scales the particle image acording to its velocity, so it looks like its deformable... but its not ;)
 	void MovementAnimation(){

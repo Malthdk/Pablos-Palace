@@ -27,7 +27,7 @@ public class Splatter : MonoBehaviour
 		player = GameObject.Find("Player");	
 		CompareColors();
 
-		Debug.Log(spriteRenderer.color);
+		//Debug.Log(spriteRenderer.color);
     }
 
     private void Start()

@@ -59,18 +59,18 @@ public class HotMetal : MonoBehaviour {
 			color = new Color(1f, 0.4f, 0f);
 			spriteRend.color = color;
 
-			Debug.Log("isHot");
+			//Debug.Log("isHot");
 			break;
 
 		case HeatAndCool.Heating:
 			MoreHot();
-			Debug.Log("isHeating");
+			//Debug.Log("isHeating");
 			break;
 
 		case HeatAndCool.Cooling:
 			gameObject.tag = "Untagged";
 			MoreCold();
-			Debug.Log("isCooling");
+			//Debug.Log("isCooling");
 			break;
 
 		case HeatAndCool.Cold:
@@ -85,7 +85,7 @@ public class HotMetal : MonoBehaviour {
 				heatAndCool = HeatAndCool.Heating;
 				tempWaitTime = waitTime;
 			}
-			Debug.Log("isCold");
+			//Debug.Log("isCold");
 			break;
 		}
 	}
