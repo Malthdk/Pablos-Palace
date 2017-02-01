@@ -225,7 +225,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 			
-		if(!abilities.isDashing && !abilities.soaring && !abilities.isDownDashing && !WaterTop.instance.onSurface)
+		if(!abilities.isDashing && !abilities.soaring && !abilities.isDownDashing)
 		{
 			velocity.y += gravity * Time.deltaTime;							//Applies velocity to gravity
 		}
