@@ -5,12 +5,12 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 430042}
-  - 212: {fileID: 21202196}
-  - 114: {fileID: 11421422}
-  - 61: {fileID: 6146334}
+  - component: {fileID: 430042}
+  - component: {fileID: 21202196}
+  - component: {fileID: 11421422}
+  - component: {fileID: 6146334}
   m_Layer: 8
   m_Name: Standard
   m_TagString: Untagged
@@ -27,10 +27,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6146334
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -68,20 +68,28 @@ MonoBehaviour:
   tileSprite: 
   thumbnail: {fileID: 0}
   tileA:
-  - {fileID: 21300032, guid: 8ccbb0b1541454dc7ad40d539e056e13, type: 3}
+  - {fileID: 21300000, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileC: []
-  tileCE: []
-  tileCN: []
-  tileCS: []
-  tileCW: []
+  tileCE:
+  - {fileID: 21300008, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  tileCN:
+  - {fileID: 21300014, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  tileCS:
+  - {fileID: 21300016, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  tileCW:
+  - {fileID: 21300004, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileE: []
   tileN: []
-  tileNE: []
+  tileNE:
+  - {fileID: 21300006, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileNS: []
-  tileNW: []
+  tileNW:
+  - {fileID: 21300002, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileS: []
-  tileSE: []
-  tileSW: []
+  tileSE:
+  - {fileID: 21300010, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  tileSW:
+  - {fileID: 21300012, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileW: []
   tileWE: []
   tileCNW: []
@@ -141,7 +149,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 5d779ac2dbc64a045b272075bb039723, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -149,14 +159,14 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300032, guid: 8ccbb0b1541454dc7ad40d539e056e13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

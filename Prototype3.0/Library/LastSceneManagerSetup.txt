@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/User tests/The Dungeon/9.Boss.unity
+- path: Assets/Scenes/ChrisTestBane.unity
   isLoaded: 1
   isActive: 1

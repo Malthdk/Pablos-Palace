@@ -53,7 +53,7 @@ namespace Water2DTool
             mesh.RecalculateBounds();
             mesh.RecalculateNormals();
 
-            mesh.Optimize();
+            ;
         }
 
         #endregion
