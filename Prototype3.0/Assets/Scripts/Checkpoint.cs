@@ -12,9 +12,15 @@ public class Checkpoint : MonoBehaviour {
 	public List<Lever> leversToRemove;
 	public List<FallingPlatform> fallingToRemove;
 
+	private GameObject graphics;
+	private CircleCollider2D boxCol;
+
 	void Start () 
 	{
+		graphics = this.gameObject.transform.GetChild(0).gameObject;
+		graphics.SetActive(false);
 		player = FindObjectOfType<Player>();
+		boxCol = gameObject.GetComponent<CircleCollider2D>();
 	}
 
 	void Update()
@@ -23,13 +29,20 @@ public class Checkpoint : MonoBehaviour {
 		{
 			player = FindObjectOfType<Player>();
 		}
+		if (LevelManager.instance.currentCheckpoint != this.gameObject)
+		{
+			graphics.SetActive(false);
+		}
 	}
 		
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.name == "Player")
 		{
+			boxCol.enabled = false;
+			graphics.SetActive(true);
 			Debug.Log ("Hit checkpoint");
+
 			LevelManager.instance.currentCheckpoint = gameObject;
 			LevelManager.instance.currentTag = player.tag;
 
