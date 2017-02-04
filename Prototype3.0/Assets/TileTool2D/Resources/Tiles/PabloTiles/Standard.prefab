@@ -69,7 +69,9 @@ MonoBehaviour:
   thumbnail: {fileID: 0}
   tileA:
   - {fileID: 21300000, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
-  tileC: []
+  tileC:
+  - {fileID: 21300018, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  - {fileID: 21300020, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileCE:
   - {fileID: 21300008, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileCN:
@@ -78,20 +80,26 @@ MonoBehaviour:
   - {fileID: 21300016, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileCW:
   - {fileID: 21300004, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
-  tileE: []
-  tileN: []
+  tileE:
+  - {fileID: 21300032, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  tileN:
+  - {fileID: 21300022, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileNE:
   - {fileID: 21300006, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
-  tileNS: []
+  tileNS:
+  - {fileID: 21300030, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileNW:
   - {fileID: 21300002, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
-  tileS: []
+  tileS:
+  - {fileID: 21300026, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileSE:
   - {fileID: 21300010, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileSW:
   - {fileID: 21300012, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
-  tileW: []
-  tileWE: []
+  tileW:
+  - {fileID: 21300028, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  tileWE:
+  - {fileID: 21300024, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
   tileCNW: []
   tileCNE: []
   tileCSE: []

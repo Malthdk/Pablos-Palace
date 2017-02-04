@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 419ed673090344d6f97842881ccd17e2
-timeCreated: 1486044859
+timeCreated: 1486166435
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,6 +13,18 @@ TextureImporter:
     21300012: DungeonTemplate1_6
     21300014: DungeonTemplate1_7
     21300016: DungeonTemplate1_8
+    21300018: DungeonTemplate1_9
+    21300020: DungeonTemplate1_10
+    21300022: DungeonTemplate1_11
+    21300024: DungeonTemplate1_12
+    21300026: DungeonTemplate1_13
+    21300028: DungeonTemplate1_14
+    21300030: DungeonTemplate1_15
+    21300032: DungeonTemplate1_16
+    21300034: DungeonTemplate1_17
+    21300036: DungeonTemplate1_18
+    21300038: DungeonTemplate1_19
+    21300040: DungeonTemplate1_20
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -204,6 +216,162 @@ TextureImporter:
         serializedVersion: 2
         x: 384
         y: 872
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_9
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 104
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_10
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 104
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 744
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 616
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 488
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 872
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_15
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 872
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_16
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 872
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 360
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_18
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 360
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_19
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 360
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_20
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 360
         width: 128
         height: 128
       alignment: 6
