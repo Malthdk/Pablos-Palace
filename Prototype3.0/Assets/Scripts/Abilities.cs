@@ -380,6 +380,7 @@ public class Abilities : MonoBehaviour {
 			{
 				if (!controller.collisions.below && !player.wallSliding)
 				{	
+					player.doubleJumped = false;
 					soaring = true;
 					player.velocity.y = Mathf.Lerp(player.velocity.y, floatingVelocity, 1f);
 				}

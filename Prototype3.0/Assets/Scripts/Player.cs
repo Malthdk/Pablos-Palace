@@ -43,6 +43,8 @@ public class Player : MonoBehaviour {
 
 	private Animator animator;		//ANIMATION
 	private PullPush pullPush;
+	[HideInInspector]
+	public bool doubleJumped;
 
 	[HideInInspector]
 	public static Player _instance;
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour {
 		controller = GetComponent<Controller2D>();
 		abilities = GetComponent<Abilities>();
 		animator = GetComponent<Animator>();		//ANIMATION
+
 	}
 
 	void Update () 
@@ -100,6 +103,7 @@ public class Player : MonoBehaviour {
 		animator.SetBool("OnWall", wallSliding);
 		animator.SetBool("Dashing", abilities.isDashing);
 		animator.SetBool ("Soaring", abilities.soaring);
+		animator.SetBool("DoubleJump", doubleJumped);
 
 		//WALLSLIDING WITH YELLOW
 		wallSliding = false;
@@ -148,12 +152,13 @@ public class Player : MonoBehaviour {
 				/*This is where double jump is handled*/
 				if (!abilities.hasDoubleJumped && !wallSliding && !abilities.isPurple)
 				{
+					doubleJumped = true; //This causes an animation bugg where we jump from a wall and then doublejump is is set to true so we canno transition into jump animation.
 					abilities.secondJump = true;
 					Debug.Log ("double jumped");
 					abilities.soaring = false;
 					abilities.hasDoubleJumped = true;
 					velocity.y = maxJumpVelocity/1.3f;
-					abilities.startRotation();
+					//abilities.startRotation();
 					
 				}
 				else if (abilities.isPurple && !controller.collisions.above)
@@ -162,6 +167,7 @@ public class Player : MonoBehaviour {
 
 					if (!abilities.hasDoubleJumped)
 					{
+						doubleJumped = true;
 						abilities.hasDoubleJumped = true;
 						velocity.y = maxJumpVelocity/1.3f;
 						abilities.startRotation();
@@ -170,6 +176,7 @@ public class Player : MonoBehaviour {
 			}
 			if (wallSliding)
 			{
+				doubleJumped = false;
 				if (wallDirX == input.x)						//If input is towards the wall
 				{
 					abilities.notJumping = false;
@@ -204,6 +211,7 @@ public class Player : MonoBehaviour {
 		}
 		else if (!pullPush.isPulling)
 		{
+			doubleJumped = false;
 			abilities.secondJump = false;
 			abilities.soaring = false;
 			moveSpeed = groundSpeed;
@@ -211,6 +219,7 @@ public class Player : MonoBehaviour {
 		if (abilities.isPurple && controller.collisions.above)
 		{
 			abilities.secondJump = false;
+			doubleJumped = false;
 		}
 
 		if (Input.GetButtonUp("Jump"))					//For variable jump
