@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 419ed673090344d6f97842881ccd17e2
-timeCreated: 1486166435
+timeCreated: 1486210422
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -25,6 +25,7 @@ TextureImporter:
     21300036: DungeonTemplate1_18
     21300038: DungeonTemplate1_19
     21300040: DungeonTemplate1_20
+    21300042: DungeonTemplate1_21
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -372,6 +373,19 @@ TextureImporter:
         serializedVersion: 2
         x: 768
         y: 360
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DungeonTemplate1_21
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 104
         width: 128
         height: 128
       alignment: 6

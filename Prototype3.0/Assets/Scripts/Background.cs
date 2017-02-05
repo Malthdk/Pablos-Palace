@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Background : MonoBehaviour {
 
-	SpriteRenderer[] middleLayer;
+	SpriteRenderer middleLayer;
 
 	// Use this for initialization
 	void Start () {
 		middleLayer = this.transform.GetComponentInChildren<SpriteRenderer> ();
-		for (int i = 0; middleLayer.Length < i; i++) {
+		/*for (int i = 0; middleLayer.Length < i; i++) {
 			middleLayer
-		}
+		}*/
 	}
 	
 	// Update is called once per frame
