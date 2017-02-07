@@ -63,7 +63,7 @@ public class ParticleGeneratorStill : MonoBehaviour {
 				PoolManager.instance.ReuseObject (prefab, this.transform.position, Quaternion.identity, force, particleLifetime, particlesState, particleSize); 
 			}
 			spawn = false;
-			Destroy (gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 		
