@@ -409,7 +409,7 @@ public class Abilities : MonoBehaviour {
 				FlipPurple ();
 			}
 			player.maxJumpHeight = -5.6f;		//Negative for reverse gravity
-			player.timeToJumpApex = -0.4875f;		//Negative for reverse gravity	
+			player.timeToJumpApex = -0.58f;		//Negative for reverse gravity	 was -0.4875f
 			player.minJumpHeight = -0.5f; 		//Need to fix for variable jump
 		}
 
@@ -560,6 +560,6 @@ public class Abilities : MonoBehaviour {
 
 		player.maxJumpHeight = 5.6f;
 		player.minJumpHeight = 0.5f;
-		player.timeToJumpApex = 0.4875f;
+		player.timeToJumpApex = 0.58f; //0.4875f
 	}
 }

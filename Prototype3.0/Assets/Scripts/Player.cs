@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 	public float maxJumpHeight = 3.5f;				//Max JumpHeight
 	public float minJumpHeight = 1f;				//Minimum JumpHeight
 	public float purpMinJumpVelocity = -9.3f;		//Minimum jump velocity when purple - have to be defined here cause of mathematical equation
-	public float timeToJumpApex = .65f;				//Time to reach highest point
+	public float timeToJumpApex = .65f;				//Time to reach highest point (4875 was before)
 	public float accelerationTimeAirborn = .2f;		//Acceleration while airborne
 	public float accelerationTimeGrounded = .5f;	//Acceleration while grounded
 	public float moveSpeed = 9;	

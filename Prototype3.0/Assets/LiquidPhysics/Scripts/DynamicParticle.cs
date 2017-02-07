@@ -103,8 +103,9 @@ public class DynamicParticle : MonoBehaviour {
 		}		
 	}
 	void FixedUpdate () {
+		Invoke("Destroy", particleLifeTime);
 		//MovementAnimation();
-		ScaleDown (); //Should be reconfigured - right now it takes a shit ton of computational power.
+		//ScaleDown (); //Should be reconfigured - right now it takes a shit ton of computational power.
 	}
 	// This scales the particle image acording to its velocity, so it looks like its deformable... but its not ;)
 	void MovementAnimation(){
