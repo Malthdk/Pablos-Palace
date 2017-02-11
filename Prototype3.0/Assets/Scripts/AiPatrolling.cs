@@ -4,57 +4,107 @@ using UnityEngine;
 
 public class AiPatrolling : MonoBehaviour {
 
-	public bool floor, leftwall, rightwall, cieling, aroundEdge;
+	//Publics
+	public bool floor, leftwall, rightwall, cieling, aroundEdge, flipAtStart;
 	public LayerMask enemyMask;
 	public int speed = 1;
 	public float raylength;
 
+	//Privates
 	private bool isGrounded, isBlocked;
+	public bool faceingLeft = true;
+	float myWidth, myHeight;
 
+	//Components
 	Rigidbody2D myBody;
 	Transform myTrans;
-	float myWidth, myHeight;
+	SpriteRenderer mySprite;
+	BoxCollider2D myBoxCol;
 
 	void Start ()
 	{
 		myTrans = this.transform;
 		myBody = this.GetComponent<Rigidbody2D>();
-		SpriteRenderer mySprite = this.GetComponent<SpriteRenderer>();
+		mySprite = this.GetComponent<SpriteRenderer>();
+		myBoxCol = this.GetComponent<BoxCollider2D>();
 
 		if (rightwall || leftwall)
 		{
-			myWidth = mySprite.bounds.extents.y;
-			myHeight = mySprite.bounds.extents.x;	
+			myWidth = myBoxCol.bounds.extents.y;
+			myHeight = myBoxCol.bounds.extents.x;
+
+			//This is so we can have the AI move in different direction from beginning
+			if (flipAtStart)
+			{
+				Flip(true);
+			}
 		}
 		else if (floor || cieling)
 		{
-			myWidth = mySprite.bounds.extents.x;
-			myHeight = mySprite.bounds.extents.y;	
+			myWidth = myBoxCol.bounds.extents.x;
+			myHeight = myBoxCol.bounds.extents.y;	
+			if (flipAtStart)
+			{
+				Flip(false);
+			}
 		}
 	}
 
 	void FixedUpdate ()
 	{
+		
+		Move();
 
+		//When the AI is walking on the floor
 		if (floor)
 		{
+			//This is the collision detection and lineshooting
 			Vector2 startPos = Vector2.up;
 			Vector2 groundCheck = Vector2.down;
 			Vector2 wallCheck = myTrans.right.toVector2();
 
 			ShootLines(startPos, groundCheck, wallCheck);
 
-			float direction = -myTrans.right.x;
-			Move(direction, true);
-			Debug.Log("(floor)My Width: " + myWidth);
-			Debug.Log("(floor)My height: " + myHeight);
-
+			//If the AI has reached an edge or is blocked by a wall
 			if(!isGrounded || isBlocked)
 			{
-				Flip(false);
-			}
+				//This is for the AI to go around an edge when blocked
+				if (aroundEdge && isBlocked)
+				{
+					AroundEdge(0, new Vector3(0f,0f, -90));
+					floor = false;
+					if(faceingLeft)
+					{
+						leftwall = true;
+					}
+					else if (!faceingLeft)
+					{
+						rightwall = true;
+					}
 
+				}
+				//This is for the AI to go around an edge when egde
+				else if (aroundEdge && !isGrounded)
+				{
+					floor = false;
+					AroundEdge(1, new Vector3(0f,0f, 90));	
+					if(faceingLeft)
+					{
+						rightwall = true;
+					}
+					else if (!faceingLeft)
+					{
+						leftwall = true;
+					}
+				}
+				//This flips the AI in the opposite direction - for back and forth patrolling.
+				else
+				{
+					Flip(false);
+				}
+			}
 		}
+		//When the AI is walking on the cieling
 		if (cieling)
 		{
 			Vector2 startPos = Vector2.down;
@@ -63,15 +113,41 @@ public class AiPatrolling : MonoBehaviour {
 
 			ShootLines(startPos, groundCheck, wallCheck);
 
-			float direction = -myTrans.right.x;
-			Move(direction, true);
-
 			if(!isGrounded || isBlocked)
 			{
-				Flip(false);
+				if (aroundEdge && isBlocked)
+				{
+					AroundEdge(0, new Vector3(0f,0f, -90));
+					cieling = false;
+					if(faceingLeft)
+					{
+						rightwall = true;
+					}
+					else if (!faceingLeft)
+					{
+						leftwall = true;
+					}
+				}
+				else if (aroundEdge && !isGrounded)
+				{
+					AroundEdge(1, new Vector3(0f,0f, 90));
+					cieling = false;
+					if(faceingLeft)
+					{
+						leftwall = true;
+					}
+					else if (!faceingLeft)
+					{
+						rightwall = true;
+					}
+				}
+				else 
+				{
+					Flip(false);	
+				}
 			}
 		}
-
+		//When the AI is walking on a left wall
 		if (leftwall)
 		{
 			Vector2 startPos = Vector2.right;
@@ -80,15 +156,41 @@ public class AiPatrolling : MonoBehaviour {
 
 			ShootLines(startPos, groundCheck, wallCheck);
 
-			float direction = -myTrans.right.y;
-			Move(direction, false);
-
 			if(!isGrounded || isBlocked)
 			{
-				Flip(true);
+				if (aroundEdge && isBlocked)
+				{
+					AroundEdge(0, new Vector3(0f,0f, -90));
+					leftwall = false;
+					if(faceingLeft)
+					{
+						cieling = true;
+					}
+					else if (!faceingLeft)
+					{
+						floor = true;
+					}
+				}
+				else if (aroundEdge && !isGrounded)
+				{
+					AroundEdge(1, new Vector3(0f,0f, 90));
+					leftwall = false;
+					if(faceingLeft)
+					{
+						floor = true;
+					}
+					else if (!faceingLeft)
+					{
+						cieling = true;
+					}
+				}
+				else
+				{
+					Flip(true);	
+				}
 			}
 		}
-
+		//When the AI is walking on a right wall
 		if (rightwall)
 		{
 			Vector2 startPos = Vector2.left;
@@ -97,57 +199,82 @@ public class AiPatrolling : MonoBehaviour {
 
 			ShootLines(startPos, groundCheck, wallCheck);
 
-			float direction = -myTrans.right.y;
-			Move(direction, false);
-
-			Debug.Log("(rightwall)My Width: " + myWidth);
-			Debug.Log("(rightwall)My height: " + myHeight);
-
 			if(!isGrounded || isBlocked)
 			{
-				Flip(true);
+				if (aroundEdge && isBlocked)
+				{
+					AroundEdge(0, new Vector3(0f,0f, -90));
+					rightwall = false;
+					if(faceingLeft)
+					{
+						floor = true;
+					}
+					else if (!faceingLeft)
+					{
+						cieling = true;
+					}
+				}
+				else if (aroundEdge && !isGrounded)
+				{
+					AroundEdge(1, new Vector3(0f,0f, 90));
+					rightwall = false;
+					if(faceingLeft)
+					{
+						cieling = true;
+					}
+					else if (!faceingLeft)
+					{
+						floor = true;
+					}
+				}
+				else
+				{
+					Flip(true);	
+				}
 			}
 		}
 	}
 
+	//This function shoots lines for collision detection
 	void ShootLines(Vector2 startPos, Vector2 groundCheck, Vector2 wallCheck)
 	{
-
-
-
 		Vector2 lineCastPos = myTrans.position.toVector2() - myTrans.right.toVector2() * myWidth + startPos * myHeight;
 
+		//Shooting towards ground
 		isGrounded = Physics2D.Linecast(lineCastPos, lineCastPos + (groundCheck * raylength), enemyMask);
 		Debug.DrawLine(lineCastPos, lineCastPos + (groundCheck * raylength), Color.blue);
 
-		//Check to see if there's a wall in front of us before moving forward
-
+		//Shooting in front of the AI
 		isBlocked = Physics2D.Linecast(lineCastPos, lineCastPos - wallCheck * .05f, enemyMask);
 		Debug.DrawLine(lineCastPos, lineCastPos - wallCheck * raylength, Color.red);
 	}
 
-	void Move(float direction, bool horizontal)
+	//This moves the AI
+	void Move()
 	{
-		Vector2 myVel = myBody.velocity;
-
-		if (horizontal)
-		{
-			Vector2 vel = new Vector2(direction * speed, 0f);
-			//myVel.x = direction * speed;
-			//myBody.velocity = myVel;
-			myBody.velocity = vel;
-			
-
-		}
-		else if (!horizontal)
-		{
-			myVel.y = direction * speed;
-			myBody.velocity = myVel;
-		}
+		myTrans.position -= myTrans.right * speed * Time.deltaTime;
 	}
 
+	//This makes the AI turn around a corner
+	void AroundEdge(int childInt, Vector3 rotation)
+	{
+		Vector3 pivot = transform.GetChild(childInt).position;
+		transform.Rotate(rotation, Space.Self);
+		pivot -= transform.GetChild(childInt).position;
+		transform.position += pivot;
+	}
+
+	//This flips the AI for patrolling back and forth
 	void Flip(bool walls)
 	{
+		if (faceingLeft)
+		{
+			faceingLeft = false;
+		}
+		else if (!faceingLeft)
+		{
+			faceingLeft = true;
+		}
 		if (!walls)
 		{
 			Vector3 currRot = myTrans.eulerAngles;

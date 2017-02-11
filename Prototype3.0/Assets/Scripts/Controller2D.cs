@@ -18,7 +18,9 @@ public class Controller2D : RaycastController {
 
 	private bool facingRight = true;		//For switching face direction
 
+
 	private Transform graphicsTransform;
+	private GameObject dashParticle;
 
 	private PullPush pullPush;
 	[HideInInspector]
@@ -41,6 +43,7 @@ public class Controller2D : RaycastController {
 		checkpoint = FindObjectOfType<Checkpoint>();
 		abilities = GetComponent<Abilities>();
 		pullPush = GetComponent<PullPush>();
+		dashParticle = transform.GetChild(3).gameObject;
 		//uiManager = FindObjectOfType<UIManager>();
 		//splatter = FindObjectOfType<Splatter>();
 
@@ -237,6 +240,10 @@ public class Controller2D : RaycastController {
 				//if (this.gameObject.tag != "white") {
 				//	StartCoroutine(SplatterControl());
 				//}
+				if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+				{
+					PlayerManager.pManager.KillPlayer();
+				}
 				if (hit.collider.tag == "orangeDestroy")
 				{
 					if(abilities.canDestroy && abilities.isOrange)
@@ -382,6 +389,11 @@ public class Controller2D : RaycastController {
 		Vector3 theScale = graphicsTransform.localScale;
 		theScale.x *= -1;
 		graphicsTransform.localScale = theScale;
+
+		//Flip the dashParticleSystem aswell
+		Vector3 particleScale = dashParticle.transform.localScale;
+		particleScale.x *= -1;
+		dashParticle.transform.localScale = particleScale;
 	}
 
 	// METHOD FOR SPLATTING

@@ -26,7 +26,8 @@ public class Abilities : MonoBehaviour {
 	public bool singleDash; //For testing dash
 	public bool longDash;	//For testing dash
 	private DashState dashState;
-	private TrailRenderer trailRenderer;
+//	private TrailRenderer trailRenderer;
+	private ParticleSystem dashParticle;
 	private float dashTimer, tempMinDash;
 	[HideInInspector]
 	public bool isDashing, hasDashed;
@@ -90,7 +91,10 @@ public class Abilities : MonoBehaviour {
 		graphicsTransform = gameObject.transform.FindChild("Graphics").GetComponent<Transform>();
 
 		//FOR DASH
-		trailRenderer = gameObject.GetComponent<TrailRenderer>();
+//		trailRenderer = GetComponentInChildren<TrailRenderer>();
+		dashParticle = transform.GetChild(3).GetComponent<ParticleSystem>();
+		StopEmitParticle(dashParticle);
+
 		tempWaitTime = waitTime;
 		tempMinDash = minDash;
 	}
@@ -152,6 +156,7 @@ public class Abilities : MonoBehaviour {
 																////////////////////////
 		if (isRed)
 		{
+			//dashParticle.main.startColor = new Color(0.85f, 0f ,0.22f);
 
 			if (controller.collisions.below && hasDashed || player.wallSliding || controller.collisions.above && isPurple && hasDashed)
 			{
@@ -189,7 +194,8 @@ public class Abilities : MonoBehaviour {
 				{
 					isDashing = true;
 					canDestroy = true;
-					EnableTrailRenderer();
+//					EnableTrailRenderer();
+					EmitParticle(dashParticle);
 					dashState = DashState.Waiting;
 				}
 				break;
@@ -260,7 +266,8 @@ public class Abilities : MonoBehaviour {
 					minDash = tempMinDash;
 					tempWaitTime = waitTime;
 					dashState = DashState.Ready;
-					DisableTrailRenderer();
+//					DisableTrailRenderer();
+					StopEmitParticle(dashParticle);
 				break;
 			}
 
@@ -279,7 +286,7 @@ public class Abilities : MonoBehaviour {
 					{
 						facingDirection = false;
 					}
-					EnableTrailRenderer();
+//					EnableTrailRenderer();
 					isDownDashing = true;
 					player.velocity.x = 0f;
 					player.velocity.y = 0f;
@@ -346,7 +353,7 @@ public class Abilities : MonoBehaviour {
 					isDownDashing = false;
 					tempWaitTime = waitTime;
 					dashTimer = 0;
-					DisableTrailRenderer();
+//					DisableTrailRenderer();
 					downDashState = DownDashState.Ready;
 				break;
 			}
@@ -397,6 +404,7 @@ public class Abilities : MonoBehaviour {
 		if (isOrange)
 		{
 			//Is handled further down in: public void OnTriggerEnter2D.
+			//dashParticle.main.startColor = new Color(1f, 0.42f, 0.0f);
 		}
 																////////////////////////
 																////PLAYER IS PURPLE////
@@ -522,16 +530,24 @@ public class Abilities : MonoBehaviour {
 		}
 	}
 
-	public void EnableTrailRenderer()
-	{
-		trailRenderer.enabled = true;
-	}
-	public void DisableTrailRenderer()
-	{
-		trailRenderer.Clear();
-		trailRenderer.enabled = false;
-	}
+//	public void EnableTrailRenderer()
+//	{
+//		trailRenderer.enabled = true;
+//	}
+//	public void DisableTrailRenderer()
+//	{
+//		trailRenderer.Clear();
+//		trailRenderer.enabled = false;
+//	}
 
+	public void EmitParticle(ParticleSystem particle)
+	{
+		particle.Play();
+	}
+	public void StopEmitParticle(ParticleSystem particle)
+	{
+		particle.Stop();
+	}
 	public void Reset()
 	{
 		StartCoroutine("Resetting");
@@ -541,7 +557,8 @@ public class Abilities : MonoBehaviour {
 	{
 		//Debug.Log("PlayerState has been Reset");
 		gameObject.tag = "white";
-		DisableTrailRenderer();
+//		DisableTrailRenderer();
+		StopEmitParticle(dashParticle);
 		if (isPurple)
 		{
 			gravityReversed = false;
