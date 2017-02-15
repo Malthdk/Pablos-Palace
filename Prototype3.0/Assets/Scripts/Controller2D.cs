@@ -451,7 +451,7 @@ public class Controller2D : RaycastController {
 			//UIManager.uiManager.score++;
 			other.gameObject.SetActive(false);
 		}
-		if (other.tag == "chaseBoss")
+		if (other.tag == "chaseBoss" || other.tag == "killTag")
 		{
 			PlayerManager.pManager.KillPlayer();
 		}

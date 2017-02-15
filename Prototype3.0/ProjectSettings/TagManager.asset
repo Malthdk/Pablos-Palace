@@ -41,6 +41,7 @@ TagManager:
   - Crush
   - pushBox
   - waterPool
+  - killTag
   layers:
   - Default
   - TransparentFX

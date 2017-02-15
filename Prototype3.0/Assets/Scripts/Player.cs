@@ -177,10 +177,10 @@ public class Player : MonoBehaviour {
 			if (wallSliding)
 			{
 				doubleJumped = false;
+				wallSliding = false;
 				if (wallDirX == input.x)						//If input is towards the wall
 				{
 					abilities.notJumping = false;
-
 					//Tried to add smoothness to the ability by SmoothDamp - didnt work. Tried afterwards with maxJumpVelocity - worked but not apparent difference. 
 					//The reason it looks wierd could simply be due to the animations state machine. 
 					velocity.x = -wallDirX * abilities.wallJumpClimb.x;
