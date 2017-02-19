@@ -7,18 +7,16 @@ public class UIManager : MonoBehaviour {
 	public static UIManager uiManager;
 	public Text uiText;
 	//public Controller2D score;
-	public int score = 0;
-	public int fps = 0;
 
-	int frameCount = 0;
-	float dt = 0.0f;
-	float updateRate = 3.0f;  // 4 updates per sec.
+	public int score;
+	public int fps;
 
-	// Use this for initialization
+	int frameCount;
+	float dt;
+	float updateRate = 3.0f;  // 3 updates per sec.
 
 	void Awake()
 	{	
-		/* DISABLED BY CHRIS FOR USERTEST
 		if(uiManager == null)
 		{
 			DontDestroyOnLoad(gameObject);
@@ -28,11 +26,9 @@ public class UIManager : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
-		*/
 	}
 
 	void Start () {
-		//DontDestroyOnLoad(gameObject); DISABLED BY CHRIS FOR USERTEST
 		uiText = FindObjectOfType<Text>();
 		//score = FindObjectOfType<Controller2D>();
 	}

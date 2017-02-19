@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour {
 
-
 	[System.Serializable]
 	public class Levels
 	{

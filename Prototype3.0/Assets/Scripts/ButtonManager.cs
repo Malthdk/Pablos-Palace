@@ -4,31 +4,38 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ButtonManager : MonoBehaviour {
-
-	//For loading
+	
+	// For loading
 	public Slider loadingbar;
 	public GameObject loadingImage;
 	private AsyncOperation async;
 
-	public void LoadScene(string sceneName) { //Loads scene with a loadscreen
-		//SceneManager.LoadScene(sceneName);
 
+
+
+	// Loads scene with a loadscreen
+	public void LoadScene(string sceneName) {
 		GetLevel(sceneName);
 	}
-	public void LoadSceneNoScreen(string sceneName){ //Loads scene without a loadscreen
+
+	// Loads scene without a loadscreen
+	public void LoadSceneNoScreen(string sceneName){ 
 		SceneManager.LoadScene(sceneName);
 	}
 
+	// Exits the game
 	public void ExitApplication() {
 		Application.Quit();
 	}
 		
+	// Sets loading image to active and starts coroutine
 	public void GetLevel(string level)
 	{
 		loadingImage.SetActive(true);
 		StartCoroutine(LoadLevelWithBar(level));
 	}
 
+	// While level is loading display loadingbar
 	IEnumerator LoadLevelWithBar (string level)
 	{
 		async = Application.LoadLevelAsync(level);
@@ -38,5 +45,7 @@ public class ButtonManager : MonoBehaviour {
 			yield return null;
 		}
 	}
+
+
 
 }

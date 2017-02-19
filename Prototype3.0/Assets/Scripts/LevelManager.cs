@@ -9,7 +9,6 @@ public class LevelManager : MonoBehaviour {
 	public static LevelManager lManager;
 
 	public GameObject currentCheckpoint;
-	//public GameObject spawnPoint;
 	public string currentTag;
 
 	public float respawnTime = 0.5f;
@@ -17,8 +16,7 @@ public class LevelManager : MonoBehaviour {
 	private Checkpoint check;
 
 	public string MyLevel;
-
-	//public GameObject[] stateObjects;
+	public int coinCount;
 
 	public List<GameObject> stateObjects;
 	public List<PlatformController> platforms;
@@ -120,7 +118,6 @@ public class LevelManager : MonoBehaviour {
 	public void Respawn()
 	{
 		StartCoroutine(Respawned());
-		//Application.LoadLevel(Application.loadedLevel);
 	}
 
 	public void NextLevel()
@@ -128,7 +125,6 @@ public class LevelManager : MonoBehaviour {
 		Destroy(player.gameObject);
 		Destroy (this.gameObject);
 		Application.LoadLevel(MyLevel);
-		//player.transform.position = spawnPoint.transform.position;
 	}
 
 	void ResetStates(List<GameObject> theList)

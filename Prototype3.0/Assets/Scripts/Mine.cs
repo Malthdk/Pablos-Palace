@@ -10,8 +10,8 @@ public class Mine : MonoBehaviour {
 	private float tempTime = 0f;
 
 	void Start () {
-		particlegenerator = this.gameObject.GetComponent<ParticleGenerator>();
-		spriterenderer = this.gameObject.GetComponent<SpriteRenderer>();
+		particlegenerator = gameObject.GetComponent<ParticleGenerator>();
+		spriterenderer = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
 	}
 
 	void OnTriggerStay2D(Collider2D other)
@@ -23,7 +23,7 @@ public class Mine : MonoBehaviour {
 			if (tempTime > cooldown) {
 				particlegenerator.spawn = true;
 				tempTime = 0f;
-				spriterenderer.color = new Color(0f,0f,0f);
+				spriterenderer.color = new Color(1f,1f,1f);
 			}
 		}
 	}
@@ -32,7 +32,7 @@ public class Mine : MonoBehaviour {
 		if (other.gameObject.name == "Player")
 		{
 			tempTime = 0f;
-			spriterenderer.color = new Color(0f,0f,0f);
+			spriterenderer.color = new Color(1f,1f,1f);
 		} 
 	}
 }

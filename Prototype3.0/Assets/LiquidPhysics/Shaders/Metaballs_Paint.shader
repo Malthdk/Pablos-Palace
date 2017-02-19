@@ -40,7 +40,7 @@ Shader "Custom/Metaballs_Paint" {
 			o.uv = TRANSFORM_TEX (v.texcoord, _MainTex);
 			return o;
 		}
-		
+
 		fixed4 frag (v2f i) : COLOR {
 			fixed4 texcol = tex2D (_MainTex, i.uv);
 			fixed4 finalColor = texcol;

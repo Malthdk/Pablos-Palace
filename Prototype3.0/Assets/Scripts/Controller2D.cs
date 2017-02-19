@@ -172,7 +172,7 @@ public class Controller2D : RaycastController {
 
 				if (i == 0 && slopeAngle <= maxClimbAngle)
 				{
-					if (collisions.descendingSlope)							//Makes it so we can go from descending to ascending slope. 
+					if (collisions.descendingSlope)							// Makes it so we can go from descending to ascending slope. 
 					{
 						collisions.descendingSlope = false;
 						velocity = collisions.velocityOld; 
@@ -213,7 +213,7 @@ public class Controller2D : RaycastController {
 				}
 				if (hit.collider.gameObject.CompareTag("coin"))
 				{
-					UIManager.uiManager.score++;
+					LevelManager.instance.coinCount++;
 					Destroy(hit.collider.gameObject);
 				}
 			}
