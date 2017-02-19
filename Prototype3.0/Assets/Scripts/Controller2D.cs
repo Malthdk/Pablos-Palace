@@ -18,9 +18,15 @@ public class Controller2D : RaycastController {
 
 	private bool facingRight = true;		//For switching face direction
 
-
+	//Graphics and splat
 	private Transform graphicsTransform;
 	private GameObject dashParticle;
+	public float splatTime = 0.0005f;
+	Vector2 rayOrigin;
+	float rayLength = 5f;
+	public LayerMask middleGroundMask;
+	public bool onMiddleGround;
+	public bool painting;
 
 	private PullPush pullPush;
 	[HideInInspector]
@@ -49,7 +55,42 @@ public class Controller2D : RaycastController {
 
 		graphicsTransform = gameObject.transform.FindChild("Graphics").transform;
 
-		StartCoroutine(SplatterControl());
+		//StartCoroutine(SplatterControl());
+	}
+
+	public override void Update()
+	{
+		base.Update();
+
+		RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector3.forward, rayLength, middleGroundMask);
+
+		Debug.DrawRay(transform.position, Vector3.forward * rayLength, Color.red);
+
+		if (hit2) 
+		{
+			onMiddleGround = true;
+		}
+		else 
+		{
+			onMiddleGround = false;
+		}
+
+		if (Input.GetKey(KeyCode.LeftShift))
+		{
+			if (onMiddleGround)
+			{
+				StartCoroutine(SplatterControl());
+			}
+			else
+			{
+				StopCoroutine(SplatterControl());
+			}
+		}
+		else if (Input.GetKeyUp(KeyCode.LeftShift))
+		{
+			painting = false;
+			StopCoroutine(SplatterControl());
+		}
 	}
 		
 
@@ -398,7 +439,9 @@ public class Controller2D : RaycastController {
 
 	// METHOD FOR SPLATTING
 	private void Splat() {
+		painting = true;
 		Vector3 pos = new Vector3(this.gameObject.transform.position.x-Random.Range(-0.15f,0.15f),this.gameObject.transform.position.y-Random.Range(-0.2f,0.2f),this.gameObject.transform.position.z);
+		//Vector3 pos = new Vector3(this.gameObject.transform.position.x - 0f,this.gameObject.transform.position.y-Random.Range(-0.2f,0.2f),this.gameObject.transform.position.z);
 		Vector3 orangePos = new Vector3(this.gameObject.transform.position.x-Random.Range(-0.35f,0.35f),this.gameObject.transform.position.y-Random.Range(0.15f,0.35f),this.gameObject.transform.position.z);
 		if (this.gameObject.tag != "white") {
 			if (this.gameObject.tag == "orange") {
@@ -415,8 +458,11 @@ public class Controller2D : RaycastController {
 
 	IEnumerator SplatterControl() {
 		Splat ();
-		yield return new WaitForSeconds(0.00005f);
-		StartCoroutine(SplatterControl());
+		yield return new WaitForSeconds(splatTime);
+		if (Input.GetKey(KeyCode.LeftShift) && onMiddleGround)
+		{
+			StartCoroutine(SplatterControl());
+		}
 	}
 
 	//STRUCT WITH COLLISION INFOS

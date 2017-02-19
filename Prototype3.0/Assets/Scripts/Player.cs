@@ -221,6 +221,14 @@ public class Player : MonoBehaviour {
 			abilities.secondJump = false;
 			doubleJumped = false;
 		}
+		if (Mathf.Sign(velocity.y) == -1)
+		{
+			timeToJumpApex = 0.58f;
+		}
+		else 
+		{
+			timeToJumpApex = 0.75f;
+		}
 
 		if (Input.GetButtonUp("Jump"))					//For variable jump
 		{

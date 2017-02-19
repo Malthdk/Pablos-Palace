@@ -12,33 +12,45 @@ public class Splatter : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 	private Vector3 playerColor;
 
+	public LayerMask collisionMask;
+	private Bounds bounds;
+	private CircleCollider2D circleCol;
+	private Collider2D playerCollide;
+	private Vector2 pointA;
+	public bool checkForPlayer;
+
 	private void Awake()
     {
-//		if(splatManager == null)
-//		{
-//			DontDestroyOnLoad(gameObject); //TEMPORARY SOLUTION, the problem is that splatter cannot be destroyed upon resetting the level. However the function used for LevelManager, PlayerManager etc. for some reason doesnt work for Splatter. 
-//			splatManager = this;
-//		}
-//		else if(splatManager != this)
-//		{
-//			Destroy(gameObject);
-//		}
+		circleCol = GetComponent<CircleCollider2D>();
+		bounds = circleCol.bounds;
         spriteRenderer = GetComponent<SpriteRenderer>();
 		player = GameObject.Find("Player");	
 		CompareColors();
-
-		//Debug.Log(spriteRenderer.color);
+		pointA = bounds.center;
     }
 
     private void Start()
     {
+		circleCol.enabled = false;
         spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
 		spriteRenderer.color = new Color(playerColor.x, playerColor.y, playerColor.z);
 		transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
-
-		//Debug.Log(spriteRenderer.color);
+		checkForPlayer = true;
     }
 
+	void Update ()
+	{
+		if (checkForPlayer)
+		{
+			playerCollide = Physics2D.OverlapCircle(pointA, circleCol.radius + 0.5f, collisionMask);
+			if (playerCollide == null)
+			{
+				circleCol.enabled = true;
+				checkForPlayer = false;
+			}
+		}
+			
+	}
 
 	private void CompareColors() {
 		if (player.gameObject.tag == "blue") {
@@ -55,5 +67,5 @@ public class Splatter : MonoBehaviour
 			playerColor = new Vector3(1f,0.42f,0.0f);
 		}
 	}
-
+		
 }

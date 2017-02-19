@@ -5,7 +5,7 @@ public class PlayerManager : MonoBehaviour {
 
 	GameObject splatterParent;
 	Transform tf;
-
+	public float splatStayTime = 5f;
 	public static PlayerManager pManager;
 
 	[HideInInspector]
@@ -52,6 +52,6 @@ public class PlayerManager : MonoBehaviour {
 	{
 		GameObject splat = (GameObject) Instantiate(Resources.Load("Splatter", typeof(GameObject)), position, Quaternion.identity);
 		splat.transform.parent = tf;
-		Destroy(splat.gameObject, 25.0f);
+		Destroy(splat.gameObject, splatStayTime);
 	}
 }
