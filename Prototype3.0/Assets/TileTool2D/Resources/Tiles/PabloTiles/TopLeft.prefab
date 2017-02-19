@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 408248}
   - component: {fileID: 21250320}
   - component: {fileID: 11433832}
-  - component: {fileID: 60000012242059164}
+  - component: {fileID: 60878157721853110}
   m_Layer: 8
   m_Name: TopLeft
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MonoBehaviour:
   tileTexture: {fileID: 0}
   tileName: 
   tileType: 
-  tileSize: 1.275
+  tileSize: 1
   passive: 0
   disableColliderOnAwake: 0
   particles: {fileID: 0}
@@ -54,7 +54,7 @@ MonoBehaviour:
   tileSprite: 
   thumbnail: {fileID: 0}
   tileA:
-  - {fileID: 21300038, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  - {fileID: 21300036, guid: 76a03b3f945d8487da999eeeb0e25bf7, type: 3}
   tileC: []
   tileCE: []
   tileCN: []
@@ -144,7 +144,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300038, guid: 419ed673090344d6f97842881ccd17e2, type: 3}
+  m_Sprite: {fileID: 21300036, guid: 76a03b3f945d8487da999eeeb0e25bf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -159,7 +159,7 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111248}
   m_IsPrefabParent: 1
---- !u!60 &60000012242059164
+--- !u!60 &60878157721853110
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -173,8 +173,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1.28}
+    - - {x: 0, y: 1.0158731}
       - {x: 0, y: 0}
-      - {x: 0.03, y: 0}
-      - {x: 1.28, y: 1.25}
-      - {x: 1.28, y: 1.28}
+      - {x: 0.015873017, y: 0}
+      - {x: 1.0158731, y: 1}
+      - {x: 1.0158731, y: 1.0158731}
