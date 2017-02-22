@@ -75,7 +75,7 @@ public class Controller2D : RaycastController {
 			onMiddleGround = false;
 		}
 
-		if (Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetButton("Special") || abilities.special == 1)
 		{
 			if (onMiddleGround)
 			{
@@ -86,7 +86,7 @@ public class Controller2D : RaycastController {
 				StopCoroutine(SplatterControl());
 			}
 		}
-		else if (Input.GetKeyUp(KeyCode.LeftShift))
+		else if (Input.GetButtonUp("Special") || abilities.special == 1)
 		{
 			painting = false;
 			StopCoroutine(SplatterControl());
@@ -459,7 +459,7 @@ public class Controller2D : RaycastController {
 	IEnumerator SplatterControl() {
 		Splat ();
 		yield return new WaitForSeconds(splatTime);
-		if (Input.GetKey(KeyCode.LeftShift) && onMiddleGround)
+		if ((Input.GetButton("Special") || abilities.special == 1) && onMiddleGround)
 		{
 			StartCoroutine(SplatterControl());
 		}

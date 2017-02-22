@@ -44,7 +44,9 @@ public class Player : MonoBehaviour {
 	private Animator animator;		//ANIMATION
 	private PullPush pullPush;
 	[HideInInspector]
-	public bool doubleJumped;
+	public bool doubleJumped, tripleJumped, hasTripleJumped;
+	private float doubleJumpVelocity;
+	private float tripleJumpVelocity;
 
 	[HideInInspector]
 	public static Player _instance;
@@ -64,7 +66,6 @@ public class Player : MonoBehaviour {
 		controller = GetComponent<Controller2D>();
 		abilities = GetComponent<Abilities>();
 		animator = GetComponent<Animator>();		//ANIMATION
-
 	}
 
 	void Update () 
@@ -104,6 +105,7 @@ public class Player : MonoBehaviour {
 		animator.SetBool("Dashing", abilities.isDashing);
 		animator.SetBool ("Soaring", abilities.soaring);
 		animator.SetBool("DoubleJump", doubleJumped);
+		animator.SetBool("TripleJump", tripleJumped);
 
 		//WALLSLIDING WITH YELLOW
 		wallSliding = false;
@@ -157,7 +159,7 @@ public class Player : MonoBehaviour {
 					Debug.Log ("double jumped");
 					abilities.soaring = false;
 					abilities.hasDoubleJumped = true;
-					velocity.y = maxJumpVelocity/1.3f;
+					velocity.y = doubleJumpVelocity;
 					//abilities.startRotation();
 					
 				}
@@ -167,16 +169,22 @@ public class Player : MonoBehaviour {
 
 					if (!abilities.hasDoubleJumped)
 					{
-						doubleJumped = true;
+						doubleJumped = true; //animation
 						abilities.hasDoubleJumped = true;
-						velocity.y = maxJumpVelocity/1.3f;
+						velocity.y = doubleJumpVelocity;
 						abilities.startRotation();
 					}
+				}
+				else if (!hasTripleJumped && abilities.hasDoubleJumped && !wallSliding && !abilities.isPurple)
+				{
+					tripleJumped = true; //animation
+					hasTripleJumped = true; 
+					velocity.y = tripleJumpVelocity;
 				}
 			}
 			if (wallSliding)
 			{
-				doubleJumped = false;
+				doubleJumped = false; //animation
 				wallSliding = false;
 				if (wallDirX == input.x)						//If input is towards the wall
 				{
@@ -211,7 +219,9 @@ public class Player : MonoBehaviour {
 		}
 		else if (!pullPush.isPulling)
 		{
-			doubleJumped = false;
+			hasTripleJumped = false;
+			tripleJumped = false; //animation
+			doubleJumped = false; //animation
 			abilities.secondJump = false;
 			abilities.soaring = false;
 			moveSpeed = groundSpeed;
@@ -223,11 +233,13 @@ public class Player : MonoBehaviour {
 		}
 		if (Mathf.Sign(velocity.y) == -1)
 		{
-			timeToJumpApex = 0.58f;
+			timeToJumpApex = 0.75f; //55
 		}
 		else 
 		{
-			timeToJumpApex = 0.75f;
+			timeToJumpApex = 0.92f;	//72
+			doubleJumpVelocity = maxJumpVelocity/1.4f;
+			tripleJumpVelocity = maxJumpVelocity/1.2f;
 		}
 
 		if (Input.GetButtonUp("Jump"))					//For variable jump

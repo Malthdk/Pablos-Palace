@@ -52,6 +52,6 @@ public class PlayerManager : MonoBehaviour {
 	{
 		GameObject splat = (GameObject) Instantiate(Resources.Load("Splatter", typeof(GameObject)), position, Quaternion.identity);
 		splat.transform.parent = tf;
-		Destroy(splat.gameObject, splatStayTime);
+		//Destroy(splat.gameObject, splatStayTime);
 	}
 }
