@@ -21,6 +21,8 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
 	public bool colliderEnabled = true;             //determines if the collider is enabled.  Changing this during runtime will have no effect.
 	public bool pausing = false;                     //determines if the trail is pausing, i.e. neither creating nor destroying vertices
 
+	private bool isActionPerformed;
+	private bool building;							//are we building a trail?
 	private Transform trans;                        //transform of the object this script is attached to                    
 	private Mesh mesh;                              
 	private new PolygonCollider2D collider;
@@ -66,30 +68,41 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
 	//************
 
 	private void Awake() {
-		//create an object and mesh for the trail
-		GameObject trail = new GameObject("Trail", new[] { typeof(MeshRenderer), typeof(MeshFilter), typeof(PolygonCollider2D) } );
-		trail.layer = 8;
-		mesh = trail.GetComponent<MeshFilter>().mesh = new Mesh();
-		trail.GetComponent<Renderer>().material = trailMaterial;
-
-		//get and set the polygon collider on this trail.
-		collider = trail.GetComponent<PolygonCollider2D>();
-		collider.isTrigger = colliderIsTrigger;
-		collider.SetPath(0, null);
-
-		//get the transform of the object this script is attatched to
-		trans = base.transform;
-
-		//set the first center position as the current position
-		centerPositions = new LinkedList<Vector3>();
-		centerPositions.AddFirst(trans.position);
-
-		leftVertices = new LinkedList<Vertex>();
-		rightVertices = new LinkedList<Vertex>();
+//		//create an object and mesh for the trail
+//		GameObject trail = new GameObject("Trail", new[] { typeof(MeshRenderer), typeof(MeshFilter), typeof(PolygonCollider2D) } );
+//		trail.layer = 8;
+//		trail.tag = "Through";
+//		mesh = trail.GetComponent<MeshFilter>().mesh = new Mesh();
+//		trail.GetComponent<Renderer>().material = trailMaterial;
+//
+//		//get and set the polygon collider on this trail.
+//		collider = trail.GetComponent<PolygonCollider2D>();
+//		collider.isTrigger = colliderIsTrigger;
+//		collider.SetPath(0, null);
+//
+//		//get the transform of the object this script is attatched to
+//		trans = base.transform;
+//
+//		//set the first center position as the current position
+//		centerPositions = new LinkedList<Vector3>();
+//		centerPositions.AddFirst(trans.position);
+//
+//		leftVertices = new LinkedList<Vertex>();
+//		rightVertices = new LinkedList<Vertex>();
 	}
 
 	private void Update() {
-		if (Controller2D.instance.painting)
+		if (Input.GetButtonDown("Special") && Controller2D.instance.onMiddleGround)
+		{
+			StartCoroutine(BuildTrail());
+			building = true;
+		}
+		if (Input.GetButtonUp("Special"))
+		{
+			building = false;
+		}
+
+		if (building)
 		{
 			if (!pausing) {
 				//set the mesh and adjust widths if vertices were added or removed
@@ -111,6 +124,40 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
 	//
 	//************
 
+	IEnumerator BuildTrail(){
+
+		while(!isActionPerformed){
+			yield return new WaitForEndOfFrame ();
+			CreateTrail();
+
+			//toggle the boolean whenever you acheive your objective
+			isActionPerformed = true;
+		}
+	}
+
+	private void CreateTrail()
+	{
+		GameObject trail = new GameObject("Trail", new[] { typeof(MeshRenderer), typeof(MeshFilter), typeof(PolygonCollider2D) } );
+		trail.layer = 8;
+		trail.tag = "Through";
+		mesh = trail.GetComponent<MeshFilter>().mesh = new Mesh();
+		trail.GetComponent<Renderer>().material = trailMaterial;
+
+		//get and set the polygon collider on this trail.
+		collider = trail.GetComponent<PolygonCollider2D>();
+		collider.isTrigger = colliderIsTrigger;
+		collider.SetPath(0, null);
+
+		//get the transform of the object this script is attatched to
+		trans = base.transform;
+
+		//set the first center position as the current position
+		centerPositions = new LinkedList<Vector3>();
+		centerPositions.AddFirst(trans.position);
+
+		leftVertices = new LinkedList<Vertex>();
+		rightVertices = new LinkedList<Vertex>();
+	}
 	/// <summary>
 	/// Adds new vertices if the object has moved more than 'vertexDistanceMin' from the most recent center position.
 	/// If a pair of vertices has been added, this method returns true.

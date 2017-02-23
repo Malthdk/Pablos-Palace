@@ -6,7 +6,7 @@ public class Splatter : MonoBehaviour
 {
 	public static Splatter splatManager;
 
-    public List<Sprite> sprites;
+    //public List<Sprite> sprites;
 	public GameObject player;
 
     private SpriteRenderer spriteRenderer;
@@ -21,22 +21,25 @@ public class Splatter : MonoBehaviour
 
 	public float splatStayTime = 5f;
 
+
+	private Material material;
 	private void Awake()
     {
+		material = GetComponent<MeshRenderer>().material;
 		circleCol = GetComponent<CircleCollider2D>();
 		bounds = circleCol.bounds;
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
 		player = GameObject.Find("Player");	
-		CompareColors();
+		//CompareColors();
 		pointA = bounds.center;
     }
 
     private void Start()
     {
 		circleCol.enabled = false;
-        spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
-		spriteRenderer.color = new Color(playerColor.x, playerColor.y, playerColor.z);
-		transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+        //spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
+		//spriteRenderer.color = new Color(playerColor.x, playerColor.y, playerColor.z);
+		//transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
 		checkForPlayer = true;
 		StartCoroutine(DestroySplat());
     }
@@ -76,11 +79,11 @@ public class Splatter : MonoBehaviour
 		yield return new WaitForSeconds(splatStayTime);
 
 		circleCol.enabled = false;
-		Color color = spriteRenderer.color;
+		Color color = material.color;
 
 		if (player.gameObject.tag == "blue") {
 			color = new Color (0.17f,0.17f,0.85f, 0.05f);
-			spriteRenderer.color = color;
+			material.color = color;
 
 		} else if (player.gameObject.tag == "purple") {
 			color = new Color (0.55f,0.21f,0.7f, 0.05f);

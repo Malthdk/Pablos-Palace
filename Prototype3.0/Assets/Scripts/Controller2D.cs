@@ -79,11 +79,11 @@ public class Controller2D : RaycastController {
 		{
 			if (onMiddleGround)
 			{
-				StartCoroutine(SplatterControl());
+				//StartCoroutine(SplatterControl());
 			}
 			else
 			{
-				StopCoroutine(SplatterControl());
+				//StopCoroutine(SplatterControl());
 			}
 		}
 		else if (Input.GetButtonUp("Special") || abilities.special == 1)

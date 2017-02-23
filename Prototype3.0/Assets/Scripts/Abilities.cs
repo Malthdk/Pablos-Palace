@@ -67,7 +67,7 @@ public class Abilities : MonoBehaviour {
 	private bool hasBeenReset = true, normalGravity = true;		//normalGravity is for flipping character when purple	
 	public  bool gravityReversed = false;
 	[HideInInspector]
-    public float special;
+    public float special = 0;
 
 	[HideInInspector]
 	public static Abilities _instance;
