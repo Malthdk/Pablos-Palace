@@ -92,7 +92,7 @@ public class LevelManager : MonoBehaviour {
 		player.enabled = false;
 		graphics.SetActive(false);
 		particleEffect.SetActive(true);
-		Abilities.instance.Reset();
+		//Abilities.instance.Reset();
 
 		yield return new WaitForSeconds(0.9f);
 

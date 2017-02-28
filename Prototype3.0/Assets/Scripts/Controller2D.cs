@@ -8,7 +8,6 @@ public class Controller2D : RaycastController {
 
 	public Collisioninfo collisions;			//Calling collisions info from struct
 	public LevelManager levelmanager;
-	public Abilities abilities;
 	public Splatter splatter;
 
 	[HideInInspector]
@@ -16,7 +15,8 @@ public class Controller2D : RaycastController {
 	public Checkpoint checkpoint;
 	public UIManager uiManager;
 
-	private bool facingRight = true;		//For switching face direction
+	[HideInInspector]
+	public bool facingRight = true;		//For switching face direction
 
 	//Graphics and splat
 	private Transform graphicsTransform;
@@ -27,7 +27,6 @@ public class Controller2D : RaycastController {
 	public LayerMask middleGroundMask;
 	public bool onMiddleGround;
 	public bool painting;
-
 	private PullPush pullPush;
 	[HideInInspector]
 	public static Controller2D _instance;
@@ -47,15 +46,11 @@ public class Controller2D : RaycastController {
 		collisions.faceDir = 1;					//Face direction set to 1
 		levelmanager = FindObjectOfType<LevelManager>();
 		checkpoint = FindObjectOfType<Checkpoint>();
-		abilities = GetComponent<Abilities>();
 		pullPush = GetComponent<PullPush>();
 		dashParticle = transform.GetChild(3).gameObject;
-		//uiManager = FindObjectOfType<UIManager>();
-		//splatter = FindObjectOfType<Splatter>();
 
 		graphicsTransform = gameObject.transform.FindChild("Graphics").transform;
 
-		//StartCoroutine(SplatterControl());
 	}
 
 	public override void Update()
@@ -75,18 +70,18 @@ public class Controller2D : RaycastController {
 			onMiddleGround = false;
 		}
 
-		if (Input.GetButton("Special") || abilities.special == 1)
+		if (Input.GetButton("Special"))
 		{
 			if (onMiddleGround)
 			{
-				//StartCoroutine(SplatterControl());
+				StartCoroutine(SplatterControl());
 			}
 			else
 			{
-				//StopCoroutine(SplatterControl());
+				StopCoroutine(SplatterControl());
 			}
 		}
-		else if (Input.GetButtonUp("Special") || abilities.special == 1)
+		else if (Input.GetButtonUp("Special"))
 		{
 			painting = false;
 			StopCoroutine(SplatterControl());
@@ -145,10 +140,6 @@ public class Controller2D : RaycastController {
 		if (standingOnPlatform)						//Tracing collisions below player when on platform
 		{
 			collisions.below = true;
-			if (gameObject.tag == "purple")
-			{
-				collisions.above = true;
-			}
 		}
 		if (slidingOnPlatformLeft)
 		{
@@ -183,27 +174,6 @@ public class Controller2D : RaycastController {
 
 			if (hit)
 			{
-				//This is for pushing and pulling boxes
-				if (hit.collider.tag == "pushBox")
-				{
-					Debug.Log("Can pull and push now!");
-					pullPush.canGrab = true;
-					pullPush.pushBlock = hit.collider.gameObject;
-				}
-
-				//To make sure there is no collision when dashing as orange
-				if (hit.collider.tag == "orangeDestroy")
-				{
-					if(abilities.canDestroy && abilities.isOrange)
-					{
-						continue;
-					}
-				}
-				// Instantiates splatter
-				//if (this.gameObject.tag != "white") {
-				//	StartCoroutine(SplatterControl());
-				//}
-
 				if (hit.distance == 0)
 				{
 					continue;
@@ -285,14 +255,7 @@ public class Controller2D : RaycastController {
 				{
 					PlayerManager.pManager.KillPlayer();
 				}
-				if (hit.collider.tag == "orangeDestroy")
-				{
-					if(abilities.canDestroy && abilities.isOrange)
-					{
-						continue;
-					}
-				}
-				if (hit.collider.tag == "Through" && gameObject.tag != "purple")					//To go through "Through" platforms
+				if (hit.collider.tag == "Through")					//To go through "Through" platforms
 				{
 					if (directionY ==1 || hit.distance == 0)		//Makes sure we have to go all the way through platform to land on it
 					{
@@ -309,24 +272,6 @@ public class Controller2D : RaycastController {
 						continue;
 					}
 				}
-				if (hit.collider.tag == "Through" && gameObject.tag == "purple")					//To go through "Through" platforms
-				{
-					if (directionY ==-1 || hit.distance == 0)		//Makes sure we have to go all the way through platform to land on it
-					{
-						continue;									//continues direction
-					}
-					if (collisions.fallingThroughPlatform)
-					{
-						continue;
-					}
-					if (playerInput.y == 1)						//if player input is down
-					{
-						collisions.fallingThroughPlatform = true;  //setting falling through platforms to true
-						Invoke("ResetFallingThroughPlatform", .2f); //After half a second this method will be called
-						continue;
-					}
-				}
-
 				velocity.y = (hit.distance - skinWidth) * directionY;
 				rayLength = hit.distance;
 
@@ -440,26 +385,17 @@ public class Controller2D : RaycastController {
 	// METHOD FOR SPLATTING
 	private void Splat() {
 		painting = true;
-		Vector3 pos = new Vector3(this.gameObject.transform.position.x-Random.Range(-0.15f,0.15f),this.gameObject.transform.position.y-Random.Range(-0.2f,0.2f),this.gameObject.transform.position.z);
-		//Vector3 pos = new Vector3(this.gameObject.transform.position.x - 0f,this.gameObject.transform.position.y-Random.Range(-0.2f,0.2f),this.gameObject.transform.position.z);
-		Vector3 orangePos = new Vector3(this.gameObject.transform.position.x-Random.Range(-0.35f,0.35f),this.gameObject.transform.position.y-Random.Range(0.15f,0.35f),this.gameObject.transform.position.z);
-		if (this.gameObject.tag != "white") {
-			if (this.gameObject.tag == "orange") {
-				PlayerManager.pManager.SpawnSplat(orangePos); 
-				//Splatter splat = (Splatter) Instantiate(splatter, orangePos, Quaternion.identity);
-				//Destroy(splat.gameObject, 25.0f);
-			} else {
+		Vector3 pos = new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y,this.gameObject.transform.position.z);
+		if (this.gameObject.tag != "white") 
+		{
 				PlayerManager.pManager.SpawnSplat(pos); 
-				//Splatter splat = (Splatter) Instantiate(splatter, pos, Quaternion.identity);
-				//Destroy(splat.gameObject, 25.0f);
-			}
 		}
 	}
 
 	IEnumerator SplatterControl() {
 		Splat ();
 		yield return new WaitForSeconds(splatTime);
-		if ((Input.GetButton("Special") || abilities.special == 1) && onMiddleGround)
+		if (Input.GetButton("Special") && onMiddleGround)
 		{
 			StartCoroutine(SplatterControl());
 		}
