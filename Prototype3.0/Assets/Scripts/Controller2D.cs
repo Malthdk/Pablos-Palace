@@ -86,6 +86,10 @@ public class Controller2D : RaycastController {
 			painting = false;
 			StopCoroutine(SplatterControl());
 		}
+		if (!onMiddleGround)
+		{
+			painting = false;
+		}
 	}
 		
 

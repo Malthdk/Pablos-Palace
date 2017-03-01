@@ -5,33 +5,35 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	
 	public float maxJumpHeight = 3.5f;				//Max JumpHeight
+	public float maxJumoHeightPainting;
 	public float minJumpHeight = 1f;				//Minimum JumpHeight
+	[HideInInspector]
 	public float purpMinJumpVelocity = -9.3f;		//Minimum jump velocity when purple - have to be defined here cause of mathematical equation
 	public float timeToJumpApex = .65f;				//Time to reach highest point (4875 was before)
 	public float accelerationTimeAirborn = .2f;		//Acceleration while airborne
 	public float accelerationTimeGrounded = .5f;	//Acceleration while grounded
-	public float moveSpeed = 9;	
 	[HideInInspector]
-	public float airSpeed = 6.4f, groundSpeed = 9.4f;
+	public float moveSpeed = 9;	
+	public float airSpeed = 6.4f, groundSpeed = 9.4f, paintingSpeed;
 	[HideInInspector]
 	public Vector2 input;
 	[HideInInspector]
 	public int wallDirX;
 
 	//FOR WALLSLIDING
+	[HideInInspector]
 	public float wallSlideSpeedMax = 0.01f;		//Maximum wall spide speed
 	private float wallStickTime = 1f;		//Time before releasing from wall when input is away from wall
 	float timeToWallUnstick;
+	[HideInInspector]
 	public bool wallSliding;
-
-	public float wjXSmoothing;
-	public float wjYSmoothing;
+	[HideInInspector]
+	public float wjXSmoothing, wjYSmoothing;
 	private float wjAcceleration = 0.05f;
 
-	public bool hasJumped;
 	public float gravity;					//gramaxJumpVelocity to player
-	public float maxJumpVelocity;			//Max jump velocity
-	public float minJumpVelocity;			//Min jump velocity
+	[HideInInspector]
+	public float maxJumpVelocity, minJumpVelocity;			//Min jump velocity
 	public Vector3 velocity;				//velocity
 	[HideInInspector]
 	public float velocityXSmoothing;		//smoothing on velocity
@@ -44,7 +46,13 @@ public class Player : MonoBehaviour {
 	[HideInInspector]
 	public bool doubleJumped, tripleJumped, hasTripleJumped = false, hasDoubleJumped = false;
 	private float doubleJumpVelocity;
+	public float doubleJumpReduction;
 	private float tripleJumpVelocity;
+	public float tripleJumpReduction;
+	public float gravityModifierFall;
+	public float gravityModifierJump;
+	public float gravityModifierPaintingJump;
+	public float gravityModifierPaintingFall;
 
 	[HideInInspector]
 	public static Player _instance;
@@ -111,7 +119,8 @@ public class Player : MonoBehaviour {
 			{
 				/*This is where double jump is handled*/
 				if (!hasDoubleJumped)
-				{
+				{	
+					velocity.y = 0;
 					Debug.Log ("double jumped");
 					doubleJumped = true; //This causes an animation bugg where we jump from a wall and then doublejump is is set to true so we canno transition into jump animation.
 					hasDoubleJumped = true;
@@ -122,6 +131,7 @@ public class Player : MonoBehaviour {
 				}
 				else if (!hasTripleJumped && hasDoubleJumped)
 				{
+					velocity.y = 0;
 					Debug.Log ("tripple jumped");
 					tripleJumped = true; //animation
 					hasTripleJumped = true; 
@@ -142,15 +152,36 @@ public class Player : MonoBehaviour {
 			doubleJumped = false; //animation
 			moveSpeed = groundSpeed;
 		}
+		if (controller.painting)
+		{
+			moveSpeed = paintingSpeed;
+		}
 		if (Mathf.Sign(velocity.y) == -1)
 		{
-			timeToJumpApex = 0.75f; //55
+			if (controller.painting)
+			{
+				timeToJumpApex = gravityModifierPaintingFall;
+			}
+			else
+			{
+				timeToJumpApex = gravityModifierFall; //55 //0.75
+			}
 		}
 		else 
 		{
-			timeToJumpApex = 0.92f;	//72
-			doubleJumpVelocity = maxJumpVelocity/1.4f;
-			tripleJumpVelocity = maxJumpVelocity/1.2f;
+			if (controller.painting)
+			{
+				//maxJumpHeight = maxJumoHeightPainting;
+				timeToJumpApex = gravityModifierPaintingJump;
+				doubleJumpVelocity = maxJumpVelocity/doubleJumpReduction;
+				tripleJumpVelocity = maxJumpVelocity/tripleJumpReduction;
+			}
+			else
+			{
+				timeToJumpApex = gravityModifierJump;//0.92f;	//72
+				doubleJumpVelocity = maxJumpVelocity/doubleJumpReduction;
+				tripleJumpVelocity = maxJumpVelocity/tripleJumpReduction;
+			}
 		}
 
 		if (Input.GetButtonUp("Jump"))					//For variable jump
@@ -170,4 +201,9 @@ public class Player : MonoBehaviour {
 			velocity.y = 0;
 		}
 	}
+
+	//IEnumerator SpecialJump(float velocity)
+	//{
+	//	yield return new WaitForEndOfFrame();
+	//}
 }
