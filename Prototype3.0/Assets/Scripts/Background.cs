@@ -5,10 +5,12 @@ using UnityEngine;
 public class Background : MonoBehaviour {
 
 	public bool scrolling = true;
-	public bool parallax = true;
+	public bool parallaxX = true;
+	public bool parallaxY = true;
 
 	public float backgroundSize;
-	public float parallaxSpeed;
+	public float parallaxSpeedX;
+	public float parallaxSpeedY;
 
 	private Transform cameraTransform;
 	private Transform[] layers;
@@ -16,23 +18,34 @@ public class Background : MonoBehaviour {
 	private int leftIndex;
 	private int rightIndex;
 	private float lastCameraX;
+	private float lastCameraY;
+	private float backgroundPosY;
+	private float backgroundPosZ;
 
 	private void Start() {
 		cameraTransform = GameObject.Find("PlayerCamera").transform;
 		lastCameraX = cameraTransform.position.x;
+		lastCameraY = cameraTransform.position.y;
 		layers = new Transform[transform.childCount];
 		for (int i = 0; i < transform.childCount; i++) {
 			layers [i] = transform.GetChild (i);
 		}
+		backgroundPosY = this.layers[0].transform.position.y;
+		backgroundPosZ = this.layers[0].transform.position.z;
 		leftIndex = 0;
 		rightIndex = layers.Length - 1;
 	}
 
 	private void Update() {
-		if (parallax) {
+		if (parallaxX) {
 			float deltaX = cameraTransform.position.x - lastCameraX;
-			transform.position += Vector3.right * (deltaX * parallaxSpeed);
+			transform.position += Vector3.right * (deltaX * parallaxSpeedX);
 			lastCameraX = cameraTransform.position.x;
+		}
+		if (parallaxY) {
+			float deltaY = cameraTransform.position.y - lastCameraY;
+			transform.position += Vector3.up * (deltaY * parallaxSpeedY);
+			lastCameraY = cameraTransform.position.y;
 		}
 
 		if (scrolling) {
@@ -47,7 +60,8 @@ public class Background : MonoBehaviour {
 
 	private void ScrollLeft() {
 		int lastRight = rightIndex;
-		layers [rightIndex].position = Vector3.right * (layers[leftIndex].position.x - backgroundSize);
+		layers [rightIndex].position = new Vector3((layers[leftIndex].position.x - backgroundSize),backgroundPosY,backgroundPosZ);
+		//layers [rightIndex].localScale.Set(layers [rightIndex].localScale.x*-1,layers [rightIndex].localScale.y,layers [rightIndex].localScale.z);
 		leftIndex = rightIndex;
 		rightIndex--;
 		if (rightIndex < 0) {
@@ -57,7 +71,8 @@ public class Background : MonoBehaviour {
 
 	private void ScrollRight() {
 		int lastLeft = leftIndex;
-		layers [leftIndex].position = Vector3.right * (layers[rightIndex].position.x + backgroundSize);
+		layers [leftIndex].position = new Vector3((layers[rightIndex].position.x + backgroundSize),backgroundPosY,backgroundPosZ);
+		//layers [leftIndex].localScale.Set(layers [leftIndex].localScale.x*-1,layers [leftIndex].localScale.y,layers [leftIndex].localScale.z);
 		rightIndex = leftIndex;
 		leftIndex++;
 		if (leftIndex == layers.Length) {
