@@ -36,7 +36,7 @@ public class Background : MonoBehaviour {
 		rightIndex = layers.Length - 1;
 	}
 
-	private void Update() {
+	private void LateUpdate() {
 		if (parallaxX) {
 			float deltaX = cameraTransform.position.x - lastCameraX;
 			transform.position += Vector3.right * (deltaX * parallaxSpeedX);
