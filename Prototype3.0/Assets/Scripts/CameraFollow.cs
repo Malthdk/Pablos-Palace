@@ -9,7 +9,8 @@ public class CameraFollow : MonoBehaviour {
 	public float lookAheadDstX;
 	public float lookSmoothTimeX;
 	public float verticalSmoothTime;
-	
+	public float horizontalSmoothTime;
+
 	public Vector2 focusAreaSize;
 
 	FocusArea focusArea;
@@ -19,6 +20,7 @@ public class CameraFollow : MonoBehaviour {
 	float lookAheadDirX;
 	float smoothLookVelocityX;
 	float smoothVelocityY;
+	float smoothVelocityX;
 
 //	float smoothFindX;
 //	float smoothFindY;
@@ -63,10 +65,11 @@ public class CameraFollow : MonoBehaviour {
 			}
 		}
 
-		currentLookAheadX = Mathf.SmoothDamp (currentLookAheadX, targetLookAheadX, ref smoothLookVelocityX, lookSmoothTimeX);
+	//	currentLookAheadX = Mathf.SmoothDamp (currentLookAheadX, targetLookAheadX, ref smoothLookVelocityX, lookSmoothTimeX); //FOR LOOKING AHEAD DO NOT DELETE
 
+		focusPosition.x = Mathf.SmoothDamp(transform.position.x, focusPosition.x, ref smoothVelocityX, horizontalSmoothTime);
 		focusPosition.y = Mathf.SmoothDamp(transform.position.y, focusPosition.y, ref smoothVelocityY, verticalSmoothTime);
-		focusPosition += Vector2.right * currentLookAheadX;
+		//focusPosition += Vector2.right * currentLookAheadX;																//FOR LOOKING AHEAD DO NOT DELETE
 
 		//float rounded_x = RoundToNearestPixel(focusPosition.x);
 		//float rounded_y = RoundToNearestPixel(focusPosition.y);

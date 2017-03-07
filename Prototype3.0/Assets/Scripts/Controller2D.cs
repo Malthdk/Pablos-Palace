@@ -31,6 +31,10 @@ public class Controller2D : RaycastController {
 	[HideInInspector]
 	public static Controller2D _instance;
 
+	//PaintParticles
+	private ParticleSystem paintParticles;
+	private bool isEmitting;
+
 	public static Controller2D instance {	// Makes it possible to call script easily from other scripts
 		get {
 			if (_instance == null) {
@@ -48,8 +52,10 @@ public class Controller2D : RaycastController {
 		checkpoint = FindObjectOfType<Checkpoint>();
 		pullPush = GetComponent<PullPush>();
 		dashParticle = transform.GetChild(3).gameObject;
-
+		paintParticles = gameObject.transform.GetChild(5).GetChild(0).GetComponent<ParticleSystem>();
 		graphicsTransform = gameObject.transform.FindChild("Graphics").transform;
+
+		//paintParticles.Stop();
 
 	}
 
@@ -75,21 +81,26 @@ public class Controller2D : RaycastController {
 			if (onMiddleGround)
 			{
 				StartCoroutine(SplatterControl());
+				EmitParticle(paintParticles);
 			}
 			else
 			{
 				StopCoroutine(SplatterControl());
+				StopEmitParticle(paintParticles);
 			}
 		}
 		else if (Input.GetButtonUp("Special"))
 		{
 			painting = false;
 			StopCoroutine(SplatterControl());
+			StopEmitParticle(paintParticles);
 		}
 		if (!onMiddleGround)
 		{
 			painting = false;
+			StopEmitParticle(paintParticles);
 		}
+
 	}
 		
 
@@ -446,6 +457,21 @@ public class Controller2D : RaycastController {
 	public void StartSplat()
 	{
 		StartCoroutine(SplatterControl());
+	}
+
+	public void EmitParticle(ParticleSystem particle)
+	{
+		if (particle.isPlaying)
+		{
+		}
+		else
+		{
+			particle.Play();
+		}
+	}
+	public void StopEmitParticle(ParticleSystem particle)
+	{
+		particle.Stop();
 	}
 
 }

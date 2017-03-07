@@ -56,7 +56,7 @@ public class Splatter : MonoBehaviour
 		if (player.gameObject.tag == "blue") 
 		{
 			myColor = "blue";
-			Color32 colorStart = playerColor;
+			Color colorStart = playerColor;
 				//new Color (0.15f, 0.15f, 0.82f);
 			material.color = colorStart; //0.17 0.17 0.85
 
