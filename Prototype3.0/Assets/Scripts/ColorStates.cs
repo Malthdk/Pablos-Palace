@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColorStates : MonoBehaviour {
 
 	//Publics
-
+	public Color activeColor;
 
 	//Privates
 	public Color red = new Color(0.82F, 0F, 0.2F);			//Red farve
@@ -74,7 +74,12 @@ public class ColorStates : MonoBehaviour {
 		Color color = myRenderer.color;
 		color = Color.Lerp(color, newColor, Mathf.PingPong(Time.deltaTime * 4f, 1));
 		myRenderer.color = color;
+		activeColor = color;
 	}
+
+	public Color GetColor() {
+		return activeColor;
+	} 
 
 	public static Vector4 hexColor(float r, float g, float b, float a)
 	{

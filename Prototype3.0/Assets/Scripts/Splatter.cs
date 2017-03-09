@@ -82,9 +82,11 @@ public class Splatter : MonoBehaviour
 		playerColor = GameObject.Find("Player").transform.FindChild("Graphics").GetComponent<SpriteRenderer>().color;
 
 		Color colorStart = playerColor;
-				//new Color (0.15f, 0.15f, 0.82f);
 		material.color = colorStart; //0.17 0.17 0.85
+	}
 
+	public void OnObjectReuse () {
+		gameObject.SetActive(true);
 	}
 
 	private IEnumerator PlayOnce(){

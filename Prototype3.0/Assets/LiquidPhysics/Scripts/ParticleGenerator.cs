@@ -42,45 +42,7 @@ public class ParticleGenerator : MonoBehaviour {
 	}
 
 	public void Update() 
-	{	
-		/*if (spawn) {
-			if (startTime < spawnDuration) {
-				if (lastSpawnTime + spawnInterval < Time.time) {
-					GameObject newLiquidParticle = (GameObject)Instantiate (Resources.Load ("LiquidPhysics/DynamicParticle")); //Spawn a particle
-					if (randomXForce) {
-						particleForce.x = Random.Range(tempXForce*-1, tempXForce);
-					}
-					if (randomYForce) {
-						particleForce.y = Random.Range(tempYForce*-1, tempYForce);
-					}
-					newLiquidParticle.GetComponent<Rigidbody2D> ().AddForce (particleForce); //Add our custom force
-					DynamicParticle particleScript = newLiquidParticle.GetComponent<DynamicParticle> (); // Get the particle script
-
-					if (randomSize) {
-						int temp = 0;
-						if (temp == 0) {
-							particleScript.SetSize (particleSize,particleSize);
-							if (!fixedSize) {
-								particleScript.SetRandomSize (-0.8f,0.8f);
-							}
-							temp++;
-						}
-					}
-					
-					particleScript.SetLifeTime (particleLifetime); //Set each particle lifetime
-					particleScript.SetState (particlesState); //Set the particle State
-					newLiquidParticle.transform.position = transform.position;// Relocate to the spawner position
-					newLiquidParticle.transform.parent = particlesParent;// Add the particle to the parent container
-					lastSpawnTime = Time.time; // Register the last spawnTime	
-				}
-				startTime += Time.deltaTime / spawnDuration;
-			} else {
-				spawn = false;
-			}
-			shooterTime = 0.0f;
-		} else {
-			startTime = 0.0f;
-		}*/
+	{
 
 		if (spawn) {
 			if (startTime < spawnDuration) {

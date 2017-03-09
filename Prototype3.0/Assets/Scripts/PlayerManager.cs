@@ -63,14 +63,16 @@ public class PlayerManager : MonoBehaviour {
 
 	public void SpawnSplat(Vector3 position)
 	{
+		Color color = new Color();
 		float angle = Mathf.Atan2(dirToCurrentPos.y, dirToCurrentPos.x) * Mathf.Rad2Deg;
 		if (Controller2D.instance.collisions.faceDir == -1)
 		{
 			angle += 180;
 		}
 		Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+		color = ColorStates.instance.GetColor();
 
-		PoolManager.instance.ReuseObject (splatterPrefab, position, q);
+		PoolManager.instance.ReuseObject (splatterPrefab, position, q, color);
 
 	}
 }
