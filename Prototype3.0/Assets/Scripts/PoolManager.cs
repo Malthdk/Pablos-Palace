@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PoolManager : MonoBehaviour {
 
-	public int poolSize = 200;
+	public int poolSize = 500;
 	public GameObject prefab;
 
 	Dictionary<int,Queue<ObjectInstance>> poolDic = new Dictionary<int, Queue<ObjectInstance>> ();
@@ -41,14 +41,14 @@ public class PoolManager : MonoBehaviour {
 		}
 	}
 
-	public void ReuseObject (GameObject prefab, Vector3 pos, Quaternion rotation, Vector2 force, float particleLifetime, DynamicParticle.STATES state, float particleSize) {
+	public void ReuseObject (GameObject prefab, Vector3 pos, Quaternion rotation) {
 		int poolKey = prefab.GetInstanceID ();
 
 		if (poolDic.ContainsKey (poolKey)) {
 			ObjectInstance objectToReuse = poolDic [poolKey].Dequeue ();
 			poolDic [poolKey].Enqueue (objectToReuse);
 
-			objectToReuse.Reuse (pos, rotation, force, particleLifetime, state, particleSize);
+			objectToReuse.Reuse (pos, rotation);
 		}
 	}
 
@@ -71,19 +71,14 @@ public class PoolManager : MonoBehaviour {
 			}
 		}
 
-		public void Reuse(Vector3 pos, Quaternion rotation, Vector3 force, float particleLifetime, DynamicParticle.STATES state, float particleSize) {
+		public void Reuse(Vector3 pos, Quaternion rotation) {
 			transform.position = pos;
 			transform.rotation = rotation;
-			dynamicParticleScript.SetLifeTime(particleLifetime);
-			dynamicParticleScript.SetState(state);
-			dynamicParticleScript.SetSize(particleSize, particleSize);
-			dynamicParticleScript.SetRandomSize (-1.5f,1.5f);
 
 			if (hasPoolObjectComponent) {
 				dynamicParticleScript.OnObjectReuse();
 			}
 			gameObject.SetActive(true);
-			gameObject.GetComponent<Rigidbody2D> ().AddForce (force);
 		}
 
 		public void SetParent(Transform parent) {

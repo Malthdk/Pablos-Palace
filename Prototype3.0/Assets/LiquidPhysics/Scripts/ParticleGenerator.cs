@@ -91,7 +91,7 @@ public class ParticleGenerator : MonoBehaviour {
 					if (randomYForce) {
 						particleForce.y = Random.Range(tempYForce*-1, tempYForce);
 					}
-					PoolManager.instance.ReuseObject (prefab, this.transform.position, Quaternion.identity, particleForce, particleLifetime, particlesState, particleSize); 
+//					PoolManager.instance.ReuseObject (prefab, this.transform.position, Quaternion.identity, particleForce, particleLifetime, particlesState, particleSize); 
 					lastSpawnTime = Time.time; // Register the last spawnTime	
 				}
 				startTime += Time.deltaTime / spawnDuration;

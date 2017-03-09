@@ -60,7 +60,7 @@ public class ParticleGeneratorStill : MonoBehaviour {
 		if (spawn) {
 			for (int i = 0; i < particleNumber; i++) {
 				Vector2 force = new Vector2 (Random.Range (xMinSize, xMaxSize), 0);
-				PoolManager.instance.ReuseObject (prefab, this.transform.position, Quaternion.identity, force, particleLifetime, particlesState, particleSize); 
+//				PoolManager.instance.ReuseObject (prefab, this.transform.position, Quaternion.identity, force, particleLifetime, particlesState, particleSize); 
 			}
 			spawn = false;
 			gameObject.SetActive(false);
