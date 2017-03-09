@@ -54,6 +54,10 @@ public class Player : MonoBehaviour {
 	public float gravityModifierPaintingJump;
 	public float gravityModifierPaintingFall;
 
+	//ParticleSystems for dJump and tJump
+	private ParticleSystem doubleJumpParticle;
+	private ParticleSystem tripleJumpParticle;
+
 	[HideInInspector]
 	public static Player _instance;
 
@@ -68,10 +72,15 @@ public class Player : MonoBehaviour {
 
 	void Start () 
 	{
+		doubleJumpParticle = gameObject.transform.GetChild(6).GetChild(0).GetComponent<ParticleSystem>();
+		tripleJumpParticle = gameObject.transform.GetChild(7).GetChild(0).GetComponent<ParticleSystem>();
 		pullPush = GetComponent<PullPush>();
 		controller = GetComponent<Controller2D>();
 		abilities = GetComponent<Abilities>();
 		animator = GetComponent<Animator>();		//ANIMATION
+
+		doubleJumpParticle.Stop();
+		tripleJumpParticle.Stop();
 	}
 
 	void Update () 
@@ -126,7 +135,7 @@ public class Player : MonoBehaviour {
 					hasDoubleJumped = true;
 					//abilities.secondJump = true;
 					velocity.y = doubleJumpVelocity;
-
+					doubleJumpParticle.Play();
 					
 				}
 				else if (!hasTripleJumped && hasDoubleJumped)
@@ -136,6 +145,7 @@ public class Player : MonoBehaviour {
 					tripleJumped = true; //animation
 					hasTripleJumped = true; 
 					velocity.y = tripleJumpVelocity;
+					tripleJumpParticle.Play();
 				}
 			}
 		}

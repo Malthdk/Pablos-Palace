@@ -55,7 +55,7 @@ public class Controller2D : RaycastController {
 		paintParticles = gameObject.transform.GetChild(5).GetChild(0).GetComponent<ParticleSystem>();
 		graphicsTransform = gameObject.transform.FindChild("Graphics").transform;
 
-		//paintParticles.Stop();
+		paintParticles.Stop();
 
 	}
 

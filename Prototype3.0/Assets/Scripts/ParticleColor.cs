@@ -34,5 +34,9 @@ public class ParticleColor : MonoBehaviour {
 
 		color1 = playerColor;
 		pColor.material.color = color1;
+		if (pColor.trailMaterial != null)
+		{
+			pColor.trailMaterial.color = color1;
+		}
 	}
 }
