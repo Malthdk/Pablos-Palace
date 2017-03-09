@@ -3,45 +3,40 @@ using System.Collections;
 
 public class ParticleColor : MonoBehaviour {
 
-	ParticleSystem pSystem;
-	Abilities abilities;
+	//ParticleSystem pSystem;
+	//Abilities abilities;
+	GameObject player;
+	ParticleSystemRenderer pColor;
+	ColorStates colorStates;
+	private Color playerColor;
 
 	void Start () 
 	{
-		pSystem = GetComponentInChildren<ParticleSystem>();
-		abilities = GetComponentInParent<Abilities>();
-		pSystem.gameObject.SetActive(false);
+		//pSystem = GetComponentInChildren<ParticleSystem>();
+		//abilities = GetComponentInParent<Abilities>();
+		//pSystem.gameObject.SetActive(false);
+		player = GameObject.Find("Player");	
+		pColor = GetComponent<ParticleSystemRenderer>();
+		colorStates = GameObject.Find("Player").GetComponent<ColorStates>();
+
+		//SetColor();
 	}
 
 	void Update () 
 	{
-		if(abilities.isBlue && !abilities.isPurple && !abilities.isGreen)
+		SetColor();
+	}
+
+	private void SetColor() 
+	{
+		playerColor = GameObject.Find("Player").transform.FindChild("Graphics").GetComponent<SpriteRenderer>().color;
+		Color color1 = pColor.material.color;
+
+		color1 = playerColor;
+		pColor.material.color = color1;
+		if (pColor.trailMaterial != null)
 		{
-			pSystem.startColor = Color.blue;
-		}
-		else if (abilities.isRed && !abilities.isPurple && !abilities.isOrange)
-		{
-			pSystem.startColor = Color.red;
-		}
-		else if (abilities.isYellow && !abilities.isOrange && !abilities.isGreen)
-		{
-			pSystem.startColor = Color.yellow;
-		}
-		else if (abilities.isGreen)
-		{
-			pSystem.startColor = Color.green;
-		}
-		else if (abilities.isPurple)
-		{
-			pSystem.startColor = Color.magenta;
-		}
-		else if (abilities.isOrange)
-		{
-			pSystem.startColor = Color.cyan;
-		}
-		else
-		{
-			pSystem.startColor = Color.white;
+			pColor.trailMaterial.color = color1;
 		}
 	}
 }

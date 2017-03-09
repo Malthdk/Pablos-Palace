@@ -7,6 +7,7 @@ public class Splatter : MonoBehaviour
 	//Publics
 	public static Splatter splatManager; //Hvad er det her?
 	public float splatStayTime = 3f;
+	public float blackTurnTime = 1f;
 	public float correctionFactor = 0.5f;
 
 	//Privates
@@ -18,9 +19,20 @@ public class Splatter : MonoBehaviour
 	private Material material;
 	private GameObject player;
 	private Color playerColor;
+	private BoxCollider2D boxCollider;
+	private Color black = new Color(0f, 0f, 0f);
+	private bool isActive;
+
+	private bool isActionPerformed;
+	public LayerMask collisionMask;
+	private Bounds bounds;
+	public Collider2D[] colliders;
+	private Vector2 pointA;
+	private Vector2 pointB;
 
 	private void Awake()
     {
+		boxCollider = GetComponent<BoxCollider2D>();
 		material = GetComponent<MeshRenderer>().material;
 		player = GameObject.Find("Player");	
 		CompareColors();
@@ -28,86 +40,91 @@ public class Splatter : MonoBehaviour
 
     private void Start()
     {
+		isActive = true;
 		randomRoll = Random.Range(1, 10);
 		endPosition = Random.Range(0.3f, 0.5f);
 		speed = Random.Range(0.3f, 1f);
 		scale = transform.localScale.y;
 		Anchor_Position = transform.localPosition;
-		StartCoroutine(DestroySplat());
+		StartCoroutine(DestroySplat(playerColor));
 		Anchor_Position = new Vector3(transform.localPosition.x, transform.localPosition.y - endPosition, transform.localPosition.z);
+
+		bounds = GetComponent<BoxCollider2D>().bounds;
+		pointA = new Vector2(bounds.min.x, bounds.min.y);
+		pointB = new Vector2(bounds.max.x, bounds.max.y);
     }
 
 	void Update ()
 	{
-		if (randomRoll>8)
+		if (isActive)
 		{
-			scaling = true;
-		}
-		if (scaling)
-		{
-			gameObject.transform.localPosition = Vector3.Lerp(gameObject.transform.position, Anchor_Position, Time.deltaTime * speed);
-			transform.localScale = new Vector3(scale * (0.3f + endPosition), scale * (0.5f + endPosition), transform.localScale.z);
-			material.SetFloat("_Warp", 0.3f);
+			colliders = Physics2D.OverlapAreaAll(pointA, pointB, collisionMask);
+			
+			if (colliders.Length > 0)
+			{
+				StartCoroutine(PlayOnce());
+			}
+
+			if (randomRoll>8)
+			{
+				scaling = true;
+			}
+			if (scaling)
+			{
+				gameObject.transform.localPosition = Vector3.Lerp(gameObject.transform.position, Anchor_Position, Time.deltaTime * speed);
+				transform.localScale = new Vector3(scale * (0.3f + endPosition), scale * (0.5f + endPosition), transform.localScale.z);
+				material.SetFloat("_Warp", 0.3f);
+			}
 		}
 	}
 
 	private void CompareColors() {
 		playerColor = GameObject.Find("Player").transform.FindChild("Graphics").GetComponent<SpriteRenderer>().color;
-		if (player.gameObject.tag == "blue") 
-		{
-			myColor = "blue";
-			Color32 colorStart = playerColor;
-				//new Color (0.15f, 0.15f, 0.82f);
-			material.color = colorStart; //0.17 0.17 0.85
 
-		} else if (player.gameObject.tag == "purple") 
-		{
-			myColor = "purple";
-			Color colorStart = playerColor;
-				//new Color (0.55f,0.21f,0.7f);
-			material.color = colorStart; //0.55f,0.21f,0.7f
-		} 
-		else if (player.gameObject.tag == "red") 
-		{
-			myColor = "red";
-			Color colorStart = playerColor;
-				//new Color (0.85f,0f,0.22f);
-			material.color = colorStart; //0.85f,0f,0.22f
-		} 
-		else if (player.gameObject.tag == "green") 
-		{
-			myColor = "green";
-			Color colorStart = playerColor;;
-				//new Color (0.185f,0.55f,0.175f);
-			material.color = colorStart; //0.185f,0.55f,0.175f
-		} 
-		else if (player.gameObject.tag == "yellow") 
-		{
-			myColor = "yellow";
-			Color colorStart = playerColor;
-				//new Color (1f,0.82f,0.22f);
-			material.color = colorStart; //1f,0.82f,0.22f
-		} 
-		else if (player.gameObject.tag == "orange") 
-		{
-			myColor = "orange";
-			Color colorStart = playerColor;
-				//new Color (1f,0.42f,0.0f);
-			material.color = colorStart; //1f,0.42f,0.0f
+		Color colorStart = playerColor;
+				//new Color (0.15f, 0.15f, 0.82f);
+		material.color = colorStart; //0.17 0.17 0.85
+
+	}
+
+	private IEnumerator PlayOnce(){
+
+		while(!isActionPerformed){
+			yield return new WaitForEndOfFrame ();
+
+			StopAllCoroutines();
+			StartCoroutine(BlackSplat());
+			isActionPerformed = true;
 		}
 	}
-		
-	public IEnumerator DestroySplat()
+
+	public IEnumerator DestroySplat(Color brightColor)
 	{
 		yield return new WaitForSeconds(splatStayTime);
 
+		boxCollider.enabled = false;
 		scaling = false;
 		material.renderQueue = 2998;
 		Color color = material.color;
 
-		color = ChangeBrightness(playerColor, 0.5f);
+		color = ChangeBrightness(brightColor, 0.5f);
 		material.color = color;
+		isActive = false;
 	}
+
+	public IEnumerator BlackSplat()
+	{
+		yield return new WaitForSeconds(blackTurnTime);
+
+		gameObject.tag = "killTag";
+		gameObject.layer = 15;
+		Color color = material.color;
+		color = black;
+		//color = Color.Lerp(color, black, Mathf.PingPong(Time.deltaTime * 1f, 1));
+		material.color = color;
+		StartCoroutine(DestroySplat(black));
+	}
+
 
 	public Color ChangeBrightness( Color color, float correctionFactor)
 	{
@@ -129,5 +146,5 @@ public class Splatter : MonoBehaviour
 			blue = (255 - blue) * correctionFactor + blue;
 		}
 		return new Color(red/255, green/255, blue/255);
-	}
+	}		
 }
