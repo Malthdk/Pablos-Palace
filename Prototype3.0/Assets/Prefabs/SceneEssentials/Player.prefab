@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splatStayTime: 5
+  splatDistanceMin: 0.3
 --- !u!212 &21215386
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -800,6 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d56e7e0cec848f0ab410dee1a545ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeColor: {r: 0, g: 0, b: 0, a: 0}
   red: {r: 0.82, g: 0, b: 0.2000002, a: 1}
   yellow: {r: 1, g: 0.79137933, b: 0, a: 1}
   blue: {r: 0.14800827, g: 0.13056879, b: 0.8455882, a: 1}
@@ -3439,7 +3441,7 @@ ParticleSystem:
   simulationSpeed: 1
   looping: 1
   prewarm: 1
-  playOnAwake: 1
+  playOnAwake: 0
   autoRandomSeed: 1
   startDelay:
     scalar: 0
@@ -3483,7 +3485,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1142777699
+  randomSeed: 1952335636
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11206,7 +11208,7 @@ ParticleSystem:
   simulationSpeed: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   autoRandomSeed: 1
   startDelay:
     scalar: 0
@@ -13783,7 +13785,7 @@ ParticleSystem:
   simulationSpeed: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   autoRandomSeed: 1
   startDelay:
     scalar: 0

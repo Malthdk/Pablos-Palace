@@ -9,6 +9,8 @@ public class Splatter : MonoBehaviour
 	public float splatStayTime = 3f;
 	public float blackTurnTime = 1f;
 	public float correctionFactor = 0.5f;
+	public float colorChangeTime = 1f;
+	public LayerMask collisionMask;
 
 	//Privates
 	private int randomRoll;
@@ -24,31 +26,38 @@ public class Splatter : MonoBehaviour
 	private bool isActive;
 
 	private bool isActionPerformed;
-	public LayerMask collisionMask;
 	private Bounds bounds;
 	public Collider2D[] colliders;
 	private Vector2 pointA;
 	private Vector2 pointB;
+	private ParticleSystem changeColorParticles;
 
 	private void Awake()
     {
 		boxCollider = GetComponent<BoxCollider2D>();
 		material = GetComponent<MeshRenderer>().material;
 		player = GameObject.Find("Player");	
-		CompareColors();
     }
 
     private void Start()
     {
 		isActive = true;
+
+		changeColorParticles = gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
+
+		//This handles the dripping and variations in trail
 		randomRoll = Random.Range(1, 10);
 		endPosition = Random.Range(0.3f, 0.5f);
 		speed = Random.Range(0.3f, 1f);
 		scale = transform.localScale.y;
 		Anchor_Position = transform.localPosition;
-		StartCoroutine(DestroySplat(playerColor));
 		Anchor_Position = new Vector3(transform.localPosition.x, transform.localPosition.y - endPosition, transform.localPosition.z);
 
+		//Starting the Destroy corotine with correct color
+		playerColor = ColorStates.instance.GetColor();
+		StartCoroutine(DestroySplat(playerColor, colorChangeTime));
+
+		//Bounds are used to check for collision with other splat prefabs
 		bounds = GetComponent<BoxCollider2D>().bounds;
 		pointA = new Vector2(bounds.min.x, bounds.min.y);
 		pointB = new Vector2(bounds.max.x, bounds.max.y);
@@ -78,13 +87,6 @@ public class Splatter : MonoBehaviour
 		}
 	}
 
-	private void CompareColors() {
-		playerColor = GameObject.Find("Player").transform.FindChild("Graphics").GetComponent<SpriteRenderer>().color;
-
-		Color colorStart = playerColor;
-		material.color = colorStart; //0.17 0.17 0.85
-	}
-
 	public void OnObjectReuse () {
 		gameObject.SetActive(true);
 	}
@@ -95,39 +97,58 @@ public class Splatter : MonoBehaviour
 			yield return new WaitForEndOfFrame ();
 
 			StopAllCoroutines();
-			StartCoroutine(BlackSplat());
+			StartCoroutine(TurnBlack(colorChangeTime));
 			isActionPerformed = true;
 		}
 	}
 
-	public IEnumerator DestroySplat(Color brightColor)
+	public IEnumerator DestroySplat(Color brightColor, float time)
 	{
 		yield return new WaitForSeconds(splatStayTime);
 
 		boxCollider.enabled = false;
 		scaling = false;
-		material.renderQueue = 2998;
-		Color color = material.color;
+		//material.renderQueue = 2999;
 
-		color = ChangeBrightness(brightColor, 0.5f);
-		material.color = color;
+		float elapsedTime = 0;
+		Color color2 = ChangeBrightness(brightColor, correctionFactor);
+
+		while (elapsedTime < time)
+		{
+			FadeColor(color2, time, elapsedTime);
+			elapsedTime += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
+		}
 		isActive = false;
 	}
 
-	public IEnumerator BlackSplat()
+	//Handles the splat turning black
+	public IEnumerator TurnBlack(float time)
 	{
 		yield return new WaitForSeconds(blackTurnTime);
 
 		gameObject.tag = "killTag";
 		gameObject.layer = 15;
-		Color color = material.color;
-		color = black;
-		//color = Color.Lerp(color, black, Mathf.PingPong(Time.deltaTime * 1f, 1));
-		material.color = color;
-		StartCoroutine(DestroySplat(black));
+		changeColorParticles.Play();
+		float elapsedTime = 0;
+		while (elapsedTime < time)
+		{
+			FadeColor(black, time, elapsedTime);
+			elapsedTime += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
+		}
+		StartCoroutine(DestroySplat(black, colorChangeTime));
 	}
 
+	//Fades the material of a color to a new color based on a specific time interval
+	public void FadeColor(Color newColor, float time, float elapsedTime)
+	{
+		Color color = material.color;
+		color = Color.Lerp(color, newColor, (elapsedTime / time));
+		material.color = color;
+	}
 
+	//Changes the brightness of a color
 	public Color ChangeBrightness( Color color, float correctionFactor)
 	{
 		float red = color.r * 255;

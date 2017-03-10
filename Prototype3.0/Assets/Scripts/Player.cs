@@ -78,9 +78,6 @@ public class Player : MonoBehaviour {
 		controller = GetComponent<Controller2D>();
 		abilities = GetComponent<Abilities>();
 		animator = GetComponent<Animator>();		//ANIMATION
-
-		doubleJumpParticle.Stop();
-		tripleJumpParticle.Stop();
 	}
 
 	void Update () 
@@ -196,7 +193,7 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetButtonUp("Jump"))					//For variable jump
 		{
-			if (velocity.y > minJumpVelocity && (!hasDoubleJumped || !hasTripleJumped))
+			if (velocity.y > minJumpVelocity && (!hasDoubleJumped && !hasTripleJumped))
 			{
 				velocity.y = minJumpVelocity;									//When space is released set velocity y to minimum jump velocity
 			}

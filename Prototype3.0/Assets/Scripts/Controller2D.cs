@@ -20,7 +20,6 @@ public class Controller2D : RaycastController {
 
 	//Graphics and splat
 	private Transform graphicsTransform;
-	private GameObject dashParticle;
 	public float splatTime = 0.0005f;
 	Vector2 rayOrigin;
 	float rayLength = 5f;
@@ -30,9 +29,11 @@ public class Controller2D : RaycastController {
 	private PullPush pullPush;
 	[HideInInspector]
 	public static Controller2D _instance;
+	private float newZPos;
 
 	//PaintParticles
 	private ParticleSystem paintParticles;
+	private GameObject paintParticleGO;
 	private bool isEmitting;
 
 	public static Controller2D instance {	// Makes it possible to call script easily from other scripts
@@ -51,12 +52,10 @@ public class Controller2D : RaycastController {
 		levelmanager = FindObjectOfType<LevelManager>();
 		checkpoint = FindObjectOfType<Checkpoint>();
 		pullPush = GetComponent<PullPush>();
-		dashParticle = transform.GetChild(3).gameObject;
-		paintParticles = gameObject.transform.GetChild(5).GetChild(0).GetComponent<ParticleSystem>();
+		//dashParticle = transform.GetChild(3).gameObject;
+		paintParticleGO = transform.GetChild(5).gameObject;
+		paintParticles = paintParticleGO.transform.GetChild(0).GetComponent<ParticleSystem>();
 		graphicsTransform = gameObject.transform.FindChild("Graphics").transform;
-
-		paintParticles.Stop();
-
 	}
 
 	public override void Update()
@@ -392,15 +391,22 @@ public class Controller2D : RaycastController {
 		graphicsTransform.localScale = theScale;
 
 		//Flip the dashParticleSystem aswell
-		Vector3 particleScale = dashParticle.transform.localScale;
+		//Vector3 particleScale = dashParticle.transform.localScale;
+		//particleScale.x *= -1;
+		//dashParticle.transform.localScale = particleScale;
+
+		//Flip the paint particle aswell
+		Vector3 particleScale = paintParticleGO.transform.localPosition;
 		particleScale.x *= -1;
-		dashParticle.transform.localScale = particleScale;
+		paintParticleGO.transform.localPosition = particleScale;
 	}
 
 	// METHOD FOR SPLATTING
 	private void Splat() {
 		painting = true;
-		Vector3 pos = new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y,this.gameObject.transform.position.z);
+		newZPos -= -0.001f;
+		Debug.Log(newZPos);
+		Vector3 pos = new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y,this.gameObject.transform.position.z - newZPos);
 		if (this.gameObject.tag != "white") 
 		{
 				PlayerManager.pManager.SpawnSplat(pos); 
@@ -461,10 +467,7 @@ public class Controller2D : RaycastController {
 
 	public void EmitParticle(ParticleSystem particle)
 	{
-		if (particle.isPlaying)
-		{
-		}
-		else
+		if (!particle.isPlaying)
 		{
 			particle.Play();
 		}

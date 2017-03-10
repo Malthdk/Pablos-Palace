@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -18,6 +19,11 @@ public class PlayerManager : MonoBehaviour {
 	public static PlayerManager _instance;
 	[HideInInspector]
 	public static GameObject splatterPrefab;
+
+
+	//For splat instantiation
+	private LinkedList<Vector3> centerPositions;
+	public float splatDistanceMin = 0.50f;
 
 	public static PlayerManager instance {	// Makes it possible to call script easily from other scripts
 		get {
@@ -47,6 +53,10 @@ public class PlayerManager : MonoBehaviour {
 		splatterParent = new GameObject("Splatter Parent");
 		lastPosition = transform.position;
 		splatterPrefab = PoolManager.instance.prefab;
+
+		//For splat instantiation
+		centerPositions = new LinkedList<Vector3>();
+		centerPositions.AddFirst(transform.position);
 	}
 
 	void Update()
@@ -69,10 +79,16 @@ public class PlayerManager : MonoBehaviour {
 		{
 			angle += 180;
 		}
-		Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-		color = ColorStates.instance.GetColor();
 
-		PoolManager.instance.ReuseObject (splatterPrefab, position, q, color);
+		//Makes it so Pablo has to have travelled a certain distance before a new splat can be created
+		if ( (centerPositions.First.Value - transform.position).sqrMagnitude > splatDistanceMin * splatDistanceMin) 
+		{
+			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+			color = ColorStates.instance.GetColor();
+			PoolManager.instance.ReuseObject (splatterPrefab, position, q, color);
+
+			centerPositions.AddFirst(transform.position);
+		}
 
 	}
 }
