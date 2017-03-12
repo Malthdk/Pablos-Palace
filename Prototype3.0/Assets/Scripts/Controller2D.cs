@@ -404,7 +404,7 @@ public class Controller2D : RaycastController {
 	// METHOD FOR SPLATTING
 	private void Splat() {
 		painting = true;
-		newZPos -= -0.001f;
+		newZPos -= -0.000001f;
 		Debug.Log(newZPos);
 		Vector3 pos = new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y,this.gameObject.transform.position.z - newZPos);
 		if (this.gameObject.tag != "white") 

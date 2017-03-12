@@ -89,6 +89,24 @@ public class Splatter : MonoBehaviour
 
 	public void OnObjectReuse () {
 		gameObject.SetActive(true);
+		isActive = true;
+
+		//This handles the dripping and variations in trail (MAYBE DELETE THIS IN THIS FUNCTION?)
+		randomRoll = Random.Range(1, 10);
+		endPosition = Random.Range(0.3f, 0.5f);
+		speed = Random.Range(0.3f, 1f);
+		scale = transform.localScale.y;
+		Anchor_Position = transform.localPosition;
+		Anchor_Position = new Vector3(transform.localPosition.x, transform.localPosition.y - endPosition, transform.localPosition.z);
+
+		//Starting the Destroy corotine with correct color
+		playerColor = ColorStates.instance.GetColor();
+		StartCoroutine(DestroySplat(playerColor, colorChangeTime));
+
+		//Bounds are used to check for collision with other splat prefabs
+		bounds = GetComponent<BoxCollider2D>().bounds;
+		pointA = new Vector2(bounds.min.x, bounds.min.y);
+		pointB = new Vector2(bounds.max.x, bounds.max.y);
 	}
 
 	private IEnumerator PlayOnce(){
