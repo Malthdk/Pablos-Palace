@@ -75,7 +75,7 @@ public class Controller2D : RaycastController {
 			onMiddleGround = false;
 		}
 
-		if (Input.GetButton("Special"))
+		if (Input.GetButton("Special") && !ColorStates.instance.isWhite)
 		{
 			if (onMiddleGround)
 			{
@@ -404,8 +404,8 @@ public class Controller2D : RaycastController {
 	// METHOD FOR SPLATTING
 	private void Splat() {
 		painting = true;
-		newZPos -= -0.000001f;
-		Debug.Log(newZPos);
+		newZPos -= -0.0001f;
+		//Debug.Log(newZPos);
 		Vector3 pos = new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y,this.gameObject.transform.position.z - newZPos);
 		if (this.gameObject.tag != "white") 
 		{

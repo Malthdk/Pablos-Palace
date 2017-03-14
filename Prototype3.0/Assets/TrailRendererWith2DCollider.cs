@@ -27,7 +27,7 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (Input.GetButton("Special"))
+		if (Input.GetButton("Special") && !ColorStates.instance.isWhite)
 		{
 			if (Controller2D.instance.onMiddleGround)
 			{

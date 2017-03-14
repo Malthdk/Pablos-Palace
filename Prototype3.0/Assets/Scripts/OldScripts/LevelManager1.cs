@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager1 : MonoBehaviour {
 
-	public static LevelManager lManager;
+	public static LevelManager1 lManager;
 
 	public GameObject currentCheckpoint;
 	public string currentTag;
@@ -22,17 +22,14 @@ public class LevelManager : MonoBehaviour {
 	public List<PlatformController> platforms;
 	public List<Lever> levers;
 	public List<FallingPlatform> fallingPlatforms;
-	public List<GameObject> orbs;
-
-	public int numberOrbs;
 
 	[HideInInspector]
-	public static LevelManager _instance;
+	public static LevelManager1 _instance;
 
-	public static LevelManager instance {	// Makes it possible to call script easily from other scripts
+	public static LevelManager1 instance {	// Makes it possible to call script easily from other scripts
 		get {
 			if (_instance == null) {
-				_instance = FindObjectOfType<LevelManager>();
+				_instance = FindObjectOfType<LevelManager1>();
 			}
 			return _instance;
 		}
@@ -54,12 +51,6 @@ public class LevelManager : MonoBehaviour {
 	void Start () 
 	{
 		player = FindObjectOfType<Player>();
-
-		foreach(GameObject oObject in FindGameObjectsWithTags(new string[]{"orb"})) 
-		{
-			orbs.Add(oObject);
-		}
-		numberOrbs = orbs.Count;
 
 		foreach(GameObject sObject in FindGameObjectsWithTags(new string[]{"orangeDestroy", "coin"})) 
 		{
@@ -93,8 +84,6 @@ public class LevelManager : MonoBehaviour {
 			player = FindObjectOfType<Player>();
 		}
 	}
-
-	//Handles all player respawning
 	IEnumerator Respawned() 
 	{
 		GameObject graphics = player.gameObject.transform.GetChild(0).gameObject;

@@ -4,118 +4,65 @@ using UnityEngine;
 
 public class PickUpGlobe : MonoBehaviour {
 
+	public Color orbColor;
+
 	ParticleSystem pSystemConstant;
-	ParticleSystem pSystemExplode;
+	ParticleSystem pSystemExplode1;
+	ParticleSystem pSystemExplode2;
 	ParticleSystemRenderer pRenderConstant;
-	ParticleSystemRenderer pRenderExplode;
+	ParticleSystemRenderer pRenderExplode1;
+	ParticleSystemRenderer pRenderExplode2;
 	ColorStates colorStates;
+	CircleCollider2D myCollider;
+	Color currentColor;
 
 	void Start () 
 	{
 		pSystemConstant = gameObject.transform.FindChild("FX_ParticleBall").GetComponent<ParticleSystem>();
-		pSystemExplode = gameObject.transform.FindChild("FX_ParticleExplode").GetComponent<ParticleSystem>();
+		pSystemExplode1 = gameObject.transform.FindChild("FX_ParticleExplode1").GetComponent<ParticleSystem>();
+		pSystemExplode2 = gameObject.transform.FindChild("FX_ParticleExplode2").GetComponent<ParticleSystem>();
+
 		pRenderConstant = pSystemConstant.GetComponent<ParticleSystemRenderer>();
-		pRenderExplode = pSystemExplode.GetComponent<ParticleSystemRenderer>();
+		pRenderExplode1 = pSystemExplode1.GetComponent<ParticleSystemRenderer>();
+		pRenderExplode2 = pSystemExplode2.GetComponent<ParticleSystemRenderer>();
 
 		colorStates = GameObject.Find("Player").GetComponent<ColorStates>();
+		myCollider = gameObject.GetComponent<CircleCollider2D>();
 
-		SetColor();
-		pSystemExplode.Stop();
+		SetColor(pRenderConstant, orbColor);
+		SetColor(pRenderExplode1, orbColor);
+		SetColor(pRenderExplode2, orbColor);
+
+		pSystemExplode1.Stop();
+		pSystemExplode2.Stop();
 		pSystemConstant.Play();
 	}
-	
 
 	void Update () 
 	{
 		
 	}
 
-	void SetColor()
+	void SetColor(ParticleSystemRenderer pRenderer, Color setColor)
 	{
-		Color color1 = pRenderConstant.material.color;
-		Color color2 = pRenderExplode.trailMaterial.color;
-
-		if (gameObject.tag == "blueBox")
-		{
-			color1 = colorStates.blue;
-			color2 = colorStates.blue;
-			pRenderConstant.material.color = color1;
-			pRenderExplode.trailMaterial.color = color2;
-		}
-		else if (gameObject.tag == "yellowBox")
-		{
-			color1 = colorStates.yellow;
-			color2 = colorStates.yellow;
-			pRenderConstant.material.color = color1;
-			pRenderExplode.trailMaterial.color = color2;
-		}
-		else if (gameObject.tag == "redBox")
-		{
-			color1 = colorStates.red;
-			color2 = colorStates.red;
-			pRenderConstant.material.color = color1;
-			pRenderExplode.trailMaterial.color = color2;
-		}
-		else if (gameObject.tag == "greenBox")
-		{
-			color1 = colorStates.green;
-			color2 = colorStates.green;
-			pRenderConstant.material.color = color1;
-			pRenderExplode.trailMaterial.color = color2;
-		}
-		else if (gameObject.tag == "orangeBox")
-		{
-			color1 = colorStates.orange;
-			color2 = colorStates.orange;
-			pRenderConstant.material.color = color1;
-			pRenderExplode.trailMaterial.color = color2;
-		}
-		else if (gameObject.tag == "purpleBox")
-		{
-			color1 = colorStates.purple;
-			color2 = colorStates.purple;
-			pRenderConstant.material.color = color1;
-			pRenderExplode.trailMaterial.color = color2;
-		}
+		Color color = pRenderer.material.color;
+		//setColor.a = 0.5f;
+		color = setColor;
+		pRenderer.material.color = color;
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.name == "Player")
 		{
-			gameObject.SetActive(false);
+			LevelManager.instance.numberOrbs --;
+			//gameObject.SetActive(false);
+			myCollider.enabled = false;
 			pSystemConstant.Stop();
 			pSystemConstant.Clear();
-			pSystemExplode.Play();
-			PickedUpGlobe(other.gameObject, gameObject.tag);
+			pSystemExplode1.Play();
+			pSystemExplode2.Play();
 		}
 	}
 
-	void PickedUpGlobe(GameObject gameObj, string tag)
-	{
-		if (tag == "blueBox")
-		{
-			gameObj.tag = "blue";
-		}
-		else if (tag == "yellowBox")
-		{
-			gameObj.tag = "yellow";
-		}
-		else if (tag == "redBox")
-		{
-			gameObj.tag = "red";
-		}
-		else if (tag == "greenBox")
-		{
-			gameObj.tag = "green";
-		}
-		else if (tag == "orangeBox")
-		{
-			gameObj.tag = "orange";
-		}
-		else if (tag == "purpleBox")
-		{
-			gameObj.tag = "purple";
-		}
-	}
 }

@@ -42,6 +42,7 @@ TagManager:
   - pushBox
   - waterPool
   - killTag
+  - orb
   layers:
   - Default
   - TransparentFX

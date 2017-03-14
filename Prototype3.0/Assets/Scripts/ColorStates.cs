@@ -5,19 +5,12 @@ using UnityEngine;
 public class ColorStates : MonoBehaviour {
 
 	//Publics
+	[HideInInspector]
 	public Color activeColor;
+	public bool isWhite;
 
 	//Privates
-	public Color red = new Color(0.82F, 0F, 0.2F);			//Red farve
-	public Color yellow = new Color(1F, 0.8F, 0.2F);		//Yellow farve
-	public Color blue = new Color(0.2F, 0.18F, 1F);		//Blue farve (0.2F, 0.18F, 1F);
-	public Color blue2 = new Color(0.3f, 0.23f, 1f);
-	public Color green = new Color(0F, 0.6F, 0.05F);		//Green farve
-	public Color purple = new Color(0.55F, 0.15F, 0.7F);	//Purple farve
-	public Color orange = new Color(0.96F, 0.55F, 0F);		//Orange farve
-
 	private SpriteRenderer myRenderer;
-
 	[HideInInspector]
 	public static ColorStates _instance;
 	public static ColorStates instance {	// Makes it possible to call script easily from other scripts
@@ -31,60 +24,55 @@ public class ColorStates : MonoBehaviour {
 
 	void Start () 
 	{
+		activeColor = Color.white;
 		myRenderer = gameObject.transform.FindChild("Graphics").GetComponent<SpriteRenderer>();
 	}
 
 	void Update () 
 	{
-
-		if (gameObject.tag == "red")
+		if (activeColor == Color.white)
 		{
-			//myRenderer.color = red;
-			ChangeColor(red);
+			isWhite = true;
 		}
-		else if (gameObject.tag == "blue")
+		else 
 		{
-
-			ChangeColor(blue);
-		}
-		else if (gameObject.tag == "yellow")
-		{
-			//myRenderer.color = yellow;
-			ChangeColor(yellow);
-		}
-		else if (gameObject.tag == "green")
-		{
-			//myRenderer.color = green;
-			ChangeColor(green);
-		}
-		else if (gameObject.tag == "orange")
-		{
-			//myRenderer.color = orange;
-			ChangeColor(orange);
-		}
-		else if (gameObject.tag == "purple")
-		{
-			//myRenderer.color = purple;
-			ChangeColor(purple);
+			isWhite = false;
 		}
 	}
 
-	public void ChangeColor(Color newColor)
+	//Detects the collision with an orb
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "orb")
+		{
+			PickUpGlobe pickUpGlobe = other.gameObject.GetComponent<PickUpGlobe>();
+			StartCoroutine(ChangeColor(pickUpGlobe.orbColor, 3f));
+		}
+	}
+
+	//Changes the color on the player
+	public IEnumerator ChangeColor(Color newColor, float time)
+	{
+		float elapsedTime = 0;
+		while (elapsedTime < time)
+		{
+			FadeColor(newColor, time, elapsedTime);
+			elapsedTime += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
+		}
+	}
+
+	//Fades the material of a color to a new color based on a specific time interval
+	public void FadeColor(Color newColor, float time, float elapsedTime)
 	{
 		Color color = myRenderer.color;
-		color = Color.Lerp(color, newColor, Mathf.PingPong(Time.deltaTime * 4f, 1));
+		color = Color.Lerp(color, newColor, (elapsedTime / time));
 		myRenderer.color = color;
 		activeColor = color;
 	}
 
+	//Gets the current active color
 	public Color GetColor() {
 		return activeColor;
 	} 
-
-	public static Vector4 hexColor(float r, float g, float b, float a)
-	{
-		Vector4 color = new Vector4(r/255, g/255, b/255, a/255);
-		return color;
-	}
-		
 }
