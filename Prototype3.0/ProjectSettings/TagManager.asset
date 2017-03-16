@@ -43,6 +43,7 @@ TagManager:
   - waterPool
   - killTag
   - orb
+  - BackgroundElement
   layers:
   - Default
   - TransparentFX

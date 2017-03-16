@@ -56,6 +56,7 @@ public class PickUpGlobe : MonoBehaviour {
 		if (other.name == "Player")
 		{
 			LevelManager.instance.numberOrbs --;
+			BackgroundManager.instance.ColorBackground();
 			//gameObject.SetActive(false);
 			myCollider.enabled = false;
 			pSystemConstant.Stop();
