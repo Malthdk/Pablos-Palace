@@ -10,6 +10,8 @@ public class CameraFollow : MonoBehaviour {
 	public float lookSmoothTimeX;
 	public float verticalSmoothTime;
 	public float horizontalSmoothTime;
+	public bool horizontalLock;
+	public bool verticalLock;
 
 	public Vector2 focusAreaSize;
 
@@ -65,8 +67,15 @@ public class CameraFollow : MonoBehaviour {
 			}
 		}
 
+		if (horizontalLock)
+		{
+			focusPosition.x = transform.position.x;
+		}
+		if (verticalLock)
+		{
+			focusPosition.y = transform.position.y;
+		}
 	//	currentLookAheadX = Mathf.SmoothDamp (currentLookAheadX, targetLookAheadX, ref smoothLookVelocityX, lookSmoothTimeX); //FOR LOOKING AHEAD DO NOT DELETE
-
 		focusPosition.x = Mathf.SmoothDamp(transform.position.x, focusPosition.x, ref smoothVelocityX, horizontalSmoothTime);
 		focusPosition.y = Mathf.SmoothDamp(transform.position.y, focusPosition.y, ref smoothVelocityY, verticalSmoothTime);
 		//focusPosition += Vector2.right * currentLookAheadX;																//FOR LOOKING AHEAD DO NOT DELETE

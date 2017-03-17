@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	void Start () {
-		uiText = FindObjectOfType<Text>();
+		uiText = transform.FindChild("FPS").GetComponent<Text>();
 		//score = FindObjectOfType<Controller2D>();
 	}
 	
@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour {
 			dt -= 1.0f/updateRate;
 		}
 
-		uiText.text = "COINS: " + score + "   FPS: " + fps;
+		uiText.text = "FPS: " + fps;
 	}
 }
 

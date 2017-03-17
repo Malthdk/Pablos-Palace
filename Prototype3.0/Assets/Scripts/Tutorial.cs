@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour {
 
-	public Image uiImage;
+	public Text uiImage;
 	public bool tutorialEnabled;
 
 	void Start () 

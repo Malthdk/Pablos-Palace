@@ -24,9 +24,12 @@ public class Door : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (isOpen)
+		if (other.name == "Player")
 		{
-			LevelManager.instance.NextLevel();
+			if (isOpen)
+			{
+				LevelManager.instance.NextLevel();
+			}
 		}
 	}
 }

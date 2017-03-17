@@ -6,24 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MenuUI/MainMenu.unity
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level1.unity
   - enabled: 1
-    path: Assets/Scenes/MenuUI/LevelSelection.unity
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level2.unity
   - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/1.Intro.unity
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level3.unity
   - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/2.BlueYellow.unity
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level4.unity
   - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/3.YellowBlue.unity
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level5.unity
   - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/4.BlueGreen.unity
-  - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/5.RedPurple.unity
-  - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/6.RedOrange.unity
-  - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/7.OrangePurple.unity
-  - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/8.MultiColor.unity
-  - enabled: 1
-    path: Assets/Scenes/User tests/The Dungeon/9.Boss.unity
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level6.unity
