@@ -71,7 +71,7 @@
              {
                  half4 texcol = tex2D (_MainTex, IN.texcoord);              
                  texcol.rgb = lerp(texcol.rgb, dot(texcol.rgb, float3(0.3, 0.59, 0.11)), _EffectAmount);
-                 texcol = texcol + _Brightness;
+                 texcol.rgb = texcol.rgb + _Brightness;
                  texcol = texcol * IN.color;
                  return texcol;
              }
