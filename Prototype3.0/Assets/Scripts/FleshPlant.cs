@@ -54,7 +54,7 @@ public class FleshPlant : RaycastController {
 			break;
 
 		case Eat.Kill:
-			PlayerManager.pManager.KillPlayer();
+			PlayerManager.instance.KillPlayer();
 			eat = Eat.Opening;
 			break;
 		}

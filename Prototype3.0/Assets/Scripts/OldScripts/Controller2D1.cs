@@ -247,7 +247,7 @@ public class Controller2D1 : RaycastController {
 				if (hit.collider.gameObject.CompareTag("blackBox"))
 				{
 					//gameObject.tag = checkpoint.tempTag;
-					PlayerManager.pManager.KillPlayer();
+					PlayerManager.instance.KillPlayer();
 				}
 				if (hit.collider.gameObject.CompareTag("doctorDark"))
 				{
@@ -283,7 +283,7 @@ public class Controller2D1 : RaycastController {
 				//}
 				if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
 				{
-					PlayerManager.pManager.KillPlayer();
+					PlayerManager.instance.KillPlayer();
 				}
 				if (hit.collider.tag == "orangeDestroy")
 				{
@@ -341,7 +341,7 @@ public class Controller2D1 : RaycastController {
 				if (hit.collider.gameObject.CompareTag("blackBox"))
 				{
 					//gameObject.tag = checkpoint.tempTag;
-					PlayerManager.pManager.KillPlayer();
+					PlayerManager.instance.KillPlayer();
 				}
 				if (hit.collider.gameObject.CompareTag("coin"))
 				{
@@ -445,11 +445,11 @@ public class Controller2D1 : RaycastController {
 		Vector3 orangePos = new Vector3(this.gameObject.transform.position.x-Random.Range(-0.35f,0.35f),this.gameObject.transform.position.y-Random.Range(0.15f,0.35f),this.gameObject.transform.position.z);
 		if (this.gameObject.tag != "white") {
 			if (this.gameObject.tag == "orange") {
-				PlayerManager.pManager.SpawnSplat(orangePos); 
+				//CreateSplat.instance.SpawnSplat(orangePos); 
 				//Splatter splat = (Splatter) Instantiate(splatter, orangePos, Quaternion.identity);
 				//Destroy(splat.gameObject, 25.0f);
 			} else {
-				PlayerManager.pManager.SpawnSplat(pos); 
+				//CreateSplat.instance.SpawnSplat(pos); 
 				//Splatter splat = (Splatter) Instantiate(splatter, pos, Quaternion.identity);
 				//Destroy(splat.gameObject, 25.0f);
 			}
@@ -499,7 +499,7 @@ public class Controller2D1 : RaycastController {
 		}
 		if (other.tag == "chaseBoss" || other.tag == "killTag")
 		{
-			PlayerManager.pManager.KillPlayer();
+			PlayerManager.instance.KillPlayer();
 		}
 		if (other.tag == "blueBox")
 		{

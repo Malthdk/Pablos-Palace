@@ -21,15 +21,12 @@ public class Controller2D : RaycastController {
 	//Graphics and splat
 	private Transform graphicsTransform;
 	public float splatTime = 0.0005f;
-	Vector2 rayOrigin;
-	float rayLength = 5f;
-	public LayerMask middleGroundMask;
-	public bool onMiddleGround;
 	public bool painting;
 	private PullPush pullPush;
 	[HideInInspector]
 	public static Controller2D _instance;
 	private float newZPos;
+	private CreateSplat createSplat;
 
 	//PaintParticles
 	private ParticleSystem paintParticles;
@@ -52,6 +49,7 @@ public class Controller2D : RaycastController {
 		levelmanager = FindObjectOfType<LevelManager>();
 		checkpoint = FindObjectOfType<Checkpoint>();
 		pullPush = GetComponent<PullPush>();
+		createSplat = GetComponent<CreateSplat>();
 		//dashParticle = transform.GetChild(3).gameObject;
 		paintParticleGO = transform.GetChild(5).gameObject;
 		paintParticles = paintParticleGO.transform.GetChild(0).GetComponent<ParticleSystem>();
@@ -62,39 +60,26 @@ public class Controller2D : RaycastController {
 	{
 		base.Update();
 
-		RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector3.forward, rayLength, middleGroundMask);
-
-		Debug.DrawRay(transform.position, Vector3.forward * rayLength, Color.red);
-
-		if (hit2) 
-		{
-			onMiddleGround = true;
-		}
-		else 
-		{
-			onMiddleGround = false;
-		}
-
 		if (Input.GetButton("Special") && !ColorStates.instance.isWhite)
 		{
-			if (onMiddleGround)
+			if (createSplat.onMiddleGround)
 			{
-				StartCoroutine(SplatterControl());
+				StartSplat();
 				EmitParticle(paintParticles);
 			}
 			else
 			{
-				StopCoroutine(SplatterControl());
+				StopSplat();
 				StopEmitParticle(paintParticles);
 			}
 		}
 		else if (Input.GetButtonUp("Special"))
 		{
 			painting = false;
-			StopCoroutine(SplatterControl());
+			StopSplat();
 			StopEmitParticle(paintParticles);
 		}
-		if (!onMiddleGround)
+		if (!createSplat.onMiddleGround)
 		{
 			painting = false;
 			StopEmitParticle(paintParticles);
@@ -231,7 +216,7 @@ public class Controller2D : RaycastController {
 				if (hit.collider.gameObject.CompareTag("blackBox"))
 				{
 					//gameObject.tag = checkpoint.tempTag;
-					PlayerManager.pManager.KillPlayer();
+					PlayerManager.instance.KillPlayer();
 				}
 				if (hit.collider.gameObject.CompareTag("doctorDark"))
 				{
@@ -267,7 +252,7 @@ public class Controller2D : RaycastController {
 				//}
 				if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
 				{
-					PlayerManager.pManager.KillPlayer();
+					PlayerManager.instance.KillPlayer();
 				}
 				if (hit.collider.tag == "Through")					//To go through "Through" platforms
 				{
@@ -300,7 +285,7 @@ public class Controller2D : RaycastController {
 				if (hit.collider.gameObject.CompareTag("blackBox"))
 				{
 					//gameObject.tag = checkpoint.tempTag;
-					PlayerManager.pManager.KillPlayer();
+					PlayerManager.instance.KillPlayer();
 				}
 				if (hit.collider.gameObject.CompareTag("coin"))
 				{
@@ -402,24 +387,13 @@ public class Controller2D : RaycastController {
 	}
 
 	// METHOD FOR SPLATTING
-	private void Splat() {
+	private void StartSplat() {
 		painting = true;
-		newZPos -= -0.0001f;
-		//Debug.Log(newZPos);
-		Vector3 pos = new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y,this.gameObject.transform.position.z - newZPos);
-		if (this.gameObject.tag != "white") 
-		{
-				PlayerManager.pManager.SpawnSplat(pos); 
-		}
+		createSplat.isSplatting = true;
 	}
-
-	IEnumerator SplatterControl() {
-		Splat ();
-		yield return new WaitForSeconds(splatTime);
-		if (Input.GetButton("Special") && onMiddleGround)
-		{
-			StartCoroutine(SplatterControl());
-		}
+	private void StopSplat()
+	{
+		createSplat.isSplatting = false;
 	}
 
 	//STRUCT WITH COLLISION INFOS
@@ -456,13 +430,8 @@ public class Controller2D : RaycastController {
 		}
 		if (other.tag == "chaseBoss" || other.tag == "killTag")
 		{
-			PlayerManager.pManager.KillPlayer();
+			PlayerManager.instance.KillPlayer();
 		}
-	}
-
-	public void StartSplat()
-	{
-		StartCoroutine(SplatterControl());
 	}
 
 	public void EmitParticle(ParticleSystem particle)

@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 58000013454833704}
   - component: {fileID: 114384473758880304}
   - component: {fileID: 114817053010598040}
+  - component: {fileID: 114143859383397944}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: chaseBoss
@@ -135,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011872829832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -157.78, y: 25.64, z: 0}
+  m_LocalPosition: {x: -262.06, y: -73.82, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4000011431343036}
@@ -278,6 +279,24 @@ MonoBehaviour:
   bubbleTime: 1.5
   startDelay: 1.5
   shootdelay: 0
+--- !u!114 &114143859383397944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011451157180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a537cd59492a74bff8c9ca4a41c6ec5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constantSplat: 1
+  middleGroundMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  onMiddleGround: 0
+  isSplatting: 1
+  splatDistanceMin: 0.5
 --- !u!114 &114384473758880304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,7 +387,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1255797105
+  randomSeed: -1135598542
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2969,7 +2988,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 722042442
+  randomSeed: 911362647
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8150,7 +8169,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -8200,7 +8219,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89

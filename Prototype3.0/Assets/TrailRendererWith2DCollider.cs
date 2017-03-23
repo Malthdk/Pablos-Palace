@@ -15,21 +15,22 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
 	private bool isActionPerformed = false;
 	private Transform trans;                        //transform of the object this script is attached to                                               
 	private Trail currentTrail;
-
+	private CreateSplat createSplat;
 	//************
 	//
 	// Private Unity Methods
 	//
 	//************
 
-	private void Awake() {
-
+	private void Awake() 
+	{
+		createSplat = GetComponent<CreateSplat>();
 	}
 
 	private void Update() {
 		if (Input.GetButton("Special") && !ColorStates.instance.isWhite)
 		{
-			if (Controller2D.instance.onMiddleGround)
+			if (createSplat.onMiddleGround)
 			{
 				StartCoroutine(BuildTrail());
 			}

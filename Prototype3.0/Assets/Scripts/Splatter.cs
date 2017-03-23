@@ -7,6 +7,7 @@ public class Splatter : MonoBehaviour
 	//Publics
 	public static Splatter splatManager; //Hvad er det her?
 	public float splatStayTime = 3f;
+	public float blackSplatStayTime = 1.5f;
 	public float blackTurnTime = 1f;
 	public float correctionFactor = 0.5f;
 	public float colorChangeTime = 1f;
@@ -24,6 +25,7 @@ public class Splatter : MonoBehaviour
 	private BoxCollider2D boxCollider;
 	private Color black = new Color(0f, 0f, 0f);
 	private bool isActive;
+	private bool isBlackSplat = false;
 
 	private bool isActionPerformed;
 	private Bounds bounds;
@@ -36,31 +38,12 @@ public class Splatter : MonoBehaviour
     {
 		boxCollider = GetComponent<BoxCollider2D>();
 		material = GetComponent<MeshRenderer>().material;
-		player = GameObject.Find("Player");	
+		player = GameObject.Find("Player");
     }
 
     private void Start()
     {
-		isActive = true;
-
 		changeColorParticles = gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
-
-		//This handles the dripping and variations in trail
-		randomRoll = Random.Range(1, 10);
-		endPosition = Random.Range(0.3f, 0.5f);
-		speed = Random.Range(0.3f, 1f);
-		scale = transform.localScale.y;
-		Anchor_Position = transform.localPosition;
-		Anchor_Position = new Vector3(transform.localPosition.x, transform.localPosition.y - endPosition, transform.localPosition.z);
-
-		//Starting the Destroy corotine with correct color
-		playerColor = ColorStates.instance.GetColor();
-		StartCoroutine(DestroySplat(playerColor, colorChangeTime));
-
-		//Bounds are used to check for collision with other splat prefabs
-		bounds = GetComponent<BoxCollider2D>().bounds;
-		pointA = new Vector2(bounds.min.x, bounds.min.y);
-		pointB = new Vector2(bounds.max.x, bounds.max.y);
     }
 
 	void Update ()
@@ -69,7 +52,7 @@ public class Splatter : MonoBehaviour
 		{
 			colliders = Physics2D.OverlapAreaAll(pointA, pointB, collisionMask);
 			
-			if (colliders.Length > 0)
+			if (colliders.Length > 0 && gameObject.tag != "killTag")
 			{
 				StartCoroutine(PlayOnce());
 			}
@@ -91,6 +74,14 @@ public class Splatter : MonoBehaviour
 		gameObject.SetActive(true);
 		isActive = true;
 
+		if (material.color == black)
+		{
+			isBlackSplat = true;
+			gameObject.tag = "killTag";
+			gameObject.layer = 15;
+			splatStayTime = blackSplatStayTime;
+		}
+
 		//This handles the dripping and variations in trail (MAYBE DELETE THIS IN THIS FUNCTION?)
 		randomRoll = Random.Range(1, 10);
 		endPosition = Random.Range(0.3f, 0.5f);
@@ -101,8 +92,14 @@ public class Splatter : MonoBehaviour
 
 		//Starting the Destroy corotine with correct color
 		playerColor = ColorStates.instance.GetColor();
-		StartCoroutine(DestroySplat(playerColor, colorChangeTime));
-
+		if (isBlackSplat)
+		{
+			StartCoroutine(DestroySplat(black, colorChangeTime));
+		}
+		else
+		{
+			StartCoroutine(DestroySplat(playerColor, colorChangeTime));
+		}
 		//Bounds are used to check for collision with other splat prefabs
 		bounds = GetComponent<BoxCollider2D>().bounds;
 		pointA = new Vector2(bounds.min.x, bounds.min.y);

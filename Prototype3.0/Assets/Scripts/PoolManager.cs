@@ -41,14 +41,14 @@ public class PoolManager : MonoBehaviour {
 		}
 	}
 
-	public void ReuseObject (GameObject prefab, Vector3 pos, Quaternion rotation, Color color) {
+	public void ReuseObject (GameObject prefab, Vector3 pos, Quaternion rotation, Color color, Vector3 scale) {
 		int poolKey = prefab.GetInstanceID ();
 
 		if (poolDic.ContainsKey (poolKey)) {
 			ObjectInstance objectToReuse = poolDic [poolKey].Dequeue ();
 			poolDic [poolKey].Enqueue (objectToReuse);
 
-			objectToReuse.Reuse (pos, rotation, color);
+			objectToReuse.Reuse (pos, rotation, color, scale);
 		}
 	}
 
@@ -71,9 +71,10 @@ public class PoolManager : MonoBehaviour {
 			}
 		}
 
-		public void Reuse(Vector3 pos, Quaternion rotation, Color color) {
+		public void Reuse(Vector3 pos, Quaternion rotation, Color color, Vector3 scale) {
 			transform.position = pos;
 			transform.rotation = rotation;
+			transform.localScale = scale;
 			splatterScript.transform.GetComponent<MeshRenderer>().material.color = color;
 
 			if (hasPoolObjectComponent) {

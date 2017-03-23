@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splatStayTime: 5
+  blackSplatStayTime: 2.5
   blackTurnTime: 0.1
   correctionFactor: 0.5
   colorChangeTime: 3

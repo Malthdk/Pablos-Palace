@@ -85,7 +85,7 @@ public class SpinningWheel : MonoBehaviour {
 	{
 		if( isSpinning && other.name == "Player")
 		{
-			PlayerManager.pManager.KillPlayer();
+			PlayerManager.instance.KillPlayer();
 		}
 	}
 }

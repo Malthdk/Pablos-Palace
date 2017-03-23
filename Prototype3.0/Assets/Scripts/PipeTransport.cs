@@ -37,7 +37,7 @@ public class PipeTransport : MonoBehaviour {
 		{
 			//AddForce to objects
 			movableObjects[i].SetActive(true);
-			Controller2D.instance.StartSplat();
+			//Controller2D.instance.StartSplat();
 		}
 
 		//player.SetActive(true);

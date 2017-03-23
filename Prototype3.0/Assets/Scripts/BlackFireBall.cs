@@ -21,7 +21,7 @@ public class BlackFireBall : MonoBehaviour {
 	{
 		if (other.transform.name == "Player")
 		{
-			PlayerManager.pManager.KillPlayer();
+			PlayerManager.instance.KillPlayer();
 		}
 		else if ((collisionlayer.value & 1<<other.gameObject.layer) != 0)
 		{

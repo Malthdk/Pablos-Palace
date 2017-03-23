@@ -115,7 +115,7 @@ public class SmashBlock : RaycastController {
 				if (hit && hit.distance !=0)
 				{
 					Debug.Log("kill player");
-					PlayerManager.pManager.KillPlayer();
+					PlayerManager.instance.KillPlayer();
 
 					//Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), hit.collider);
 

@@ -80,7 +80,7 @@ public class HauntedPicture : MonoBehaviour {
 			break;
 
 		case Haunt.Kill:
-			PlayerManager.pManager.KillPlayer();
+			PlayerManager.instance.KillPlayer();
 			haunt = Haunt.Waiting;
 			break;
 		}

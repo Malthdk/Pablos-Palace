@@ -314,7 +314,7 @@ public class PlatformController : RaycastController {
 				if (hit && hit.distance !=0)
 				{
 					Debug.Log("kill player");
-					PlayerManager.pManager.KillPlayer();
+					PlayerManager.instance.KillPlayer();
 				}
 			}
 		}
