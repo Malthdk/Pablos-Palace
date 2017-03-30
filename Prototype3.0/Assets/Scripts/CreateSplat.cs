@@ -107,7 +107,7 @@ public class CreateSplat : MonoBehaviour {
 
 		//Currently to make sure new track is on top of old track
 		newZvalue -= -0.001f;
-		Debug.Log(newZvalue);
+		//Debug.Log(newZvalue);
 		//Makes it so object has to have travelled a certain distance before a new splat can be created
 		if ( (centerPositions.First.Value - transform.position).sqrMagnitude > splatDistanceMin * splatDistanceMin) 
 		{

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraFollow : MonoBehaviour {
 
@@ -24,6 +25,9 @@ public class CameraFollow : MonoBehaviour {
 	float smoothVelocityY;
 	float smoothVelocityX;
 
+	public List<Vector3> localBoundaries;
+	public List<Vector3> globalBoundaries;
+
 //	float smoothFindX;
 //	float smoothFindY;
 //	public bool findingTarget = false;
@@ -34,6 +38,16 @@ public class CameraFollow : MonoBehaviour {
 	{
 		target = FindObjectOfType<Controller2D>();
 		focusArea = new FocusArea(target.collider.bounds, focusAreaSize);
+
+		foreach(Vector3 boundary in localBoundaries) 
+		{
+			globalBoundaries.Add(boundary);
+		}
+
+		for (int i=0; i < localBoundaries.Count; i++)
+		{
+			globalBoundaries[i] = localBoundaries[i] + transform.position;
+		}
 	}
 
 	void Update()
@@ -42,6 +56,15 @@ public class CameraFollow : MonoBehaviour {
 		{
 			target = FindObjectOfType<Controller2D>();
 		}
+
+//		if (Mathf.Abs(transform.position.x) >= boundaryX)
+//		{
+//			Debug.Log("Hit boundaryX");
+//		}
+//		if (Mathf.Abs(transform.position.y) >= boundaryY)
+//		{
+//			Debug.Log("Hit boundaryY");
+//		}
 	}
 	void LateUpdate()
 	{
@@ -99,7 +122,8 @@ public class CameraFollow : MonoBehaviour {
 //		}
 //		else 
 //		{
-			transform.position = (Vector3)focusPosition + Vector3.forward * -10;
+		transform.position = (Vector3)focusPosition + Vector3.forward * -10;	
+
 			//transform.position = new Vector3(rounded_x, rounded_y, -10);
 //		}
 	}
@@ -121,6 +145,12 @@ public class CameraFollow : MonoBehaviour {
 	{
 		Gizmos.color = new Color (1, 0, 0, .5f);
 		Gizmos.DrawCube (focusArea.centre, focusAreaSize);
+
+		for (int i = 0; i < localBoundaries.Count; i ++)
+		{
+			Vector3 globalWaypointPos = (Application.isPlaying)?globalBoundaries[i]:localBoundaries[i] + transform.position;
+			Gizmos.DrawSphere(globalWaypointPos, 1f);
+		}
 	}
 	struct FocusArea
 	{

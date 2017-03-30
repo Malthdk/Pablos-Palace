@@ -20,6 +20,11 @@ public class Door : MonoBehaviour {
 			myRenderer.color = Color.green;
 			isOpen = true;
 		}
+		else
+		{
+			myRenderer.color = Color.red;
+			isOpen = false;
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

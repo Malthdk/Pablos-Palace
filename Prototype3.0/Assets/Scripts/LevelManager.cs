@@ -22,7 +22,8 @@ public class LevelManager : MonoBehaviour {
 	public List<PlatformController> platforms;
 	public List<Lever> levers;
 	public List<FallingPlatform> fallingPlatforms;
-	public List<GameObject> orbs;
+	public List<PickUpGlobe> orbs;
+	public List<PickUpSecret> secrets;
 
 	public int numberOrbs;
 
@@ -55,12 +56,18 @@ public class LevelManager : MonoBehaviour {
 	{
 		player = FindObjectOfType<Player>();
 
-		foreach(GameObject oObject in FindGameObjectsWithTags(new string[]{"orb"})) 
+		foreach(GameObject oObject in GameObject.FindGameObjectsWithTag("orb")) 
 		{
-			orbs.Add(oObject);
+			PickUpGlobe oOrb = oObject.GetComponent<PickUpGlobe>();
+			orbs.Add(oOrb);
 		}
 		numberOrbs = orbs.Count;
 
+		foreach(GameObject seObject in GameObject.FindGameObjectsWithTag("coin")) 
+		{
+			PickUpSecret sOrb = seObject.GetComponent<PickUpSecret>();
+			secrets.Add(sOrb);
+		}
 		foreach(GameObject sObject in FindGameObjectsWithTags(new string[]{"orangeDestroy", "coin"})) 
 		{
 			stateObjects.Add(sObject);
@@ -110,6 +117,7 @@ public class LevelManager : MonoBehaviour {
 		particleEffect.SetActive(false);
 		player.transform.position = currentCheckpoint.transform.position;
 		player.tag = currentTag;
+		StartCoroutine(	ColorStates.instance.ChangeColor(Color.white, 1f));
 		player.velocity.x = 0f;
 		player.velocity.y = 0f;
 
@@ -118,7 +126,9 @@ public class LevelManager : MonoBehaviour {
 		ResetPlatforms(platforms);
 		ResetLevers(levers);
 		ResetParticles();
-
+		ResetOrbs(orbs);
+		ResetSeOrbs(secrets);
+		numberOrbs = orbs.Count;
 		yield return new WaitForSeconds(respawnTime);
 
 		player.enabled = true;
@@ -167,6 +177,21 @@ public class LevelManager : MonoBehaviour {
 		for (int i = 0; i < theList.Count; i++)
 		{
 			theList[i].ResetLever();
+		}
+	}
+
+	void ResetOrbs(List<PickUpGlobe> theList)
+	{
+		for (int i = 0; i < theList.Count; i++)
+		{
+			theList[i].ResetOrb();
+		}
+	}
+	void ResetSeOrbs(List<PickUpSecret> theList)
+	{
+		for (int i = 0; i < theList.Count; i++)
+		{
+			theList[i].ResetSeOrb();
 		}
 	}
 
