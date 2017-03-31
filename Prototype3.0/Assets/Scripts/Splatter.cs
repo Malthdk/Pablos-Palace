@@ -110,7 +110,7 @@ public class Splatter : MonoBehaviour
 
 		while(!isActionPerformed){
 			yield return new WaitForEndOfFrame ();
-
+			splatStayTime = blackSplatStayTime;
 			StopAllCoroutines();
 			StartCoroutine(TurnBlack(colorChangeTime));
 			isActionPerformed = true;
@@ -140,6 +140,7 @@ public class Splatter : MonoBehaviour
 	//Handles the splat turning black
 	public IEnumerator TurnBlack(float time)
 	{
+		isBlackSplat = true;
 		yield return new WaitForSeconds(blackTurnTime);
 
 		gameObject.tag = "killTag";
