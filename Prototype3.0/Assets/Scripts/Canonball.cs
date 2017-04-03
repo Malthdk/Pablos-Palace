@@ -20,7 +20,7 @@ public class Canonball : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.name == "CanvasTile" || other.name == "Player" || other.tag == "Obsticle" || other.tag == "Through" || other.tag == "killTag") {
+		if (other.name == "CanvasTile" || other.name == "Player" || other.tag == "Obsticle" || other.tag == "Through" || other.tag == "killTag" || other.tag == "movingPlatform") {
 			StartCoroutine(Destroy());
 		}
 		if (other.tag == "blackBox") {

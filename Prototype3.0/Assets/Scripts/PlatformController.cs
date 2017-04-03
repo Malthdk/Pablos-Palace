@@ -417,10 +417,6 @@ public class PlatformController : RaycastController {
 		{
 			elevator = true;
 		}
-		else
-		{
-			elevator = false;
-		}
 	}
 
 	public void ResetPlatform()
