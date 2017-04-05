@@ -54,6 +54,18 @@ public class Player : MonoBehaviour {
 	public float gravityModifierPaintingJump;
 	public float gravityModifierPaintingFall;
 
+	// Has player landed?
+	private bool landed = true;
+
+	// FOR SOUND
+	public AudioClip jumpSoundTakeOff;
+	public AudioClip jumpSoundLanding;
+
+	private AudioSource source;
+	private float volLowRange = .6f;
+	private float volHighRange = .8f;
+	private float volLanding;
+
 	//ParticleSystems for dJump and tJump
 	private ParticleSystem doubleJumpParticle;
 	private ParticleSystem tripleJumpParticle;
@@ -78,6 +90,7 @@ public class Player : MonoBehaviour {
 		controller = GetComponent<Controller2D>();
 		abilities = GetComponent<Abilities>();
 		animator = GetComponent<Animator>();		//ANIMATION
+		source = GetComponent<AudioSource>();
 	}
 
 	void Update () 
@@ -115,8 +128,10 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetButtonDown("Jump"))
 		{
+			float vol = Random.Range(volLowRange, volHighRange);
 			if (controller.collisions.below && !pullPush.isPulling && !Swimming.instance.isSwimming)
 			{
+				source.PlayOneShot(jumpSoundTakeOff, vol);
 				velocity.y = maxJumpVelocity;
 				animator.SetBool("Ground", false);
 			}
@@ -126,6 +141,7 @@ public class Player : MonoBehaviour {
 				/*This is where double jump is handled*/
 				if (!hasDoubleJumped)
 				{	
+					source.PlayOneShot(jumpSoundTakeOff, (.1f + vol));
 					velocity.y = 0;
 					Debug.Log ("double jumped");
 					doubleJumped = true; //This causes an animation bugg where we jump from a wall and then doublejump is is set to true so we canno transition into jump animation.
@@ -137,6 +153,7 @@ public class Player : MonoBehaviour {
 				}
 				else if (!hasTripleJumped && hasDoubleJumped)
 				{
+					source.PlayOneShot(jumpSoundTakeOff, (.2f + vol));
 					velocity.y = 0;
 					Debug.Log ("tripple jumped");
 					tripleJumped = true; //animation
@@ -146,18 +163,23 @@ public class Player : MonoBehaviour {
 				}
 			}
 		}
-
+			
 		if (!controller.collisions.below && !pullPush.isPulling)
 		{
+			landed = false;
 			moveSpeed = airSpeed;
+			volLanding = (velocity.y / -30);
 		}
-		else if (controller.collisions.below)
+		else if (controller.collisions.below && landed == false)
 		{
+			Debug.Log(volLanding);
+			source.PlayOneShot(jumpSoundLanding, volLanding);
 			hasTripleJumped = false;
 			hasDoubleJumped = false;
 			tripleJumped = false; //animation
 			doubleJumped = false; //animation
 			moveSpeed = groundSpeed;
+			landed = true;
 		}
 		if (controller.painting)
 		{
