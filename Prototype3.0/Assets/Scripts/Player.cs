@@ -60,6 +60,7 @@ public class Player : MonoBehaviour {
 	// FOR SOUND
 	public AudioClip jumpSoundTakeOff;
 	public AudioClip jumpSoundLanding;
+	public AudioClip paintingSound;
 
 	private AudioSource source;
 	private float volLowRange = .6f;
@@ -172,7 +173,6 @@ public class Player : MonoBehaviour {
 		}
 		else if (controller.collisions.below && landed == false)
 		{
-			Debug.Log(volLanding);
 			source.PlayOneShot(jumpSoundLanding, volLanding);
 			hasTripleJumped = false;
 			hasDoubleJumped = false;
@@ -183,6 +183,10 @@ public class Player : MonoBehaviour {
 		}
 		if (controller.painting)
 		{
+			if (!source.isPlaying) {
+				StartCoroutine("PaintAudio");
+				Debug.Log("PLAY");
+			}
 			moveSpeed = paintingSpeed;
 		}
 		if (Mathf.Sign(velocity.y) == -1)
@@ -228,6 +232,19 @@ public class Player : MonoBehaviour {
 		if (controller.collisions.above  || controller.collisions.below)		//If raycasts hit above or below, velocity on y axis stops
 		{
 			velocity.y = 0;
+		}
+	}
+
+	IEnumerator PaintAudio() {
+		source.pitch = Mathf.Lerp(0.9f, 1.1f, (paintingSound.length*Time.deltaTime));
+		//source.pitch = Random.Range (0.9f, 1.1f);
+		float vol = Random.Range (0.9f, 1.0f);
+		source.PlayOneShot(paintingSound, vol);
+		yield return new WaitForSeconds(paintingSound.length-0.15f);
+		if (!controller.painting) {
+			StopCoroutine("PaintAudio");
+		} else {
+			StartCoroutine("PaintAudio");
 		}
 	}
 

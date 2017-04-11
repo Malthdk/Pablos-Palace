@@ -7,11 +7,18 @@ public class PickUpSecret : MonoBehaviour {
 	ParticleSystem pSystem;
 	SpriteRenderer sRenderer;
 	CircleCollider2D cCollider;
+
+	// FOR SOUND
+	public AudioClip pickUpSound;
+	private AudioSource source;
+
+
 	void Start () 
 	{
 		cCollider = gameObject.GetComponent<CircleCollider2D>();
 		sRenderer = gameObject.GetComponent<SpriteRenderer>();
 		pSystem = transform.GetComponentInChildren<ParticleSystem>();
+		source = GetComponent<AudioSource>();
 	}
 
 	void Update () 
@@ -23,6 +30,7 @@ public class PickUpSecret : MonoBehaviour {
 	{
 		if (other.name == "Player")
 		{
+			source.PlayOneShot(pickUpSound, 0.8f);
 			pSystem.Play();
 			PickedUp();
 		}

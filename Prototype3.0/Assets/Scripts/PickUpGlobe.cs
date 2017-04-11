@@ -16,6 +16,10 @@ public class PickUpGlobe : MonoBehaviour {
 	CircleCollider2D myCollider;
 	Color currentColor;
 
+	// FOR SOUND
+	public AudioClip pickUpSound;
+	private AudioSource source;
+
 	void Start () 
 	{
 		pSystemConstant = gameObject.transform.FindChild("FX_ParticleBall").GetComponent<ParticleSystem>();
@@ -36,11 +40,8 @@ public class PickUpGlobe : MonoBehaviour {
 		pSystemExplode1.Stop();
 		pSystemExplode2.Stop();
 		pSystemConstant.Play();
-	}
 
-	void Update () 
-	{
-		
+		source = GetComponent<AudioSource>();
 	}
 
 	void SetColor(ParticleSystemRenderer pRenderer, Color setColor)
@@ -55,6 +56,7 @@ public class PickUpGlobe : MonoBehaviour {
 	{
 		if (other.name == "Player")
 		{
+			source.PlayOneShot(pickUpSound, 0.8f);
 			LevelManager.instance.numberOrbs --;
 			BackgroundManager.instance.ColorBackground();
 			myCollider.enabled = false;
