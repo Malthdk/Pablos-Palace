@@ -61,8 +61,13 @@ public class Player : MonoBehaviour {
 	public AudioClip jumpSoundTakeOff;
 	public AudioClip jumpSoundLanding;
 	public AudioClip paintingSound;
+	public AudioClip paintingSplashSound;
 
-	private AudioSource source;
+	[HideInInspector]
+	public AudioSource paintingSoundSource;
+	[HideInInspector]
+	public AudioSource jumpSoundSource;
+
 	private float volLowRange = .6f;
 	private float volHighRange = .8f;
 	private float volLanding;
@@ -87,11 +92,12 @@ public class Player : MonoBehaviour {
 	{
 		doubleJumpParticle = gameObject.transform.GetChild(6).GetChild(0).GetComponent<ParticleSystem>();
 		tripleJumpParticle = gameObject.transform.GetChild(7).GetChild(0).GetComponent<ParticleSystem>();
+		paintingSoundSource = gameObject.transform.GetChild(8).GetComponent<AudioSource>();
+		jumpSoundSource = gameObject.transform.GetChild(9).GetComponent<AudioSource>();
 		pullPush = GetComponent<PullPush>();
 		controller = GetComponent<Controller2D>();
 		abilities = GetComponent<Abilities>();
 		animator = GetComponent<Animator>();		//ANIMATION
-		source = GetComponent<AudioSource>();
 	}
 
 	void Update () 
@@ -132,7 +138,7 @@ public class Player : MonoBehaviour {
 			float vol = Random.Range(volLowRange, volHighRange);
 			if (controller.collisions.below && !pullPush.isPulling && !Swimming.instance.isSwimming)
 			{
-				source.PlayOneShot(jumpSoundTakeOff, vol);
+				jumpSoundSource.PlayOneShot(jumpSoundTakeOff, vol);
 				velocity.y = maxJumpVelocity;
 				animator.SetBool("Ground", false);
 			}
@@ -142,7 +148,7 @@ public class Player : MonoBehaviour {
 				/*This is where double jump is handled*/
 				if (!hasDoubleJumped)
 				{	
-					source.PlayOneShot(jumpSoundTakeOff, (.1f + vol));
+					jumpSoundSource.PlayOneShot(jumpSoundTakeOff, (.1f + vol));
 					velocity.y = 0;
 					Debug.Log ("double jumped");
 					doubleJumped = true; //This causes an animation bugg where we jump from a wall and then doublejump is is set to true so we canno transition into jump animation.
@@ -154,7 +160,7 @@ public class Player : MonoBehaviour {
 				}
 				else if (!hasTripleJumped && hasDoubleJumped)
 				{
-					source.PlayOneShot(jumpSoundTakeOff, (.2f + vol));
+					jumpSoundSource.PlayOneShot(jumpSoundTakeOff, (.2f + vol));
 					velocity.y = 0;
 					Debug.Log ("tripple jumped");
 					tripleJumped = true; //animation
@@ -173,7 +179,7 @@ public class Player : MonoBehaviour {
 		}
 		else if (controller.collisions.below && landed == false)
 		{
-			source.PlayOneShot(jumpSoundLanding, volLanding);
+			jumpSoundSource.PlayOneShot(jumpSoundLanding, volLanding);
 			hasTripleJumped = false;
 			hasDoubleJumped = false;
 			tripleJumped = false; //animation
@@ -183,11 +189,13 @@ public class Player : MonoBehaviour {
 		}
 		if (controller.painting)
 		{
-			if (!source.isPlaying) {
+			if (!paintingSoundSource.isPlaying) {
 				StartCoroutine("PaintAudio");
-				Debug.Log("PLAY");
+				paintingSoundSource.PlayOneShot(paintingSplashSound, 0.8f);
 			}
 			moveSpeed = paintingSpeed;
+		} else {
+			paintingSoundSource.Pause();
 		}
 		if (Mathf.Sign(velocity.y) == -1)
 		{
@@ -236,10 +244,10 @@ public class Player : MonoBehaviour {
 	}
 
 	IEnumerator PaintAudio() {
-		source.pitch = Mathf.Lerp(0.9f, 1.1f, (paintingSound.length*Time.deltaTime));
+		paintingSoundSource.pitch = Mathf.Lerp(0.9f, 1.1f, (paintingSound.length*Time.deltaTime));
 		//source.pitch = Random.Range (0.9f, 1.1f);
 		float vol = Random.Range (0.9f, 1.0f);
-		source.PlayOneShot(paintingSound, vol);
+		paintingSoundSource.PlayOneShot(paintingSound, vol);
 		yield return new WaitForSeconds(paintingSound.length-0.15f);
 		if (!controller.painting) {
 			StopCoroutine("PaintAudio");

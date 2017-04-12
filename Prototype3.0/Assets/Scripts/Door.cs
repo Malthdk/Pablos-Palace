@@ -7,9 +7,14 @@ public class Door : MonoBehaviour {
 	SpriteRenderer myRenderer;
 	private bool isOpen = false;
 
+	// FOR SOUND
+	public AudioClip completeSound;
+	private AudioSource source;
+
 	void Start () 
 	{
 		myRenderer = gameObject.GetComponent<SpriteRenderer>();
+		source = this.gameObject.GetComponent<AudioSource>();
 	}
 	
 
@@ -31,10 +36,21 @@ public class Door : MonoBehaviour {
 	{
 		if (other.name == "Player")
 		{
-			if (isOpen)
+			StartCoroutine("CompletedLevel");
+			/*if (isOpen)
 			{
+				source.PlayOneShot(completeSound, 0.8f);
 				LevelManager.instance.NextLevel();
-			}
+			}*/
+		}
+	}
+
+	IEnumerator CompletedLevel() {
+		if (isOpen)
+		{
+			source.PlayOneShot(completeSound, 0.8f);
+			yield return new WaitForSeconds(completeSound.length);
+			LevelManager.instance.NextLevel();	
 		}
 	}
 }
