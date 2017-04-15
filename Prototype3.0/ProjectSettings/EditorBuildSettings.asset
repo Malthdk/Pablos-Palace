@@ -24,4 +24,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level9.unity
   - enabled: 1
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level9.5.unity
+  - enabled: 1
     path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level10.unity
+  - enabled: 1
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level11.unity
+  - enabled: 1
+    path: Assets/Scenes/ChrisLevels/Ustertestlevels/Level12.unity
