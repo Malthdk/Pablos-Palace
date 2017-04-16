@@ -9,6 +9,7 @@ public class BackgroundManager : MonoBehaviour {
 	public int orbs = 5;
 	private float amount = 1f;
 	private int temp;
+	private Color tempCol;
 
 	[HideInInspector]
 	public static BackgroundManager _instance;
@@ -27,27 +28,35 @@ public class BackgroundManager : MonoBehaviour {
 		{
 			backgroundMaterials.Add(obj.GetComponent<SpriteRenderer>());
 		}
+		orbs = FindGameObjectsWithTags ("orb").Length;
+		tempCol = new Color (1f, 1f, 1f);
 	}
 
-	public void ColorBackground() {
+	public void ColorBackground(Color col) {
 		temp++;
-		StartCoroutine(FadeTime(2f));
+		StartCoroutine(FadeTime(3f, col));
 	}
 
-	IEnumerator FadeTime(float time)
+	IEnumerator FadeTime(float time, Color col)
 	{
 		float oldValue = amount;
 		amount = 1f-(temp * 1f / orbs);
+		if (amount < 0) { // QUICKFIX FOR BG TURNING BLACK
+			amount = 0;
+		}
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / time)
 		{
 			float newValue = Mathf.Lerp(oldValue,amount,t);
+			Color newColorValue = Color.Lerp(tempCol,col,t); 
 			foreach(SpriteRenderer m in backgroundMaterials) 
 			{
-				m.material.SetFloat("_Brightness", newValue);
-				m.material.SetFloat("_EffectAmount", newValue);
+				//m.material.SetFloat("_Brightness", newValue);
+				m.material.SetColor ("_Color", newColorValue);
+				//m.material.SetFloat("_EffectAmount", newValue);
 			}
 			yield return null;
 		}
+		tempCol = col;
 	}
 
 	GameObject[] FindGameObjectsWithTags(params string[] tags)

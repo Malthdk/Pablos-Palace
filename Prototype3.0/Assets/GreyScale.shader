@@ -69,10 +69,10 @@
   
              fixed4 frag(v2f IN) : COLOR
              {
-                 half4 texcol = tex2D (_MainTex, IN.texcoord);              
+                 half4 texcol = tex2D (_MainTex, IN.texcoord); 
+                 texcol = texcol * IN.color;             
                  texcol.rgb = lerp(texcol.rgb, dot(texcol.rgb, float3(0.3, 0.59, 0.11)), _EffectAmount);
                  texcol.rgb = texcol.rgb + _Brightness;
-                 texcol = texcol * IN.color;
                  return texcol;
              }
          ENDCG
