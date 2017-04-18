@@ -8,6 +8,7 @@ public class Splatter : MonoBehaviour
 	public static Splatter splatManager; //Hvad er det her?
 	public float splatStayTime = 3f;
 	public float blackSplatStayTime = 1.5f;
+	public float turnedBlackSplatStayTime = 1.5f;
 	public float blackTurnTime = 1f;
 	public float correctionFactor = 0.5f;
 	public float colorChangeTime = 1f;
@@ -68,6 +69,10 @@ public class Splatter : MonoBehaviour
 				material.SetFloat("_Warp", 0.3f);
 			}
 		}
+		if (isBlackSplat)
+		{
+			splatStayTime = blackSplatStayTime;
+		}
 	}
 
 	public void OnObjectReuse () {
@@ -109,8 +114,8 @@ public class Splatter : MonoBehaviour
 	private IEnumerator PlayOnce(){
 
 		while(!isActionPerformed){
+			splatStayTime = turnedBlackSplatStayTime;
 			yield return new WaitForEndOfFrame ();
-			splatStayTime = blackSplatStayTime;
 			StopAllCoroutines();
 			StartCoroutine(TurnBlack(colorChangeTime));
 			isActionPerformed = true;
@@ -123,6 +128,7 @@ public class Splatter : MonoBehaviour
 
 		boxCollider.enabled = false;
 		scaling = false;
+
 		//material.renderQueue = 2999;
 
 		float elapsedTime = 0;
@@ -136,6 +142,27 @@ public class Splatter : MonoBehaviour
 		}
 		isActive = false;
 	}
+
+	//Sepereate IEnumerator needed because i cannot restart the original DestroySplat IEnumerator.. it wont start with a different splatStayTime.
+//	public IEnumerator DestroyBlackSplat(Color brightColor, float time)
+//	{
+//		yield return new WaitForSeconds(blackSplatStayTime);
+//
+//		boxCollider.enabled = false;
+//		scaling = false;
+//		//material.renderQueue = 2999;
+//
+//		float elapsedTime = 0;
+//		Color color2 = ChangeBrightness(brightColor, correctionFactor);
+//
+//		while (elapsedTime < time)
+//		{
+//			FadeColor(color2, time, elapsedTime);
+//			elapsedTime += Time.deltaTime;
+//			yield return new WaitForEndOfFrame();
+//		}
+//		isActive = false;
+//	}
 
 	//Handles the splat turning black
 	public IEnumerator TurnBlack(float time)

@@ -167,10 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splatStayTime: 5
-  blackSplatStayTime: 2.5
+  blackSplatStayTime: 2
+  turnedBlackSplatStayTime: 0.5
   blackTurnTime: 0.1
   correctionFactor: 0.5
-  colorChangeTime: 3
+  colorChangeTime: 2.5
   collisionMask:
     serializedVersion: 2
     m_Bits: 32768

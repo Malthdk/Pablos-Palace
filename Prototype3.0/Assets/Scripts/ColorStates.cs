@@ -8,7 +8,7 @@ public class ColorStates : MonoBehaviour {
 	[HideInInspector]
 	public Color activeColor;
 	public bool isWhite;
-
+	public float colorChangeTime = 1.5f;
 	//Privates
 	private SpriteRenderer myRenderer;
 	[HideInInspector]
@@ -46,7 +46,7 @@ public class ColorStates : MonoBehaviour {
 		if (other.tag == "orb")
 		{
 			PickUpGlobe pickUpGlobe = other.gameObject.GetComponent<PickUpGlobe>();
-			StartCoroutine(ChangeColor(pickUpGlobe.orbColor, 3f));
+			StartCoroutine(ChangeColor(pickUpGlobe.orbColor, colorChangeTime));
 		}
 	}
 
