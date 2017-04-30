@@ -3742,6 +3742,11 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114361701962777334, guid: 9545cc0baa75643e884924719285c6bb,
+        type: 2}
+      propertyPath: nextLevelName
+      value: Level9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9545cc0baa75643e884924719285c6bb, type: 2}
   m_IsPrefabParent: 0
@@ -7069,7 +7074,6 @@ MonoBehaviour:
   currentTag: 
   respawnTime: 0.7
   player: {fileID: 0}
-  MyLevel: Level9
   coinCount: 0
   stateObjects: []
   platforms: []

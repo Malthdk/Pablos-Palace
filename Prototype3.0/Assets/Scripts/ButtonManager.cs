@@ -11,16 +11,25 @@ public class ButtonManager : MonoBehaviour {
 	private AsyncOperation async;
 
 
-
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			LoadLevelSelection();
+		}
+	}
 
 	// Loads scene with a loadscreen
 	public void LoadScene(string sceneName) {
-		GetLevel(sceneName);
+		SceneManager.LoadScene(sceneName);
 	}
 
 	// Loads scene without a loadscreen
-	public void LoadSceneNoScreen(string sceneName){ 
-		SceneManager.LoadScene(sceneName);
+	public void LoadSceneWithLoadingImage(string sceneName){ 
+		GetLevel(sceneName);
+	}
+
+	public void LoadLevelSelection() {
+		Destroy(GameObject.Find("Canvas"));
+		LevelManager.instance.NextLevel("LevelSelection");
 	}
 
 	// Exits the game
@@ -29,7 +38,7 @@ public class ButtonManager : MonoBehaviour {
 	}
 		
 	// Sets loading image to active and starts coroutine
-	public void GetLevel(string level)
+	private void GetLevel(string level)
 	{
 		loadingImage.SetActive(true);
 		StartCoroutine(LoadLevelWithBar(level));
@@ -45,7 +54,5 @@ public class ButtonManager : MonoBehaviour {
 			yield return null;
 		}
 	}
-
-
 
 }

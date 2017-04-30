@@ -11,7 +11,7 @@ public class Nextlevel : MonoBehaviour {
 	{
 		if(other.gameObject.name == "Player")
 		{
-			LevelManager.lManager.NextLevel();
+//			LevelManager.lManager.NextLevel();
 		}
 	}
 }

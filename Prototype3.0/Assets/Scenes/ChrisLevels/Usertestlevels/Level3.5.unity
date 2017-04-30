@@ -53575,7 +53575,6 @@ MonoBehaviour:
   currentTag: 
   respawnTime: 0.7
   player: {fileID: 0}
-  MyLevel: Level4
   coinCount: 0
   stateObjects: []
   platforms: []
@@ -78242,6 +78241,11 @@ Prefab:
     - target: {fileID: 400528, guid: 9545cc0baa75643e884924719285c6bb, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361701962777334, guid: 9545cc0baa75643e884924719285c6bb,
+        type: 2}
+      propertyPath: nextLevelName
+      value: Level4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9545cc0baa75643e884924719285c6bb, type: 2}

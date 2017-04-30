@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
@@ -15,7 +16,6 @@ public class LevelManager : MonoBehaviour {
 	public Player player;
 	private Checkpoint check;
 
-	public string MyLevel;
 	public int coinCount;
 
 	public List<GameObject> stateObjects;
@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour {
 	public List<PickUpSecret> secrets;
 
 	public int numberOrbs;
+
+	private Scene scene;
 
 	[HideInInspector]
 	public static LevelManager _instance;
@@ -54,43 +56,15 @@ public class LevelManager : MonoBehaviour {
 
 	void Start () 
 	{
+		scene = SceneManager.GetActiveScene();
+		if (GameObject.Find("Music") == null && GameObject.Find("Music(Clone)") == null) {
+			Debug.Log("StartMusic");
+			GameObject instance = (GameObject)Instantiate(Resources.Load("Music")); // Instantiates music if none is found
+		}
 		player = FindObjectOfType<Player>();
-
-		foreach(GameObject oObject in GameObject.FindGameObjectsWithTag("orb")) 
-		{
-			PickUpGlobe oOrb = oObject.GetComponent<PickUpGlobe>();
-			orbs.Add(oOrb);
-		}
-		numberOrbs = orbs.Count;
-
-		foreach(GameObject seObject in GameObject.FindGameObjectsWithTag("coin")) 
-		{
-			PickUpSecret sOrb = seObject.GetComponent<PickUpSecret>();
-			secrets.Add(sOrb);
-		}
-		foreach(GameObject sObject in FindGameObjectsWithTags(new string[]{"orangeDestroy", "coin"})) 
-		{
-			stateObjects.Add(sObject);
-		}
-
-		foreach(GameObject dObject in GameObject.FindGameObjectsWithTag("dissPlatform")) 
-		{
-			FallingPlatform fPlatform = dObject.GetComponent<FallingPlatform>();
-			fallingPlatforms.Add(fPlatform);
-		}
-
-		foreach(GameObject pObject in FindGameObjectsWithTags(new string[]{"movingPlatform", "chaseBoss"})) 
-		{
-			PlatformController pController = pObject.GetComponent<PlatformController>();
-			platforms.Add(pController);
-		}
-
-		foreach(GameObject lObject in GameObject.FindGameObjectsWithTag("Lever")) 
-		{
-			Lever lever = lObject.GetComponent<Lever>();
-			levers.Add(lever);
-		}
+		FillLists();
 	}
+
 	void Update()
 	{
 		//spawnPoint = GameObject.FindGameObjectWithTag("spawnpoint");
@@ -99,6 +73,12 @@ public class LevelManager : MonoBehaviour {
 		{
 			player = FindObjectOfType<Player>();
 		}
+
+		/*if (SceneManager.GetActiveScene() != scene) {
+			Debug.Log("Scene changed");
+			FillLists();
+			scene = SceneManager.GetActiveScene();
+		}*/
 	}
 
 	//Handles all player respawning
@@ -141,11 +121,11 @@ public class LevelManager : MonoBehaviour {
 		StartCoroutine(Respawned());
 	}
 
-	public void NextLevel()
+	public void NextLevel(string myLevel)
 	{
 		Destroy(player.gameObject);
 		Destroy (this.gameObject);
-		Application.LoadLevel(MyLevel);
+		Application.LoadLevel(myLevel);
 	}
 
 	void ResetStates(List<GameObject> theList)
@@ -155,7 +135,7 @@ public class LevelManager : MonoBehaviour {
 			theList[i].SetActive(true);
 		}
 	}
-
+		
 	void ResetFallingPlatforms(List<FallingPlatform> theList)
 	{
 		for (int i = 0; i < theList.Count; i++)
@@ -215,5 +195,41 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		return all.ToArray() ;
+	}
+
+	void FillLists() {
+		foreach(GameObject oObject in GameObject.FindGameObjectsWithTag("orb")) 
+		{
+			PickUpGlobe oOrb = oObject.GetComponent<PickUpGlobe>();
+			orbs.Add(oOrb);
+		}
+		numberOrbs = orbs.Count;
+		foreach(GameObject seObject in GameObject.FindGameObjectsWithTag("coin")) 
+		{
+			PickUpSecret sOrb = seObject.GetComponent<PickUpSecret>();
+			secrets.Add(sOrb);
+		}
+		foreach(GameObject sObject in FindGameObjectsWithTags(new string[]{"orangeDestroy", "coin"})) 
+		{
+			stateObjects.Add(sObject);
+		}
+
+		foreach(GameObject dObject in GameObject.FindGameObjectsWithTag("dissPlatform")) 
+		{
+			FallingPlatform fPlatform = dObject.GetComponent<FallingPlatform>();
+			fallingPlatforms.Add(fPlatform);
+		}
+
+		foreach(GameObject pObject in FindGameObjectsWithTags(new string[]{"movingPlatform", "chaseBoss"})) 
+		{
+			PlatformController pController = pObject.GetComponent<PlatformController>();
+			platforms.Add(pController);
+		}
+
+		foreach(GameObject lObject in GameObject.FindGameObjectsWithTag("Lever")) 
+		{
+			Lever lever = lObject.GetComponent<Lever>();
+			levers.Add(lever);
+		}
 	}
 }

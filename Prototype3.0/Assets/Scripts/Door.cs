@@ -7,6 +7,8 @@ public class Door : MonoBehaviour {
 	SpriteRenderer myRenderer;
 	private bool isOpen = false;
 
+	public string nextLevelName;
+
 	// FOR SOUND
 	public AudioClip completeSound;
 	private AudioSource source;
@@ -50,7 +52,7 @@ public class Door : MonoBehaviour {
 		{
 			source.PlayOneShot(completeSound, 0.8f);
 			yield return new WaitForSeconds(completeSound.length);
-			LevelManager.instance.NextLevel();	
+			LevelManager.instance.NextLevel(nextLevelName);	
 		}
 	}
 }

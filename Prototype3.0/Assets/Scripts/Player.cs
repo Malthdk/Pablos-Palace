@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent (typeof (Controller2D))]
 public class Player : MonoBehaviour {
-	
+
 	public float maxJumpHeight = 3.5f;				//Max JumpHeight
 	public float maxJumoHeightPainting;
 	public float minJumpHeight = 1f;				//Minimum JumpHeight
@@ -57,6 +57,9 @@ public class Player : MonoBehaviour {
 	// Has player landed?
 	private bool landed = true;
 
+	public float ghostJumpingBuffer = 0.15f;
+	private float timeSinceJump;
+
 	// FOR SOUND
 	public AudioClip jumpSoundTakeOff;
 	public AudioClip jumpSoundLanding;
@@ -104,7 +107,7 @@ public class Player : MonoBehaviour {
 	{
 
 		gravity = -(2* maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);		//Gravity defined based of jumpheigmaxJumpVelocityto reach highest point
-	
+
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;				//Max jump velocity defined based on gravity and time to reach highest point
 		minJumpVelocity = Mathf.Sqrt(2*Mathf.Abs(gravity) * minJumpHeight);	//Min jump velocity defined based on gravity and min jump height
 
@@ -121,7 +124,7 @@ public class Player : MonoBehaviour {
 		{
 			accelerationTimeGrounded = 0.05f; //0.05
 		}
-			
+
 		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborn);		//Calculating velocity x both airborn and on ground with smoothing
 
 		animator.SetFloat("Speed", Mathf.Abs(velocity.x));		//ANIMATION
@@ -133,14 +136,17 @@ public class Player : MonoBehaviour {
 		animator.SetBool("DoubleJump", doubleJumped);
 		animator.SetBool("TripleJump", tripleJumped);
 
+		if (!controller.collisions.below) {
+			timeSinceJump += Time.deltaTime;
+		} else {
+			timeSinceJump = 0f;
+		}
+
 		if (Input.GetButtonDown("Jump"))
 		{
-			float vol = Random.Range(volLowRange, volHighRange);
 			if (controller.collisions.below && !pullPush.isPulling && !Swimming.instance.isSwimming)
 			{
-				jumpSoundSource.PlayOneShot(jumpSoundTakeOff, vol);
-				velocity.y = maxJumpVelocity;
-				animator.SetBool("Ground", false);
+				FirstJump ();
 			}
 
 			if(!controller.collisions.below)
@@ -148,29 +154,20 @@ public class Player : MonoBehaviour {
 				/*This is where double jump is handled*/
 				if (!hasDoubleJumped)
 				{	
-					jumpSoundSource.PlayOneShot(jumpSoundTakeOff, (.1f + vol));
-					velocity.y = 0;
-					Debug.Log ("double jumped");
-					doubleJumped = true; //This causes an animation bugg where we jump from a wall and then doublejump is is set to true so we canno transition into jump animation.
-					hasDoubleJumped = true;
-					//abilities.secondJump = true;
-					velocity.y = doubleJumpVelocity;
-					doubleJumpParticle.Play();
-					
+					if (timeSinceJump < ghostJumpingBuffer){	
+						FirstJump ();
+					} else {
+						DoubleJump ();	
+					}
+
 				}
 				else if (!hasTripleJumped && hasDoubleJumped)
 				{
-					jumpSoundSource.PlayOneShot(jumpSoundTakeOff, (.2f + vol));
-					velocity.y = 0;
-					Debug.Log ("tripple jumped");
-					tripleJumped = true; //animation
-					hasTripleJumped = true; 
-					velocity.y = tripleJumpVelocity;
-					tripleJumpParticle.Play();
+					TripleJump ();
 				}
 			}
 		}
-			
+
 		if (!controller.collisions.below && !pullPush.isPulling)
 		{
 			landed = false;
@@ -241,6 +238,41 @@ public class Player : MonoBehaviour {
 		{
 			velocity.y = 0;
 		}
+	}
+
+	void FirstJump() {
+		float vol = Random.Range(volLowRange, volHighRange);
+		jumpSoundSource.PlayOneShot(jumpSoundTakeOff, vol);
+		velocity.y = maxJumpVelocity;
+		animator.SetBool("Ground", false);
+	}
+
+	void DoubleJump() {
+		float vol = Random.Range(volLowRange, volHighRange);
+		if (timeSinceJump < ghostJumpingBuffer) {
+			jumpSoundSource.PlayOneShot(jumpSoundTakeOff, vol);
+			velocity.y = maxJumpVelocity;
+			animator.SetBool("Ground", false);
+		}
+		jumpSoundSource.PlayOneShot(jumpSoundTakeOff, (.1f + vol));
+		velocity.y = 0;
+		Debug.Log ("double jumped");
+		doubleJumped = true; //This causes an animation bugg where we jump from a wall and then doublejump is is set to true so we canno transition into jump animation.
+		hasDoubleJumped = true;
+		//abilities.secondJump = true;
+		velocity.y = doubleJumpVelocity;
+		doubleJumpParticle.Play();
+	}
+
+	void TripleJump() {
+		float vol = Random.Range(volLowRange, volHighRange);
+		jumpSoundSource.PlayOneShot(jumpSoundTakeOff, (.2f + vol));
+		velocity.y = 0;
+		Debug.Log ("tripple jumped");
+		tripleJumped = true; //animation
+		hasTripleJumped = true; 
+		velocity.y = tripleJumpVelocity;
+		tripleJumpParticle.Play();
 	}
 
 	IEnumerator PaintAudio() {

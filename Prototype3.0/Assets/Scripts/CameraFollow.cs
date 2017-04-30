@@ -146,10 +146,11 @@ public class CameraFollow : MonoBehaviour {
 		Gizmos.color = new Color (1, 0, 0, .5f);
 		Gizmos.DrawCube (focusArea.centre, focusAreaSize);
 
-		for (int i = 0; i < localBoundaries.Count; i ++)
-		{
-			Vector3 globalWaypointPos = (Application.isPlaying)?globalBoundaries[i]:localBoundaries[i] + transform.position;
-			Gizmos.DrawSphere(globalWaypointPos, 1f);
+		if (this.isActiveAndEnabled) {
+			for (int i = 0; i < localBoundaries.Count; i ++) {
+				Vector3 globalWaypointPos = (Application.isPlaying)?globalBoundaries[i]:localBoundaries[i] + transform.position;
+				Gizmos.DrawSphere(globalWaypointPos, 1f);
+			}
 		}
 	}
 	struct FocusArea
