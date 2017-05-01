@@ -10,6 +10,8 @@ public class ParticleColor : MonoBehaviour {
 	ColorStates colorStates;
 	private Color playerColor;
 
+	public bool dissapearingParticle;
+
 	void Start () 
 	{
 		//pSystem = GetComponentInChildren<ParticleSystem>();
@@ -20,11 +22,19 @@ public class ParticleColor : MonoBehaviour {
 		colorStates = GameObject.Find("Player").GetComponent<ColorStates>();
 
 		//SetColor();
+
+		if (dissapearingParticle)
+		{
+			SetColor();
+		}
 	}
 
 	void Update () 
 	{
-		SetColor();
+		if (!dissapearingParticle)
+		{
+			SetColor();
+		}
 	}
 
 	private void SetColor() 

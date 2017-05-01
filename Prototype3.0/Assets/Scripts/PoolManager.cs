@@ -86,5 +86,6 @@ public class PoolManager : MonoBehaviour {
 		public void SetParent(Transform parent) {
 			transform.parent = parent;
 		}
+
 	}
 }

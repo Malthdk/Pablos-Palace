@@ -34,6 +34,7 @@ public class Splatter : MonoBehaviour
 	private Vector2 pointA;
 	private Vector2 pointB;
 	private ParticleSystem changeColorParticles;
+	private ParticleSystem dissapearParticles;
 
 	private void Awake()
     {
@@ -45,6 +46,7 @@ public class Splatter : MonoBehaviour
     private void Start()
     {
 		changeColorParticles = gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
+		dissapearParticles = gameObject.transform.GetChild(1).GetComponent<ParticleSystem>();
     }
 
 	void Update ()
@@ -128,6 +130,7 @@ public class Splatter : MonoBehaviour
 
 		boxCollider.enabled = false;
 		scaling = false;
+		//dissapearParticles.Play(); //If we want a particle effect when it starts to dissapear - this also has to take into account if the particle is black etc. which is why it is not working correctly atm. 
 
 		//material.renderQueue = 2999;
 

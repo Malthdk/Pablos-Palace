@@ -130,48 +130,90 @@ public class LevelManager : MonoBehaviour {
 
 	void ResetStates(List<GameObject> theList)
 	{
-		for (int i = 0; i < theList.Count; i++)
+		if (theList.Count == 0)
 		{
-			theList[i].SetActive(true);
+			return;
+		}
+		else 
+		{
+			for (int i = 0; i < theList.Count; i++)
+			{
+				theList[i].SetActive(true);
+			}	
 		}
 	}
 		
 	void ResetFallingPlatforms(List<FallingPlatform> theList)
 	{
-		for (int i = 0; i < theList.Count; i++)
+		if (theList.Count == 0)
 		{
-			theList[i].Reset();
+			return;
+		}
+		else
+		{
+			for (int i = 0; i < theList.Count; i++)
+			{
+				theList[i].Reset();
+			}	
 		}
 	}
 
 	void ResetPlatforms(List<PlatformController> theList)
 	{
-		for (int i = 0; i < theList.Count; i++)
+		if (theList.Count == 0)
 		{
-			theList[i].ResetPlatform();
+			return;
+		}
+		else
+		{
+			for (int i = 0; i < theList.Count; i++)
+			{
+				theList[i].ResetPlatform();
+			}	
 		}
 	}
 
 	void ResetLevers(List<Lever> theList)
 	{
-		for (int i = 0; i < theList.Count; i++)
+		if (theList.Count == 0)
 		{
-			theList[i].ResetLever();
+			return;
+		}
+		else
+		{
+			for (int i = 0; i < theList.Count; i++)
+			{
+				theList[i].ResetLever();
+			}	
 		}
 	}
 
 	void ResetOrbs(List<PickUpGlobe> theList)
 	{
-		for (int i = 0; i < theList.Count; i++)
+		if (theList.Count == 0)
 		{
-			theList[i].ResetOrb();
+			return;
+		}
+		else
+		{
+			for (int i = 0; i < theList.Count; i++)
+			{
+				theList[i].ResetOrb();
+			}	
 		}
 	}
 	void ResetSeOrbs(List<PickUpSecret> theList)
 	{
-		for (int i = 0; i < theList.Count; i++)
+		if (theList.Count == 0)
 		{
-			theList[i].ResetSeOrb();
+			return;
+		}
+		else
+		{
+			for (int i = 0; i < theList.Count; i++)
+			{
+				theList[i].ResetSeOrb();
+			}	
 		}
 	}
 

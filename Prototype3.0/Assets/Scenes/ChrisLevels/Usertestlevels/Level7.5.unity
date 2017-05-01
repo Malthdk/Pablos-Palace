@@ -444,12 +444,17 @@ Prefab:
     - target: {fileID: 224079304199564522, guid: 167cef7bea6524413a30c94097ac5dac,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224912907842200542, guid: 167cef7bea6524413a30c94097ac5dac,
         type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224187902330868906, guid: 167cef7bea6524413a30c94097ac5dac,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 167cef7bea6524413a30c94097ac5dac, type: 2}
