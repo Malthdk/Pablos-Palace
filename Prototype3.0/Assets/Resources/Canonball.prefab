@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 21246670}
   - component: {fileID: 5815598}
   - component: {fileID: 11466192}
-  - component: {fileID: 11481804}
   - component: {fileID: 82414337156666180}
   m_Layer: 15
   m_Name: Canonball
@@ -80,29 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec258adce2364877b5135e273f32b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlegenerator: {fileID: 0}
   spriterenderer: {fileID: 0}
   collisionSound: {fileID: 8300000, guid: a75a105c7d79f450e8de8c884d79e9b9, type: 3}
---- !u!114 &11481804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc3fa708b5f445938d02269cef03cac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 118442, guid: ea4b78d9510144627af635efc515b30d, type: 2}
-  particleSize: 3
-  particleNumber: 40
-  particleLifetime: 1.5
-  xMinSize: -100
-  xMaxSize: 100
-  particlesState: 1
-  particlesParent: {fileID: 0}
-  spawn: 0
 --- !u!212 &21246670
 SpriteRenderer:
   m_ObjectHideFlags: 1

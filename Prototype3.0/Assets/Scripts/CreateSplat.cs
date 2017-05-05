@@ -53,7 +53,7 @@ public class CreateSplat : MonoBehaviour {
 	{
 		splatterParent = new GameObject("Splatter Parent");
 		lastPosition = transform.position;
-		splatterPrefab = PoolManager.instance.prefab;
+		splatterPrefab = PoolManager.instance.splatterPrefab;
 
 		//For splat instantiation
 		centerPositions = new LinkedList<Vector3>();
@@ -114,7 +114,7 @@ public class CreateSplat : MonoBehaviour {
 			Vector3 scale = transform.localScale;
 			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
 			//color = ColorStates.instance.GetColor();
-			PoolManager.instance.ReuseObject (splatterPrefab, position, q, color, scale);
+			PoolManager.instance.ReuseSplatter (splatterPrefab, position, q, color, scale);
 
 			centerPositions.AddFirst(transform.position);
 		}

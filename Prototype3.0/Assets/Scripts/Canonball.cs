@@ -3,36 +3,31 @@ using System.Collections;
 
 public class Canonball : MonoBehaviour {
 
-	public ParticleGeneratorStill particlegenerator;
 	public SpriteRenderer spriterenderer;
 	private CircleCollider2D cCollider;
 	private ParticleSystem pSystem;
-	private Rigidbody2D rgb;
+	private Rigidbody2D rb;
 
 	// FOR SOUND
 	public AudioClip collisionSound;
 	private AudioSource source;
 
-	void Start () {
-		particlegenerator = this.gameObject.GetComponent<ParticleGeneratorStill>();
+	void Awake () {
 		spriterenderer = this.gameObject.GetComponent<SpriteRenderer>();
 		cCollider = this.gameObject.GetComponent<CircleCollider2D>();
 		pSystem = this.transform.GetComponentInChildren<ParticleSystem>();
-		rgb = this.gameObject.GetComponent<Rigidbody2D>();
+		rb = this.gameObject.GetComponent<Rigidbody2D>();
 		source = this.gameObject.GetComponent<AudioSource>();
 	}
 
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.name == "CanvasTile" || other.name == "Player" || other.tag == "Obsticle" || other.tag == "Through" || other.tag == "killTag" || other.tag == "movingPlatform") {
+		if (other.name == "CanvasTile" || other.name == "Player" || other.tag == "Obsticle" || other.tag == "Through" || other.tag == "killTag" || other.tag == "movingPlatform" || other.tag == "blackBox") {
 			float vol = Random.Range(0.4f,0.8f);
 			source.pitch =  Random.Range(0.7f,1.3f);
 			source.PlayOneShot(collisionSound, vol);
 			StartCoroutine(Destroy());
-		}
-		if (other.tag == "blackBox") {
-			Destroy(gameObject);
 		}
 	}
 
@@ -45,12 +40,18 @@ public class Canonball : MonoBehaviour {
 		}
 	}*/
 
+	public void OnObjectReuse () {
+		gameObject.SetActive(true);
+		rb.velocity = new Vector2(0f, 0f);
+	}
+
 	public IEnumerator Destroy()
 	{
-		rgb.velocity = new Vector2(0f, 0f);
+		rb.velocity = new Vector2(0f, 0f);
 		spriterenderer.enabled = false;
 		pSystem.Play();
-		yield return new WaitForEndOfFrame();
-		cCollider.enabled = false;
+		yield return new WaitForSeconds(0.4f);
+		spriterenderer.enabled = true;
+		gameObject.SetActive(false);
 	}
 }

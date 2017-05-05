@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 public class PoolManager : MonoBehaviour {
 
-	public int poolSize = 500;
-	public GameObject prefab;
+	public int splatterPoolSize = 500;
+	public int canonballPoolSize = 30;
+	public GameObject splatterPrefab;
+	public GameObject canonballPrefab;
 
 	Dictionary<int,Queue<ObjectInstance>> poolDic = new Dictionary<int, Queue<ObjectInstance>> ();
 
@@ -21,7 +23,8 @@ public class PoolManager : MonoBehaviour {
 	}
 
 	void Start() {
-		CreatePool (prefab, poolSize);
+		CreatePool (splatterPrefab, splatterPoolSize);
+		CreatePool (canonballPrefab, canonballPoolSize);
 	}
 
 	public void CreatePool(GameObject prefab, int poolSize) {
@@ -41,14 +44,25 @@ public class PoolManager : MonoBehaviour {
 		}
 	}
 
-	public void ReuseObject (GameObject prefab, Vector3 pos, Quaternion rotation, Color color, Vector3 scale) {
+	public void ReuseSplatter (GameObject prefab, Vector3 pos, Quaternion rotation, Color color, Vector3 scale) {
 		int poolKey = prefab.GetInstanceID ();
 
 		if (poolDic.ContainsKey (poolKey)) {
 			ObjectInstance objectToReuse = poolDic [poolKey].Dequeue ();
 			poolDic [poolKey].Enqueue (objectToReuse);
 
-			objectToReuse.Reuse (pos, rotation, color, scale);
+			objectToReuse.ReuseSplat (pos, rotation, color, scale);
+		}
+	}
+
+	public void ReuseCanonball (Transform t, GameObject prefab, Vector3 pos, float power, bool constVel) {
+		int poolKey = prefab.GetInstanceID ();
+
+		if (poolDic.ContainsKey (poolKey)) {
+			ObjectInstance objectToReuse = poolDic [poolKey].Dequeue ();
+			poolDic [poolKey].Enqueue (objectToReuse);
+
+			objectToReuse.ReuseCanon (t, pos, power, constVel);
 		}
 	}
 
@@ -59,6 +73,7 @@ public class PoolManager : MonoBehaviour {
 
 		bool hasPoolObjectComponent;
 		Splatter splatterScript;
+		Canonball canonballScript;
 
 		public ObjectInstance(GameObject objectInstance) {
 			gameObject = objectInstance;
@@ -68,10 +83,13 @@ public class PoolManager : MonoBehaviour {
 			if (gameObject.GetComponent<Splatter>()) {
 				hasPoolObjectComponent = true;
 				splatterScript = gameObject.GetComponent<Splatter>();
+			} else if (gameObject.GetComponent<Canonball>()) {
+				hasPoolObjectComponent = true;
+				canonballScript = gameObject.GetComponent<Canonball>();
 			}
 		}
 
-		public void Reuse(Vector3 pos, Quaternion rotation, Color color, Vector3 scale) {
+		public void ReuseSplat(Vector3 pos, Quaternion rotation, Color color, Vector3 scale) {
 			transform.position = pos;
 			transform.rotation = rotation;
 			transform.localScale = scale;
@@ -81,6 +99,19 @@ public class PoolManager : MonoBehaviour {
 				splatterScript.OnObjectReuse();
 			}
 			gameObject.SetActive(true);
+		}
+
+		public void ReuseCanon(Transform t, Vector3 pos, float power, bool constVel) {
+			if (hasPoolObjectComponent) {
+				canonballScript.OnObjectReuse();
+			}
+			transform.position = pos;
+			if (!constVel) {
+				transform.GetComponent<Rigidbody2D> ().AddForce (t.right * power); //Add our custom force
+			} else {
+				transform.GetComponent<Rigidbody2D> ().gravityScale = 0f;
+				transform.GetComponent<Rigidbody2D> ().AddRelativeForce (t.right * power);
+			}
 		}
 
 		public void SetParent(Transform parent) {

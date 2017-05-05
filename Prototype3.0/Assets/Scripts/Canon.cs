@@ -4,16 +4,17 @@ using System.Collections;
 public class Canon : MonoBehaviour {
 
 	public float cooldown = 2f;
-	public int particleNumber = 20;
-	public float particleLifetime = 2f;
 	public bool spawn = true;
 	public bool stopShooting = false;
 	public float power = 4500f;
-	public DynamicParticle.STATES states = DynamicParticle.STATES.BLUE;
 	public bool constantVelocity;
 	public bool canon;
 	private Vector3 vel;
 	public GameObject ball;
+
+	void Start() {
+		ball = PoolManager.instance.canonballPrefab;
+	}
 
 	public void Update() 
 	{	
@@ -32,13 +33,9 @@ public class Canon : MonoBehaviour {
 	IEnumerator Fire () 
 	{	
 		yield return new WaitForSeconds(cooldown);
-		ball = (GameObject) Instantiate(Resources.Load("Canonball", typeof(GameObject)));
-		ball.gameObject.transform.position = this.gameObject.transform.position;
-		ball.GetComponent<ParticleGeneratorStill> ().particlesState = states;
-		ball.GetComponent<ParticleGeneratorStill> ().particleLifetime = particleLifetime;
-		ball.GetComponent<ParticleGeneratorStill> ().particleNumber = particleNumber;
+		PoolManager.instance.ReuseCanonball (transform, ball, transform.position, power, constantVelocity);
 
-		if (!constantVelocity) {
+		/*if (!constantVelocity) {
 			if (!canon) {
 				ball.GetComponent<Rigidbody2D> ().AddForce (transform.right * power); //Add our custom force
 			} else {
@@ -47,7 +44,7 @@ public class Canon : MonoBehaviour {
 		} else {
 			ball.GetComponent<Rigidbody2D> ().gravityScale = 0f;
 			ball.GetComponent<Rigidbody2D> ().AddRelativeForce (transform.right * power);
-		}
+		}*/
 		StartCoroutine ("Fire");
 	}
 }

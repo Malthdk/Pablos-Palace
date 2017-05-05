@@ -58,7 +58,7 @@ public class PickUpGlobe : MonoBehaviour {
 		{
 			source.PlayOneShot(pickUpSound, 0.8f);
 			LevelManager.instance.numberOrbs --;
-			BackgroundManager.instance.ColorBackground(orbColor);
+			//BackgroundManager.instance.ColorBackground(orbColor);
 			myCollider.enabled = false;
 
 			pSystemConstant.Stop();
