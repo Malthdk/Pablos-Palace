@@ -40,6 +40,7 @@ public class Player : MonoBehaviour {
 
 	Controller2D controller;					//calling controller class
 	Abilities abilities;
+	CreateSplat createSplat;
 
 	private Animator animator;		//ANIMATION
 	private PullPush pullPush;
@@ -101,6 +102,7 @@ public class Player : MonoBehaviour {
 		controller = GetComponent<Controller2D>();
 		abilities = GetComponent<Abilities>();
 		animator = GetComponent<Animator>();		//ANIMATION
+		createSplat = GetComponent<CreateSplat>();
 	}
 
 	void Update () 
@@ -135,7 +137,8 @@ public class Player : MonoBehaviour {
 		//animator.SetBool ("Soaring", abilities.soaring);
 		animator.SetBool("DoubleJump", doubleJumped);
 		animator.SetBool("TripleJump", tripleJumped);
-
+		animator.SetBool("Splatting", createSplat.isSplatting);
+			
 		if (!controller.collisions.below) {
 			timeSinceJump += Time.deltaTime;
 		} else {
