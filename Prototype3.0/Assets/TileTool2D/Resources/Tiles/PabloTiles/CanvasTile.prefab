@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4919264438481906}
   - component: {fileID: 212741260639709508}
   - component: {fileID: 114688827542761218}
-  - component: {fileID: 61754689909809308}
+  - component: {fileID: 60148429207301840}
   m_Layer: 8
   m_Name: CanvasTile
   m_TagString: Untagged
@@ -42,8 +42,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61754689909809308
-BoxCollider2D:
+--- !u!60 &60148429207301840
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,9 +53,13 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.5, y: 0.5}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1.0158731}
+      - {x: 0, y: 0}
+      - {x: 1.0158731, y: 0}
+      - {x: 1.0158731, y: 1.0158731}
 --- !u!114 &114688827542761218
 MonoBehaviour:
   m_ObjectHideFlags: 1

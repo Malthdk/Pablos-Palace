@@ -9,12 +9,16 @@ public class Door : MonoBehaviour {
 
 	public string nextLevelName;
 
+	private Color openColor = new Color(0.2f, 0.6f, 0.15f);
+	private Color closedColor = new Color(0.6f, 0.15f, 0.15f);
+
 	// FOR SOUND
 	public AudioClip completeSound;
 	private AudioSource source;
 
 	void Start () 
 	{
+
 		myRenderer = gameObject.GetComponent<SpriteRenderer>();
 		source = this.gameObject.GetComponent<AudioSource>();
 	}
@@ -24,12 +28,12 @@ public class Door : MonoBehaviour {
 	{
 		if (LevelManager.instance.numberOrbs == 0)
 		{
-			myRenderer.color = Color.green;
+			myRenderer.color = openColor;
 			isOpen = true;
 		}
 		else
 		{
-			myRenderer.color = Color.red;
+			myRenderer.color = closedColor;
 			isOpen = false;
 		}
 	}

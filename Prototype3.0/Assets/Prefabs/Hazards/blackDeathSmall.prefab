@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - component: {fileID: 430748}
   - component: {fileID: 21229306}
-  - component: {fileID: 6119836}
   - component: {fileID: 5004088}
-  m_Layer: 8
+  - component: {fileID: 60148101766696936}
+  m_Layer: 0
   m_Name: blackDeathSmall
-  m_TagString: blackBox
+  m_TagString: killTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,20 +51,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6119836
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113420}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 1.2516793, y: 0.3142395}
-  serializedVersion: 2
-  m_Size: {x: 2.501008, y: 0.62597656}
 --- !u!212 &21229306
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -119,3 +105,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113420}
   m_IsPrefabParent: 1
+--- !u!60 &60148101766696936
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113420}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.625}
+      - {x: 0, y: 0}
+      - {x: 2.5, y: 0}
+      - {x: 2.5, y: 0.625}

@@ -23,7 +23,7 @@ public class Canonball : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.name == "CanvasTile" || other.name == "Player" || other.tag == "Obsticle" || other.tag == "Through" || other.tag == "killTag" || other.tag == "movingPlatform" || other.tag == "blackBox") {
+		if (other.name == "CanvasTile" || other.tag == "Ground" || other.name == "Player" || other.tag == "Obsticle" || other.tag == "Through" || other.tag == "killTag" || other.tag == "movingPlatform" || other.tag == "blackBox") {
 			float vol = Random.Range(0.4f,0.8f);
 			source.pitch =  Random.Range(0.7f,1.3f);
 			source.PlayOneShot(collisionSound, vol);

@@ -227,7 +227,7 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetButtonUp("Jump"))					//For variable jump
 		{
-			if (velocity.y > minJumpVelocity && (!hasDoubleJumped && !hasTripleJumped))
+			if (velocity.y > minJumpVelocity) //&& (!hasDoubleJumped && !hasTripleJumped) to get it on DJ and TJ
 			{
 				velocity.y = minJumpVelocity;									//When space is released set velocity y to minimum jump velocity
 			}
