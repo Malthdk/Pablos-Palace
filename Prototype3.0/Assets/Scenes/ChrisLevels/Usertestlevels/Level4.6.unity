@@ -100,15 +100,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4829036264491154, guid: d31693fc0fc9f4511b0bcceea09a08cf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.79
+      value: 12.8
       objectReference: {fileID: 0}
     - target: {fileID: 4829036264491154, guid: d31693fc0fc9f4511b0bcceea09a08cf, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -28.24
+      value: -31.2
       objectReference: {fileID: 0}
     - target: {fileID: 4829036264491154, guid: d31693fc0fc9f4511b0bcceea09a08cf, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4829036264491154, guid: d31693fc0fc9f4511b0bcceea09a08cf, type: 2}
       propertyPath: m_LocalRotation.x
@@ -169,7 +169,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 466734, guid: a7809cd7a029548208725d43ad452b86, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.74
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 466734, guid: a7809cd7a029548208725d43ad452b86, type: 2}
       propertyPath: m_LocalRotation.x
@@ -432,7 +432,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4829036264491154, guid: d31693fc0fc9f4511b0bcceea09a08cf, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4829036264491154, guid: d31693fc0fc9f4511b0bcceea09a08cf, type: 2}
       propertyPath: m_LocalRotation.x
@@ -615,7 +615,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 300737405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -251.34981, y: -41.5, z: 2.0625}
+  m_LocalPosition: {x: -251.34981, y: -41.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 494294501}
@@ -934,7 +934,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 497462, guid: 9545cc0baa75643e884924719285c6bb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 497462, guid: 9545cc0baa75643e884924719285c6bb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1131,6 +1131,30 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010795014636, guid: 65c22a5ff72f347c28cf1a5f87b4a4ac, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010795014636, guid: 65c22a5ff72f347c28cf1a5f87b4a4ac, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010795014636, guid: 65c22a5ff72f347c28cf1a5f87b4a4ac, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.025411312
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010795014636, guid: 65c22a5ff72f347c28cf1a5f87b4a4ac, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99967706
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010795014636, guid: 65c22a5ff72f347c28cf1a5f87b4a4ac, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 2.9120002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010795014636, guid: 65c22a5ff72f347c28cf1a5f87b4a4ac, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65c22a5ff72f347c28cf1a5f87b4a4ac, type: 2}
@@ -2145,7 +2169,7 @@ Prefab:
     - target: {fileID: 11442128, guid: 210af2eb3aed7ab4ca9f921065d84ef7, type: 2}
       propertyPath: lightMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 9dca8fb17abbe3143977f4c5d91420a8, type: 2}
+      objectReference: {fileID: 2100000, guid: d9b2d0e5b7e5d4a07a4c5fa65d084886, type: 2}
     - target: {fileID: 11442128, guid: 210af2eb3aed7ab4ca9f921065d84ef7, type: 2}
       propertyPath: layer.m_Bits
       value: 768

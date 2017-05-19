@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour {
 			dt -= 1.0f/updateRate;
 		}
 
-		uiText.text = "FPS: " + fps + "    SCORE: " + score;
+		uiText.text = "SECRETS: " + score;
 	}
 }
 
