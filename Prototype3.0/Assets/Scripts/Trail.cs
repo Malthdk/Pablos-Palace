@@ -51,14 +51,14 @@ public class Trail : MonoBehaviour {
 	void Awake () 
 	{
 		mesh = GetComponent<MeshFilter>().mesh = new Mesh();
-		GetComponent<Renderer>().material = GameObject.Find("Player").GetComponent<TrailRendererWith2DCollider>().trailMaterial;
+		GetComponent<Renderer>().material = GameObject.Find("BrushHead").GetComponent<TrailRendererWith2DCollider>().trailMaterial; //was Player
 
 		//get and set the polygon collider on this trail.
 		collider = GetComponent<PolygonCollider2D>();
 		collider.isTrigger = colliderIsTrigger;
 		collider.SetPath(0, null);
 
-		trans = GameObject.Find("Player").GetComponent<Transform>();
+		trans = GameObject.Find("BrushHead").GetComponent<Transform>(); //was Player
 
 		//set the first center position as the current position
 		centerPositions = new LinkedList<Vector3>();

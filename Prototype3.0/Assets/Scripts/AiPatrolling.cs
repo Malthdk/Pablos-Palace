@@ -5,7 +5,7 @@ using UnityEngine;
 public class AiPatrolling : MonoBehaviour {
 
 	//Publics
-	public bool floor, leftwall, rightwall, cieling, aroundEdge, flipAtStart;
+	public bool floor, leftwall, rightwall, cieling, aroundEdge, flipAtStart, isPatrolling;
 	public LayerMask enemyMask;
 	public int speed = 1;
 	public float raylength;
@@ -55,181 +55,184 @@ public class AiPatrolling : MonoBehaviour {
 		
 		Move();
 
-		//When the AI is walking on the floor
-		if (floor)
+		if (isPatrolling)
 		{
-			//This is the collision detection and lineshooting
-			Vector2 startPos = Vector2.up;
-			Vector2 groundCheck = Vector2.down;
-			Vector2 wallCheck = myTrans.right.toVector2();
-
-			ShootLines(startPos, groundCheck, wallCheck);
-
-			//If the AI has reached an edge or is blocked by a wall
-			if(!isGrounded || isBlocked)
+			//When the AI is walking on the floor
+			if (floor)
 			{
-				//This is for the AI to go around an edge when blocked
-				if (aroundEdge && isBlocked)
-				{
-					AroundEdge(0, new Vector3(0f,0f, -90));
-					floor = false;
-					if(faceingLeft)
-					{
-						leftwall = true;
-					}
-					else if (!faceingLeft)
-					{
-						rightwall = true;
-					}
+				//This is the collision detection and lineshooting
+				Vector2 startPos = Vector2.up;
+				Vector2 groundCheck = Vector2.down;
+				Vector2 wallCheck = myTrans.right.toVector2();
 
-				}
-				//This is for the AI to go around an edge when egde
-				else if (aroundEdge && !isGrounded)
+				ShootLines(startPos, groundCheck, wallCheck);
+
+				//If the AI has reached an edge or is blocked by a wall
+				if(!isGrounded || isBlocked)
 				{
-					floor = false;
-					AroundEdge(1, new Vector3(0f,0f, 90));	
-					if(faceingLeft)
+					//This is for the AI to go around an edge when blocked
+					if (aroundEdge && isBlocked)
 					{
-						rightwall = true;
+						AroundEdge(0, new Vector3(0f,0f, -90));
+						floor = false;
+						if(faceingLeft)
+						{
+							leftwall = true;
+						}
+						else if (!faceingLeft)
+						{
+							rightwall = true;
+						}
+
 					}
-					else if (!faceingLeft)
+					//This is for the AI to go around an edge when egde
+					else if (aroundEdge && !isGrounded)
 					{
-						leftwall = true;
+						floor = false;
+						AroundEdge(1, new Vector3(0f,0f, 90));	
+						if(faceingLeft)
+						{
+							rightwall = true;
+						}
+						else if (!faceingLeft)
+						{
+							leftwall = true;
+						}
 					}
-				}
-				//This flips the AI in the opposite direction - for back and forth patrolling.
-				else
-				{
-					Flip(false);
+					//This flips the AI in the opposite direction - for back and forth patrolling.
+					else
+					{
+						Flip(false);
+					}
 				}
 			}
-		}
-		//When the AI is walking on the cieling
-		if (cieling)
-		{
-			Vector2 startPos = Vector2.down;
-			Vector2 groundCheck = Vector2.up;
-			Vector2 wallCheck = myTrans.right.toVector2();
-
-			ShootLines(startPos, groundCheck, wallCheck);
-
-			if(!isGrounded || isBlocked)
+			//When the AI is walking on the cieling
+			if (cieling)
 			{
-				if (aroundEdge && isBlocked)
+				Vector2 startPos = Vector2.down;
+				Vector2 groundCheck = Vector2.up;
+				Vector2 wallCheck = myTrans.right.toVector2();
+
+				ShootLines(startPos, groundCheck, wallCheck);
+
+				if(!isGrounded || isBlocked)
 				{
-					AroundEdge(0, new Vector3(0f,0f, -90));
-					cieling = false;
-					if(faceingLeft)
+					if (aroundEdge && isBlocked)
 					{
-						rightwall = true;
+						AroundEdge(0, new Vector3(0f,0f, -90));
+						cieling = false;
+						if(faceingLeft)
+						{
+							rightwall = true;
+						}
+						else if (!faceingLeft)
+						{
+							leftwall = true;
+						}
 					}
-					else if (!faceingLeft)
+					else if (aroundEdge && !isGrounded)
 					{
-						leftwall = true;
+						AroundEdge(1, new Vector3(0f,0f, 90));
+						cieling = false;
+						if(faceingLeft)
+						{
+							leftwall = true;
+						}
+						else if (!faceingLeft)
+						{
+							rightwall = true;
+						}
 					}
-				}
-				else if (aroundEdge && !isGrounded)
-				{
-					AroundEdge(1, new Vector3(0f,0f, 90));
-					cieling = false;
-					if(faceingLeft)
+					else 
 					{
-						leftwall = true;
+						Flip(false);	
 					}
-					else if (!faceingLeft)
-					{
-						rightwall = true;
-					}
-				}
-				else 
-				{
-					Flip(false);	
 				}
 			}
-		}
-		//When the AI is walking on a left wall
-		if (leftwall)
-		{
-			Vector2 startPos = Vector2.right;
-			Vector2 groundCheck = Vector2.left;
-			Vector2 wallCheck = myTrans.right.toVector2();
-
-			ShootLines(startPos, groundCheck, wallCheck);
-
-			if(!isGrounded || isBlocked)
+			//When the AI is walking on a left wall
+			if (leftwall)
 			{
-				if (aroundEdge && isBlocked)
+				Vector2 startPos = Vector2.right;
+				Vector2 groundCheck = Vector2.left;
+				Vector2 wallCheck = myTrans.right.toVector2();
+
+				ShootLines(startPos, groundCheck, wallCheck);
+
+				if(!isGrounded || isBlocked)
 				{
-					AroundEdge(0, new Vector3(0f,0f, -90));
-					leftwall = false;
-					if(faceingLeft)
+					if (aroundEdge && isBlocked)
 					{
-						cieling = true;
+						AroundEdge(0, new Vector3(0f,0f, -90));
+						leftwall = false;
+						if(faceingLeft)
+						{
+							cieling = true;
+						}
+						else if (!faceingLeft)
+						{
+							floor = true;
+						}
 					}
-					else if (!faceingLeft)
+					else if (aroundEdge && !isGrounded)
 					{
-						floor = true;
+						AroundEdge(1, new Vector3(0f,0f, 90));
+						leftwall = false;
+						if(faceingLeft)
+						{
+							floor = true;
+						}
+						else if (!faceingLeft)
+						{
+							cieling = true;
+						}
 					}
-				}
-				else if (aroundEdge && !isGrounded)
-				{
-					AroundEdge(1, new Vector3(0f,0f, 90));
-					leftwall = false;
-					if(faceingLeft)
+					else
 					{
-						floor = true;
+						Flip(true);	
 					}
-					else if (!faceingLeft)
-					{
-						cieling = true;
-					}
-				}
-				else
-				{
-					Flip(true);	
 				}
 			}
-		}
-		//When the AI is walking on a right wall
-		if (rightwall)
-		{
-			Vector2 startPos = Vector2.left;
-			Vector2 groundCheck = Vector2.right;
-			Vector2 wallCheck = myTrans.right.toVector2();
-
-			ShootLines(startPos, groundCheck, wallCheck);
-
-			if(!isGrounded || isBlocked)
+			//When the AI is walking on a right wall
+			if (rightwall)
 			{
-				if (aroundEdge && isBlocked)
+				Vector2 startPos = Vector2.left;
+				Vector2 groundCheck = Vector2.right;
+				Vector2 wallCheck = myTrans.right.toVector2();
+
+				ShootLines(startPos, groundCheck, wallCheck);
+
+				if(!isGrounded || isBlocked)
 				{
-					AroundEdge(0, new Vector3(0f,0f, -90));
-					rightwall = false;
-					if(faceingLeft)
+					if (aroundEdge && isBlocked)
 					{
-						floor = true;
+						AroundEdge(0, new Vector3(0f,0f, -90));
+						rightwall = false;
+						if(faceingLeft)
+						{
+							floor = true;
+						}
+						else if (!faceingLeft)
+						{
+							cieling = true;
+						}
 					}
-					else if (!faceingLeft)
+					else if (aroundEdge && !isGrounded)
 					{
-						cieling = true;
+						AroundEdge(1, new Vector3(0f,0f, 90));
+						rightwall = false;
+						if(faceingLeft)
+						{
+							cieling = true;
+						}
+						else if (!faceingLeft)
+						{
+							floor = true;
+						}
 					}
-				}
-				else if (aroundEdge && !isGrounded)
-				{
-					AroundEdge(1, new Vector3(0f,0f, 90));
-					rightwall = false;
-					if(faceingLeft)
+					else
 					{
-						cieling = true;
+						Flip(true);	
 					}
-					else if (!faceingLeft)
-					{
-						floor = true;
-					}
-				}
-				else
-				{
-					Flip(true);	
 				}
 			}
 		}
