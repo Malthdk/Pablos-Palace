@@ -52,6 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splatterPoolSize: 1500
-  canonballPoolSize: 30
+  canonballPoolSize: 15
   splatterPrefab: {fileID: 136784, guid: 1d80052f0add04c679584a89b9b1a102, type: 2}
   canonballPrefab: {fileID: 112902, guid: 8bdbe59fbec31f74cae5ff0fbd97c86c, type: 2}

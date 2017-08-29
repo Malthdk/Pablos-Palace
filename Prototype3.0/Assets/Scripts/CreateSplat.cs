@@ -86,7 +86,7 @@ public class CreateSplat : MonoBehaviour {
 			else if (onMiddleGround)
 			{
 				Color color = ColorStates.instance.GetColor();
-				Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - newZvalue);
+				Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y - 2.09f, this.transform.position.z - newZvalue);
 				SpawnSplat(pos, color, false); 
 			}
 		}

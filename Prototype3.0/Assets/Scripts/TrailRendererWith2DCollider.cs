@@ -28,7 +28,7 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (Input.GetButton("Fire1") && !ColorStates.instance.isWhite) //was Special
+		if (Input.GetButton("Special") && !ColorStates.instance.isWhite) //Use Fire1 for brush or Special for player
 		{
 			if (createSplat.onMiddleGround)
 			{
@@ -40,7 +40,7 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
 				isActionPerformed = false;
 			}
 		}
-		if (Input.GetButtonUp("Fire1")) //was Special
+		if (Input.GetButtonUp("Special")) //was Special
 		{
 			currentTrail.building = false;
 			isActionPerformed = false;

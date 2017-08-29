@@ -26,11 +26,11 @@ public class HeatSeeking : MonoBehaviour {
 
 			point2Target.Normalize();
 
-			float value = Vector3.Cross(point2Target, transform.right).z;
+			float value = Vector3.Cross(point2Target, transform.up).z;
 
 			rb.angularVelocity = rotatingSpeed * value;
 
-			rb.velocity = transform.right * speed;
+			rb.velocity = transform.up * speed;
 		}
 	}
 }

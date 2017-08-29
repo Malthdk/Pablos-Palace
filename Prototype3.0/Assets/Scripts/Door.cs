@@ -18,7 +18,6 @@ public class Door : MonoBehaviour {
 
 	void Start () 
 	{
-
 		myRenderer = gameObject.GetComponent<SpriteRenderer>();
 		source = this.gameObject.GetComponent<AudioSource>();
 	}

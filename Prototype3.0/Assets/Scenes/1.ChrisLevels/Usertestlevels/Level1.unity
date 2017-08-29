@@ -548,11 +548,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 497462, guid: 9545cc0baa75643e884924719285c6bb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -259.42
+      value: -259.07
       objectReference: {fileID: 0}
     - target: {fileID: 497462, guid: 9545cc0baa75643e884924719285c6bb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -49.22
+      value: -49.4
       objectReference: {fileID: 0}
     - target: {fileID: 497462, guid: 9545cc0baa75643e884924719285c6bb, type: 2}
       propertyPath: m_LocalPosition.z
@@ -582,36 +582,6 @@ Prefab:
         type: 2}
       propertyPath: nextLevelName
       value: Level2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114361701962777334, guid: 9545cc0baa75643e884924719285c6bb,
-        type: 2}
-      propertyPath: openColor.r
-      value: 0.1768509
-      objectReference: {fileID: 0}
-    - target: {fileID: 114361701962777334, guid: 9545cc0baa75643e884924719285c6bb,
-        type: 2}
-      propertyPath: openColor.g
-      value: 0.625
-      objectReference: {fileID: 0}
-    - target: {fileID: 114361701962777334, guid: 9545cc0baa75643e884924719285c6bb,
-        type: 2}
-      propertyPath: openColor.b
-      value: 0.1608456
-      objectReference: {fileID: 0}
-    - target: {fileID: 114361701962777334, guid: 9545cc0baa75643e884924719285c6bb,
-        type: 2}
-      propertyPath: closedColor.r
-      value: 0.62352943
-      objectReference: {fileID: 0}
-    - target: {fileID: 114361701962777334, guid: 9545cc0baa75643e884924719285c6bb,
-        type: 2}
-      propertyPath: closedColor.g
-      value: 0.16078432
-      objectReference: {fileID: 0}
-    - target: {fileID: 114361701962777334, guid: 9545cc0baa75643e884924719285c6bb,
-        type: 2}
-      propertyPath: closedColor.b
-      value: 0.16078432
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9545cc0baa75643e884924719285c6bb, type: 2}

@@ -7,8 +7,8 @@ public class Trail : MonoBehaviour {
 	public Material trailMaterial;                  //the material of the trail.  Changing this during runtime will have no effect.
 	public float lifeTime = 5.0f;                   //the amount of time in seconds that the trail lasts
 	public float changeTime = 0.1f;                 //time point when the trail begins changing its width (if widthStart != widthEnd)
-	public float widthStart = 0.3f;                 //the starting width of the trail
-	public float widthEnd = 0.3f;                   //the ending width of the trail
+	public float widthStart = 0.6f;                 //the starting width of the trail
+	public float widthEnd = 0.6f;                   //the ending width of the trail
 	public float vertexDistanceMin = 0.20f;         //the minimum distance between the center positions
 	public Vector3 renderDirection = new Vector3(0, 0, -1); //the direction that the mesh of the trail will be rendered towards
 	public bool colliderIsTrigger = true;           //determines if the collider is a trigger.  Changing this during runtime will have no effect.
@@ -51,14 +51,16 @@ public class Trail : MonoBehaviour {
 	void Awake () 
 	{
 		mesh = GetComponent<MeshFilter>().mesh = new Mesh();
-		GetComponent<Renderer>().material = GameObject.Find("BrushHead").GetComponent<TrailRendererWith2DCollider>().trailMaterial; //was Player
+		GetComponent<Renderer>().material = GameObject.Find("Player").GetComponent<TrailRendererWith2DCollider>().trailMaterial; //Use "Player" for player or "BrushHead" for brush
 
 		//get and set the polygon collider on this trail.
 		collider = GetComponent<PolygonCollider2D>();
 		collider.isTrigger = colliderIsTrigger;
 		collider.SetPath(0, null);
 
-		trans = GameObject.Find("BrushHead").GetComponent<Transform>(); //was Player
+		trans = GameObject.Find("TrailSpawnPoint").GetComponent<Transform>(); //Use "Player" for player or "BrushHead" for brush
+		Vector3 trailPosition = trans.position;
+		trailPosition.y = trailPosition.y - 1f;
 
 		//set the first center position as the current position
 		centerPositions = new LinkedList<Vector3>();
