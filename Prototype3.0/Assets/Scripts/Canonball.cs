@@ -8,6 +8,7 @@ public class Canonball : MonoBehaviour {
 	private ParticleSystem pSystem;
 	private Rigidbody2D rb;
 
+
 	// FOR SOUND
 	public AudioClip collisionSound;
 	private AudioSource source;
@@ -18,6 +19,7 @@ public class Canonball : MonoBehaviour {
 		pSystem = this.transform.GetComponentInChildren<ParticleSystem>();
 		rb = this.gameObject.GetComponent<Rigidbody2D>();
 		source = this.gameObject.GetComponent<AudioSource>();
+
 	}
 
 
@@ -30,7 +32,7 @@ public class Canonball : MonoBehaviour {
 			StartCoroutine(Destroy());
 		}
 	}
-
+		
 	/*
 	void OnCollisionEnter2D(Collision2D other)
 	{

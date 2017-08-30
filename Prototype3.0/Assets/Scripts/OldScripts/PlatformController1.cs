@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlatformController : RaycastController {
+public class PlatformController1 : RaycastController {
 
 	// Should it function as an elevator
 	public bool elevator = false;
@@ -198,7 +198,7 @@ public class PlatformController : RaycastController {
 
 				Debug.DrawRay(rayOrigin, Vector2.right * directionX * rayLength, Color.red);
 
-				if (hit && hit.distance != 0) //&& Abilities.instance.isYellow == true
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == false)
 				{
 					if (!movedPassengers.Contains(hit.transform))
 					{
@@ -210,44 +210,44 @@ public class PlatformController : RaycastController {
 					}
 				}
 			}
-//			for (int i = 0; i < horizontalRayCount; i ++)
-//			{
-//				Vector2 rayOrigin = raycastOrigins.bottomLeft + Vector2.up * (horizontalRaySpacing * i);	//Rayorigin allways on bottomleft.
-//				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.left, rayLength, passengerMask); 		//Allways casting ray.
-//				
-//				Debug.DrawRay(rayOrigin, Vector2.left * rayLength, Color.red);
-//				
-//				if (hit && hit.distance != 0) //&& Abilities.instance.isYellow == true
-//				{
-//					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
-//					{
-//						movedPassengers.Add(hit.transform);
-//						float pushX = velocity.x;
-//						float pushY = velocity.y;
-//						
-//						passengerMovement.Add (new PassengerMovement(hit.transform, new Vector3(pushX,pushY), false, true, false, false));
-//					}
-//				}
-//			}
-//			for (int i = 0; i < horizontalRayCount; i ++)
-//			{
-//				Vector2 rayOrigin = raycastOrigins.bottomRight + Vector2.up * (horizontalRaySpacing * i);	//Rayorigin allways on bottomleft.
-//				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right, rayLength, passengerMask); 		//Allways casting ray.
-//				
-//				Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.red);
-//				
-//				if (hit && hit.distance != 0) //&& Abilities.instance.isYellow == true
-//				{
-//					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
-//					{
-//						movedPassengers.Add(hit.transform);
-//						float pushX = velocity.x;
-//						float pushY = velocity.y;
-//						
-//						passengerMovement.Add (new PassengerMovement(hit.transform, new Vector3(pushX,pushY), false, false, true, false));
-//					}
-//				}
-//			}
+			for (int i = 0; i < horizontalRayCount; i ++)
+			{
+				Vector2 rayOrigin = raycastOrigins.bottomLeft + Vector2.up * (horizontalRaySpacing * i);	//Rayorigin allways on bottomleft.
+				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.left, rayLength, passengerMask); 		//Allways casting ray.
+				
+				Debug.DrawRay(rayOrigin, Vector2.left * rayLength, Color.red);
+				
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == true)
+				{
+					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
+					{
+						movedPassengers.Add(hit.transform);
+						float pushX = velocity.x;
+						float pushY = velocity.y;
+						
+						passengerMovement.Add (new PassengerMovement(hit.transform, new Vector3(pushX,pushY), false, true, false, false));
+					}
+				}
+			}
+			for (int i = 0; i < horizontalRayCount; i ++)
+			{
+				Vector2 rayOrigin = raycastOrigins.bottomRight + Vector2.up * (horizontalRaySpacing * i);	//Rayorigin allways on bottomleft.
+				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right, rayLength, passengerMask); 		//Allways casting ray.
+				
+				Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.red);
+				
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == true)
+				{
+					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
+					{
+						movedPassengers.Add(hit.transform);
+						float pushX = velocity.x;
+						float pushY = velocity.y;
+						
+						passengerMovement.Add (new PassengerMovement(hit.transform, new Vector3(pushX,pushY), false, false, true, false));
+					}
+				}
+			}
 		}
 		//PASSANGER ON TOP OF A HORIZONTALLY OR DOWNWARD MOVING PLATFORM
 		if (directionY == -1 || velocity.y == 0 && velocity.x != 0)        //If platform moving downward or horizontally
@@ -319,50 +319,50 @@ public class PlatformController : RaycastController {
 			}
 		}
 
-//		//PASSENGER STICKING TO A DOWN/UP MOVING PLATFORM
-//		if (directionY == -1 && velocity.x == 0|| directionY == 1 && velocity.x == 0 ) 
-//		{
-//			float rayLength = skinWidth * 4;			//Short rayLength
-//			
-//			for (int i = 0; i < horizontalRayCount; i ++)
-//			{
-//				Vector2 rayOrigin = raycastOrigins.bottomLeft + Vector2.up * (horizontalRaySpacing * i);	//Rayorigin allways on bottomleft.
-//				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.left, rayLength, passengerMask); 		//Allways casting ray.
-//				
-//				Debug.DrawRay(rayOrigin, Vector2.left * rayLength, Color.red);
-//				
-//				if (hit && hit.distance != 0) //&& Abilities.instance.isYellow == true
-//				{
-//					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
-//					{
-//						movedPassengers.Add(hit.transform);
-//						float pushX = velocity.x;
-//						float pushY = velocity.y;
-//						
-//						passengerMovement.Add (new PassengerMovement(hit.transform, new Vector3(pushX,pushY), false, true, false, false));
-//					}
-//				}
-//			}
-//			for (int i = 0; i < horizontalRayCount; i ++)
-//			{
-//				Vector2 rayOrigin = raycastOrigins.bottomRight + Vector2.up * (horizontalRaySpacing * i);	//Rayorigin allways on bottomleft.
-//				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right, rayLength, passengerMask); 		//Allways casting ray.
-//				
-//				Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.red);
-//				
-//				if (hit && hit.distance != 0) //&& Abilities.instance.isYellow == true
-//				{
-//					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
-//					{
-//						movedPassengers.Add(hit.transform);
-//						float pushX = velocity.x;
-//						float pushY = velocity.y;
-//						
-//						passengerMovement.Add (new PassengerMovement(hit.transform, new Vector3(pushX,pushY), false, false, true, false));
-//					}
-//				}
-//			}
-//		}
+		//PASSENGER STICKING TO A DOWN/UP MOVING PLATFORM
+		if (directionY == -1 && velocity.x == 0|| directionY == 1 && velocity.x == 0 ) 
+		{
+			float rayLength = skinWidth * 4;			//Short rayLength
+			
+			for (int i = 0; i < horizontalRayCount; i ++)
+			{
+				Vector2 rayOrigin = raycastOrigins.bottomLeft + Vector2.up * (horizontalRaySpacing * i);	//Rayorigin allways on bottomleft.
+				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.left, rayLength, passengerMask); 		//Allways casting ray.
+				
+				Debug.DrawRay(rayOrigin, Vector2.left * rayLength, Color.red);
+				
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == true)
+				{
+					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
+					{
+						movedPassengers.Add(hit.transform);
+						float pushX = velocity.x;
+						float pushY = velocity.y;
+						
+						passengerMovement.Add (new PassengerMovement(hit.transform, new Vector3(pushX,pushY), false, true, false, false));
+					}
+				}
+			}
+			for (int i = 0; i < horizontalRayCount; i ++)
+			{
+				Vector2 rayOrigin = raycastOrigins.bottomRight + Vector2.up * (horizontalRaySpacing * i);	//Rayorigin allways on bottomleft.
+				RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right, rayLength, passengerMask); 		//Allways casting ray.
+				
+				Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.red);
+				
+				if (hit && hit.distance != 0 && Abilities.instance.isYellow == true)
+				{
+					if (!movedPassengers.Contains(hit.transform))  //Makes it so player will only be moved once per frame. 
+					{
+						movedPassengers.Add(hit.transform);
+						float pushX = velocity.x;
+						float pushY = velocity.y;
+						
+						passengerMovement.Add (new PassengerMovement(hit.transform, new Vector3(pushX,pushY), false, false, true, false));
+					}
+				}
+			}
+		}
 	}
 	struct PassengerMovement
 	{

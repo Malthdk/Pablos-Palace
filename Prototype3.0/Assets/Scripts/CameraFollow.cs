@@ -28,6 +28,9 @@ public class CameraFollow : MonoBehaviour {
 	public List<Vector3> localBoundaries;
 	public List<Vector3> globalBoundaries;
 
+	//Boundaries
+	public float MIN_X, MAX_X, MIN_Y, MAX_Y;
+	public bool XminEnable, XmaxEnable, YminEnable, YmaxEnable;
 //	float smoothFindX;
 //	float smoothFindY;
 //	public bool findingTarget = false;
@@ -56,15 +59,7 @@ public class CameraFollow : MonoBehaviour {
 		{
 			target = FindObjectOfType<Controller2D>();
 		}
-
-//		if (Mathf.Abs(transform.position.x) >= boundaryX)
-//		{
-//			Debug.Log("Hit boundaryX");
-//		}
-//		if (Mathf.Abs(transform.position.y) >= boundaryY)
-//		{
-//			Debug.Log("Hit boundaryY");
-//		}
+			
 	}
 	void LateUpdate()
 	{
@@ -122,6 +117,43 @@ public class CameraFollow : MonoBehaviour {
 //		}
 //		else 
 //		{
+
+
+		//Vertical clamp
+		if (YminEnable && YmaxEnable)
+		{
+			focusPosition.y = Mathf.Clamp(focusPosition.y, MIN_Y, MAX_Y);
+		}
+		else if (YminEnable)
+		{
+			focusPosition.y = Mathf.Clamp(focusPosition.y, MIN_Y, focusPosition.y);
+		}
+		else if (YmaxEnable)
+		{
+			focusPosition.y = Mathf.Clamp(focusPosition.y, focusPosition.y, MAX_Y);
+		}
+
+
+		//Horizontal clamp
+		if (XminEnable && XmaxEnable)
+		{
+			focusPosition.x = Mathf.Clamp(focusPosition.x, MIN_X, MAX_X);
+		}
+		else if (XminEnable)
+		{
+			focusPosition.x = Mathf.Clamp(focusPosition.x, MIN_X, focusPosition.x);
+		}
+		else if (XmaxEnable)
+		{
+			focusPosition.x = Mathf.Clamp(focusPosition.x, focusPosition.x, MAX_X);
+		}
+
+
+
+
+
+
+
 		transform.position = (Vector3)focusPosition + Vector3.forward * -10;	
 
 			//transform.position = new Vector3(rounded_x, rounded_y, -10);
