@@ -9,39 +9,39 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuUI/MainMenu.unity
   - enabled: 1
     path: Assets/Scenes/MenuUI/LevelSelection.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level2.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level3.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level3.5.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level4.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level4.5.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level4.6.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level5.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level6.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level7.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level7.5.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level8.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level9.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level10.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level11.unity
   - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level12.unity
   - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level14.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChrisLevels/Usertestlevels/Level13.5.unity

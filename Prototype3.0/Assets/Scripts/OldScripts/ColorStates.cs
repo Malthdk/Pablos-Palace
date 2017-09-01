@@ -25,7 +25,7 @@ public class ColorStates : MonoBehaviour {
 	void Start () 
 	{
 		activeColor = Color.white;
-		myRenderer = gameObject.transform.FindChild("Graphics").GetComponent<SpriteRenderer>();
+		myRenderer = gameObject.transform.FindChild("Graphics").transform.FindChild("BrushHead").GetComponent<SpriteRenderer>();
 	}
 
 	void Update () 

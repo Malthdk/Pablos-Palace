@@ -39,7 +39,7 @@ public class ParticleColor : MonoBehaviour {
 
 	private void SetColor() 
 	{
-		playerColor = GameObject.Find("Player").transform.FindChild("Graphics").GetComponent<SpriteRenderer>().color;
+		playerColor = GameObject.Find("Player").transform.FindChild("Graphics").transform.FindChild("BrushHead").GetComponent<SpriteRenderer>().color;
 		Color color1 = pColor.material.color;
 
 		color1 = playerColor;
